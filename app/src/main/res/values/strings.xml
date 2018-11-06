@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Plan\'Eat</string>
+    <string name="recipes">Mes recettes</string>
+    <string name="fridge">Mon frigo</string>
+    <string name="shopping">Mes courses</string>
+    <string name="planning">Mon calendrier</string>
+    <string name="user">Mon profil</string>
+
+    <string name="activity_recipes">ACTIVITY RECIPES</string>
+    <string name="activity_recipe">ACTIVITY RECIPE</string>
+    <string name="activity_user">ACTIVITY USER</string>
+    <string name="activity_planning">ACTIVITY PLANNING</string>
+    <string name="activity_fridge">ACTIVITY FRIDGE</string>
+    <string name="activity_shopping">ACTIVITY SHOPPING</string>
+
+</resources>
