@@ -12,13 +12,28 @@ public class Recipe {
     private float difficulty;
     private String description;
     private int preparationTime;
+    private String imageLink;
     private String tag;
     private boolean isShared;
     private float score;
 
-
     public Recipe(int id) {
         this.id = id;
+    }
+
+    public Recipe(int id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, boolean isShared, float score) {
+        this.id = id;
+        this.name = name;
+        this.listComponent = listComponent;
+        this.nbPeople = nbPeople;
+        this.calories = calories;
+        this.difficulty = difficulty;
+        this.description = description;
+        this.preparationTime = preparationTime;
+        this.imageLink = imageLink;
+        this.tag = tag;
+        this.isShared = isShared;
+        this.score = score;
     }
 
     public String getName() {
@@ -35,5 +50,13 @@ public class Recipe {
 
     public String getTag() {
         return tag;
+    }
+
+    public float getScore() {
+        return score;
+    }
+
+    public String getImageLink() {
+        return imageLink;
     }
 }
