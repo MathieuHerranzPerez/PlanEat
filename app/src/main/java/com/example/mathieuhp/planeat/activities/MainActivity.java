@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
 
+    private Bundle bundleUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,7 +51,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         firebaseUser = firebaseAuth.getCurrentUser();
         // create the user
         User user = new User(firebaseUser.getEmail());
-        Log.d("USER", user.toString());     // affD
+        // and the bundle to pass it to the fragment
+        bundleUser = new Bundle();
+        bundleUser.putParcelable("user", user);
 
         // launch the main fragment
         loadFragment(new RecipesListFragment());
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.navigation_user:
                 fragment = new UserFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.user);
                 break;
         }

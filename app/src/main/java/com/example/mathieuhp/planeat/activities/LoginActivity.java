@@ -16,6 +16,7 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.example.mathieuhp.planeat.R;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -25,7 +26,9 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -41,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     LoginButton loginButtonFacebook;
-    TextView textView;
     CallbackManager callbackManager;
 
 
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if(currentUser != null)
-            login(currentUser);
+            login();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -114,46 +116,54 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                                login(user);
+                                login();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
                             }
-
                         }
                     }
                 );
             }
         });
 
-
         /* --- FACEBOOK --- */
 
         loginButtonFacebook = (LoginButton) findViewById(R.id.facebook_login_button);
-        textView = (TextView) findViewById(R.id.login_status);
+        loginButtonFacebook.setReadPermissions("email", "public_profile");
         callbackManager = CallbackManager.Factory.create();
         loginButtonFacebook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                // TODO
-                // si existe pas
-                textView.setText("Login Success \n" + loginResult.getAccessToken().getUserId() +
-                    "\n" + loginResult.getAccessToken().getToken());
-
+                connectionFirebaseFacebook(loginResult.getAccessToken());
             }
-
             @Override
-            public void onCancel() {
-                textView.setText("Login canceled");
-            }
-
+            public void onCancel() {}
             @Override
-            public void onError(FacebookException error) {
-                textView.setText("Login error");
-            }
+            public void onError(FacebookException error) {}
         });
+    }
 
+    private void connectionFirebaseFacebook(AccessToken token) {
+
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            login();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(LoginActivity.this, task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 
     @Override
@@ -162,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void login(FirebaseUser user) {
+    private void login() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
     }
