@@ -35,7 +35,7 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/layout_signup"
+        android:id="@+id/layout_connection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -45,7 +45,7 @@
         android:layout_alignParentLeft="true">
 
         <EditText
-            android:id="@+id/signup_email"
+            android:id="@+id/email_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -53,7 +53,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/signup_password"
+            android:id="@+id/password_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -65,6 +65,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_signup" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login" />
 
     </LinearLayout>
 

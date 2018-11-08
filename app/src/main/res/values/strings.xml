@@ -12,6 +12,8 @@
     <string name="password">Mot de passe</string>
     <string name="btn_signup">S\'enregitrer</string>
     <string name="registered">Enregistré !</string>
+    <string name="btn_login">Connexion</string>
+    <string name="deconnection">Déconnexion</string>
 
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>

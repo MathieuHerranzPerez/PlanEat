@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_deconnection"
+        android:padding="12dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/deconnection"
+        android:drawableRight="@drawable/ic_action_name"
+        android:textSize="12sp"
+        android:drawableEnd="@drawable/ic_action_name"
+        tools:ignore="RelativeOverlap" />
 
     <TextView
         android:layout_centerVertical="true"

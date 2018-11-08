@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -15,10 +17,15 @@ import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
 import com.example.mathieuhp.planeat.fragments.ShoppingFragment;
 import com.example.mathieuhp.planeat.fragments.UserFragment;
+import com.example.mathieuhp.planeat.models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private TextView mTitleToolbar;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +36,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // setup the toolbar
         mTitleToolbar = (TextView) findViewById(R.id.toolbar_title);
         mTitleToolbar.setText(R.string.recipes);
 
+        // setup the bottom navigation
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        // we are on the first fragment when run
+        // get the user connection
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        // create the user
+        User user = new User(firebaseUser.getEmail());
+        Log.d("USER", user.toString());     // affD
+
+        // launch the main fragment
         loadFragment(new RecipesListFragment());
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
