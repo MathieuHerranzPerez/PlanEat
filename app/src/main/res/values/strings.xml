@@ -8,6 +8,10 @@
 
     <string name="search">Rechercher...</string>
     <string name="recipe_image">recipe image</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="btn_signup">S\'enregitrer</string>
+    <string name="registered">Enregistré !</string>
 
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>
