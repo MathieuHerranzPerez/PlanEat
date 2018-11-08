@@ -16,4 +16,10 @@
     <string name="activity_fridge">ACTIVITY FRIDGE</string>
     <string name="activity_shopping">ACTIVITY SHOPPING</string>
 
+
+
+
+    <string name="facebook_app_id">1968130033267796</string>
+    <string name="fb_login_protocol_scheme">fb1968130033267796</string>
+
 </resources>
