@@ -6,14 +6,26 @@
     <string name="planning">Mon calendrier</string>
     <string name="user">Mon profil</string>
 
-    <string name="search">Rechercher...</string>
-    <string name="recipe_image">recipe image</string>
+    <!-- connection -->
     <string name="email">Email</string>
     <string name="password">Mot de passe</string>
     <string name="btn_signup">S\'enregitrer</string>
     <string name="registered">Enregistré !</string>
     <string name="btn_login">Connexion</string>
+    <!-- /connection -->
+
+    <!-- user -->
     <string name="deconnection">Déconnexion</string>
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom</string>
+    <string name="btn_modif">Sauver les changements</string>
+    <string name="saved">Enregistré !</string>
+    <!-- /user -->
+
+    <!-- recipes list -->1
+    <string name="search">Rechercher...</string>
+    <string name="recipe_image">recipe image</string>
+    <!-- /recipes list -->
 
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>

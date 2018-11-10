@@ -3,6 +3,7 @@ package com.example.mathieuhp.planeat.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.mathieuhp.planeat.models.comparator.RecipeComparator;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +27,8 @@ public class User implements Parcelable {
     private ArrayList<Recipe> listPersonnalAndFollowedRecipe;
     private RecipeComparator comparator;
 
+    private DatabaseReference firebaseReference;
+
     // TODO
 //    private RecipeCalendar calendar;
 //    private Fridge fridge;
@@ -44,8 +47,8 @@ public class User implements Parcelable {
 
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
-        DatabaseReference firebaseTable = FirebaseDatabase.getInstance().getReference();
-        firebaseTable.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseTable));
+        firebaseReference = FirebaseDatabase.getInstance().getReference();
+        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
     }
     /* ---- GETTERS ----*/
     public String getId() {
@@ -81,11 +84,11 @@ public class User implements Parcelable {
         this.email = email;
     }
 
-    private void setFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    private void setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -107,8 +110,10 @@ public class User implements Parcelable {
                 '}';
     }
 
+
+
     /**
-     * we need the the current instance of user
+     * link the the current instance of the user of the connection with our user
      */
     private class MyValueEventListener implements ValueEventListener {
 
@@ -142,6 +147,14 @@ public class User implements Parcelable {
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {
 
+        }
+    }
+
+    public void updateData() {
+        try {
+            this.firebaseReference.child("users").child(this.id).setValue(this);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
