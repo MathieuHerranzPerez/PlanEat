@@ -5,8 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         // create the user
-        User user = new User(firebaseUser.getEmail());
+        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail());
         // and the bundle to pass it to the fragment
         bundleUser = new Bundle();
         bundleUser.putParcelable("user", user);
