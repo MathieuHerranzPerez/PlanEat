@@ -6,12 +6,19 @@
     <string name="planning">Mon calendrier</string>
     <string name="user">Mon profil</string>
 
+    <!-- global -->
+    <string name="yes">Oui</string>
+    <string name="cancel">Annuler</string>
+    <string name="no">Non</string>
+    <!-- /global -->
+
     <!-- connection -->
     <string name="email">Email</string>
     <string name="password">Mot de passe</string>
     <string name="btn_signup">S\'enregitrer</string>
     <string name="registered">Enregistré !</string>
     <string name="btn_login">Connexion</string>
+    <string name="wrong_login">Mauvais identifiant(s)</string>
     <!-- /connection -->
 
     <!-- user -->
@@ -20,6 +27,9 @@
     <string name="last_name">Nom</string>
     <string name="btn_modif">Sauver les changements</string>
     <string name="saved">Enregistré !</string>
+    <string name="delete_user">Supprimer le compte</string>
+    <string name="message_asking_suppression">Êtes-vous sûr ? (irréversible)</string>
+    <string name="delete_done">Compte supprimé</string>
     <!-- /user -->
 
     <!-- recipes list -->1

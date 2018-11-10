@@ -5,4 +5,5 @@
     <color name="colorAccent">#22830c</color>
     <color name="colorWhiteBack">#DDFFFF</color>
     <color name="colorBackgroundMenu">#D0F1D4</color>
+    <color name="color_danger">#FFA3A5</color>
 </resources>

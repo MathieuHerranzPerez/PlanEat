@@ -3,7 +3,6 @@ package com.example.mathieuhp.planeat.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.example.mathieuhp.planeat.models.comparator.RecipeComparator;
 import com.google.firebase.database.DataSnapshot;
@@ -129,18 +128,25 @@ public class User implements Parcelable {
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
             boolean isInDB = false;
-
-            for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                if(ds.child(u.getId()).exists()) {
-                    u.setFirstName(ds.child(u.getId()).getValue(User.class).getFirstName());
-                    u.setLastName(ds.child(u.getId()).getValue(User.class).getLastName());
-                    u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
-                    isInDB = true;
+            try {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    if (ds.child(u.getId()).exists()) {
+                        u.setFirstName(ds.child(u.getId()).getValue(User.class).getFirstName());
+                        u.setLastName(ds.child(u.getId()).getValue(User.class).getLastName());
+                        u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
+                        isInDB = true;
+                    }
                 }
+            }  catch (Exception e) {
+                e.printStackTrace();
             }
             if(!isInDB) {
                 // create the user in firebase
-                firebaseRef.child("users").child(u.getId()).setValue(u);
+                try {
+                    firebaseRef.child("users").child(u.getId()).setValue(u);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -153,6 +159,14 @@ public class User implements Parcelable {
     public void updateData() {
         try {
             this.firebaseReference.child("users").child(this.id).setValue(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteData() {
+        try {
+            this.firebaseReference.child("users").child(this.id).removeValue();
         } catch (Exception e) {
             e.printStackTrace();
         }

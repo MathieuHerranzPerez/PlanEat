@@ -1,5 +1,5 @@
 package com.example.mathieuhp.planeat.models;
 
-public enum QuantityUnit {
+public enum QuantityUnity {
     g, cups, ml
 }

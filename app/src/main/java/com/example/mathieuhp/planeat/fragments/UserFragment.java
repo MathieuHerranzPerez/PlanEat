@@ -1,5 +1,7 @@
 package com.example.mathieuhp.planeat.fragments;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,10 +9,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +21,10 @@ import android.widget.Toast;
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.activities.LoginActivity;
 import com.example.mathieuhp.planeat.models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class UserFragment extends Fragment {
 
@@ -29,6 +34,7 @@ public class UserFragment extends Fragment {
     EditText lastName;
     User user;
     Button btnModif;
+    Button btnDelete;
 
     TextView userText;
 
@@ -36,6 +42,8 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, null);
+
+        /* --- layout element binding --- */
         deconnectionBtn = (Button) view.findViewById(R.id.btn_deconnection);
 
         email = (TextView) view.findViewById(R.id.user_email);
@@ -49,9 +57,12 @@ public class UserFragment extends Fragment {
 
         btnModif = (Button) view.findViewById(R.id.btn_modif);
 
+        btnDelete = (Button) view.findViewById(R.id.btn_delete_user);
+
 
         userText = (TextView) view.findViewById(R.id.user);
         userText.setText(user.toString());
+        /* --- /layout element binding --- */
 
 
 
@@ -106,6 +117,9 @@ public class UserFragment extends Fragment {
             }
         });
 
+        // setup delete button
+        btnDelete.setOnClickListener(new myOnClickListenerDeleteUser(user));
+
         return view;
     }
 
@@ -136,6 +150,85 @@ public class UserFragment extends Fragment {
             user.updateData();
             view.findViewById(R.id.btn_modif).setVisibility(View.INVISIBLE);
             Toast.makeText(getActivity(), getResources().getString(R.string.saved), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private class myOnClickListenerDeleteUser implements View.OnClickListener {
+
+        private User user;
+
+        private myOnClickListenerDeleteUser(User user) {
+            this.user = user;
+        }
+
+        @Override
+        public void onClick(View view) {
+            myDialogDeleteUser confirmWindow = new myDialogDeleteUser(getActivity(), user);
+            confirmWindow.show();
+        }
+    }
+
+    /**
+     * provide a minimum security to avoid miss click by asking a confirmation from the real user
+     */
+    private class myDialogDeleteUser extends Dialog implements android.view.View.OnClickListener {
+
+        private Activity activity;
+        private Button btnYes;
+        private Button btnCancel;
+        private User user;
+
+        private myDialogDeleteUser(Activity a, User user) {
+            super(a);
+            this.activity = a;
+            this.user = user;
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_delete_user);
+            btnYes = (Button) findViewById(R.id.btn_yes);
+            btnCancel = (Button) findViewById(R.id.btn_cancel);
+            btnYes.setOnClickListener(this);
+            btnCancel.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_yes :
+                    // TODO recipes suppression
+
+                    // delete our user
+                    user.deleteData();
+
+                    // delete firebase authentification user
+                    FirebaseUser userFirebase = FirebaseAuth.getInstance().getCurrentUser();
+                    userFirebase.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(activity, getResources().getString(R.string.delete_done),
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_cancel :
+                    dismiss();
+                    break;
+                default:
+                    break;
+            }
+            dismiss();
         }
     }
 }
