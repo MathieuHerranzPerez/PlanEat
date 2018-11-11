@@ -6,5 +6,5 @@ public class Component {
     private Ingredient ingredient;
 
     private float quantity;
-    private QuantityUnity unity;
+    private QuantityUnit unity;
 }
