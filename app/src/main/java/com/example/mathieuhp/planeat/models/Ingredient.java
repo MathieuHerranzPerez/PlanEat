@@ -1,9 +1,99 @@
 package com.example.mathieuhp.planeat.models;
 
+import android.support.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Ingredient {
 
-    private int id;
+    private String id;
     private String name;
-    private int caloriesPerHundredGrams;
-    private IngredientType type;
+    private String kiloCaloriesPerHundredGrams;
+    private String type;
+
+    private static DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("ingredients");
+
+
+    public Ingredient() {
+        // default constructor required for calls to DataSnapshot.getValue(xxx.class)
+    }
+
+    public Ingredient(String id) {
+        this.id = id;
+
+        // get the information of the ingredient from the database
+        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this));
+    }
+
+    /* --- GETTERS --- */
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getKiloCaloriesPerHundredGrams() {
+        return kiloCaloriesPerHundredGrams;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    /* --- SETTERS --- */
+
+    private void setName(String name) {
+        this.name = name;
+    }
+
+    private void setKiloCaloriesPerHundredGrams(String kiloCaloriesPerHundredGrams) {
+        this.kiloCaloriesPerHundredGrams = kiloCaloriesPerHundredGrams;
+    }
+
+    private void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{\n" +
+                " id=" + id + "\'\n" +
+                " name='" + name + "\'\n" +
+                " kiloCaloriesPerHundredGrams=" + kiloCaloriesPerHundredGrams + "\'\n" +
+                " type='" + type + "\'\n" +
+                '}';
+    }
+
+    private class MyValueEventListener implements ValueEventListener {
+
+        private Ingredient ingredient;
+
+
+        private MyValueEventListener(Ingredient ingredient) {
+            this.ingredient = ingredient;
+        }
+
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            try {
+                DataSnapshot ds = dataSnapshot.child(ingredient.getId());
+                ingredient.setName(ds.getValue(Ingredient.class).getName());
+                ingredient.setType(ds.getValue(Ingredient.class).getType());
+                ingredient.setKiloCaloriesPerHundredGrams(ds.getValue(Ingredient.class).getKiloCaloriesPerHundredGrams());
+
+            }  catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {}
+    }
 }

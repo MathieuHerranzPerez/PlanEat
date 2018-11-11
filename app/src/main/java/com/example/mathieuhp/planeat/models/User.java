@@ -34,7 +34,7 @@ public class User implements Parcelable {
 //    private ShoppingList shoppingList;
 
     public User() {
-        // default constructor required for calls to DataSnapshot.getValue(Post.class)
+        // default constructor required for calls to DataSnapshot.getValue(xxx.class)
     }
 
     public User(String id, String email) {
