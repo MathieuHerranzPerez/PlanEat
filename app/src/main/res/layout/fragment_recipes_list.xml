@@ -10,6 +10,12 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recipesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarSearch"
+        />
     <ProgressBar
         android:id="@+id/recipesLoadingBar"
         style="?android:attr/progressBarStyle"
@@ -19,12 +25,5 @@
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:visibility="visible" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recipesRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbarSearch"
-        />
 
 </RelativeLayout>
