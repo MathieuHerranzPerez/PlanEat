@@ -36,8 +36,6 @@ public class UserFragment extends Fragment {
     Button btnModif;
     Button btnDelete;
 
-    TextView userText;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,8 +58,6 @@ public class UserFragment extends Fragment {
         btnDelete = (Button) view.findViewById(R.id.btn_delete_user);
 
 
-        userText = (TextView) view.findViewById(R.id.user);
-        userText.setText(user.toString());
         /* --- /layout element binding --- */
 
 

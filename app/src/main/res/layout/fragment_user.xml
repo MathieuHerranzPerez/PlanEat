@@ -91,12 +91,6 @@
         android:visibility="invisible"
         android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:id="@+id/user"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/btn_delete_user"
         android:layout_width="match_parent"
