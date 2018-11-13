@@ -36,6 +36,7 @@ public class User implements Parcelable{
     private DatabaseReference firebaseReference;
 
 
+
     // TODO
 //    private Fridge fridge;
 //    private ShoppingList shoppingList;
@@ -60,14 +61,11 @@ public class User implements Parcelable{
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
-
-        //get data dealing with recipes
-        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
+        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
     }
 
-
     /* ---- GETTERS ----*/
+
 
     public FirebaseDataRetriever getFirebaseDataRetriever() {
         return firebaseDataRetriever;
@@ -120,7 +118,9 @@ public class User implements Parcelable{
 
 
 
+
     /* ---- SETTERS ---- */
+
 
     public void setFirebaseDataRetriever(FirebaseDataRetriever firebaseDataRetriever) {
         this.firebaseDataRetriever = firebaseDataRetriever;
@@ -280,6 +280,29 @@ public class User implements Parcelable{
     }
 
 
+
+
+
+
+    public void updateRecipes(){
+        try{
+            this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                    for(DataSnapshot child : children){
+
+                        Recipe newRecipe = new Recipe();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        } catch
+    }
 
 
 
