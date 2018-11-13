@@ -49,8 +49,7 @@ public class Recipe implements Parcelable{
 
     }
 
-    public Recipe(String id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
-        this.id = id;
+    public Recipe(int id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, Bitmap image, List<String> tags, boolean isShared, float score) {
         this.name = name;
         this.listComponent = listComponent;
         this.nbPeople = nbPeople;
@@ -61,6 +60,27 @@ public class Recipe implements Parcelable{
         this.imageLink = imageLink;
         this.image = image;
         this.tags = tags;
+        this.isShared = isShared;
+        this.score = score;
+    }
+
+
+    public Recipe(String id) {
+        this.id = id;
+        // todo get the recipe from DB
+        firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
+        firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
+    }
+
+    public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
+
+        this.name = name;
+        this.nbPeople = nbPeople;
+        this.description = description;
+        this.preparationTime = preparationTime;
+        this.difficulty = difficulty;
+        this.ingredients = ingredients;
+        this.preparation = preparation;
         this.isShared = isShared;
         this.score = score;
     }
@@ -83,12 +103,6 @@ public class Recipe implements Parcelable{
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
     }
 
-    public Recipe(String id) {
-        this.id = id;
-        // todo get the recipe from DB
-        firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.child("recipes").addValueEventListener(new ValueEventListenerRecipeConstruct(this));
-    }
 
     public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
 
@@ -176,9 +190,6 @@ public class Recipe implements Parcelable{
 
     public void setShared(boolean shared) {
         isShared = shared;
-    }
-
-    public void loadInformation() {
     }
     public int getCalories() {
         return calories;
