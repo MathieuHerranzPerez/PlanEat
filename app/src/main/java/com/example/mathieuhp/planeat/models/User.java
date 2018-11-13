@@ -118,6 +118,10 @@ public class User implements Parcelable{
     public RecipeCalendar getRecipeCalendar() {
         return recipeCalendar;
     }
+
+    public ArrayList<Recipe> getPersonnalRecipes() {
+        return personnalRecipes;
+    }
     public Fridge getFridge() {
         return fridge;
     }
@@ -125,7 +129,12 @@ public class User implements Parcelable{
         return shopping;
     }
 
-
+    public ArrayList<Recipe> getAllRecipes() {
+        ArrayList<Recipe> allRecipes = new ArrayList<Recipe>();
+        allRecipes.addAll(this.followedRecipes);
+        allRecipes.addAll(this.personnalRecipes);
+        return allRecipes;
+    }
 
 
 
