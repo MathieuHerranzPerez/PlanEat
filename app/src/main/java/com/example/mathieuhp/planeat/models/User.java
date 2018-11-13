@@ -61,12 +61,14 @@ public class User implements Parcelable{
         firebaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
 
+
         //get data dealing with recipes
         RecipeCatalogValueListener recipeCatalogValueListener = new RecipeCatalogValueListener(this);
         firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(recipeCatalogValueListener);
     }
 
     /* ---- GETTERS ----*/
+
 
     public FirebaseDataRetriever getFirebaseDataRetriever() {
         return firebaseDataRetriever;
@@ -170,7 +172,7 @@ public class User implements Parcelable{
     /**
      * sort the recipes list
      */
-    public void sortList() {
+    public void sortList(){
         Collections.sort(this.getAllRecipes(), comparator);
 
 
