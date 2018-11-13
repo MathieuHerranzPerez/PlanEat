@@ -1,5 +1,6 @@
 package com.example.mathieuhp.planeat.models;
 
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
@@ -10,8 +11,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class Recipe {
 
@@ -26,7 +27,8 @@ public class Recipe {
     private ArrayList<ArrayList> ingredients;
     private ArrayList<String> preparation;
     private String imageLink;
-    private String tag;
+    private Bitmap image;
+    private List<String> tags;
     private boolean isShared;
     private float score;
 
@@ -35,6 +37,22 @@ public class Recipe {
     public Recipe() {
 
     }
+
+    public Recipe(int id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, Bitmap image, List<String> tags, boolean isShared, float score) {
+        this.name = name;
+        this.listComponent = listComponent;
+        this.nbPeople = nbPeople;
+        this.calories = calories;
+        this.difficulty = difficulty;
+        this.description = description;
+        this.preparationTime = preparationTime;
+        this.imageLink = imageLink;
+        this.image = image;
+        this.tags = tags;
+        this.isShared = isShared;
+        this.score = score;
+    }
+
 
     public Recipe(String id) {
         this.id = id;
@@ -58,23 +76,49 @@ public class Recipe {
     public String getId() {
         return this.id;
     }
+
     public String getName() {
         return name;
     }
+
     public float getDifficulty() {
         return difficulty;
     }
+
     public int getPreparationTime() {
         return preparationTime;
     }
-    public String getTag() {
-        return tag;
-    }
+
     public float getScore() {
         return score;
     }
+
     public String getImageLink() {
         return imageLink;
+    }
+
+    public Bitmap getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public boolean isShared() {
+        return isShared;
+    }
+
+    public void setShared(boolean shared) {
+        isShared = shared;
     }
     public int getCalories() {
         return calories;

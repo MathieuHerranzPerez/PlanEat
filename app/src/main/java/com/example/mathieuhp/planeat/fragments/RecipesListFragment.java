@@ -58,7 +58,7 @@ public class RecipesListFragment extends Fragment implements Updatable {
 
                 @Override
                 public boolean onQueryTextChange(String s) {
-                    // Text has chaged, apply filtering
+                    // Text has changed, apply filtering
                     return false;
                 }
             }
