@@ -182,9 +182,6 @@ public class Recipe implements Parcelable{
     public void setShared(boolean shared) {
         isShared = shared;
     }
-
-    public void loadInformation() {
-    }
     public int getCalories() {
         return calories;
     }
