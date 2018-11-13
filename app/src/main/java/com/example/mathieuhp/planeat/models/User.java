@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -23,15 +25,13 @@ public class User implements Parcelable {
     private String email;
     private String firstName;
     private String lastName;
-    private TreeMap<String, Recipe> listPersonnalRecipe;
-    private TreeMap<String, Recipe> listFollowedRecipe;
-    private TreeMap<String, Recipe> listPersonnalAndFollowedRecipe;
+    private ArrayList<Recipe> personnalRecipes;
+    private ArrayList<Recipe> followedRecipes;
     private RecipeCalendar recipeCalendar;
     private RecipeComparator comparator;
 
     private DatabaseReference firebaseReference;
 
-    private static User userInstance;
 
     // TODO
 //    private Fridge fridge;
@@ -48,82 +48,103 @@ public class User implements Parcelable {
         this.firstName = "";
         this.lastName = "";
 
-        listPersonnalRecipe = new TreeMap<>();
-        listFollowedRecipe = new TreeMap<>();
-        listPersonnalAndFollowedRecipe = new TreeMap<>();
-
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addValueEventListener(new ValueEventListenerUserConstruct(this, firebaseReference));
-
-        userInstance = this;
+        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
     }
+
+
     /* ---- GETTERS ----*/
+
     public String getId() {
         return id;
     }
+
     public String getBirthDate() {
         return birthDate;
     }
+
     public String getEmail() {
         return email;
     }
+
     public String getFirstName() {
         return firstName;
     }
+
     public String getLastName() {
         return lastName;
     }
-    public RecipeCalendar getRecipeCalendar() {
-        return recipeCalendar;
-    }
-    public TreeMap<String, Recipe> getListPersonnalAndFollowedRecipe() {
-        return listPersonnalAndFollowedRecipe;
-    }
-    public TreeMap<String, Recipe> getListPersonnalRecipe() {
-        return listPersonnalRecipe;
+
+
+    public ArrayList<Recipe> getFollowedRecipes() {
+        return followedRecipes;
     }
 
-    public static User getUserInstance() {
-        return userInstance;
+    public ArrayList<Recipe> getPersonnalRecipes() {
+        return personnalRecipes;
     }
+
+    public ArrayList<Recipe> getAllRecipes() {
+        ArrayList<Recipe> allRecipes = new ArrayList<Recipe>();
+        allRecipes.addAll(this.followedRecipes);
+        allRecipes.addAll(this.personnalRecipes);
+        return allRecipes;
+    }
+
 
 
     /* ---- SETTERS ---- */
+
     private void setId(String id) {
         this.id = id;
     }
+
     private void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
     private void setEmail(String email) {
         this.email = email;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    public void setPersonnalRecipes(ArrayList<Recipe> personnalRecipes){ this.personnalRecipes = personnalRecipes; }
 
-    public void addPersonnalRecipe(Recipe recipe) {
-        this.listPersonnalRecipe.put(recipe.getId(), recipe);
-        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
-    }
+    public void setFollowedRecipes(ArrayList<Recipe> followedRecipes){ this.followedRecipes = followedRecipes; }
 
-    public void addFollowedRecipe(Recipe recipe) {
-        this.listFollowedRecipe.put(recipe.getId(), recipe);
-        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
-    }
+
+
+    /* ---- FUNCTIONS ---- */
+    /**
+     * sort the recipes list
+     */
+    public void sortList() {
+        Collections.sort(this.getAllRecipes(), comparator);
+
 
 //    /**
 //     * sort the recipes list
 //     */
 //    public void sortList() {
 //        Collections.sort(listPersonnalAndFollowedRecipe, comparator);
-//    }
+   }
+
+    public void addPersonnalRecipe(Recipe recipe){
+        this.personnalRecipes.add(recipe);
+    }
+
+    public void addFollowedRecipe(Recipe recipe){
+        this.followedRecipes.add(recipe);
+    }
 
     @Override
     public String toString() {
@@ -163,7 +184,7 @@ public class User implements Parcelable {
                     u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
                     isInDB = true;
                 }
-                
+
                 // get the recipe list todo
                 ds = dataSnapshot.child("recipes");
                 for(DataSnapshot dataSnapshot1 : ds.getChildren()) {
@@ -172,7 +193,7 @@ public class User implements Parcelable {
                     }
                 }
 
-                for(Map.Entry<String, Recipe> entry : listPersonnalAndFollowedRecipe.entrySet())    // affD
+                for(Recipe recipe : u.getAllRecipes())    // affD
                     Log.d("TABLEAU RECIPE : ", entry.toString());   // affD
 
 
@@ -225,6 +246,29 @@ public class User implements Parcelable {
             e.printStackTrace();
         }
     }
+
+
+    public void updateRecipes(){
+        try{
+            this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                    for(DataSnapshot child : children){
+
+                        Recipe newRecipe = new Recipe();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        } catch
+    }
+
+
 
     /* ------------- PARCELABLE ------------- */
 
