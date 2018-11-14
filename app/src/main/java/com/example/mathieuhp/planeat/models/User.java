@@ -3,6 +3,7 @@ package com.example.mathieuhp.planeat.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.mathieuhp.planeat.models.comparator.RecipeComparator;
 import com.google.firebase.database.DataSnapshot;
@@ -137,8 +138,9 @@ public class User implements Parcelable {
                     isInDB = true;
                 }
 
+                Log.d("USER : ", u.toString());
                 // get the recipe list
-                
+
 
             }  catch (Exception e) {
                 e.printStackTrace();
@@ -146,7 +148,11 @@ public class User implements Parcelable {
             if(!isInDB) {
                 // create the user in firebase
                 try {
-                    firebaseRef.child("users").child(u.getId()).setValue(u);
+                    //firebaseRef.child("users").child(u.getId()).setValue(u);
+                    firebaseRef.child("users").child(u.getId()).child("email").setValue(u.getEmail());
+                    firebaseRef.child("users").child(u.getId()).child("firstName").setValue(u.getFirstName());
+                    firebaseRef.child("users").child(u.getId()).child("lastName").setValue(u.getLastName());
+                    firebaseRef.child("users").child(u.getId()).child("birthDate").setValue(u.getBirthDate());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -161,7 +167,11 @@ public class User implements Parcelable {
 
     public void updateData() {
         try {
-            this.firebaseReference.child("users").child(this.id).setValue(this);
+           // this.firebaseReference.child("users").child(this.id).setValue(this);
+            this.firebaseReference.child("users").child(this.id).child("email").setValue(this.email);
+            this.firebaseReference.child("users").child(this.id).child("firstName").setValue(this.firstName);
+            this.firebaseReference.child("users").child(this.id).child("lastName").setValue(this.lastName);
+            this.firebaseReference.child("users").child(this.id).child("birthDate").setValue(this.birthDate);
         } catch (Exception e) {
             e.printStackTrace();
         }
