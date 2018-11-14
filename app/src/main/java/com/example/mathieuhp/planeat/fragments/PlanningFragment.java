@@ -9,12 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.models.User;
 
 public class PlanningFragment extends Fragment{
+
+    User user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_planning, null);
+        View view =inflater.inflate(R.layout.fragment_planning, null);
+
+
+
+
+        return view;
     }
 }

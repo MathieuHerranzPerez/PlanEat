@@ -99,7 +99,7 @@ public class UserFragment extends Fragment {
         });
 
         // setup the save change button
-        btnModif.setOnClickListener(new myOnClickListenerSavingChange(firstName, lastName));
+        btnModif.setOnClickListener(new OnClickListenerSavingChange(firstName, lastName));
 
         // setup deconnection button
         deconnectionBtn.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +114,7 @@ public class UserFragment extends Fragment {
         });
 
         // setup delete button
-        btnDelete.setOnClickListener(new myOnClickListenerDeleteUser(user));
+        btnDelete.setOnClickListener(new OnClickListenerDeleteUser(user));
 
         return view;
     }
@@ -124,17 +124,18 @@ public class UserFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
+            // get the user from the activity
             user = bundle.getParcelable("user");
         }
     }
 
 
-    private class myOnClickListenerSavingChange implements View.OnClickListener {
+    private class OnClickListenerSavingChange implements View.OnClickListener {
 
         private EditText firstNameEdit;
         private EditText lastNameEdit;
 
-        private myOnClickListenerSavingChange(EditText firstNameEdit, EditText lastNameEdit) {
+        private OnClickListenerSavingChange(EditText firstNameEdit, EditText lastNameEdit) {
             this.firstNameEdit = firstNameEdit;
             this.lastNameEdit = lastNameEdit;
         }
@@ -149,17 +150,20 @@ public class UserFragment extends Fragment {
         }
     }
 
-    private class myOnClickListenerDeleteUser implements View.OnClickListener {
+    /**
+     * Delete the firebase user
+     */
+    private class OnClickListenerDeleteUser implements View.OnClickListener {
 
         private User user;
 
-        private myOnClickListenerDeleteUser(User user) {
+        private OnClickListenerDeleteUser(User user) {
             this.user = user;
         }
 
         @Override
         public void onClick(View view) {
-            myDialogDeleteUser confirmWindow = new myDialogDeleteUser(getActivity(), user);
+            DialogDeleteUser confirmWindow = new DialogDeleteUser(getActivity(), user);
             confirmWindow.show();
         }
     }
@@ -167,14 +171,14 @@ public class UserFragment extends Fragment {
     /**
      * provide a minimum security to avoid miss click by asking a confirmation from the real user
      */
-    private class myDialogDeleteUser extends Dialog implements android.view.View.OnClickListener {
+    private class DialogDeleteUser extends Dialog implements android.view.View.OnClickListener {
 
         private Activity activity;
         private Button btnYes;
         private Button btnCancel;
         private User user;
 
-        private myDialogDeleteUser(Activity a, User user) {
+        private DialogDeleteUser(Activity a, User user) {
             super(a);
             this.activity = a;
             this.user = user;

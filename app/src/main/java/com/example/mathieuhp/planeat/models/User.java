@@ -47,7 +47,7 @@ public class User implements Parcelable {
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
+        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
     }
     /* ---- GETTERS ----*/
     public String getId() {
@@ -114,12 +114,12 @@ public class User implements Parcelable {
     /**
      * link the the current instance of the user of the connection with our user
      */
-    private class MyValueEventListener implements ValueEventListener {
+    private class ValueEventListenerUserConstruct implements ValueEventListener {
 
         private User u;
         private DatabaseReference firebaseRef;
 
-        private MyValueEventListener(User u, DatabaseReference fr) {
+        private ValueEventListenerUserConstruct(User u, DatabaseReference fr) {
             this.u = u;
             this.firebaseRef = fr;
         }
@@ -129,14 +129,17 @@ public class User implements Parcelable {
 
             boolean isInDB = false;
             try {
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    if (ds.child(u.getId()).exists()) {
-                        u.setFirstName(ds.child(u.getId()).getValue(User.class).getFirstName());
-                        u.setLastName(ds.child(u.getId()).getValue(User.class).getLastName());
-                        u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
-                        isInDB = true;
-                    }
+                DataSnapshot ds = dataSnapshot.child("users");
+                if (ds.child(u.getId()).exists()) {
+                    u.setFirstName(ds.child(u.getId()).getValue(User.class).getFirstName());
+                    u.setLastName(ds.child(u.getId()).getValue(User.class).getLastName());
+                    u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
+                    isInDB = true;
                 }
+
+                // get the recipe list
+                
+
             }  catch (Exception e) {
                 e.printStackTrace();
             }
@@ -174,12 +177,22 @@ public class User implements Parcelable {
 
     /* ------------- PARCELABLE ------------- */
 
+    /**
+     * Constructs a User from a Parcel
+     * @param in
+     */
     private User(Parcel in) {
         id = in.readString();
         birthDate = in.readString();
         email = in.readString();
         firstName = in.readString();
         lastName = in.readString();
+        listPersonnalRecipe = new ArrayList<>();
+        in.readList(listPersonnalRecipe, null);
+        listFollowedRecipe = new ArrayList<>();
+        in.readList(listFollowedRecipe, null);
+        listPersonnalAndFollowedRecipe = new ArrayList<>();
+        in.readList(listPersonnalAndFollowedRecipe, null);
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -206,5 +219,8 @@ public class User implements Parcelable {
         parcel.writeString(email);
         parcel.writeString(firstName);
         parcel.writeString(lastName);
+        parcel.writeList(listPersonnalRecipe);
+        parcel.writeList(listFollowedRecipe);
+        parcel.writeList(listPersonnalAndFollowedRecipe);
     }
 }
