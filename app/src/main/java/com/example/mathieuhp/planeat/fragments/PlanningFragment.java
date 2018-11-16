@@ -106,18 +106,20 @@ public class PlanningFragment extends Fragment implements Updatable{
                 linearLayoutRecipe.setFocusable(true);
                 linearLayoutRecipe.setClickable(true);
 
-                // get the recipe name and calories from the user
+                    // get the recipe name and calories from the user
                 Pair<String, String> resNameCaloriesRecipe;
                 //String idRecipeValue;
                 // if there is a recipe in the pair,
                 if(i == 1 && entry.getValue().first != null) {
                     //idRecipeValue = entry.getValue().first.getId();
                     resNameCaloriesRecipe = new Pair<>(entry.getValue().first.getName(), Integer.toString(entry.getValue().first.getCalories()));
+                    linearLayoutRecipe.setOnClickListener(new OnClickListenerBtnRecipe(entry.getValue().first));
                     //resNameCaloriesRecipe = new Pair<>(user.getListPersonnalAndFollowedRecipe().get(idRecipeValue).getName(), Integer.toString(user.getListPersonnalAndFollowedRecipe().get(idRecipeValue).getCalories()));
                 }
                 else if(i != 1 && entry.getValue().second != null) {
                     //idRecipeValue = entry.getValue().second.getId();
                     resNameCaloriesRecipe = new Pair<>(entry.getValue().second.getName(), Integer.toString(entry.getValue().second.getCalories()));
+                    linearLayoutRecipe.setOnClickListener(new OnClickListenerBtnRecipe(entry.getValue().second));
                     //resNameCaloriesRecipe = new Pair<>(user.getListPersonnalAndFollowedRecipe().get(idRecipeValue).getName(), Integer.toString(user.getListPersonnalAndFollowedRecipe().get(idRecipeValue).getCalories()));
                 }
                 else {
@@ -144,7 +146,7 @@ public class PlanningFragment extends Fragment implements Updatable{
                 LinearLayout.LayoutParams layoutParamsBtnChange = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 2);
                 btnChangeRecipe.setLayoutParams(layoutParamsBtnChange);
                 btnChangeRecipe.setImageResource(R.drawable.ic_action_change_edit);
-                btnChangeRecipe.setOnClickListener(new OnClickListenerChangeRecipe(user, entry.getKey() + i/10f));
+                btnChangeRecipe.setOnClickListener(new OnClickListenerChangeRecipe(entry.getKey() + i/10f));
 
                 linearLayoutRecipe.addView(titleRecipeTextView);
                 linearLayoutRecipe.addView(caloriesRecipeTextView);
@@ -156,14 +158,26 @@ public class PlanningFragment extends Fragment implements Updatable{
         }
     }
 
+    private class OnClickListenerBtnRecipe implements View.OnClickListener {
+
+        private Recipe recipe;
+
+        private OnClickListenerBtnRecipe(Recipe r) {
+            this.recipe = r;
+        }
+
+        @Override
+        public void onClick(View view) {
+            // TODO start the recipe fragment
+            Log.d("Click recipe", "OUIIII");        // affD
+        }
+    }
 
     private class OnClickListenerChangeRecipe implements View.OnClickListener {
 
-        private User u;
         private float date;
 
-        private OnClickListenerChangeRecipe(User u, Float date) {
-            this.u = u;
+        private OnClickListenerChangeRecipe(Float date) {
             this.date = date;
         }
 

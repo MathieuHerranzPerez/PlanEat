@@ -2,6 +2,7 @@ package com.example.mathieuhp.planeat.models;
 
 import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
+import android.util.Log;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.google.firebase.database.DataSnapshot;
@@ -48,14 +49,11 @@ public class RecipeCalendar {
         int year = (int) (date / 1000f);
         int week = ((int) (date / 10f)) % 100;
         int dayOfWeek = (int) date % 10;
-        BigDecimal bidD = BigDecimal.valueOf(date);
-        int journeyPart = bidD.multiply(BigDecimal.valueOf(10)).remainder(BigDecimal.valueOf(10))
-                .round(new MathContext(1, RoundingMode.HALF_DOWN)).intValue();     // (int) ((date * 10) % 10)
-
+        int dayPart = (int) ((date - ((int) date)) * 10);
 
         // update the TreeMap
         int key = (int) date;
-        if(journeyPart == 1) {
+        if(dayPart == 1) {
             Recipe recipePart2 = recipesListPerDay.get(key).second;
             // update the TreeMap
             recipesListPerDay.put(key, new Pair<>(recipe, recipePart2));
