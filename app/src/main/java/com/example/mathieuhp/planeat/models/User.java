@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.mathieuhp.planeat.fragments.UserFragment;
 import com.example.mathieuhp.planeat.models.comparator.RecipeComparator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -12,8 +13,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class User implements Parcelable {
 
@@ -22,15 +23,17 @@ public class User implements Parcelable {
     private String email;
     private String firstName;
     private String lastName;
-    private ArrayList<Recipe> listPersonnalRecipe;
-    private ArrayList<Recipe> listFollowedRecipe;
-    private ArrayList<Recipe> listPersonnalAndFollowedRecipe;
+    private TreeMap<String, Recipe> listPersonnalRecipe;
+    private TreeMap<String, Recipe> listFollowedRecipe;
+    private TreeMap<String, Recipe> listPersonnalAndFollowedRecipe;
+    private RecipeCalendar recipeCalendar;
     private RecipeComparator comparator;
 
     private DatabaseReference firebaseReference;
 
+    private static User userInstance;
+
     // TODO
-//    private RecipeCalendar calendar;
 //    private Fridge fridge;
 //    private ShoppingList shoppingList;
 
@@ -45,10 +48,16 @@ public class User implements Parcelable {
         this.firstName = "";
         this.lastName = "";
 
+        listPersonnalRecipe = new TreeMap<>();
+        listFollowedRecipe = new TreeMap<>();
+        listPersonnalAndFollowedRecipe = new TreeMap<>();
+
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
+        firebaseReference.addValueEventListener(new ValueEventListenerUserConstruct(this, firebaseReference));
+
+        userInstance = this;
     }
     /* ---- GETTERS ----*/
     public String getId() {
@@ -71,6 +80,19 @@ public class User implements Parcelable {
         return lastName;
     }
 
+    public RecipeCalendar getRecipeCalendar() {
+        return recipeCalendar;
+    }
+
+    public TreeMap<String, Recipe> getListPersonnalAndFollowedRecipe() {
+        return listPersonnalAndFollowedRecipe;
+    }
+
+    public static User getUserInstance() {
+        return userInstance;
+    }
+
+
     /* ---- SETTERS ---- */
     private void setId(String id) {
         this.id = id;
@@ -92,12 +114,23 @@ public class User implements Parcelable {
         this.lastName = lastName;
     }
 
-    /**
-     * sort the recipes list
-     */
-    public void sortList() {
-        Collections.sort(listPersonnalAndFollowedRecipe, comparator);
+
+    public void addPersonnalRecipe(Recipe recipe) {
+        this.listPersonnalRecipe.put(recipe.getId(), recipe);
+        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
     }
+
+    public void addFollowedRecipe(Recipe recipe) {
+        this.listFollowedRecipe.put(recipe.getId(), recipe);
+        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
+    }
+
+//    /**
+//     * sort the recipes list
+//     */
+//    public void sortList() {
+//        Collections.sort(listPersonnalAndFollowedRecipe, comparator);
+//    }
 
     @Override
     public String toString() {
@@ -131,18 +164,34 @@ public class User implements Parcelable {
             boolean isInDB = false;
             try {
                 DataSnapshot ds = dataSnapshot.child("users");
-                if (ds.child(u.getId()).exists()) {
+                if(ds.child(u.getId()).exists()) {
                     u.setFirstName(ds.child(u.getId()).getValue(User.class).getFirstName());
                     u.setLastName(ds.child(u.getId()).getValue(User.class).getLastName());
                     u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
                     isInDB = true;
                 }
+                
+                // get the recipe list todo
+                ds = dataSnapshot.child("recipes");
+                for(DataSnapshot dataSnapshot1 : ds.getChildren()) {
+                    if(u.getId().equals(dataSnapshot1.child("owner").getValue())) {
+                        u.addPersonnalRecipe(new Recipe(dataSnapshot1.getKey()));
+                    }
+                }
 
-                Log.d("USER : ", u.toString());
-                // get the recipe list
+                for(Map.Entry<String, Recipe> entry : listPersonnalAndFollowedRecipe.entrySet())    // affD
+                    Log.d("TABLEAU RECIPE : ", entry.toString());   // affD
 
 
-            }  catch (Exception e) {
+                // get the calendar
+                recipeCalendar = new RecipeCalendar();
+
+
+                // notify the observers
+                if(UserFragment.getUserFragment() != null)
+                    UserFragment.getUserFragment().updateView();
+
+            }  catch(Exception e) {
                 e.printStackTrace();
             }
             if(!isInDB) {
@@ -197,12 +246,12 @@ public class User implements Parcelable {
         email = in.readString();
         firstName = in.readString();
         lastName = in.readString();
-        listPersonnalRecipe = new ArrayList<>();
-        in.readList(listPersonnalRecipe, null);
-        listFollowedRecipe = new ArrayList<>();
-        in.readList(listFollowedRecipe, null);
-        listPersonnalAndFollowedRecipe = new ArrayList<>();
-        in.readList(listPersonnalAndFollowedRecipe, null);
+//        listPersonnalRecipe = new ArrayList<>();
+//        in.readList(listPersonnalRecipe, null);
+//        listFollowedRecipe = new ArrayList<>();
+//        in.readList(listFollowedRecipe, null);
+//        listPersonnalAndFollowedRecipe = new ArrayList<>();
+//        in.readList(listPersonnalAndFollowedRecipe, null);
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -229,8 +278,8 @@ public class User implements Parcelable {
         parcel.writeString(email);
         parcel.writeString(firstName);
         parcel.writeString(lastName);
-        parcel.writeList(listPersonnalRecipe);
-        parcel.writeList(listFollowedRecipe);
-        parcel.writeList(listPersonnalAndFollowedRecipe);
+//        parcel.writeList(listPersonnalRecipe);
+//        parcel.writeList(listFollowedRecipe);
+//        parcel.writeList(listPersonnalAndFollowedRecipe);
     }
 }

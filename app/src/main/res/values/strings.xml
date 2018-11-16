@@ -32,10 +32,22 @@
     <string name="delete_done">Compte supprimé</string>
     <!-- /user -->
 
-    <!-- recipes list -->1
+    <!-- recipes list -->
     <string name="search">Rechercher...</string>
     <string name="recipe_image">recipe image</string>
     <!-- /recipes list -->
+
+    <!-- planning -->
+    <string name="day_1">LUNDI</string>
+    <string name="day_2">MARDI</string>
+    <string name="day_3">MERCREDI</string>
+    <string name="day_4">JEUDI</string>
+    <string name="day_5">VENDREDI</string>
+    <string name="day_6">SAMEDI</string>
+    <string name="day_7">DIMANCHE</string>
+    <string name="empty_recipe">VIDE</string>
+    <string name="change">OK</string>
+    <!-- /planning -->
 
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>

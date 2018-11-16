@@ -26,7 +26,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class UserFragment extends Fragment {
+public class UserFragment extends Fragment implements Updatable {
+
+    private static UserFragment userFragment;
 
     Button deconnectionBtn;
     TextView email;
@@ -127,6 +129,12 @@ public class UserFragment extends Fragment {
             // get the user from the activity
             user = bundle.getParcelable("user");
         }
+        userFragment = this;
+    }
+
+    @Override
+    public void updateView() {
+
     }
 
 
@@ -199,9 +207,7 @@ public class UserFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_yes :
-                    // TODO recipes suppression
-
-                    // delete our user
+                      // delete our user
                     user.deleteData();
 
                     // delete firebase authentification user
@@ -230,5 +236,10 @@ public class UserFragment extends Fragment {
             }
             dismiss();
         }
+    }
+
+
+    public static UserFragment getUserFragment() {
+        return userFragment;
     }
 }

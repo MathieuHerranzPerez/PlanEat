@@ -10,11 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.mathieuhp.planeat.R;
 
-public class RecipeFragment extends Fragment {
+public class RecipeFragment extends Fragment implements Updatable {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_recipe, null);
+    }
+
+    @Override
+    public void updateView() {
+        // TODO
     }
 }

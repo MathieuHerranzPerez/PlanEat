@@ -18,7 +18,10 @@ import android.view.ViewGroup;
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Ingredient;
 
-public class RecipesListFragment extends Fragment {
+public class RecipesListFragment extends Fragment implements Updatable {
+
+    // give an access for the models to call the update methode
+    private static RecipesListFragment recipesListFragment;
 
     @Nullable
     @Override
@@ -29,19 +32,13 @@ public class RecipesListFragment extends Fragment {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getResources().getString(R.string.search));
 
-
-        // testRemove
-
-        Ingredient ingredient = new Ingredient("1");
-
-        // testRemove
-
         return view;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // allow toolbar
         setHasOptionsMenu(true);
     }
 
@@ -66,5 +63,15 @@ public class RecipesListFragment extends Fragment {
                 }
             }
         );
+    }
+
+    @Override
+    public void updateView() {
+        // TODO
+    }
+
+    // give an access for the models to call the update methode
+    public static RecipesListFragment getRecipesListFragment() {
+        return recipesListFragment;
     }
 }

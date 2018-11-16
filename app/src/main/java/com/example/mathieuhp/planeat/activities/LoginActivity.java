@@ -56,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
             login();
     }
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email_login);
         password = (EditText) findViewById(R.id.password_login);
         signUpBtn = (Button) findViewById(R.id.btn_signup);
-        loginBtn = (Button) findViewById(R.id.btn_login) ;
+        loginBtn = (Button) findViewById(R.id.btn_login);
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
