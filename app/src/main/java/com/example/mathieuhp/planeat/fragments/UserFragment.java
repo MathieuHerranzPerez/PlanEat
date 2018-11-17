@@ -9,22 +9,28 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.activities.LoginActivity;
+import com.example.mathieuhp.planeat.models.Recipe;
 import com.example.mathieuhp.planeat.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Map;
 
 public class UserFragment extends Fragment implements Updatable {
 
@@ -34,9 +40,11 @@ public class UserFragment extends Fragment implements Updatable {
     TextView email;
     EditText firstName;
     EditText lastName;
-    User user;
+    LinearLayout linearLayoutPersonnalRecipe;
     Button btnModif;
     Button btnDelete;
+
+    User user;
 
     @Nullable
     @Override
@@ -58,6 +66,8 @@ public class UserFragment extends Fragment implements Updatable {
         btnModif = (Button) view.findViewById(R.id.btn_modif);
 
         btnDelete = (Button) view.findViewById(R.id.btn_delete_user);
+
+        linearLayoutPersonnalRecipe = (LinearLayout) view.findViewById(R.id.list_personnal_recipes);
 
 
         /* --- /layout element binding --- */
@@ -118,6 +128,8 @@ public class UserFragment extends Fragment implements Updatable {
         // setup delete button
         btnDelete.setOnClickListener(new OnClickListenerDeleteUser(user));
 
+        updateView();
+
         return view;
     }
 
@@ -135,9 +147,92 @@ public class UserFragment extends Fragment implements Updatable {
     @Override
     public void updateView() {
 
+        int color = getResources().getColor(R.color.colorBackgroundMenu);
+
+        for(Map.Entry<String, Recipe> entry : user.getListPersonnalRecipe().entrySet()) {
+            LinearLayout linearLayoutRecipe = new LinearLayout(getActivity());
+            LinearLayout.LayoutParams layoutParamsRecipe = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
+            linearLayoutRecipe.setLayoutParams(layoutParamsRecipe);
+            linearLayoutRecipe.setOrientation(LinearLayout.HORIZONTAL);
+            linearLayoutRecipe.setPadding(30, 0, 10, 0);
+            linearLayoutRecipe.setFocusable(true);
+            linearLayoutRecipe.setClickable(true);
+            if(color == getResources().getColor(R.color.colorPrimary))
+                color = getResources().getColor(R.color.colorWhiteBack);
+            else
+                color =getResources().getColor(R.color.colorPrimary);
+
+            linearLayoutRecipe.setBackgroundColor(color);
+            linearLayoutRecipe.setOnClickListener(new OnClickListenerRecipeChange(entry.getValue()));
+
+            // title of the recipe
+            TextView titleRecipeTextView = new TextView(getActivity());
+            LinearLayout.LayoutParams layoutParamsTitle1 = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 6);
+            titleRecipeTextView.setLayoutParams(layoutParamsTitle1);
+            titleRecipeTextView.setGravity(Gravity.CENTER_VERTICAL);
+            titleRecipeTextView.setText(entry.getValue().getName());
+
+            // calories of the recipe
+            TextView caloriesRecipeTextView = new TextView(getActivity());
+            LinearLayout.LayoutParams layoutParamsCalories = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 2);
+            caloriesRecipeTextView.setLayoutParams(layoutParamsCalories);
+            caloriesRecipeTextView.setGravity(Gravity.CENTER_VERTICAL);
+            String cal = entry.getValue().getCalories() + " kcal";
+            caloriesRecipeTextView.setText(cal);
+
+            // btn delete recipe
+            ImageButton btnDelete = new ImageButton(getActivity());
+            LinearLayout.LayoutParams layoutParamsBtnChange = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 2);
+            btnDelete.setLayoutParams(layoutParamsBtnChange);
+            btnDelete.setImageResource(R.drawable.ic_action_delete);
+            btnDelete.setOnClickListener(new OnClickListenerDeleteRecipe(entry.getValue(), user));
+
+            linearLayoutRecipe.addView(titleRecipeTextView);
+            linearLayoutRecipe.addView(caloriesRecipeTextView);
+            linearLayoutRecipe.addView(btnDelete);
+
+            // add the linearlayout to the xml view
+            linearLayoutPersonnalRecipe.addView(linearLayoutRecipe);
+        }
     }
 
+    /**
+     * load the recipe change fragment
+     */
+    private class OnClickListenerRecipeChange implements View.OnClickListener {
 
+        private Recipe r;
+
+        private OnClickListenerRecipeChange(Recipe r) {
+            this.r = r;
+        }
+
+        @Override
+        public void onClick(View view) {
+            // TODO call the recipe change fragment
+        }
+    }
+
+    private class OnClickListenerDeleteRecipe implements View.OnClickListener {
+
+        private Recipe r;
+        private User u;
+
+        private OnClickListenerDeleteRecipe(Recipe r, User u) {
+            this.r = r;
+            this.u = u;
+        }
+
+        @Override
+        public void onClick(View view) {
+            DialogDeleteRecipe confirmWindow = new DialogDeleteRecipe(getActivity(), r, u);
+            confirmWindow.show();
+        }
+    }
+
+    /**
+     * change the user data
+     */
     private class OnClickListenerSavingChange implements View.OnClickListener {
 
         private EditText firstNameEdit;
@@ -176,7 +271,10 @@ public class UserFragment extends Fragment implements Updatable {
         }
     }
 
+
+
     /**
+     * delete a user
      * provide a minimum security to avoid miss click by asking a confirmation from the real user
      */
     private class DialogDeleteUser extends Dialog implements android.view.View.OnClickListener {
@@ -237,6 +335,55 @@ public class UserFragment extends Fragment implements Updatable {
             dismiss();
         }
     }
+
+    /**
+     * delete a recipe
+     * provide a minimum security to avoid miss click by asking a confirmation from the real user
+     */
+    private class DialogDeleteRecipe extends Dialog implements android.view.View.OnClickListener {
+
+        private Button btnYes;
+        private Button btnCancel;
+        private Recipe r;
+        private User u;
+
+        private DialogDeleteRecipe(Activity a, Recipe r, User u) {
+            super(a);
+            this.r = r;
+            this.u = u;
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_delete_user);
+            btnYes = (Button) findViewById(R.id.btn_yes);
+            btnCancel = (Button) findViewById(R.id.btn_cancel);
+            btnYes.setOnClickListener(this);
+            btnCancel.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_yes :
+                    // delete the recipe in the user recipe list
+                    u.getListPersonnalAndFollowedRecipe().remove(r.getId());
+                    u.getListPersonnalRecipe().remove(r.getId());
+                    // delete the recipe in DB
+                    r.deleteData();
+                    break;
+                case R.id.btn_cancel :
+                    dismiss();
+                    break;
+                default:
+                    break;
+            }
+            dismiss();
+        }
+    }
+
 
 
     public static UserFragment getUserFragment() {

@@ -106,7 +106,7 @@ public class PlanningFragment extends Fragment implements Updatable{
                 linearLayoutRecipe.setFocusable(true);
                 linearLayoutRecipe.setClickable(true);
 
-                    // get the recipe name and calories from the user
+                // get the recipe name and calories from the user
                 Pair<String, String> resNameCaloriesRecipe;
                 //String idRecipeValue;
                 // if there is a recipe in the pair,

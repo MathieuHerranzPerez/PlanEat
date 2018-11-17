@@ -63,29 +63,26 @@ public class User implements Parcelable {
     public String getId() {
         return id;
     }
-
     public String getBirthDate() {
         return birthDate;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getFirstName() {
         return firstName;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public RecipeCalendar getRecipeCalendar() {
         return recipeCalendar;
     }
-
     public TreeMap<String, Recipe> getListPersonnalAndFollowedRecipe() {
         return listPersonnalAndFollowedRecipe;
+    }
+    public TreeMap<String, Recipe> getListPersonnalRecipe() {
+        return listPersonnalRecipe;
     }
 
     public static User getUserInstance() {
@@ -97,19 +94,15 @@ public class User implements Parcelable {
     private void setId(String id) {
         this.id = id;
     }
-
     private void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
-
     private void setEmail(String email) {
         this.email = email;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -197,7 +190,6 @@ public class User implements Parcelable {
             if(!isInDB) {
                 // create the user in firebase
                 try {
-                    //firebaseRef.child("users").child(u.getId()).setValue(u);
                     firebaseRef.child("users").child(u.getId()).child("email").setValue(u.getEmail());
                     firebaseRef.child("users").child(u.getId()).child("firstName").setValue(u.getFirstName());
                     firebaseRef.child("users").child(u.getId()).child("lastName").setValue(u.getLastName());
@@ -246,12 +238,6 @@ public class User implements Parcelable {
         email = in.readString();
         firstName = in.readString();
         lastName = in.readString();
-//        listPersonnalRecipe = new ArrayList<>();
-//        in.readList(listPersonnalRecipe, null);
-//        listFollowedRecipe = new ArrayList<>();
-//        in.readList(listFollowedRecipe, null);
-//        listPersonnalAndFollowedRecipe = new ArrayList<>();
-//        in.readList(listPersonnalAndFollowedRecipe, null);
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -278,8 +264,5 @@ public class User implements Parcelable {
         parcel.writeString(email);
         parcel.writeString(firstName);
         parcel.writeString(lastName);
-//        parcel.writeList(listPersonnalRecipe);
-//        parcel.writeList(listFollowedRecipe);
-//        parcel.writeList(listPersonnalAndFollowedRecipe);
     }
 }

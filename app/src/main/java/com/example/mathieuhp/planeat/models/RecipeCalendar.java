@@ -2,7 +2,6 @@ package com.example.mathieuhp.planeat.models;
 
 import android.support.annotation.NonNull;
 import android.support.v4.util.Pair;
-import android.util.Log;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.google.firebase.database.DataSnapshot;
@@ -11,9 +10,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.TreeMap;
 

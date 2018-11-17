@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
+import com.example.mathieuhp.planeat.fragments.UserFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,31 +46,24 @@ public class Recipe {
     public String getId() {
         return this.id;
     }
-
     public String getName() {
         return name;
     }
-
     public float getDifficulty() {
         return difficulty;
     }
-
     public int getPreparationTime() {
         return preparationTime;
     }
-
     public String getTag() {
         return tag;
     }
-
     public float getScore() {
         return score;
     }
-
     public String getImageLink() {
         return imageLink;
     }
-
     public int getCalories() {
         return calories;
     }
@@ -78,37 +72,32 @@ public class Recipe {
     private void setId(String id) {
         this.id = id;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public void setCalories(int calories) {
         this.calories = calories;
     }
-
     public void setNbPeople(int nbPeople) {
         this.nbPeople = nbPeople;
     }
-
     public void setDifficulty(float difficulty) {
         this.difficulty = difficulty;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
-
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
     }
-
     public void setScore(float score) {
         this.score = score;
+    }
+    public void setIsShared(boolean isShared) {
+        this.isShared = isShared;
     }
 
 
@@ -135,6 +124,7 @@ public class Recipe {
                 recipe.setDescription((String) ds.child("preparation").getValue());
                 recipe.setPreparationTime(Integer.parseInt((String)ds.child("preparationTime").getValue()));
                 recipe.setScore(Float.parseFloat((String)ds.child("score").getValue()));
+                recipe.setIsShared(Boolean.valueOf((String) ds.child("isShared").getValue()));
 
                 // todo get the tags
 
@@ -152,5 +142,25 @@ public class Recipe {
 
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {}
+    }
+
+    public void deleteData() {
+        // TODO delete the recipe
+
+        // if the recipe isShared, delete it from the recipeCatalogs
+        if(isShared) {
+            // TODO firebase rules ?
+        }
+
+        // delete it from the recipe schedule
+        // TODO firebase rules ?
+
+
+        // delete it
+
+
+        if(UserFragment.getUserFragment() != null) {
+            UserFragment.getUserFragment().updateView();
+        }
     }
 }
