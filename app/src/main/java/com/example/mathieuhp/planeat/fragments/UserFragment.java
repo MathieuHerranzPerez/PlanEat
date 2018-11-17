@@ -157,10 +157,10 @@ public class UserFragment extends Fragment implements Updatable {
             linearLayoutRecipe.setPadding(30, 0, 10, 0);
             linearLayoutRecipe.setFocusable(true);
             linearLayoutRecipe.setClickable(true);
-            if(color == getResources().getColor(R.color.colorPrimary))
-                color = getResources().getColor(R.color.colorWhiteBack);
+            if(color == getResources().getColor(R.color.colorBackgroundMenu))
+                color = getResources().getColor(R.color.colorWhite);
             else
-                color =getResources().getColor(R.color.colorPrimary);
+                color =getResources().getColor(R.color.colorBackgroundMenu);
 
             linearLayoutRecipe.setBackgroundColor(color);
             linearLayoutRecipe.setOnClickListener(new OnClickListenerRecipeChange(entry.getValue()));
