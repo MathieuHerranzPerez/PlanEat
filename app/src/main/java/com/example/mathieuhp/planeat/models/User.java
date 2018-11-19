@@ -1,5 +1,6 @@
 package com.example.mathieuhp.planeat.models;
 
+import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -18,7 +19,9 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class User implements Parcelable {
+public class User implements Parcelable{
+
+    private FirebaseDataRetriever activity;
 
     private String id;
     private String birthDate;
@@ -40,6 +43,7 @@ public class User implements Parcelable {
     public User() {
         // default constructor required for calls to DataSnapshot.getValue(xxx.class)
     }
+
 
     public User(String id, String email) {
         this.id = id;
@@ -157,6 +161,14 @@ public class User implements Parcelable {
                 '}';
     }
 
+    public FirebaseDataRetriever getActivity() {
+        return activity;
+    }
+
+    public void setActivity(FirebaseDataRetriever activity) {
+        this.activity = activity;
+    }
+
 
 
     /**
@@ -248,25 +260,6 @@ public class User implements Parcelable {
     }
 
 
-    public void updateRecipes(){
-        try{
-            this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                    for(DataSnapshot child : children){
-
-                        Recipe newRecipe = new Recipe();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        } catch
-    }
 
 
 
@@ -308,5 +301,43 @@ public class User implements Parcelable {
         parcel.writeString(email);
         parcel.writeString(firstName);
         parcel.writeString(lastName);
+    }
+
+
+    public class RecipeCatalogValueListener implements ValueEventListener{
+
+        private User user;
+
+        public RecipeCatalogValueListener(User user){
+            this.user = user;
+        }
+
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            ArrayList<Recipe> personnalRecipes = new ArrayList<Recipe>();
+            ArrayList<Recipe> followedRecipes = new ArrayList<Recipe>();
+            Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+            for(DataSnapshot recipesPerTypeSnapshot : children){
+                String recipeType = recipesPerTypeSnapshot.getKey().toString();
+                Iterable<DataSnapshot> recipes = recipesPerTypeSnapshot.getChildren();
+                for(DataSnapshot recipeSnapshot : recipes){
+                    String recipeId = recipeSnapshot.getKey();
+                    Recipe newRecipe = new Recipe(recipeId);
+                    newRecipe.loadInformation();
+                    if(recipeType.equals("followed")){
+                        followedRecipes.add(newRecipe);
+                    }
+                    else if(recipeType.equals("personnal")){
+                        personnalRecipes.add(newRecipe);
+                    }
+                }
+            }
+            this.user.getActivity().retrieveData();
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
     }
 }
