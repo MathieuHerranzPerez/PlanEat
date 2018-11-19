@@ -35,8 +35,6 @@ public class User implements Parcelable{
 
     private DatabaseReference firebaseReference;
 
-    private static User userInstance;
-
 
     // TODO
 //    private Fridge fridge;
@@ -62,12 +60,10 @@ public class User implements Parcelable{
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
+        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
 
         //get data dealing with recipes
-        RecipeCatalogValueListener recipeCatalogValueListener = new RecipeCatalogValueListener(this);
-        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(recipeCatalogValueListener);
-        userInstance = this;
+        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
     }
 
 
@@ -121,9 +117,6 @@ public class User implements Parcelable{
         return recipeCalendar;
     }
 
-    public static User getUserInstance() {
-        return userInstance;
-    }
 
 
 
@@ -388,10 +381,6 @@ public class User implements Parcelable{
         @Override
         public void updateData() {
 
-        }
-
-        public User getUser() {
-            return user;
         }
     }
 }
