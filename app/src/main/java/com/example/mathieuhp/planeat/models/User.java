@@ -62,6 +62,8 @@ public class User implements Parcelable{
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
+
+        //get data dealing with recipes
         firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
     }
 

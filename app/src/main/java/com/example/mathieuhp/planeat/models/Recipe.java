@@ -39,12 +39,6 @@ public class Recipe implements Parcelable{
 
     private DatabaseReference firebaseReference;
 
-    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
-        this.firebaseDataRetriever = firebaseDataRetriever;
-        this.id = id;
-    }
-
-
     public Recipe() {
 
     }
