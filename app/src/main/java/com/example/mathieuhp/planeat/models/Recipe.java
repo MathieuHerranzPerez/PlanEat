@@ -149,8 +149,6 @@ public class Recipe implements Parcelable{
         return this.id;
     }
 
-
-
     public String getName() {
         return name;
     }
