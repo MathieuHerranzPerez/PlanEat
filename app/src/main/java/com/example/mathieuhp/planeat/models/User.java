@@ -35,6 +35,8 @@ public class User implements Parcelable{
 
     private DatabaseReference firebaseReference;
 
+    private static User userInstance;
+
 
     // TODO
 //    private Fridge fridge;
@@ -55,10 +57,12 @@ public class User implements Parcelable{
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
+        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
 
         //get data dealing with recipes
         firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
+
+        userInstance = this;
     }
 
 
@@ -102,6 +106,14 @@ public class User implements Parcelable{
         allRecipes.addAll(this.followedRecipes);
         allRecipes.addAll(this.personnalRecipes);
         return allRecipes;
+    }
+
+    public RecipeCalendar getRecipeCalendar() {
+        return recipeCalendar;
+    }
+
+    public static User getUserInstance() {
+        return userInstance;
     }
 
 
@@ -212,7 +224,7 @@ public class User implements Parcelable{
                 }
 
                 for(Recipe recipe : u.getAllRecipes())    // affD
-                    Log.d("TABLEAU RECIPE : ", entry.toString());   // affD
+                    Log.d("TABLEAU RECIPE : ", recipe.toString());   // affD
 
 
                 // get the calendar
@@ -333,7 +345,6 @@ public class User implements Parcelable{
                 for(DataSnapshot recipeSnapshot : recipes){
                     String recipeId = recipeSnapshot.getKey();
                     Recipe newRecipe = new Recipe(this, recipeId);
-                    newRecipe.loadInformation();
                     if(recipeType.equals("followed")){
                         followedRecipes.add(newRecipe);
                     }

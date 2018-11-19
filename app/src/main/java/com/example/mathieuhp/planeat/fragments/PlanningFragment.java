@@ -217,9 +217,7 @@ public class PlanningFragment extends Fragment implements Updatable{
 
                 // get all the user recipes (followed and owned)
                 List<Recipe> recipeList = new ArrayList<>();
-                for(Map.Entry<String, Recipe> entry : user.getListPersonnalAndFollowedRecipe().entrySet()) {
-                    recipeList.add(entry.getValue());
-                }
+                recipeList = user.getAllRecipes();
 
                 // create an adapter for the spinner
                 ArrayAdapter<Recipe> adapterRecipe = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_item, recipeList);
