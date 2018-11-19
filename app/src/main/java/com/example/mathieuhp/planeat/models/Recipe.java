@@ -38,7 +38,8 @@ public class Recipe {
 
     }
 
-    public Recipe(int id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, Bitmap image, List<String> tags, boolean isShared, float score) {
+    public Recipe(String id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
+        this.id = id;
         this.name = name;
         this.listComponent = listComponent;
         this.nbPeople = nbPeople;
@@ -76,6 +77,8 @@ public class Recipe {
     public String getId() {
         return this.id;
     }
+
+
 
     public String getName() {
         return name;
@@ -119,6 +122,9 @@ public class Recipe {
 
     public void setShared(boolean shared) {
         isShared = shared;
+    }
+
+    public void loadInformation() {
     }
     public int getCalories() {
         return calories;
