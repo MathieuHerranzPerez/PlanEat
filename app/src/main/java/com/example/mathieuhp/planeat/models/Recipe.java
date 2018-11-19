@@ -40,6 +40,12 @@ public class Recipe implements Parcelable{
 
     private DatabaseReference firebaseReference;
 
+    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
+        this.firebaseDataRetriever = firebaseDataRetriever;
+        this.id = id;
+    }
+
+
     public Recipe() {
 
     }
@@ -138,8 +144,6 @@ public class Recipe implements Parcelable{
     public String getId() {
         return this.id;
     }
-
-
 
     public String getName() {
         return name;
