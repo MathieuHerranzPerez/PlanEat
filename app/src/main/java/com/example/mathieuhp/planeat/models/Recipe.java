@@ -34,12 +34,6 @@ public class Recipe {
 
     private DatabaseReference firebaseReference;
 
-    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
-        this.firebaseDataRetriever = firebaseDataRetriever;
-        this.id = id;
-    }
-
-
     public Recipe() {
 
     }
@@ -60,6 +54,10 @@ public class Recipe {
         this.score = score;
     }
 
+    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
+        this(id);
+        this.firebaseDataRetriever = firebaseDataRetriever;
+    }
 
     public Recipe(String id) {
         this.id = id;
@@ -186,8 +184,9 @@ public class Recipe {
                 // notify the observers
                 if(PlanningFragment.getPlanningFragment() != null)
                     PlanningFragment.getPlanningFragment().updateView();
-                if(RecipesListFragment.getRecipesListFragment() != null)
-                    RecipesListFragment.getRecipesListFragment().updateView();
+
+                //notify that recipe has been retrieved from db
+                this.recipe.firebaseDataRetriever.retrieveData();
 
             } catch(Exception e) {
                 e.printStackTrace();
