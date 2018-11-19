@@ -35,6 +35,8 @@ public class User implements Parcelable{
 
     private DatabaseReference firebaseReference;
 
+    private static User userInstance;
+
 
     private Fridge fridge;
     private Shopping shopping;
