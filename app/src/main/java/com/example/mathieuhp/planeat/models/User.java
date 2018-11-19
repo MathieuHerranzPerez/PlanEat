@@ -21,7 +21,7 @@ import java.util.TreeMap;
 
 public class User implements Parcelable{
 
-    private FirebaseDataRetriever activity;
+    private FirebaseDataRetriever firebaseDataRetriever; //usually the activity or the model that needs its info
 
     private String id;
     private String birthDate;
@@ -56,10 +56,17 @@ public class User implements Parcelable{
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseReference.addListenerForSingleValueEvent(new MyValueEventListener(this, firebaseReference));
+
+        //get data dealing with recipes
+        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
     }
 
 
     /* ---- GETTERS ----*/
+
+    public FirebaseDataRetriever getFirebaseDataRetriever() {
+        return firebaseDataRetriever;
+    }
 
     public String getId() {
         return id;
@@ -100,6 +107,10 @@ public class User implements Parcelable{
 
 
     /* ---- SETTERS ---- */
+
+    public void setFirebaseDataRetriever(FirebaseDataRetriever firebaseDataRetriever) {
+        this.firebaseDataRetriever = firebaseDataRetriever;
+    }
 
     private void setId(String id) {
         this.id = id;
@@ -161,13 +172,8 @@ public class User implements Parcelable{
                 '}';
     }
 
-    public FirebaseDataRetriever getActivity() {
-        return activity;
-    }
 
-    public void setActivity(FirebaseDataRetriever activity) {
-        this.activity = activity;
-    }
+
 
 
 
@@ -304,25 +310,29 @@ public class User implements Parcelable{
     }
 
 
-    public class RecipeCatalogValueListener implements ValueEventListener{
+    public class RecipeCatalogValueListener implements ValueEventListener, FirebaseDataRetriever{
 
         private User user;
+        private int nbLoadedRecipes;
 
         public RecipeCatalogValueListener(User user){
             this.user = user;
+            this.nbLoadedRecipes = 0;
         }
 
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            int nbTotalRecipes = 0;
             ArrayList<Recipe> personnalRecipes = new ArrayList<Recipe>();
             ArrayList<Recipe> followedRecipes = new ArrayList<Recipe>();
             Iterable<DataSnapshot> children = dataSnapshot.getChildren();
             for(DataSnapshot recipesPerTypeSnapshot : children){
                 String recipeType = recipesPerTypeSnapshot.getKey().toString();
                 Iterable<DataSnapshot> recipes = recipesPerTypeSnapshot.getChildren();
+                nbTotalRecipes += recipesPerTypeSnapshot.getChildrenCount();
                 for(DataSnapshot recipeSnapshot : recipes){
                     String recipeId = recipeSnapshot.getKey();
-                    Recipe newRecipe = new Recipe(recipeId);
+                    Recipe newRecipe = new Recipe(this, recipeId);
                     newRecipe.loadInformation();
                     if(recipeType.equals("followed")){
                         followedRecipes.add(newRecipe);
@@ -330,13 +340,28 @@ public class User implements Parcelable{
                     else if(recipeType.equals("personnal")){
                         personnalRecipes.add(newRecipe);
                     }
+
+                    //notify observer when recipes are all loaded
+                    if(this.nbLoadedRecipes == nbTotalRecipes){
+                        this.user.getFirebaseDataRetriever().retrieveData();
+                    }
                 }
             }
-            this.user.getActivity().retrieveData();
         }
 
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
+
+
+        @Override
+        public void retrieveData() {
+            this.nbLoadedRecipes += 1;
+        }
+
+        @Override
+        public void updateData() {
 
         }
     }

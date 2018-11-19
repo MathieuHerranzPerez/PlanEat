@@ -16,6 +16,8 @@ import java.util.List;
 
 public class Recipe {
 
+    private FirebaseDataRetriever firebaseDataRetriever;
+
     private String id;
     private String name;
     private ArrayList<Component> listComponent;
@@ -33,6 +35,12 @@ public class Recipe {
     private float score;
 
     private DatabaseReference firebaseReference;
+
+    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
+        this.firebaseDataRetriever = firebaseDataRetriever;
+        this.id = id;
+    }
+
 
     public Recipe() {
 
@@ -77,8 +85,6 @@ public class Recipe {
     public String getId() {
         return this.id;
     }
-
-
 
     public String getName() {
         return name;
