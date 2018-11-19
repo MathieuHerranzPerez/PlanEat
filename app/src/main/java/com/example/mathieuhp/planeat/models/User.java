@@ -69,7 +69,6 @@ public class User implements Parcelable{
 
     /* ---- GETTERS ----*/
 
-
     public FirebaseDataRetriever getFirebaseDataRetriever() {
         return firebaseDataRetriever;
     }
