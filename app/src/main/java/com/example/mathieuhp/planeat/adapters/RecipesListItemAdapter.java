@@ -63,6 +63,8 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
             super(itemView);
 
             recipeImage = itemView.findViewById(R.id.recipeImage);
+            recipeTitle = itemView.findViewById(R.id.recipeTitle);
+            recipeTags = itemView.findViewById(R.id.recipeTags);
 
         }
 
@@ -72,18 +74,24 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
         }
 
         public void bind(Bitmap image, String title, List<String> tagsList){
-            recipeImage.setImageBitmap(image);
-
-            recipeTitle.setText(title);
-
-            String tags = "";
-            for (int i = 0; i < tagsList.size(); i++) {
-                tags += tagsList.get(i);
-                if(i != tagsList.size() - 1){
-                    tags += ", ";
-                }
+            if(image != null) {
+                recipeImage.setImageBitmap(image);
             }
-            recipeTags.setText(tags);
+
+            if(title != null) {
+                recipeTitle.setText(title);
+            }
+
+            if(tagsList != null) {
+                String tags = "";
+                for (int i = 0; i < tagsList.size(); i++) {
+                    tags += tagsList.get(i);
+                    if (i != tagsList.size() - 1) {
+                        tags += ", ";
+                    }
+                }
+                recipeTags.setText(tags);
+            }
         }
     }
 }
