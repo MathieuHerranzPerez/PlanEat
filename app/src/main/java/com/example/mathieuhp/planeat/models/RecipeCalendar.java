@@ -101,8 +101,8 @@ public class RecipeCalendar {
                 // if the user doesn't have any calendar with the current week, create it
                 if(!dataSnapshot.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).exists()) {
                     for(int i = 1; i < 8; ++i) {
-                        firebase.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).child(Integer.toString(i)).child("dinner").setValue(-1);
-                        firebase.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).child(Integer.toString(i)).child("lunch").setValue(-1);
+                        firebase.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).child(Integer.toString(i)).child("dinner").setValue("-1");
+                        firebase.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).child(Integer.toString(i)).child("lunch").setValue("-1");
                     }
                 }
 

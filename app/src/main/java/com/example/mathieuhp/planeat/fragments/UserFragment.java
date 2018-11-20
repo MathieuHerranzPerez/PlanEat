@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -43,6 +44,7 @@ public class UserFragment extends Fragment implements Updatable {
     LinearLayout linearLayoutPersonnalRecipe;
     Button btnModif;
     Button btnDelete;
+    FloatingActionButton btnAddRecipe;
 
     User user;
 
@@ -66,6 +68,8 @@ public class UserFragment extends Fragment implements Updatable {
         btnModif = (Button) view.findViewById(R.id.btn_modif);
 
         btnDelete = (Button) view.findViewById(R.id.btn_delete_user);
+
+        btnAddRecipe = (FloatingActionButton) view.findViewById(R.id.btn_add_recipe);
 
         linearLayoutPersonnalRecipe = (LinearLayout) view.findViewById(R.id.list_personnal_recipes);
 
@@ -127,6 +131,14 @@ public class UserFragment extends Fragment implements Updatable {
 
         // setup delete button
         btnDelete.setOnClickListener(new OnClickListenerDeleteUser(user));
+
+        // setup the add recipe button
+        btnAddRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO start createRecipeFragment
+            }
+        });
 
         updateView();
 
