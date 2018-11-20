@@ -64,7 +64,8 @@ public class User implements Parcelable{
         firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
 
         //get data dealing with recipes
-        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
+        RecipeCatalogValueListener recipeCatalogValueListener = new RecipeCatalogValueListener(this);
+        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(recipeCatalogValueListener);
     }
 
     /* ---- GETTERS ----*/
@@ -384,11 +385,6 @@ public class User implements Parcelable{
                         Log.d("personnal recipes contains:", this.user.getPersonnalRecipes().get(0).toString());
                     }
                     Log.d("recipes loaded: ", this.nbLoadedRecipes + "/" + this.nbTotalRecipes);
-
-                    //notify observer when recipes are all loaded
-                    if(this.nbLoadedRecipes == nbTotalRecipes){
-                        this.user.getFirebaseDataRetriever().retrieveData();
-                    }
                 }
             }
         }
@@ -411,6 +407,10 @@ public class User implements Parcelable{
         @Override
         public void updateData() {
 
+        }
+
+        public User getUser() {
+            return user;
         }
     }
 }
