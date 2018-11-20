@@ -416,5 +416,9 @@ public class User implements Parcelable{
         public void updateData() {
 
         }
+
+        public User getUser() {
+            return user;
+        }
     }
 }
