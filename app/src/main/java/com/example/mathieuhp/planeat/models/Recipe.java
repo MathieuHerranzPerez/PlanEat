@@ -2,6 +2,7 @@ package com.example.mathieuhp.planeat.models;
 
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
@@ -55,15 +56,28 @@ public class Recipe {
     }
 
     public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
-        this(id);
+        this.id = id;
+        this.name = "";
+        this.nbPeople = 0;
+        this.calories = 0;
+        this.difficulty = 0;
+        this.description = "";
+        this.preparationTime = 0;
+        this.imageLink = "";
+        this.isShared = false;
+        this.score = 0;
+
         this.firebaseDataRetriever = firebaseDataRetriever;
+        // todo get the recipe from DB
+        firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
+        firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
     }
 
     public Recipe(String id) {
         this.id = id;
         // todo get the recipe from DB
-        firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
-        firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
+        firebaseReference = FirebaseDatabase.getInstance().getReference();
+        firebaseReference.child("recipes").addValueEventListener(new ValueEventListenerRecipeConstruct(this));
     }
 
     public String getId() {
@@ -170,21 +184,50 @@ public class Recipe {
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             try {
                 DataSnapshot ds = dataSnapshot.child(recipe.getId());
-                recipe.setName((String) ds.child("name").getValue());
-                recipe.setCalories(Integer.parseInt((String)ds.child("calories").getValue()));
-                recipe.setNbPeople(Integer.parseInt((String) ds.child("persons").getValue()));
-                recipe.setDescription((String) ds.child("preparation").getValue());
-                recipe.setPreparationTime(Integer.parseInt((String)ds.child("preparationTime").getValue()));
-                recipe.setScore(Float.parseFloat((String)ds.child("score").getValue()));
-                recipe.setIsShared(Boolean.valueOf((String) ds.child("isShared").getValue()));
+                String recipeName;
+                if ((recipeName = (String) ds.child("name").getValue()) != null) {
+                    recipe.setName(recipeName);
+                    Log.d("recipe name", recipeName);
+                }
+                Integer calories;
+                if ((calories = Integer.parseInt((String) ds.child("calories").getValue())) != null) {
+                    recipe.setCalories(calories);
+                    Log.d("recipe calories", calories.toString());
+                }
+                Integer nbPeople;
+                if ((nbPeople = Integer.parseInt((String) ds.child("persons").getValue())) != null) {
+                    recipe.setNbPeople(nbPeople);
+                    Log.d("recipe nbPeople", nbPeople.toString());
+                }
+                String description;
+                if ((description = (String) ds.child("preparation").getValue()) != null){
+                    recipe.setDescription(description);
+                    Log.d("recipe description", description);
+                }
+                Integer preparationTime;
+                if((preparationTime = Integer.parseInt((String)ds.child("preparationTime").getValue())) != null){
+                    recipe.setPreparationTime(preparationTime);
+                    Log.d("recipe preparation time", preparationTime.toString());
+                }
+                Float score;
+                if((score = Float.parseFloat((String)ds.child("score").getValue())) != null) {
+                    recipe.setScore(score);
+                    Log.d("recipe score", score.toString());
+                }
+                Boolean isShared;
+                /*if((isShared = Boolean.valueOf((String) ds.child("isShared").getValue())) != null) {
+                    recipe.setIsShared(isShared);
+                    Log.d("is recipe shared", String.valueOf(isShared));
+                }*/
 
                 // todo get the tags
 
 
                 // notify the observers
-                if(PlanningFragment.getPlanningFragment() != null)
+                if(PlanningFragment.getPlanningFragment() != null) {
                     PlanningFragment.getPlanningFragment().updateView();
-
+                }
+                Log.d("Getting recipe done! ", this.recipe.name);
                 //notify that recipe has been retrieved from db
                 this.recipe.firebaseDataRetriever.retrieveData();
 

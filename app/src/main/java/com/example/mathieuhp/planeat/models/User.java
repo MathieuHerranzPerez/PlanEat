@@ -47,12 +47,17 @@ public class User implements Parcelable{
     }
 
 
-    public User(String id, String email) {
+    public User(String id, String email, FirebaseDataRetriever firebaseDataRetriever) {
         this.id = id;
         this.email = email;
         this.birthDate = "";
         this.firstName = "";
         this.lastName = "";
+
+        this.personnalRecipes = new ArrayList<Recipe>();
+        this.followedRecipes = new ArrayList<Recipe>();
+
+        this.firebaseDataRetriever = firebaseDataRetriever;
 
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
@@ -60,8 +65,8 @@ public class User implements Parcelable{
         firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
 
         //get data dealing with recipes
-        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new RecipeCatalogValueListener(this));
-
+        RecipeCatalogValueListener recipeCatalogValueListener = new RecipeCatalogValueListener(this);
+        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(recipeCatalogValueListener);
         userInstance = this;
     }
 
@@ -103,8 +108,12 @@ public class User implements Parcelable{
 
     public ArrayList<Recipe> getAllRecipes() {
         ArrayList<Recipe> allRecipes = new ArrayList<Recipe>();
-        allRecipes.addAll(this.followedRecipes);
-        allRecipes.addAll(this.personnalRecipes);
+        if(this.followedRecipes != null) {
+            allRecipes.addAll(this.followedRecipes);
+        }
+        if(this.personnalRecipes != null) {
+            allRecipes.addAll(this.personnalRecipes);
+        }
         return allRecipes;
     }
 
@@ -326,54 +335,63 @@ public class User implements Parcelable{
 
         private User user;
         private int nbLoadedRecipes;
+        private int nbTotalRecipes;
 
         public RecipeCatalogValueListener(User user){
             this.user = user;
             this.nbLoadedRecipes = 0;
+            this.nbTotalRecipes = 0;
         }
 
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            int nbTotalRecipes = 0;
-            ArrayList<Recipe> personnalRecipes = new ArrayList<Recipe>();
-            ArrayList<Recipe> followedRecipes = new ArrayList<Recipe>();
+            Log.d("Lets explore recipes! ", "Lets go!");
             Iterable<DataSnapshot> children = dataSnapshot.getChildren();
             for(DataSnapshot recipesPerTypeSnapshot : children){
                 String recipeType = recipesPerTypeSnapshot.getKey().toString();
+                Log.d("recipe type", recipeType);
                 Iterable<DataSnapshot> recipes = recipesPerTypeSnapshot.getChildren();
-                nbTotalRecipes += recipesPerTypeSnapshot.getChildrenCount();
+                this.nbTotalRecipes += recipesPerTypeSnapshot.getChildrenCount();
                 for(DataSnapshot recipeSnapshot : recipes){
                     String recipeId = recipeSnapshot.getKey();
                     Recipe newRecipe = new Recipe(this, recipeId);
                     if(recipeType.equals("followed")){
-                        followedRecipes.add(newRecipe);
+                        this.user.addFollowedRecipe(newRecipe);
+                        Log.d("recipe added to ", recipeType);
+                        Log.d("followed recipes contains:", this.user.getFollowedRecipes().get(0).toString());
                     }
                     else if(recipeType.equals("personnal")){
-                        personnalRecipes.add(newRecipe);
+                        this.user.addPersonnalRecipe(newRecipe);
+                        Log.d("recipe added to ", recipeType);
+                        Log.d("personnal recipes contains:", this.user.getPersonnalRecipes().get(0).toString());
                     }
-
-                    //notify observer when recipes are all loaded
-                    if(this.nbLoadedRecipes == nbTotalRecipes){
-                        this.user.getFirebaseDataRetriever().retrieveData();
-                    }
+                    Log.d("recipes loaded: ", this.nbLoadedRecipes + "/" + this.nbTotalRecipes);
                 }
             }
         }
 
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            System.out.println("FAILED");
         }
 
 
         @Override
         public void retrieveData() {
             this.nbLoadedRecipes += 1;
+            //notify observer when recipes are all loaded
+            if(this.nbLoadedRecipes == nbTotalRecipes){
+                this.user.getFirebaseDataRetriever().retrieveData();
+            }
         }
 
         @Override
         public void updateData() {
 
+        }
+
+        public User getUser() {
+            return user;
         }
     }
 }

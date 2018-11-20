@@ -15,6 +15,7 @@ import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
 import com.example.mathieuhp.planeat.fragments.ShoppingFragment;
 import com.example.mathieuhp.planeat.fragments.UserFragment;
+import com.example.mathieuhp.planeat.models.FirebaseDataRetriever;
 import com.example.mathieuhp.planeat.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,17 +45,21 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
+        //create the fragment
+        RecipesListFragment recipesListFragment = new RecipesListFragment();
+
         // get the user connection
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         // create the user
-        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail());
+        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), recipesListFragment);
         // and the bundle to pass it to the fragment
         bundleUser = new Bundle();
         bundleUser.putParcelable("user", user);
 
         // launch the main fragment
-        loadFragment(new RecipesListFragment());
+        recipesListFragment.setArguments(bundleUser);
+        loadFragment(recipesListFragment);
     }
 
 
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch(menuItem.getItemId()) {
             case R.id.navigation_recipes:
                 fragment = new RecipesListFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.recipes);
                 break;
 
@@ -103,4 +109,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+
 }
