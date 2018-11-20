@@ -16,6 +16,7 @@ import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
 import com.example.mathieuhp.planeat.fragments.ShoppingFragment;
 import com.example.mathieuhp.planeat.fragments.UserFragment;
 import com.example.mathieuhp.planeat.models.FirebaseDataRetriever;
+import com.example.mathieuhp.planeat.models.Ingredient;
 import com.example.mathieuhp.planeat.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
