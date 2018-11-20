@@ -20,9 +20,11 @@ public class Recipe {
     private ArrayList<Component> listComponent;
     private int nbPeople;
     private int calories;
-    private float difficulty;
     private String description;
     private int preparationTime;
+    private float difficulty;
+    private ArrayList<ArrayList> ingredients;
+    private ArrayList<String> preparation;
     private String imageLink;
     private String tag;
     private boolean isShared;
@@ -30,17 +32,27 @@ public class Recipe {
 
     private DatabaseReference firebaseReference;
 
-
     public Recipe() {
 
     }
 
     public Recipe(String id) {
         this.id = id;
-
         // todo get the recipe from DB
         firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
+    }
+
+    public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
+
+        this.name = name;
+        this.nbPeople = nbPeople;
+        this.description = description;
+        this.preparationTime = preparationTime;
+        this.difficulty = difficulty;
+        this.ingredients = ingredients;
+        this.preparation = preparation;
+        this.isShared = isShared;
     }
 
     public String getId() {
