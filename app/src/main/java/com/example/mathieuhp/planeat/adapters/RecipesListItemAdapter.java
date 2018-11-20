@@ -1,17 +1,24 @@
 package com.example.mathieuhp.planeat.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.activities.MainActivity;
+import com.example.mathieuhp.planeat.activities.RecipeDisplayActivity;
 import com.example.mathieuhp.planeat.models.Recipe;
 
 import java.util.List;
@@ -19,11 +26,22 @@ import java.util.List;
 public class RecipesListItemAdapter extends RecyclerView.Adapter{
 
     private List<Recipe> recipes;
+    private Context context;
 
     //data related methods
+    public List<Recipe> getRecipes(){
+        return this.recipes;
+    }
+
     public void setRecipes(List<Recipe> recipes){
         this.recipes = recipes;
         notifyDataSetChanged();
+    }
+
+    //constructor
+    public RecipesListItemAdapter(List<Recipe> recipes, Context context){
+        this.recipes = recipes;
+        this.context = context;
     }
 
     // adapters methods
@@ -36,10 +54,21 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, int position) {
         if(viewHolder instanceof RecipeHolder){
-            Recipe currentRecipe = recipes.get(position);
+            final Recipe currentRecipe = recipes.get(position);
             ((RecipeHolder) viewHolder).bind(currentRecipe.getImage(), currentRecipe.getName(), currentRecipe.getTags());
+            ((RecipeHolder) viewHolder).itemLayout.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    Log.d("clicked recipe",  currentRecipe.getName());
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("recipe", currentRecipe);
+                    Intent intent = new Intent(context, RecipeDisplayActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 
@@ -55,6 +84,7 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
 
     static class RecipeHolder extends RecyclerView.ViewHolder{
 
+        private LinearLayout itemLayout;
         private ImageView recipeImage;
         private TextView recipeTitle;
         private TextView recipeTags;
@@ -62,6 +92,7 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
         public RecipeHolder(@NonNull View itemView) {
             super(itemView);
 
+            itemLayout = itemView.findViewById(R.id.itemLayout);
             recipeImage = itemView.findViewById(R.id.recipeImage);
             recipeTitle = itemView.findViewById(R.id.recipeTitle);
             recipeTags = itemView.findViewById(R.id.recipeTags);

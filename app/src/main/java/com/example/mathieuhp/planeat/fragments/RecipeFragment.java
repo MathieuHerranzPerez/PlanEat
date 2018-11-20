@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.models.Recipe;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +32,8 @@ public class RecipeFragment extends Fragment implements Updatable {
     private int nbIngredient;
     private int nbStep;
     private String id = "5";
+
+    private Recipe recipe;
 
     public RecipeFragment() {
     }

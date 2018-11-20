@@ -66,8 +66,7 @@ public class RecipesListFragment extends Fragment implements Updatable, Firebase
             loadingBar.setVisibility(View.GONE);
             recipesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
             recipesRecyclerView.addItemDecoration(new RecipesListItemDecoration(30));
-            recipeItemAdapter = new RecipesListItemAdapter();
-            recipeItemAdapter.setRecipes(recipes);
+            recipeItemAdapter = new RecipesListItemAdapter(recipes, this.getContext());
             recipesRecyclerView.setAdapter(recipeItemAdapter);
         }
         return view;
