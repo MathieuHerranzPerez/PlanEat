@@ -49,6 +49,43 @@
     <string name="change">OK</string>
     <!-- /planning -->
 
+    <!-- addRecipe -->
+    <string name="hint_name"> Nom de la recette* </string>
+    <string name="hint_description"> Description de la recette* </string>
+    <string name="nbPerson_star">Nombre de personnes*</string>
+    <string name="preparationTime_star">Temps de préparation*</string>
+    <string name="difficulty_star">Dificulté* (de 0 à 5)</string>
+    <string name="tittle_ingredients">Ingredients</string>
+    <string name="hint_quantity_star">Qté*</string>
+    <string name="hint_quantity">Qté</string>
+    <string name="hint_ingredient_star">Ingrédient*</string>
+    <string name="hint_ingredient">Ingrédient</string>
+    <string name="tittle_preparation">Preparation</string>
+    <string name="hint_firstStep">Première étape*</string>
+    <string name="hint_otherStep">Etape suivante</string>
+    <string name="invalid_difficulty">La dificulté doit être comprise entre 0 et 5</string>
+    <string name="invalid_completion">Les champs marqués d\'une * sont obligatoire.</string>
+    <!-- /addRecipe -->
+
+
+    <!-- showRecipe -->
+    <string name="nbPerson">Nombre de personnes</string>
+    <string name="preparationTime">Temps de préparation</string>
+    <string name="cookingTime">Temps de cuisson</string>
+    <string name="difficulty">Dificulté</string>
+    <!-- /showRecipe -->
+
+    <!-- Unities -->
+    <string-array name="unity_array">
+        <item>-</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>cl</item>
+        <item>L</item>
+        <item>unité</item>
+    </string-array>
+    <!-- /Unities -->
+
     <!-- fridge -->
     <string name="ingredient_name">Nom ingrédient</string>
     <!-- /fridge -->
@@ -61,9 +98,9 @@
     <string name="activity_shopping">ACTIVITY SHOPPING</string>
 
 
-
-
     <string name="facebook_app_id">1968130033267796</string>
     <string name="fb_login_protocol_scheme">fb1968130033267796</string>
+
+
 
 </resources>
