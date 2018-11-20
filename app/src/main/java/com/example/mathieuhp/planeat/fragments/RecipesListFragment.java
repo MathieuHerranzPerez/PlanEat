@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.RecipesListItemDecoration;
 import com.example.mathieuhp.planeat.adapters.RecipesListItemAdapter;
 import com.example.mathieuhp.planeat.models.FirebaseDataRetriever;
 import com.example.mathieuhp.planeat.models.Ingredient;
@@ -64,6 +65,7 @@ public class RecipesListFragment extends Fragment implements Updatable, Firebase
         if(user.getAllRecipes().size() > 0){
             loadingBar.setVisibility(View.GONE);
             recipesRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+            recipesRecyclerView.addItemDecoration(new RecipesListItemDecoration(30));
             recipeItemAdapter = new RecipesListItemAdapter();
             recipeItemAdapter.setRecipes(recipes);
             recipesRecyclerView.setAdapter(recipeItemAdapter);
