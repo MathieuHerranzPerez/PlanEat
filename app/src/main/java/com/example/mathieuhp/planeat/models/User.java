@@ -39,9 +39,8 @@ public class User implements Parcelable{
 
 
 
-    // TODO
-//    private Fridge fridge;
-//    private ShoppingList shoppingList;
+    private Fridge fridge;
+//    private ShoppingList shoppingList; //TODO
 
     public User() {
         // default constructor required for calls to DataSnapshot.getValue(xxx.class)
@@ -119,6 +118,9 @@ public class User implements Parcelable{
     public RecipeCalendar getRecipeCalendar() {
         return recipeCalendar;
     }
+    public Fridge getFridge() {
+        return fridge;
+    }
 
 
 
@@ -154,6 +156,10 @@ public class User implements Parcelable{
     public void setPersonnalRecipes(ArrayList<Recipe> personnalRecipes){ this.personnalRecipes = personnalRecipes; }
 
     public void setFollowedRecipes(ArrayList<Recipe> followedRecipes){ this.followedRecipes = followedRecipes; }
+
+    public void setFridge(Fridge fridge) {
+        this.fridge = fridge;
+    }
 
 
 

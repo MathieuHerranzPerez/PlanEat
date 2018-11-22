@@ -1,0 +1,6902 @@
+[
+  {
+    "id": "0",
+    "type": "fruits",
+    "name": "Abricot",
+    "kiloCaloriesPerHundredGrams": "42,6"
+  },
+  {
+    "id": "1",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Amande",
+    "kiloCaloriesPerHundredGrams": "634"
+  },
+  {
+    "id": "2",
+    "type": "fruits",
+    "name": "Ananas",
+    "kiloCaloriesPerHundredGrams": "53,2"
+  },
+  {
+    "id": "3",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Arachide",
+    "kiloCaloriesPerHundredGrams": "316"
+  },
+  {
+    "id": "4",
+    "type": "legumes",
+    "name": "Artichaut",
+    "kiloCaloriesPerHundredGrams": "45,7"
+  },
+  {
+    "id": "5",
+    "type": "legumes",
+    "name": "Asperge",
+    "kiloCaloriesPerHundredGrams": "24,7"
+  },
+  {
+    "id": "6",
+    "type": "legumes",
+    "name": "Aubergine",
+    "kiloCaloriesPerHundredGrams": "21,2"
+  },
+  {
+    "id": "7",
+    "type": "legumes",
+    "name": "Avocat",
+    "kiloCaloriesPerHundredGrams": "155"
+  },
+  {
+    "id": "8",
+    "type": "legumes",
+    "name": "Bambou",
+    "kiloCaloriesPerHundredGrams": "35,1"
+  },
+  {
+    "id": "9",
+    "type": "fruits",
+    "name": "Banane",
+    "kiloCaloriesPerHundredGrams": "90"
+  },
+  {
+    "id": "10",
+    "type": "legumes",
+    "name": "Betterave rouge",
+    "kiloCaloriesPerHundredGrams": "47,2"
+  },
+  {
+    "id": "11",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Beurre de cacahuete ou Pate d arachide",
+    "kiloCaloriesPerHundredGrams": "648"
+  },
+  {
+    "id": "12",
+    "type": "legumes",
+    "name": "Blette",
+    "kiloCaloriesPerHundredGrams": "12,3"
+  },
+  {
+    "id": "13",
+    "type": "legumes",
+    "name": "Brocoli",
+    "kiloCaloriesPerHundredGrams": "29,2"
+  },
+  {
+    "id": "14",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Cacahuete",
+    "kiloCaloriesPerHundredGrams": "623"
+  },
+  {
+    "id": "15",
+    "type": "legumes",
+    "name": "Cardon",
+    "kiloCaloriesPerHundredGrams": "13,6"
+  },
+  {
+    "id": "16",
+    "type": "legumes",
+    "name": "Carotte",
+    "kiloCaloriesPerHundredGrams": "36,4"
+  },
+  {
+    "id": "17",
+    "type": "fruits",
+    "name": "Cassis",
+    "kiloCaloriesPerHundredGrams": "64,6"
+  },
+  {
+    "id": "18",
+    "type": "legumes",
+    "name": "Celeri",
+    "kiloCaloriesPerHundredGrams": "21,5"
+  },
+  {
+    "id": "19",
+    "type": "legumes",
+    "name": "Celeri-rave",
+    "kiloCaloriesPerHundredGrams": "32,4"
+  },
+  {
+    "id": "20",
+    "type": "fruits",
+    "name": "Cerise",
+    "kiloCaloriesPerHundredGrams": "59,6"
+  },
+  {
+    "id": "21",
+    "type": "Champignon",
+    "name": "Champignon",
+    "kiloCaloriesPerHundredGrams": "21,6"
+  },
+  {
+    "id": "22",
+    "type": "Champignon",
+    "name": "Champignon de Paris",
+    "kiloCaloriesPerHundredGrams": "21,1"
+  },
+  {
+    "id": "23",
+    "type": "Champignon",
+    "name": "Cepe",
+    "kiloCaloriesPerHundredGrams": "31,6"
+  },
+  {
+    "id": "24",
+    "type": "Champignon",
+    "name": "Chanterelle ou girollee",
+    "kiloCaloriesPerHundredGrams": "33,1"
+  },
+  {
+    "id": "25",
+    "type": "Champignon",
+    "name": "Lentin comestible ou shiitake",
+    "kiloCaloriesPerHundredGrams": "60,9"
+  },
+  {
+    "id": "26",
+    "type": "Champignon",
+    "name": "Morillee",
+    "kiloCaloriesPerHundredGrams": "24,5"
+  },
+  {
+    "id": "27",
+    "type": "Champignon",
+    "name": "Oronge",
+    "kiloCaloriesPerHundredGrams": "23,2"
+  },
+  {
+    "id": "28",
+    "type": "Champignon",
+    "name": "Pleurote",
+    "kiloCaloriesPerHundredGrams": "25,5"
+  },
+  {
+    "id": "29",
+    "type": "Champignon",
+    "name": "Rose des pres",
+    "kiloCaloriesPerHundredGrams": "25,3"
+  },
+  {
+    "id": "30",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Chataigne  bouillie/cuite a l eau",
+    "kiloCaloriesPerHundredGrams": "139"
+  },
+  {
+    "id": "31",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Chia  graine  sechee",
+    "kiloCaloriesPerHundredGrams": "454"
+  },
+  {
+    "id": "32",
+    "type": "legumes",
+    "name": "Chicoree rouge",
+    "kiloCaloriesPerHundredGrams": "18,9"
+  },
+  {
+    "id": "33",
+    "type": "legumes",
+    "name": "Chicoree verte",
+    "kiloCaloriesPerHundredGrams": "16,1"
+  },
+  {
+    "id": "34",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Chips de pommes de terre",
+    "kiloCaloriesPerHundredGrams": "545"
+  },
+  {
+    "id": "35",
+    "type": "legumes",
+    "name": "Chou blanc",
+    "kiloCaloriesPerHundredGrams": "28,4"
+  },
+  {
+    "id": "36",
+    "type": "legumes",
+    "name": "Chou chinois",
+    "kiloCaloriesPerHundredGrams": "16"
+  },
+  {
+    "id": "37",
+    "type": "legumes",
+    "name": "Chou de Bruxelles",
+    "kiloCaloriesPerHundredGrams": "34,6"
+  },
+  {
+    "id": "38",
+    "type": "legumes",
+    "name": "Chou frise",
+    "kiloCaloriesPerHundredGrams": "29,7"
+  },
+  {
+    "id": "39",
+    "type": "legumes",
+    "name": "Chou romanesco ou brocoli a pomme",
+    "kiloCaloriesPerHundredGrams": "28,8"
+  },
+  {
+    "id": "40",
+    "type": "legumes",
+    "name": "Chou rouge",
+    "kiloCaloriesPerHundredGrams": "29,1"
+  },
+  {
+    "id": "41",
+    "type": "legumes",
+    "name": "Chou vert",
+    "kiloCaloriesPerHundredGrams": "25,3"
+  },
+  {
+    "id": "42",
+    "type": "legumes",
+    "name": "Chou-fleur",
+    "kiloCaloriesPerHundredGrams": "23"
+  },
+  {
+    "id": "43",
+    "type": "legumes",
+    "name": "Chou-rave",
+    "kiloCaloriesPerHundredGrams": "25,1"
+  },
+  {
+    "id": "44",
+    "type": "fruits",
+    "name": "Citron",
+    "kiloCaloriesPerHundredGrams": "39,1"
+  },
+  {
+    "id": "45",
+    "type": "fruits",
+    "name": "Citron vert ou Lime",
+    "kiloCaloriesPerHundredGrams": "32,8"
+  },
+  {
+    "id": "46",
+    "type": "legumes",
+    "name": "Citrouille",
+    "kiloCaloriesPerHundredGrams": "29,9"
+  },
+  {
+    "id": "47",
+    "type": "fruits",
+    "name": "Compote de pomme",
+    "kiloCaloriesPerHundredGrams": "102"
+  },
+  {
+    "id": "48",
+    "type": "legumes",
+    "name": "Concombre",
+    "kiloCaloriesPerHundredGrams": "13,6"
+  },
+  {
+    "id": "49",
+    "type": "legumes",
+    "name": "Courge doubeurre",
+    "kiloCaloriesPerHundredGrams": "25"
+  },
+  {
+    "id": "50",
+    "type": "legumes",
+    "name": "Courge hokkaido",
+    "kiloCaloriesPerHundredGrams": "56,1"
+  },
+  {
+    "id": "51",
+    "type": "legumes",
+    "name": "Courge melonnette",
+    "kiloCaloriesPerHundredGrams": "30,8"
+  },
+  {
+    "id": "52",
+    "type": "legumes",
+    "name": "Courge musquee",
+    "kiloCaloriesPerHundredGrams": "23,5"
+  },
+  {
+    "id": "53",
+    "type": "legumes",
+    "name": "Courge spaghetti",
+    "kiloCaloriesPerHundredGrams": "32,3"
+  },
+  {
+    "id": "54",
+    "type": "legumes",
+    "name": "Courge",
+    "kiloCaloriesPerHundredGrams": "14,9"
+  },
+  {
+    "id": "55",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Creme de marrons",
+    "kiloCaloriesPerHundredGrams": "266"
+  },
+  {
+    "id": "56",
+    "type": "legumes",
+    "name": "Cresson alenois",
+    "kiloCaloriesPerHundredGrams": "27,1"
+  },
+  {
+    "id": "57",
+    "type": "legumes",
+    "name": "Cresson de fontaine",
+    "kiloCaloriesPerHundredGrams": "14,9"
+  },
+  {
+    "id": "58",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Graine de cucurbitacees",
+    "kiloCaloriesPerHundredGrams": "615"
+  },
+  {
+    "id": "59",
+    "type": "fruits",
+    "name": "Datte",
+    "kiloCaloriesPerHundredGrams": "287"
+  },
+  {
+    "id": "60",
+    "type": "legumes",
+    "name": "echalote  cuite",
+    "kiloCaloriesPerHundredGrams": "71,6"
+  },
+  {
+    "id": "61",
+    "type": "legumes",
+    "name": "Endive",
+    "kiloCaloriesPerHundredGrams": "20,8"
+  },
+  {
+    "id": "62",
+    "type": "legumes",
+    "name": "epinard",
+    "kiloCaloriesPerHundredGrams": "21,5"
+  },
+  {
+    "id": "63",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Farine de chataigne",
+    "kiloCaloriesPerHundredGrams": "362"
+  },
+  {
+    "id": "64",
+    "type": "legumes",
+    "name": "Fenouil",
+    "kiloCaloriesPerHundredGrams": "20"
+  },
+  {
+    "id": "65",
+    "type": "legumineuses",
+    "name": "Feve a ecosser",
+    "kiloCaloriesPerHundredGrams": "61,5"
+  },
+  {
+    "id": "66",
+    "type": "legumineuses",
+    "name": "Feve seche",
+    "kiloCaloriesPerHundredGrams": "301"
+  },
+  {
+    "id": "67",
+    "type": "fruits",
+    "name": "Figue seche",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "68",
+    "type": "legumes",
+    "name": "Fondue de poireau",
+    "kiloCaloriesPerHundredGrams": "58,4"
+  },
+  {
+    "id": "69",
+    "type": "fruits",
+    "name": "Fraise",
+    "kiloCaloriesPerHundredGrams": "34,9"
+  },
+  {
+    "id": "70",
+    "type": "fruits",
+    "name": "Framboise",
+    "kiloCaloriesPerHundredGrams": "43,7"
+  },
+  {
+    "id": "71",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Fruit a pain",
+    "kiloCaloriesPerHundredGrams": "105"
+  },
+  {
+    "id": "72",
+    "type": "fruits",
+    "name": "Fruit de la passion ou maracudja et pepins",
+    "kiloCaloriesPerHundredGrams": "84,4"
+  },
+  {
+    "id": "73",
+    "type": "legumes",
+    "name": "Gombo",
+    "kiloCaloriesPerHundredGrams": "22,4"
+  },
+  {
+    "id": "74",
+    "type": "fruits",
+    "name": "Goyave",
+    "kiloCaloriesPerHundredGrams": "54,9"
+  },
+  {
+    "id": "75",
+    "type": "fruits",
+    "name": "Grenade",
+    "kiloCaloriesPerHundredGrams": "75,9"
+  },
+  {
+    "id": "76",
+    "type": "fruits",
+    "name": "Groseille a maquereaue",
+    "kiloCaloriesPerHundredGrams": "40,1"
+  },
+  {
+    "id": "77",
+    "type": "fruits",
+    "name": "Groseillee",
+    "kiloCaloriesPerHundredGrams": "56,1"
+  },
+  {
+    "id": "78",
+    "type": "legumes",
+    "name": "Haricot beurre",
+    "kiloCaloriesPerHundredGrams": "36,1"
+  },
+  {
+    "id": "79",
+    "type": "legumineuses",
+    "name": "Haricot blanc",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "80",
+    "type": "legumineuses",
+    "name": "Haricot blanc sec",
+    "kiloCaloriesPerHundredGrams": "302"
+  },
+  {
+    "id": "81",
+    "type": "legumes",
+    "name": "Haricot de Lima",
+    "kiloCaloriesPerHundredGrams": "105"
+  },
+  {
+    "id": "82",
+    "type": "legumineuses",
+    "name": "Haricot flageolet",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "83",
+    "type": "legumineuses",
+    "name": "Haricot flageolet sec",
+    "kiloCaloriesPerHundredGrams": "315"
+  },
+  {
+    "id": "84",
+    "type": "legumes",
+    "name": "Haricot mungo germe ou pousse de \"soja\"",
+    "kiloCaloriesPerHundredGrams": "30,5"
+  },
+  {
+    "id": "85",
+    "type": "legumineuses",
+    "name": "Haricot mungo",
+    "kiloCaloriesPerHundredGrams": "95,7"
+  },
+  {
+    "id": "86",
+    "type": "legumineuses",
+    "name": "Haricot mungo sec",
+    "kiloCaloriesPerHundredGrams": "334"
+  },
+  {
+    "id": "87",
+    "type": "legumes",
+    "name": "Haricot plat",
+    "kiloCaloriesPerHundredGrams": "32,6"
+  },
+  {
+    "id": "88",
+    "type": "legumineuses",
+    "name": "Haricot rouge",
+    "kiloCaloriesPerHundredGrams": "115"
+  },
+  {
+    "id": "89",
+    "type": "legumineuses",
+    "name": "Haricot rouge sec",
+    "kiloCaloriesPerHundredGrams": "314"
+  },
+  {
+    "id": "90",
+    "type": "legumes",
+    "name": "Haricot vert",
+    "kiloCaloriesPerHundredGrams": "31"
+  },
+  {
+    "id": "91",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Igname",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "92",
+    "type": "fruits",
+    "name": "Kiwi",
+    "kiloCaloriesPerHundredGrams": "58,5"
+  },
+  {
+    "id": "93",
+    "type": "legumes",
+    "name": "Laituee",
+    "kiloCaloriesPerHundredGrams": "15,1"
+  },
+  {
+    "id": "94",
+    "type": "legumineuses",
+    "name": "Lentille blonde",
+    "kiloCaloriesPerHundredGrams": "122"
+  },
+  {
+    "id": "95",
+    "type": "legumineuses",
+    "name": "Lentille blonde seche",
+    "kiloCaloriesPerHundredGrams": "339"
+  },
+  {
+    "id": "96",
+    "type": "legumineuses",
+    "name": "Lentille corail",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "97",
+    "type": "legumineuses",
+    "name": "Lentille corail seche",
+    "kiloCaloriesPerHundredGrams": "328"
+  },
+  {
+    "id": "98",
+    "type": "legumineuses",
+    "name": "Lentille verte",
+    "kiloCaloriesPerHundredGrams": "124"
+  },
+  {
+    "id": "99",
+    "type": "legumineuses",
+    "name": "Lentille verte seche",
+    "kiloCaloriesPerHundredGrams": "327"
+  },
+  {
+    "id": "100",
+    "type": "legumineuses",
+    "name": "Lentille",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "101",
+    "type": "legumineuses",
+    "name": "Lentille seche",
+    "kiloCaloriesPerHundredGrams": "332"
+  },
+  {
+    "id": "102",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Lin",
+    "kiloCaloriesPerHundredGrams": "506"
+  },
+  {
+    "id": "103",
+    "type": "legumineuses",
+    "name": "Lupin",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "104",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Luzerne",
+    "kiloCaloriesPerHundredGrams": "426"
+  },
+  {
+    "id": "105",
+    "type": "legumes",
+    "name": "Mache",
+    "kiloCaloriesPerHundredGrams": "19,2"
+  },
+  {
+    "id": "106",
+    "type": "legumes",
+    "name": "Mais",
+    "kiloCaloriesPerHundredGrams": "78,6"
+  },
+  {
+    "id": "107",
+    "type": "fruits",
+    "name": "Mangue",
+    "kiloCaloriesPerHundredGrams": "64,4"
+  },
+  {
+    "id": "108",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Manioc",
+    "kiloCaloriesPerHundredGrams": "132"
+  },
+  {
+    "id": "109",
+    "type": "fruits",
+    "name": "Melon Charentais ou Cavaillon",
+    "kiloCaloriesPerHundredGrams": "33"
+  },
+  {
+    "id": "110",
+    "type": "fruits",
+    "name": "Mure (de ronce)",
+    "kiloCaloriesPerHundredGrams": "41,1"
+  },
+  {
+    "id": "111",
+    "type": "fruits",
+    "name": "Myrtillee",
+    "kiloCaloriesPerHundredGrams": "57,7"
+  },
+  {
+    "id": "112",
+    "type": "legumes",
+    "name": "Navet",
+    "kiloCaloriesPerHundredGrams": "25"
+  },
+  {
+    "id": "113",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noisette",
+    "kiloCaloriesPerHundredGrams": "680"
+  },
+  {
+    "id": "114",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix de cajou",
+    "kiloCaloriesPerHundredGrams": "632"
+  },
+  {
+    "id": "115",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix de coco",
+    "kiloCaloriesPerHundredGrams": "360"
+  },
+  {
+    "id": "116",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix de coco seche",
+    "kiloCaloriesPerHundredGrams": "690"
+  },
+  {
+    "id": "117",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix de macadamia",
+    "kiloCaloriesPerHundredGrams": "740"
+  },
+  {
+    "id": "118",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix de pecan",
+    "kiloCaloriesPerHundredGrams": "736"
+  },
+  {
+    "id": "119",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix du Bresil",
+    "kiloCaloriesPerHundredGrams": "702"
+  },
+  {
+    "id": "120",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Noix",
+    "kiloCaloriesPerHundredGrams": "703"
+  },
+  {
+    "id": "121",
+    "type": "legumes",
+    "name": "Oignon",
+    "kiloCaloriesPerHundredGrams": "39"
+  },
+  {
+    "id": "122",
+    "type": "legumes",
+    "name": "Oignon seche",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "123",
+    "type": "fruits",
+    "name": "Orange",
+    "kiloCaloriesPerHundredGrams": "47,1"
+  },
+  {
+    "id": "124",
+    "type": "legumes",
+    "name": "Oseillee",
+    "kiloCaloriesPerHundredGrams": "23,4"
+  },
+  {
+    "id": "125",
+    "type": "legumes",
+    "name": "Panais",
+    "kiloCaloriesPerHundredGrams": "58,3"
+  },
+  {
+    "id": "126",
+    "type": "fruits",
+    "name": "Pasteque",
+    "kiloCaloriesPerHundredGrams": "34,9"
+  },
+  {
+    "id": "127",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Patate doucee",
+    "kiloCaloriesPerHundredGrams": "86,3"
+  },
+  {
+    "id": "128",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Pate d amande",
+    "kiloCaloriesPerHundredGrams": "467"
+  },
+  {
+    "id": "129",
+    "type": "legumes",
+    "name": "Petits pois",
+    "kiloCaloriesPerHundredGrams": "67,3"
+  },
+  {
+    "id": "130",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Pignon de pin",
+    "kiloCaloriesPerHundredGrams": "695"
+  },
+  {
+    "id": "131",
+    "type": "legumes",
+    "name": "Piment",
+    "kiloCaloriesPerHundredGrams": "44,5"
+  },
+  {
+    "id": "132",
+    "type": "legumes",
+    "name": "Pissenlit",
+    "kiloCaloriesPerHundredGrams": "48,8"
+  },
+  {
+    "id": "133",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Pistache",
+    "kiloCaloriesPerHundredGrams": "608"
+  },
+  {
+    "id": "134",
+    "type": "legumes",
+    "name": "Poireau",
+    "kiloCaloriesPerHundredGrams": "24,6"
+  },
+  {
+    "id": "135",
+    "type": "legumineuses",
+    "name": "Pois casse",
+    "kiloCaloriesPerHundredGrams": "128"
+  },
+  {
+    "id": "136",
+    "type": "legumineuses",
+    "name": "Pois casse sec",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "137",
+    "type": "legumineuses",
+    "name": "Pois chiche",
+    "kiloCaloriesPerHundredGrams": "147"
+  },
+  {
+    "id": "138",
+    "type": "legumineuses",
+    "name": "Pois chiche sec",
+    "kiloCaloriesPerHundredGrams": "351"
+  },
+  {
+    "id": "139",
+    "type": "legumes",
+    "name": "Pois mange-tout ou pois gourmand",
+    "kiloCaloriesPerHundredGrams": "44,8"
+  },
+  {
+    "id": "140",
+    "type": "legumes",
+    "name": "Poivron jaune",
+    "kiloCaloriesPerHundredGrams": "29,4"
+  },
+  {
+    "id": "141",
+    "type": "legumes",
+    "name": "Poivron rouge",
+    "kiloCaloriesPerHundredGrams": "29,4"
+  },
+  {
+    "id": "142",
+    "type": "legumes",
+    "name": "Poivron vert",
+    "kiloCaloriesPerHundredGrams": "19,8"
+  },
+  {
+    "id": "143",
+    "type": "legumes",
+    "name": "Poivron vert  jaune ou rouge",
+    "kiloCaloriesPerHundredGrams": "26,8"
+  },
+  {
+    "id": "144",
+    "type": "fruits",
+    "name": "Pomelo (dit Pamplemousse)",
+    "kiloCaloriesPerHundredGrams": "36,6"
+  },
+  {
+    "id": "145",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Puree de pomme de terre a base de flocons",
+    "kiloCaloriesPerHundredGrams": "67,3"
+  },
+  {
+    "id": "146",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Puree de pomme de terre",
+    "kiloCaloriesPerHundredGrams": "88,9"
+  },
+  {
+    "id": "147",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Pomme de terre",
+    "kiloCaloriesPerHundredGrams": "91,9"
+  },
+  {
+    "id": "148",
+    "type": "fruits",
+    "name": "Pomme Golden",
+    "kiloCaloriesPerHundredGrams": "53,5"
+  },
+  {
+    "id": "149",
+    "type": "legumes",
+    "name": "Potimarron",
+    "kiloCaloriesPerHundredGrams": "18"
+  },
+  {
+    "id": "150",
+    "type": "legumes",
+    "name": "Potiron",
+    "kiloCaloriesPerHundredGrams": "25,9"
+  },
+  {
+    "id": "151",
+    "type": "legumes",
+    "name": "Radis noir",
+    "kiloCaloriesPerHundredGrams": "20,3"
+  },
+  {
+    "id": "152",
+    "type": "legumes",
+    "name": "Radis rouge",
+    "kiloCaloriesPerHundredGrams": "11,4"
+  },
+  {
+    "id": "153",
+    "type": "fruits",
+    "name": "Raisin blanc",
+    "kiloCaloriesPerHundredGrams": "73,4"
+  },
+  {
+    "id": "154",
+    "type": "fruits",
+    "name": "Raisin sec",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "155",
+    "type": "fruits",
+    "name": "Rhubarbe",
+    "kiloCaloriesPerHundredGrams": "21,7"
+  },
+  {
+    "id": "156",
+    "type": "legumes",
+    "name": "Roquettee",
+    "kiloCaloriesPerHundredGrams": "27,9"
+  },
+  {
+    "id": "157",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Rostis ou Galette de pomme de terre",
+    "kiloCaloriesPerHundredGrams": "183"
+  },
+  {
+    "id": "158",
+    "type": "legumes",
+    "name": "Rutabaga",
+    "kiloCaloriesPerHundredGrams": "26"
+  },
+  {
+    "id": "159",
+    "type": "legumes",
+    "name": "Salade",
+    "kiloCaloriesPerHundredGrams": "22,7"
+  },
+  {
+    "id": "160",
+    "type": "legumes",
+    "name": "Salade verte",
+    "kiloCaloriesPerHundredGrams": "13,5"
+  },
+  {
+    "id": "161",
+    "type": "legumes",
+    "name": "Salicorne",
+    "kiloCaloriesPerHundredGrams": "14,1"
+  },
+  {
+    "id": "162",
+    "type": "legumes",
+    "name": "Salsifis noir",
+    "kiloCaloriesPerHundredGrams": "83,1"
+  },
+  {
+    "id": "163",
+    "type": "legumes",
+    "name": "Scarole",
+    "kiloCaloriesPerHundredGrams": "14,5"
+  },
+  {
+    "id": "164",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Sesame",
+    "kiloCaloriesPerHundredGrams": "599"
+  },
+  {
+    "id": "165",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Soja",
+    "kiloCaloriesPerHundredGrams": "432"
+  },
+  {
+    "id": "166",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Tahin ou Puree de sesame",
+    "kiloCaloriesPerHundredGrams": "631"
+  },
+  {
+    "id": "167",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Tapioca ou Perles du Japon",
+    "kiloCaloriesPerHundredGrams": "354"
+  },
+  {
+    "id": "168",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Taro",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "169",
+    "type": "legumes",
+    "name": "Tetragone cornue",
+    "kiloCaloriesPerHundredGrams": "13,5"
+  },
+  {
+    "id": "170",
+    "type": "legumes",
+    "name": "Tomate cerisee",
+    "kiloCaloriesPerHundredGrams": "21,4"
+  },
+  {
+    "id": "171",
+    "type": "legumes",
+    "name": "Tomate vertee",
+    "kiloCaloriesPerHundredGrams": "24,8"
+  },
+  {
+    "id": "172",
+    "type": "legumes",
+    "name": "Tomate sechee",
+    "kiloCaloriesPerHundredGrams": "282"
+  },
+  {
+    "id": "173",
+    "type": "legumes",
+    "name": "Tomate",
+    "kiloCaloriesPerHundredGrams": "18,4"
+  },
+  {
+    "id": "174",
+    "type": "pommes de terre et autres tubercules",
+    "name": "Topinambour",
+    "kiloCaloriesPerHundredGrams": "81,9"
+  },
+  {
+    "id": "175",
+    "type": "fruits a coque et graines oleagineuses",
+    "name": "Graine de tournesol",
+    "kiloCaloriesPerHundredGrams": "653"
+  },
+  {
+    "id": "176",
+    "type": "pates, riz et cereales",
+    "name": "Amarante",
+    "kiloCaloriesPerHundredGrams": "369"
+  },
+  {
+    "id": "177",
+    "type": "farines et pates a tarte",
+    "name": "Amidon de mais ou fecule de mais",
+    "kiloCaloriesPerHundredGrams": "362"
+  },
+  {
+    "id": "178",
+    "type": "farines et pates a tarte",
+    "name": "Amidon de riz",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "179",
+    "type": "pates, riz et cereales",
+    "name": "Avoine",
+    "kiloCaloriesPerHundredGrams": "378"
+  },
+  {
+    "id": "180",
+    "type": "pains et viennoiseries",
+    "name": "Bagel",
+    "kiloCaloriesPerHundredGrams": "272"
+  },
+  {
+    "id": "181",
+    "type": "pains et viennoiseries",
+    "name": "Biscotte",
+    "kiloCaloriesPerHundredGrams": "417"
+  },
+  {
+    "id": "182",
+    "type": "pains et viennoiseries",
+    "name": "Biscotte complete ou riche en fibres",
+    "kiloCaloriesPerHundredGrams": "393"
+  },
+  {
+    "id": "183",
+    "type": "pates, riz et cereales",
+    "name": "Ble de Khorasan",
+    "kiloCaloriesPerHundredGrams": "342"
+  },
+  {
+    "id": "184",
+    "type": "pates, riz et cereales",
+    "name": "Ble dur entier",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "185",
+    "type": "pains et viennoiseries",
+    "name": "Blini",
+    "kiloCaloriesPerHundredGrams": "260"
+  },
+  {
+    "id": "186",
+    "type": "pates, riz et cereales",
+    "name": "Boulgour de ble",
+    "kiloCaloriesPerHundredGrams": "80,7"
+  },
+  {
+    "id": "187",
+    "type": "pains et viennoiseries",
+    "name": "Brioche",
+    "kiloCaloriesPerHundredGrams": "355"
+  },
+  {
+    "id": "188",
+    "type": "pains et viennoiseries",
+    "name": "Chapelure",
+    "kiloCaloriesPerHundredGrams": "374"
+  },
+  {
+    "id": "189",
+    "type": "pains et viennoiseries",
+    "name": "Chouquette",
+    "kiloCaloriesPerHundredGrams": "381"
+  },
+  {
+    "id": "190",
+    "type": "pates, riz et cereales",
+    "name": "Couscous (semoule de ble dur roulee precuite a la vapeur)  cuitee",
+    "kiloCaloriesPerHundredGrams": "165"
+  },
+  {
+    "id": "191",
+    "type": "pates, riz et cereales",
+    "name": "Couscous (semoule de ble dur roulee precuite a la vapeur)e",
+    "kiloCaloriesPerHundredGrams": "365"
+  },
+  {
+    "id": "192",
+    "type": "pains et viennoiseries",
+    "name": "Croissant",
+    "kiloCaloriesPerHundredGrams": "375"
+  },
+  {
+    "id": "193",
+    "type": "pains et viennoiseries",
+    "name": "Croutons",
+    "kiloCaloriesPerHundredGrams": "522"
+  },
+  {
+    "id": "194",
+    "type": "pates, riz et cereales",
+    "name": "epeautre",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "195",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment avec levure incorporee",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "196",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T110",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "197",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T150",
+    "kiloCaloriesPerHundredGrams": "338"
+  },
+  {
+    "id": "198",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T45 (pour patisserie)",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "199",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T55 (pour pains)",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "200",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T65",
+    "kiloCaloriesPerHundredGrams": "345"
+  },
+  {
+    "id": "201",
+    "type": "farines et pates a tarte",
+    "name": "Farine de ble tendre ou froment T80",
+    "kiloCaloriesPerHundredGrams": "355"
+  },
+  {
+    "id": "202",
+    "type": "farines et pates a tarte",
+    "name": "Farine de mais",
+    "kiloCaloriesPerHundredGrams": "361"
+  },
+  {
+    "id": "203",
+    "type": "farines et pates a tarte",
+    "name": "Farine de millet",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "204",
+    "type": "farines et pates a tarte",
+    "name": "Farine de pois chiche",
+    "kiloCaloriesPerHundredGrams": "359"
+  },
+  {
+    "id": "205",
+    "type": "farines et pates a tarte",
+    "name": "Farine de riz",
+    "kiloCaloriesPerHundredGrams": "357"
+  },
+  {
+    "id": "206",
+    "type": "farines et pates a tarte",
+    "name": "Farine de sarrasin",
+    "kiloCaloriesPerHundredGrams": "348"
+  },
+  {
+    "id": "207",
+    "type": "farines et pates a tarte",
+    "name": "Farine de seigle T130",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "208",
+    "type": "farines et pates a tarte",
+    "name": "Farine de seigle T170",
+    "kiloCaloriesPerHundredGrams": "315"
+  },
+  {
+    "id": "209",
+    "type": "farines et pates a tarte",
+    "name": "Farine de seigle T85",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "210",
+    "type": "farines et pates a tarte",
+    "name": "Farine de soja",
+    "kiloCaloriesPerHundredGrams": "460"
+  },
+  {
+    "id": "211",
+    "type": "farines et pates a tarte",
+    "name": "Farine d epeautre (grand epeautre)",
+    "kiloCaloriesPerHundredGrams": "352"
+  },
+  {
+    "id": "212",
+    "type": "farines et pates a tarte",
+    "name": "Farine d orge",
+    "kiloCaloriesPerHundredGrams": "339"
+  },
+  {
+    "id": "213",
+    "type": "farines et pates a tarte",
+    "name": "Fecule de pomme de terre",
+    "kiloCaloriesPerHundredGrams": "348"
+  },
+  {
+    "id": "214",
+    "type": "farines et pates a tarte",
+    "name": "Feuille de brick  cuite a sec sans matiere grasse",
+    "kiloCaloriesPerHundredGrams": "378"
+  },
+  {
+    "id": "215",
+    "type": "farines et pates a tarte",
+    "name": "Flocon d avoine",
+    "kiloCaloriesPerHundredGrams": "367"
+  },
+  {
+    "id": "216",
+    "type": "pates, riz et cereales",
+    "name": "Frik (ble dur immature concasse)",
+    "kiloCaloriesPerHundredGrams": "76"
+  },
+  {
+    "id": "217",
+    "type": "pains et viennoiseries",
+    "name": "Galette de riz souffle",
+    "kiloCaloriesPerHundredGrams": "385"
+  },
+  {
+    "id": "218",
+    "type": "pains et viennoiseries",
+    "name": "Galettes multicereales soufflees",
+    "kiloCaloriesPerHundredGrams": "394"
+  },
+  {
+    "id": "219",
+    "type": "pates, riz et cereales",
+    "name": "Gnocchi a la pomme de terre",
+    "kiloCaloriesPerHundredGrams": "176"
+  },
+  {
+    "id": "220",
+    "type": "pates, riz et cereales",
+    "name": "Gnocchi a la semoule",
+    "kiloCaloriesPerHundredGrams": "200"
+  },
+  {
+    "id": "221",
+    "type": "pates, riz et cereales",
+    "name": "Gnocchi a la semoule  cuit",
+    "kiloCaloriesPerHundredGrams": "185"
+  },
+  {
+    "id": "222",
+    "type": "pains et viennoiseries",
+    "name": "Gressins",
+    "kiloCaloriesPerHundredGrams": "433"
+  },
+  {
+    "id": "223",
+    "type": "farines et pates a tarte",
+    "name": "Khatfa feuille de brick",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "224",
+    "type": "pates, riz et cereales",
+    "name": "Mais entier",
+    "kiloCaloriesPerHundredGrams": "346"
+  },
+  {
+    "id": "225",
+    "type": "pates, riz et cereales",
+    "name": "Melange de cereales et legumineuses",
+    "kiloCaloriesPerHundredGrams": "354"
+  },
+  {
+    "id": "226",
+    "type": "pates, riz et cereales",
+    "name": "Mil  cuit",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "227",
+    "type": "pates, riz et cereales",
+    "name": "Nouilles asiatiques",
+    "kiloCaloriesPerHundredGrams": "371"
+  },
+  {
+    "id": "228",
+    "type": "pates, riz et cereales",
+    "name": "Orge entieree",
+    "kiloCaloriesPerHundredGrams": "334"
+  },
+  {
+    "id": "229",
+    "type": "pates, riz et cereales",
+    "name": "Orge perlee",
+    "kiloCaloriesPerHundredGrams": "346"
+  },
+  {
+    "id": "230",
+    "type": "pains et viennoiseries",
+    "name": "Pain au chocolat",
+    "kiloCaloriesPerHundredGrams": "428"
+  },
+  {
+    "id": "231",
+    "type": "pains et viennoiseries",
+    "name": "Pain au lait",
+    "kiloCaloriesPerHundredGrams": "354"
+  },
+  {
+    "id": "232",
+    "type": "pains et viennoiseries",
+    "name": "Pain au son",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "233",
+    "type": "pains et viennoiseries",
+    "name": "Pain aux raisins",
+    "kiloCaloriesPerHundredGrams": "333"
+  },
+  {
+    "id": "234",
+    "type": "pains et viennoiseries",
+    "name": "Pain blanc maison",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "235",
+    "type": "pains et viennoiseries",
+    "name": "Pain brioche ou viennois",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "236",
+    "type": "pains et viennoiseries",
+    "name": "Pain complet ou integral (a la farine T150)",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "237",
+    "type": "pains et viennoiseries",
+    "name": "Pain de campagne maison",
+    "kiloCaloriesPerHundredGrams": "240"
+  },
+  {
+    "id": "238",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie brioche",
+    "kiloCaloriesPerHundredGrams": "321"
+  },
+  {
+    "id": "239",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie au son",
+    "kiloCaloriesPerHundredGrams": "278"
+  },
+  {
+    "id": "240",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie complet",
+    "kiloCaloriesPerHundredGrams": "262"
+  },
+  {
+    "id": "241",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie courant",
+    "kiloCaloriesPerHundredGrams": "284"
+  },
+  {
+    "id": "242",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie multicereale",
+    "kiloCaloriesPerHundredGrams": "274"
+  },
+  {
+    "id": "243",
+    "type": "pains et viennoiseries",
+    "name": "Pain de mie sans croute",
+    "kiloCaloriesPerHundredGrams": "253"
+  },
+  {
+    "id": "244",
+    "type": "pains et viennoiseries",
+    "name": "Pain de seigle et froment",
+    "kiloCaloriesPerHundredGrams": "239"
+  },
+  {
+    "id": "245",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille brioche",
+    "kiloCaloriesPerHundredGrams": "419"
+  },
+  {
+    "id": "246",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille suedois au ble complet",
+    "kiloCaloriesPerHundredGrams": "398"
+  },
+  {
+    "id": "247",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille suedois au froment",
+    "kiloCaloriesPerHundredGrams": "402"
+  },
+  {
+    "id": "248",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille suedois aux fruits",
+    "kiloCaloriesPerHundredGrams": "401"
+  },
+  {
+    "id": "249",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille suedois aux graines de lin",
+    "kiloCaloriesPerHundredGrams": "396"
+  },
+  {
+    "id": "250",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille domestique",
+    "kiloCaloriesPerHundredGrams": "338"
+  },
+  {
+    "id": "251",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille au froment",
+    "kiloCaloriesPerHundredGrams": "403"
+  },
+  {
+    "id": "252",
+    "type": "pains et viennoiseries",
+    "name": "Pain grille multicereale",
+    "kiloCaloriesPerHundredGrams": "412"
+  },
+  {
+    "id": "253",
+    "type": "pains et viennoiseries",
+    "name": "Pain panini",
+    "kiloCaloriesPerHundredGrams": "272"
+  },
+  {
+    "id": "254",
+    "type": "pains et viennoiseries",
+    "name": "Pain pita",
+    "kiloCaloriesPerHundredGrams": "259"
+  },
+  {
+    "id": "255",
+    "type": "pains et viennoiseries",
+    "name": "Pain pour hamburger ou hot dog (bun) complet",
+    "kiloCaloriesPerHundredGrams": "285"
+  },
+  {
+    "id": "256",
+    "type": "pains et viennoiseries",
+    "name": "Pain pour hamburger ou hot dog (bun) preemballe",
+    "kiloCaloriesPerHundredGrams": "293"
+  },
+  {
+    "id": "257",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette",
+    "kiloCaloriesPerHundredGrams": "280"
+  },
+  {
+    "id": "258",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette ou boule au levain",
+    "kiloCaloriesPerHundredGrams": "261"
+  },
+  {
+    "id": "259",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette ou boule bio (a la farine T55 jusqu a T110)",
+    "kiloCaloriesPerHundredGrams": "249"
+  },
+  {
+    "id": "260",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette ou boule bis (a la farine T80 ou T110)",
+    "kiloCaloriesPerHundredGrams": "265"
+  },
+  {
+    "id": "261",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette ou boule de campagne",
+    "kiloCaloriesPerHundredGrams": "268"
+  },
+  {
+    "id": "262",
+    "type": "pains et viennoiseries",
+    "name": "Pain baguette",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "263",
+    "type": "pains et viennoiseries",
+    "name": "Pain sans gluten",
+    "kiloCaloriesPerHundredGrams": "261"
+  },
+  {
+    "id": "264",
+    "type": "farines et pates a tarte",
+    "name": "Pate a pizza",
+    "kiloCaloriesPerHundredGrams": "324"
+  },
+  {
+    "id": "265",
+    "type": "farines et pates a tarte",
+    "name": "Pate a pizza fine",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "266",
+    "type": "farines et pates a tarte",
+    "name": "Pate brisee",
+    "kiloCaloriesPerHundredGrams": "377"
+  },
+  {
+    "id": "267",
+    "type": "farines et pates a tarte",
+    "name": "Pate feuilletee pur beurre",
+    "kiloCaloriesPerHundredGrams": "520"
+  },
+  {
+    "id": "268",
+    "type": "farines et pates a tarte",
+    "name": "Pate feuilletee",
+    "kiloCaloriesPerHundredGrams": "531"
+  },
+  {
+    "id": "269",
+    "type": "farines et pates a tarte",
+    "name": "Pate phyllo ou Pate filoe",
+    "kiloCaloriesPerHundredGrams": "289"
+  },
+  {
+    "id": "270",
+    "type": "farines et pates a tarte",
+    "name": "Pate sablee",
+    "kiloCaloriesPerHundredGrams": "469"
+  },
+  {
+    "id": "271",
+    "type": "pates, riz et cereales",
+    "name": "Pates fraiches",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "272",
+    "type": "pates, riz et cereales",
+    "name": "Pates seches standardes",
+    "kiloCaloriesPerHundredGrams": "336"
+  },
+  {
+    "id": "273",
+    "type": "pates, riz et cereales",
+    "name": "Pates seches au ble complet",
+    "kiloCaloriesPerHundredGrams": "353"
+  },
+  {
+    "id": "274",
+    "type": "pates, riz et cereales",
+    "name": "Pates seches  sans glutenes",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "275",
+    "type": "pates, riz et cereales",
+    "name": "Polenta ou semoule de mais  precuite  seche",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "276",
+    "type": "farines et pates a tarte",
+    "name": "Preparation pour pate a pizza",
+    "kiloCaloriesPerHundredGrams": "381"
+  },
+  {
+    "id": "277",
+    "type": "pates, riz et cereales",
+    "name": "Quinoa",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "278",
+    "type": "pates, riz et cereales",
+    "name": "Riz blanc",
+    "kiloCaloriesPerHundredGrams": "352"
+  },
+  {
+    "id": "279",
+    "type": "pates, riz et cereales",
+    "name": "Riz complet",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "280",
+    "type": "pates, riz et cereales",
+    "name": "Riz rouge",
+    "kiloCaloriesPerHundredGrams": "352"
+  },
+  {
+    "id": "281",
+    "type": "pates, riz et cereales",
+    "name": "Riz sauvage",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "282",
+    "type": "pates, riz et cereales",
+    "name": "Riz thai ou basmati",
+    "kiloCaloriesPerHundredGrams": "353"
+  },
+  {
+    "id": "283",
+    "type": "pates, riz et cereales",
+    "name": "Riz  melange de varietes (blanc  complet  rouge  sauvage  etc.)",
+    "kiloCaloriesPerHundredGrams": "355"
+  },
+  {
+    "id": "284",
+    "type": "pates, riz et cereales",
+    "name": "Sarrasin entier",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "285",
+    "type": "pates, riz et cereales",
+    "name": "Seigle entier",
+    "kiloCaloriesPerHundredGrams": "334"
+  },
+  {
+    "id": "286",
+    "type": "pates, riz et cereales",
+    "name": "Semoule de ble dure",
+    "kiloCaloriesPerHundredGrams": "352"
+  },
+  {
+    "id": "287",
+    "type": "pates, riz et cereales",
+    "name": "Sorgho entier",
+    "kiloCaloriesPerHundredGrams": "349"
+  },
+  {
+    "id": "288",
+    "type": "pains et viennoiseries",
+    "name": "Tortilla souple (a garnir)  a base de ble",
+    "kiloCaloriesPerHundredGrams": "327"
+  },
+  {
+    "id": "289",
+    "type": "pains et viennoiseries",
+    "name": "Tortilla souple (a garnir)  a base de mais",
+    "kiloCaloriesPerHundredGrams": "309"
+  },
+  {
+    "id": "290",
+    "type": "pates, riz et cereales",
+    "name": "Vermicelle de riz  cuit",
+    "kiloCaloriesPerHundredGrams": "89,3"
+  },
+  {
+    "id": "291",
+    "type": "pates, riz et cereales",
+    "name": "Vermicelle de riz  seche",
+    "kiloCaloriesPerHundredGrams": "365"
+  },
+  {
+    "id": "292",
+    "type": "pates, riz et cereales",
+    "name": "Vermicelle de soja  cuit",
+    "kiloCaloriesPerHundredGrams": "61,2"
+  },
+  {
+    "id": "293",
+    "type": "pates, riz et cereales",
+    "name": "Vermicelle de soja  seche",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "294",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Accra de poisson",
+    "kiloCaloriesPerHundredGrams": "275"
+  },
+  {
+    "id": "295",
+    "type": "viandes crues",
+    "name": "Agneau  collier",
+    "kiloCaloriesPerHundredGrams": "195"
+  },
+  {
+    "id": "296",
+    "type": "viandes crues",
+    "name": "Agneau  cote filete",
+    "kiloCaloriesPerHundredGrams": "242"
+  },
+  {
+    "id": "297",
+    "type": "viandes crues",
+    "name": "Agneau  cote premieree",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "298",
+    "type": "viandes crues",
+    "name": "Agneau  cotelettee",
+    "kiloCaloriesPerHundredGrams": "368"
+  },
+  {
+    "id": "299",
+    "type": "viandes crues",
+    "name": "Agneau  epaule  maigre",
+    "kiloCaloriesPerHundredGrams": "139"
+  },
+  {
+    "id": "300",
+    "type": "viandes crues",
+    "name": "Agneau  epaulee",
+    "kiloCaloriesPerHundredGrams": "204"
+  },
+  {
+    "id": "301",
+    "type": "viandes crues",
+    "name": "Agneau  gigot",
+    "kiloCaloriesPerHundredGrams": "128"
+  },
+  {
+    "id": "302",
+    "type": "viandes crues",
+    "name": "Agneau  selle",
+    "kiloCaloriesPerHundredGrams": "236"
+  },
+  {
+    "id": "303",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Anchois au sel (anchoite  semi-conserve)",
+    "kiloCaloriesPerHundredGrams": "128"
+  },
+  {
+    "id": "304",
+    "type": "poissons crus",
+    "name": "Anchois commun",
+    "kiloCaloriesPerHundredGrams": "129"
+  },
+  {
+    "id": "305",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Anchois  filets a l huile",
+    "kiloCaloriesPerHundredGrams": "182"
+  },
+  {
+    "id": "306",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Anchois  filets roules aux capres",
+    "kiloCaloriesPerHundredGrams": "198"
+  },
+  {
+    "id": "307",
+    "type": "charcuteries",
+    "name": "Andouille",
+    "kiloCaloriesPerHundredGrams": "211"
+  },
+  {
+    "id": "308",
+    "type": "charcuteries",
+    "name": "Andouille de Guemene",
+    "kiloCaloriesPerHundredGrams": "234"
+  },
+  {
+    "id": "309",
+    "type": "charcuteries",
+    "name": "Andouille de Vire",
+    "kiloCaloriesPerHundredGrams": "238"
+  },
+  {
+    "id": "310",
+    "type": "charcuteries",
+    "name": "Andouillette de Troyese",
+    "kiloCaloriesPerHundredGrams": "254"
+  },
+  {
+    "id": "311",
+    "type": "charcuteries",
+    "name": "Andouillettee",
+    "kiloCaloriesPerHundredGrams": "227"
+  },
+  {
+    "id": "312",
+    "type": "poissons crus",
+    "name": "Anguillee",
+    "kiloCaloriesPerHundredGrams": "232"
+  },
+  {
+    "id": "313",
+    "type": "viandes crues",
+    "name": "Autruche  viande crue",
+    "kiloCaloriesPerHundredGrams": "159"
+  },
+  {
+    "id": "314",
+    "type": "poissons crus",
+    "name": "Bar commun ou loup",
+    "kiloCaloriesPerHundredGrams": "124"
+  },
+  {
+    "id": "315",
+    "type": "poissons crus",
+    "name": "Bar raye ou bar d Amerique",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "316",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Beignet de crevette",
+    "kiloCaloriesPerHundredGrams": "222"
+  },
+  {
+    "id": "317",
+    "type": "viandes crues",
+    "name": "Boeuf  a bourguignon ou pot-au-feu",
+    "kiloCaloriesPerHundredGrams": "164"
+  },
+  {
+    "id": "318",
+    "type": "viandes crues",
+    "name": "Boeuf  bavette d aloyau",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "319",
+    "type": "viandes crues",
+    "name": "Boeuf  boule de macreuse",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "320",
+    "type": "viandes crues",
+    "name": "Boeuf  cote",
+    "kiloCaloriesPerHundredGrams": "147"
+  },
+  {
+    "id": "321",
+    "type": "viandes crues",
+    "name": "Boeuf  entre-cote",
+    "kiloCaloriesPerHundredGrams": "231"
+  },
+  {
+    "id": "322",
+    "type": "viandes crues",
+    "name": "Boeuf  epaule",
+    "kiloCaloriesPerHundredGrams": "168"
+  },
+  {
+    "id": "323",
+    "type": "viandes crues",
+    "name": "Boeuf  faux-filet",
+    "kiloCaloriesPerHundredGrams": "152"
+  },
+  {
+    "id": "324",
+    "type": "viandes crues",
+    "name": "Boeuf  gite a la noix",
+    "kiloCaloriesPerHundredGrams": "148"
+  },
+  {
+    "id": "325",
+    "type": "viandes crues",
+    "name": "Boeuf  hampe",
+    "kiloCaloriesPerHundredGrams": "154"
+  },
+  {
+    "id": "326",
+    "type": "viandes crues",
+    "name": "Boeuf  jarret",
+    "kiloCaloriesPerHundredGrams": "122"
+  },
+  {
+    "id": "327",
+    "type": "viandes crues",
+    "name": "Boeuf  joue",
+    "kiloCaloriesPerHundredGrams": "136"
+  },
+  {
+    "id": "328",
+    "type": "viandes crues",
+    "name": "Boeuf  onglet",
+    "kiloCaloriesPerHundredGrams": "139"
+  },
+  {
+    "id": "329",
+    "type": "viandes crues",
+    "name": "Boeuf  paleron",
+    "kiloCaloriesPerHundredGrams": "144"
+  },
+  {
+    "id": "330",
+    "type": "viandes crues",
+    "name": "Boeuf  plat de cotes",
+    "kiloCaloriesPerHundredGrams": "287"
+  },
+  {
+    "id": "331",
+    "type": "viandes crues",
+    "name": "Boeuf  rumsteck",
+    "kiloCaloriesPerHundredGrams": "114"
+  },
+  {
+    "id": "332",
+    "type": "viandes crues",
+    "name": "Bœuf  steak hache 10% MG",
+    "kiloCaloriesPerHundredGrams": "171"
+  },
+  {
+    "id": "333",
+    "type": "viandes crues",
+    "name": "Bœuf  steak hache 15% MG",
+    "kiloCaloriesPerHundredGrams": "209"
+  },
+  {
+    "id": "334",
+    "type": "viandes crues",
+    "name": "Bœuf  steak hache 20% MG",
+    "kiloCaloriesPerHundredGrams": "249"
+  },
+  {
+    "id": "335",
+    "type": "viandes crues",
+    "name": "Bœuf  steak hache 5% MG",
+    "kiloCaloriesPerHundredGrams": "130"
+  },
+  {
+    "id": "336",
+    "type": "viandes crues",
+    "name": "Boeuf  steak ou bifteck",
+    "kiloCaloriesPerHundredGrams": "223"
+  },
+  {
+    "id": "337",
+    "type": "viandes crues",
+    "name": "Boeuf  tende de tranche",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "338",
+    "type": "poissons crus",
+    "name": "Boguee",
+    "kiloCaloriesPerHundredGrams": "90"
+  },
+  {
+    "id": "339",
+    "type": "poissons crus",
+    "name": "Bonitee",
+    "kiloCaloriesPerHundredGrams": "161"
+  },
+  {
+    "id": "340",
+    "type": "charcuteries",
+    "name": "Boudin blanc truffe",
+    "kiloCaloriesPerHundredGrams": "244"
+  },
+  {
+    "id": "341",
+    "type": "charcuteries",
+    "name": "Boudin noir",
+    "kiloCaloriesPerHundredGrams": "297"
+  },
+  {
+    "id": "342",
+    "type": "poissons crus",
+    "name": "Breme",
+    "kiloCaloriesPerHundredGrams": "104"
+  },
+  {
+    "id": "343",
+    "type": "charcuteries",
+    "name": "Bresaola",
+    "kiloCaloriesPerHundredGrams": "175"
+  },
+  {
+    "id": "344",
+    "type": "poissons crus",
+    "name": "Brochet",
+    "kiloCaloriesPerHundredGrams": "83,7"
+  },
+  {
+    "id": "345",
+    "type": "mollusques et crustaces crus",
+    "name": "Bulot ou Buccin",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "346",
+    "type": "poissons crus",
+    "name": "Cabillaud",
+    "kiloCaloriesPerHundredGrams": "77,6"
+  },
+  {
+    "id": "347",
+    "type": "viandes crues",
+    "name": "Caille",
+    "kiloCaloriesPerHundredGrams": "136"
+  },
+  {
+    "id": "348",
+    "type": "mollusques et crustaces crus",
+    "name": "Calmar ou calamar ou encornet",
+    "kiloCaloriesPerHundredGrams": "77"
+  },
+  {
+    "id": "349",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Calmar ou Calamar ou encornet  a la romaine (beignet)",
+    "kiloCaloriesPerHundredGrams": "252"
+  },
+  {
+    "id": "350",
+    "type": "viandes crues",
+    "name": "Canard  cuisse avec peau",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "351",
+    "type": "viandes crues",
+    "name": "Canard  magret",
+    "kiloCaloriesPerHundredGrams": "340"
+  },
+  {
+    "id": "352",
+    "type": "charcuteries",
+    "name": "Canard  magret fume",
+    "kiloCaloriesPerHundredGrams": "364"
+  },
+  {
+    "id": "353",
+    "type": "viandes crues",
+    "name": "Canard  viande et peau",
+    "kiloCaloriesPerHundredGrams": "284"
+  },
+  {
+    "id": "354",
+    "type": "viandes crues",
+    "name": "Canard  viande",
+    "kiloCaloriesPerHundredGrams": "126"
+  },
+  {
+    "id": "355",
+    "type": "poissons crus",
+    "name": "Capelan",
+    "kiloCaloriesPerHundredGrams": "90"
+  },
+  {
+    "id": "356",
+    "type": "poissons crus",
+    "name": "Carangue",
+    "kiloCaloriesPerHundredGrams": "104"
+  },
+  {
+    "id": "357",
+    "type": "poissons crus",
+    "name": "Cardine franche",
+    "kiloCaloriesPerHundredGrams": "93,4"
+  },
+  {
+    "id": "358",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Carpaccio de saumon avec marinade",
+    "kiloCaloriesPerHundredGrams": "217"
+  },
+  {
+    "id": "359",
+    "type": "poissons crus",
+    "name": "Carpe",
+    "kiloCaloriesPerHundredGrams": "114"
+  },
+  {
+    "id": "360",
+    "type": "poissons crus",
+    "name": "Carrelet ou plie",
+    "kiloCaloriesPerHundredGrams": "80,9"
+  },
+  {
+    "id": "361",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Caviar",
+    "kiloCaloriesPerHundredGrams": "254"
+  },
+  {
+    "id": "362",
+    "type": "viandes crues",
+    "name": "Cerf",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "363",
+    "type": "charcuteries",
+    "name": "Cervelas",
+    "kiloCaloriesPerHundredGrams": "278"
+  },
+  {
+    "id": "364",
+    "type": "charcuteries",
+    "name": "Cervelas a l ail  pur porc",
+    "kiloCaloriesPerHundredGrams": "297"
+  },
+  {
+    "id": "365",
+    "type": "charcuteries",
+    "name": "Cervelas obernois",
+    "kiloCaloriesPerHundredGrams": "305"
+  },
+  {
+    "id": "366",
+    "type": "viandes crues",
+    "name": "Cervelle  agneaue",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "367",
+    "type": "viandes crues",
+    "name": "Cervelle  porc",
+    "kiloCaloriesPerHundredGrams": "128"
+  },
+  {
+    "id": "368",
+    "type": "viandes crues",
+    "name": "Cervelle  veau",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "369",
+    "type": "charcuteries",
+    "name": "Chair a saucisse",
+    "kiloCaloriesPerHundredGrams": "323"
+  },
+  {
+    "id": "370",
+    "type": "viandes crues",
+    "name": "Chapon",
+    "kiloCaloriesPerHundredGrams": "183"
+  },
+  {
+    "id": "371",
+    "type": "viandes crues",
+    "name": "Cheval  entre-cote",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "372",
+    "type": "viandes crues",
+    "name": "Cheval  faux-filet",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "373",
+    "type": "viandes crues",
+    "name": "Cheval  steak",
+    "kiloCaloriesPerHundredGrams": "129"
+  },
+  {
+    "id": "374",
+    "type": "viandes crues",
+    "name": "Cheval  tende de tranche",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "375",
+    "type": "viandes crues",
+    "name": "Cheval  viande",
+    "kiloCaloriesPerHundredGrams": "167"
+  },
+  {
+    "id": "376",
+    "type": "viandes crues",
+    "name": "Chevreau",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "377",
+    "type": "viandes crues",
+    "name": "Chevreuil",
+    "kiloCaloriesPerHundredGrams": "110"
+  },
+  {
+    "id": "378",
+    "type": "poissons crus",
+    "name": "Chinchard",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "379",
+    "type": "poissons crus",
+    "name": "Chinchard gras",
+    "kiloCaloriesPerHundredGrams": "147"
+  },
+  {
+    "id": "380",
+    "type": "poissons crus",
+    "name": "Chinchard maigre",
+    "kiloCaloriesPerHundredGrams": "96,7"
+  },
+  {
+    "id": "381",
+    "type": "charcuteries",
+    "name": "Chipolata",
+    "kiloCaloriesPerHundredGrams": "307"
+  },
+  {
+    "id": "382",
+    "type": "charcuteries",
+    "name": "Chorizo",
+    "kiloCaloriesPerHundredGrams": "425"
+  },
+  {
+    "id": "383",
+    "type": "charcuteries",
+    "name": "Chorizo superieur  doux ou fort  type charcuterie en tranches",
+    "kiloCaloriesPerHundredGrams": "313"
+  },
+  {
+    "id": "384",
+    "type": "charcuteries",
+    "name": "Chorizo superieur  doux ou fort  type saucisse seche",
+    "kiloCaloriesPerHundredGrams": "466"
+  },
+  {
+    "id": "385",
+    "type": "mollusques et crustaces crus",
+    "name": "Clam  Praire ou Palourde",
+    "kiloCaloriesPerHundredGrams": "80,5"
+  },
+  {
+    "id": "386",
+    "type": "viandes crues",
+    "name": "Coeur  agneau",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "387",
+    "type": "viandes crues",
+    "name": "Coeur  boeuf",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "388",
+    "type": "viandes crues",
+    "name": "Coeur  dinde",
+    "kiloCaloriesPerHundredGrams": "135"
+  },
+  {
+    "id": "389",
+    "type": "viandes crues",
+    "name": "Coeur  porc",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "390",
+    "type": "viandes crues",
+    "name": "Coeur  poulet",
+    "kiloCaloriesPerHundredGrams": "149"
+  },
+  {
+    "id": "391",
+    "type": "viandes crues",
+    "name": "Coeur  veau",
+    "kiloCaloriesPerHundredGrams": "105"
+  },
+  {
+    "id": "392",
+    "type": "charcuteries",
+    "name": "Confit de canard",
+    "kiloCaloriesPerHundredGrams": "286"
+  },
+  {
+    "id": "393",
+    "type": "charcuteries",
+    "name": "Confit de foie de porc",
+    "kiloCaloriesPerHundredGrams": "346"
+  },
+  {
+    "id": "394",
+    "type": "charcuteries",
+    "name": "Confit de foie de volaille",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "395",
+    "type": "poissons crus",
+    "name": "Congre",
+    "kiloCaloriesPerHundredGrams": "115"
+  },
+  {
+    "id": "396",
+    "type": "charcuteries",
+    "name": "Coppa",
+    "kiloCaloriesPerHundredGrams": "284"
+  },
+  {
+    "id": "397",
+    "type": "mollusques et crustaces cuits",
+    "name": "Coquille Saint-Jacques  noix et corail",
+    "kiloCaloriesPerHundredGrams": "110"
+  },
+  {
+    "id": "398",
+    "type": "poissons crus",
+    "name": "Corb",
+    "kiloCaloriesPerHundredGrams": "87,2"
+  },
+  {
+    "id": "399",
+    "type": "poissons crus",
+    "name": "Coregone lavaret",
+    "kiloCaloriesPerHundredGrams": "115"
+  },
+  {
+    "id": "400",
+    "type": "poissons crus",
+    "name": "Coulirou",
+    "kiloCaloriesPerHundredGrams": "70,9"
+  },
+  {
+    "id": "401",
+    "type": "mollusques et crustaces crus",
+    "name": "Crabe",
+    "kiloCaloriesPerHundredGrams": "104"
+  },
+  {
+    "id": "402",
+    "type": "mollusques et crustaces crus",
+    "name": "Crevette rose",
+    "kiloCaloriesPerHundredGrams": "92,3"
+  },
+  {
+    "id": "403",
+    "type": "mollusques et crustaces crus",
+    "name": "Crevette",
+    "kiloCaloriesPerHundredGrams": "99"
+  },
+  {
+    "id": "404",
+    "type": "poissons crus",
+    "name": "Dente",
+    "kiloCaloriesPerHundredGrams": "99,3"
+  },
+  {
+    "id": "405",
+    "type": "viandes crues",
+    "name": "Dinde  aile",
+    "kiloCaloriesPerHundredGrams": "192"
+  },
+  {
+    "id": "406",
+    "type": "viandes crues",
+    "name": "Dinde  cuisse  viande et peau",
+    "kiloCaloriesPerHundredGrams": "150"
+  },
+  {
+    "id": "407",
+    "type": "viandes crues",
+    "name": "Dinde  cuisse  viande sans peau",
+    "kiloCaloriesPerHundredGrams": "109"
+  },
+  {
+    "id": "408",
+    "type": "viandes crues",
+    "name": "Dinde  escalope",
+    "kiloCaloriesPerHundredGrams": "109"
+  },
+  {
+    "id": "409",
+    "type": "viandes crues",
+    "name": "Dinde  viande et peau",
+    "kiloCaloriesPerHundredGrams": "132"
+  },
+  {
+    "id": "410",
+    "type": "viandes crues",
+    "name": "Dinde",
+    "kiloCaloriesPerHundredGrams": "110"
+  },
+  {
+    "id": "411",
+    "type": "charcuteries",
+    "name": "Diot",
+    "kiloCaloriesPerHundredGrams": "342"
+  },
+  {
+    "id": "412",
+    "type": "poissons crus",
+    "name": "Dorade grise  ou daurade grise  ou griset",
+    "kiloCaloriesPerHundredGrams": "130"
+  },
+  {
+    "id": "413",
+    "type": "poissons crus",
+    "name": "Dorade rose  ou daurade rose",
+    "kiloCaloriesPerHundredGrams": "102"
+  },
+  {
+    "id": "414",
+    "type": "poissons crus",
+    "name": "Dorade royale ou daurade ou vraie daurade",
+    "kiloCaloriesPerHundredGrams": "129"
+  },
+  {
+    "id": "415",
+    "type": "mollusques et crustaces crus",
+    "name": "ecrevisse",
+    "kiloCaloriesPerHundredGrams": "68,3"
+  },
+  {
+    "id": "416",
+    "type": "poissons crus",
+    "name": "eglefin",
+    "kiloCaloriesPerHundredGrams": "72,3"
+  },
+  {
+    "id": "417",
+    "type": "poissons crus",
+    "name": "Empereur",
+    "kiloCaloriesPerHundredGrams": "73,5"
+  },
+  {
+    "id": "418",
+    "type": "charcuteries",
+    "name": "epaule de porc",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "419",
+    "type": "poissons crus",
+    "name": "eperlan",
+    "kiloCaloriesPerHundredGrams": "85,4"
+  },
+  {
+    "id": "420",
+    "type": "mollusques et crustaces crus",
+    "name": "Escargot",
+    "kiloCaloriesPerHundredGrams": "77,9"
+  },
+  {
+    "id": "421",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Escargot en sauce au beurre persille",
+    "kiloCaloriesPerHundredGrams": "277"
+  },
+  {
+    "id": "422",
+    "type": "poissons cuits",
+    "name": "Espadon",
+    "kiloCaloriesPerHundredGrams": "266"
+  },
+  {
+    "id": "423",
+    "type": "poissons crus",
+    "name": "Esturgeon",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "424",
+    "type": "viandes crues",
+    "name": "Faisan  viande",
+    "kiloCaloriesPerHundredGrams": "127"
+  },
+  {
+    "id": "425",
+    "type": "viandes crues",
+    "name": "Faisan  viande et peau",
+    "kiloCaloriesPerHundredGrams": "164"
+  },
+  {
+    "id": "426",
+    "type": "charcuteries",
+    "name": "Filet de bacon",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "427",
+    "type": "poissons crus",
+    "name": "Fletan de l Atlantique ou fletan blanc",
+    "kiloCaloriesPerHundredGrams": "96,5"
+  },
+  {
+    "id": "428",
+    "type": "poissons crus",
+    "name": "Fletan du Groenland ou fletan noir ou fletan commun",
+    "kiloCaloriesPerHundredGrams": "168"
+  },
+  {
+    "id": "429",
+    "type": "poissons crus",
+    "name": "Foie de morue",
+    "kiloCaloriesPerHundredGrams": "619"
+  },
+  {
+    "id": "430",
+    "type": "charcuteries",
+    "name": "Foie gras de canard",
+    "kiloCaloriesPerHundredGrams": "600"
+  },
+  {
+    "id": "431",
+    "type": "viandes crues",
+    "name": "Foie  agneau",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "432",
+    "type": "viandes crues",
+    "name": "Foie  canard",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "433",
+    "type": "viandes crues",
+    "name": "Foie  dinde",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "434",
+    "type": "viandes crues",
+    "name": "Foie  genisse",
+    "kiloCaloriesPerHundredGrams": "136"
+  },
+  {
+    "id": "435",
+    "type": "viandes crues",
+    "name": "Foie  lapin",
+    "kiloCaloriesPerHundredGrams": "134"
+  },
+  {
+    "id": "436",
+    "type": "viandes crues",
+    "name": "Foie  oie",
+    "kiloCaloriesPerHundredGrams": "129"
+  },
+  {
+    "id": "437",
+    "type": "viandes crues",
+    "name": "Foie  porc",
+    "kiloCaloriesPerHundredGrams": "124"
+  },
+  {
+    "id": "438",
+    "type": "viandes crues",
+    "name": "Foie  poulet",
+    "kiloCaloriesPerHundredGrams": "120"
+  },
+  {
+    "id": "439",
+    "type": "viandes crues",
+    "name": "Foie  veau",
+    "kiloCaloriesPerHundredGrams": "120"
+  },
+  {
+    "id": "440",
+    "type": "viandes crues",
+    "name": "Foie  volaille",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "441",
+    "type": "charcuteries",
+    "name": "Fromage de tete",
+    "kiloCaloriesPerHundredGrams": "186"
+  },
+  {
+    "id": "442",
+    "type": "viandes crues",
+    "name": "Gesier  poulet",
+    "kiloCaloriesPerHundredGrams": "104"
+  },
+  {
+    "id": "443",
+    "type": "poissons crus",
+    "name": "Grand sebaste  ou dorade sebaste  ou daurade sebaste",
+    "kiloCaloriesPerHundredGrams": "90,1"
+  },
+  {
+    "id": "444",
+    "type": "poissons crus",
+    "name": "Grenadier (de roche)",
+    "kiloCaloriesPerHundredGrams": "68,9"
+  },
+  {
+    "id": "445",
+    "type": "poissons crus",
+    "name": "Grenadier bleu ou hoki de Nouvelle-Zelande",
+    "kiloCaloriesPerHundredGrams": "75,5"
+  },
+  {
+    "id": "446",
+    "type": "mollusques et crustaces crus",
+    "name": "Grenouille  cuisse",
+    "kiloCaloriesPerHundredGrams": "70"
+  },
+  {
+    "id": "447",
+    "type": "poissons crus",
+    "name": "Grondin",
+    "kiloCaloriesPerHundredGrams": "94"
+  },
+  {
+    "id": "448",
+    "type": "poissons crus",
+    "name": "Grondin perlon",
+    "kiloCaloriesPerHundredGrams": "97,4"
+  },
+  {
+    "id": "449",
+    "type": "charcuteries",
+    "name": "Hache de volaille",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "450",
+    "type": "poissons cuits",
+    "name": "Haddock (fume) ou eglefin fume",
+    "kiloCaloriesPerHundredGrams": "100"
+  },
+  {
+    "id": "451",
+    "type": "poissons crus",
+    "name": "Hareng",
+    "kiloCaloriesPerHundredGrams": "176"
+  },
+  {
+    "id": "452",
+    "type": "poissons cuits",
+    "name": "Hareng fume",
+    "kiloCaloriesPerHundredGrams": "173"
+  },
+  {
+    "id": "453",
+    "type": "poissons crus",
+    "name": "Hareng gras",
+    "kiloCaloriesPerHundredGrams": "172"
+  },
+  {
+    "id": "454",
+    "type": "poissons crus",
+    "name": "Hareng maigre",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "455",
+    "type": "poissons crus",
+    "name": "Hoki",
+    "kiloCaloriesPerHundredGrams": "92,3"
+  },
+  {
+    "id": "456",
+    "type": "mollusques et crustaces cuits",
+    "name": "Homard",
+    "kiloCaloriesPerHundredGrams": "90,9"
+  },
+  {
+    "id": "457",
+    "type": "mollusques et crustaces crus",
+    "name": "Huitre creuse",
+    "kiloCaloriesPerHundredGrams": "67,2"
+  },
+  {
+    "id": "458",
+    "type": "mollusques et crustaces crus",
+    "name": "Huitre platee",
+    "kiloCaloriesPerHundredGrams": "53,5"
+  },
+  {
+    "id": "459",
+    "type": "charcuteries",
+    "name": "Jambon a l os braise",
+    "kiloCaloriesPerHundredGrams": "238"
+  },
+  {
+    "id": "460",
+    "type": "charcuteries",
+    "name": "Jambon cru",
+    "kiloCaloriesPerHundredGrams": "225"
+  },
+  {
+    "id": "461",
+    "type": "charcuteries",
+    "name": "Jambon cru fume",
+    "kiloCaloriesPerHundredGrams": "246"
+  },
+  {
+    "id": "462",
+    "type": "charcuteries",
+    "name": "Jambon cuit",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "463",
+    "type": "charcuteries",
+    "name": "Jambon cuit fume",
+    "kiloCaloriesPerHundredGrams": "135"
+  },
+  {
+    "id": "464",
+    "type": "charcuteries",
+    "name": "Jambon de Bayonne",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "465",
+    "type": "charcuteries",
+    "name": "Jambon de dinde ou Blanc de dinde en tranche",
+    "kiloCaloriesPerHundredGrams": "104"
+  },
+  {
+    "id": "466",
+    "type": "charcuteries",
+    "name": "Jambon de porc a cuire ou Jambon a rotir/cuire au four",
+    "kiloCaloriesPerHundredGrams": "161"
+  },
+  {
+    "id": "467",
+    "type": "charcuteries",
+    "name": "Jambon de poulet ou Blanc de poulet en tranche",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "468",
+    "type": "charcuteries",
+    "name": "Jambon en croute",
+    "kiloCaloriesPerHundredGrams": "220"
+  },
+  {
+    "id": "469",
+    "type": "charcuteries",
+    "name": "Jambon persille en gelee",
+    "kiloCaloriesPerHundredGrams": "152"
+  },
+  {
+    "id": "470",
+    "type": "charcuteries",
+    "name": "Jambon sec",
+    "kiloCaloriesPerHundredGrams": "230"
+  },
+  {
+    "id": "471",
+    "type": "charcuteries",
+    "name": "Jambon sec de Parme",
+    "kiloCaloriesPerHundredGrams": "248"
+  },
+  {
+    "id": "472",
+    "type": "charcuteries",
+    "name": "Jambon sec Serrano",
+    "kiloCaloriesPerHundredGrams": "235"
+  },
+  {
+    "id": "473",
+    "type": "charcuteries",
+    "name": "Jambonneau",
+    "kiloCaloriesPerHundredGrams": "162"
+  },
+  {
+    "id": "474",
+    "type": "poissons crus",
+    "name": "Joels (petits poissons entiers) pour fritures",
+    "kiloCaloriesPerHundredGrams": "88,9"
+  },
+  {
+    "id": "475",
+    "type": "poissons cuits",
+    "name": "Julienne ou Lingue",
+    "kiloCaloriesPerHundredGrams": "105"
+  },
+  {
+    "id": "476",
+    "type": "mollusques et crustaces cuits",
+    "name": "Langouste",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "477",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Langoustine (a paner / frire)",
+    "kiloCaloriesPerHundredGrams": "288"
+  },
+  {
+    "id": "478",
+    "type": "mollusques et crustaces crus",
+    "name": "Langoustine",
+    "kiloCaloriesPerHundredGrams": "89,8"
+  },
+  {
+    "id": "479",
+    "type": "viandes crues",
+    "name": "Langue  bœuf",
+    "kiloCaloriesPerHundredGrams": "195"
+  },
+  {
+    "id": "480",
+    "type": "viandes crues",
+    "name": "Langue  porc",
+    "kiloCaloriesPerHundredGrams": "189"
+  },
+  {
+    "id": "481",
+    "type": "viandes crues",
+    "name": "Langue  veau",
+    "kiloCaloriesPerHundredGrams": "153"
+  },
+  {
+    "id": "482",
+    "type": "viandes crues",
+    "name": "Lapin de garenne",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "483",
+    "type": "viandes crues",
+    "name": "Lapin",
+    "kiloCaloriesPerHundredGrams": "189"
+  },
+  {
+    "id": "484",
+    "type": "charcuteries",
+    "name": "Lardon fume",
+    "kiloCaloriesPerHundredGrams": "272"
+  },
+  {
+    "id": "485",
+    "type": "charcuteries",
+    "name": "Lardon nature",
+    "kiloCaloriesPerHundredGrams": "324"
+  },
+  {
+    "id": "486",
+    "type": "poissons crus",
+    "name": "Lavaret",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "487",
+    "type": "poissons crus",
+    "name": "Lieu jaune ou colin",
+    "kiloCaloriesPerHundredGrams": "75,5"
+  },
+  {
+    "id": "488",
+    "type": "poissons cuits",
+    "name": "Lieu noir",
+    "kiloCaloriesPerHundredGrams": "99,7"
+  },
+  {
+    "id": "489",
+    "type": "poissons crus",
+    "name": "Lieu ou colin d Alaska",
+    "kiloCaloriesPerHundredGrams": "70,8"
+  },
+  {
+    "id": "490",
+    "type": "poissons cuits",
+    "name": "Lieu ou colin d Alaska  fume",
+    "kiloCaloriesPerHundredGrams": "81,3"
+  },
+  {
+    "id": "491",
+    "type": "viandes crues",
+    "name": "Lievre",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "492",
+    "type": "poissons crus",
+    "name": "Limande",
+    "kiloCaloriesPerHundredGrams": "80,8"
+  },
+  {
+    "id": "493",
+    "type": "poissons cuits",
+    "name": "Limande-sole",
+    "kiloCaloriesPerHundredGrams": "90,1"
+  },
+  {
+    "id": "494",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Limande-sole (a paner / frire)",
+    "kiloCaloriesPerHundredGrams": "206"
+  },
+  {
+    "id": "495",
+    "type": "poissons crus",
+    "name": "Lingue bleue ou Lingue",
+    "kiloCaloriesPerHundredGrams": "79,6"
+  },
+  {
+    "id": "496",
+    "type": "poissons crus",
+    "name": "Lompe",
+    "kiloCaloriesPerHundredGrams": "168"
+  },
+  {
+    "id": "497",
+    "type": "poissons crus",
+    "name": "Lotte de riviere",
+    "kiloCaloriesPerHundredGrams": "77"
+  },
+  {
+    "id": "498",
+    "type": "poissons crus",
+    "name": "Lotte ou baudroie",
+    "kiloCaloriesPerHundredGrams": "67,2"
+  },
+  {
+    "id": "499",
+    "type": "poissons crus",
+    "name": "Loup tachete",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "500",
+    "type": "poissons crus",
+    "name": "Maquereau",
+    "kiloCaloriesPerHundredGrams": "194"
+  },
+  {
+    "id": "501",
+    "type": "poissons crus",
+    "name": "Maquereau espagnol ou maquereau blanc ou billard",
+    "kiloCaloriesPerHundredGrams": "135"
+  },
+  {
+    "id": "502",
+    "type": "poissons cuits",
+    "name": "Maquereau  frit",
+    "kiloCaloriesPerHundredGrams": "186"
+  },
+  {
+    "id": "503",
+    "type": "poissons cuits",
+    "name": "Maquereau  fume",
+    "kiloCaloriesPerHundredGrams": "298"
+  },
+  {
+    "id": "504",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Maquereau  marine",
+    "kiloCaloriesPerHundredGrams": "185"
+  },
+  {
+    "id": "505",
+    "type": "poissons cuits",
+    "name": "Maquereau  roti/cuit au four",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "506",
+    "type": "charcuteries",
+    "name": "Merguez  boeuf et mouton  cuite",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "507",
+    "type": "charcuteries",
+    "name": "Merguez  boeuf et mouton",
+    "kiloCaloriesPerHundredGrams": "315"
+  },
+  {
+    "id": "508",
+    "type": "charcuteries",
+    "name": "Merguez  bœuf  mouton et porc",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "509",
+    "type": "charcuteries",
+    "name": "Merguez  porc et bœuf",
+    "kiloCaloriesPerHundredGrams": "415"
+  },
+  {
+    "id": "510",
+    "type": "charcuteries",
+    "name": "Merguez  pur bœuf",
+    "kiloCaloriesPerHundredGrams": "436"
+  },
+  {
+    "id": "511",
+    "type": "charcuteries",
+    "name": "Merguez",
+    "kiloCaloriesPerHundredGrams": "316"
+  },
+  {
+    "id": "512",
+    "type": "poissons crus",
+    "name": "Merlan",
+    "kiloCaloriesPerHundredGrams": "79,3"
+  },
+  {
+    "id": "513",
+    "type": "poissons cuits",
+    "name": "Merlan  cuit a la vapeur",
+    "kiloCaloriesPerHundredGrams": "98,3"
+  },
+  {
+    "id": "514",
+    "type": "poissons cuits",
+    "name": "Merlan  frit",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "515",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Merlan  pane",
+    "kiloCaloriesPerHundredGrams": "190"
+  },
+  {
+    "id": "516",
+    "type": "poissons crus",
+    "name": "Merlu",
+    "kiloCaloriesPerHundredGrams": "82,6"
+  },
+  {
+    "id": "517",
+    "type": "poissons cuits",
+    "name": "Merlu  cuit a l etouffee",
+    "kiloCaloriesPerHundredGrams": "112"
+  },
+  {
+    "id": "518",
+    "type": "poissons crus",
+    "name": "Merou",
+    "kiloCaloriesPerHundredGrams": "82,3"
+  },
+  {
+    "id": "519",
+    "type": "charcuteries",
+    "name": "Mortadelle",
+    "kiloCaloriesPerHundredGrams": "301"
+  },
+  {
+    "id": "520",
+    "type": "charcuteries",
+    "name": "Mortadelle pistachee pur porc",
+    "kiloCaloriesPerHundredGrams": "320"
+  },
+  {
+    "id": "521",
+    "type": "charcuteries",
+    "name": "Mortadelle  porc et boeuf",
+    "kiloCaloriesPerHundredGrams": "304"
+  },
+  {
+    "id": "522",
+    "type": "charcuteries",
+    "name": "Mortadelle  pur porc",
+    "kiloCaloriesPerHundredGrams": "310"
+  },
+  {
+    "id": "523",
+    "type": "poissons cuits",
+    "name": "Morue",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "524",
+    "type": "poissons crus",
+    "name": "Morue seche",
+    "kiloCaloriesPerHundredGrams": "206"
+  },
+  {
+    "id": "525",
+    "type": "mollusques et crustaces cuits",
+    "name": "Moule",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "526",
+    "type": "charcuteries",
+    "name": "Mousse de canard",
+    "kiloCaloriesPerHundredGrams": "395"
+  },
+  {
+    "id": "527",
+    "type": "charcuteries",
+    "name": "Mousse de foie de porc",
+    "kiloCaloriesPerHundredGrams": "287"
+  },
+  {
+    "id": "528",
+    "type": "viandes crues",
+    "name": "Mouton  epaule",
+    "kiloCaloriesPerHundredGrams": "204"
+  },
+  {
+    "id": "529",
+    "type": "viandes crues",
+    "name": "Mouton  gigot",
+    "kiloCaloriesPerHundredGrams": "225"
+  },
+  {
+    "id": "530",
+    "type": "viandes crues",
+    "name": "Mouton  pied",
+    "kiloCaloriesPerHundredGrams": "204"
+  },
+  {
+    "id": "531",
+    "type": "viandes crues",
+    "name": "Mouton  tete",
+    "kiloCaloriesPerHundredGrams": "204"
+  },
+  {
+    "id": "532",
+    "type": "viandes crues",
+    "name": "Mouton  viande",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "533",
+    "type": "poissons crus",
+    "name": "Mulet",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "534",
+    "type": "charcuteries",
+    "name": "Museau de boeuf",
+    "kiloCaloriesPerHundredGrams": "151"
+  },
+  {
+    "id": "535",
+    "type": "charcuteries",
+    "name": "Museau de porc",
+    "kiloCaloriesPerHundredGrams": "185"
+  },
+  {
+    "id": "536",
+    "type": "œufs",
+    "name": "Oeuf",
+    "kiloCaloriesPerHundredGrams": "140"
+  },
+  {
+    "id": "537",
+    "type": "œufs",
+    "name": "Oeuf de caille",
+    "kiloCaloriesPerHundredGrams": "154"
+  },
+  {
+    "id": "538",
+    "type": "œufs",
+    "name": "Oeuf de cane",
+    "kiloCaloriesPerHundredGrams": "181"
+  },
+  {
+    "id": "539",
+    "type": "œufs",
+    "name": "Oeuf de dinde",
+    "kiloCaloriesPerHundredGrams": "166"
+  },
+  {
+    "id": "540",
+    "type": "œufs",
+    "name": "Oeuf d oie",
+    "kiloCaloriesPerHundredGrams": "180"
+  },
+  {
+    "id": "541",
+    "type": "œufs",
+    "name": "Blanc d œuf",
+    "kiloCaloriesPerHundredGrams": "48,1"
+  },
+  {
+    "id": "542",
+    "type": "œufs",
+    "name": "Jaune d œuf",
+    "kiloCaloriesPerHundredGrams": "307"
+  },
+  {
+    "id": "543",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Oeufs de cabillau fumes",
+    "kiloCaloriesPerHundredGrams": "146"
+  },
+  {
+    "id": "544",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Oeufs de lompe",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "545",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Oeufs de saumon",
+    "kiloCaloriesPerHundredGrams": "224"
+  },
+  {
+    "id": "546",
+    "type": "viandes crues",
+    "name": "Oie",
+    "kiloCaloriesPerHundredGrams": "365"
+  },
+  {
+    "id": "547",
+    "type": "poissons crus",
+    "name": "Omble chevalier",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "548",
+    "type": "charcuteries",
+    "name": "Oreille de porc",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "549",
+    "type": "mollusques et crustaces crus",
+    "name": "Ormeau",
+    "kiloCaloriesPerHundredGrams": "99,6"
+  },
+  {
+    "id": "550",
+    "type": "poissons crus",
+    "name": "Orphie commune",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "551",
+    "type": "charcuteries",
+    "name": "Pancetta ou Poitrine roulee seche",
+    "kiloCaloriesPerHundredGrams": "342"
+  },
+  {
+    "id": "552",
+    "type": "poissons crus",
+    "name": "Pangasius ou Poisson-chat",
+    "kiloCaloriesPerHundredGrams": "65,2"
+  },
+  {
+    "id": "553",
+    "type": "charcuteries",
+    "name": "Pate au poivre vert",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "554",
+    "type": "charcuteries",
+    "name": "Pate breton",
+    "kiloCaloriesPerHundredGrams": "363"
+  },
+  {
+    "id": "555",
+    "type": "charcuteries",
+    "name": "Pate de foie de porc",
+    "kiloCaloriesPerHundredGrams": "355"
+  },
+  {
+    "id": "556",
+    "type": "charcuteries",
+    "name": "Pate de foie de volaille",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "557",
+    "type": "charcuteries",
+    "name": "Pate de foie d oie",
+    "kiloCaloriesPerHundredGrams": "459"
+  },
+  {
+    "id": "558",
+    "type": "charcuteries",
+    "name": "Pate de gibier",
+    "kiloCaloriesPerHundredGrams": "284"
+  },
+  {
+    "id": "559",
+    "type": "charcuteries",
+    "name": "Pate de lapin",
+    "kiloCaloriesPerHundredGrams": "255"
+  },
+  {
+    "id": "560",
+    "type": "charcuteries",
+    "name": "Pate en croute",
+    "kiloCaloriesPerHundredGrams": "292"
+  },
+  {
+    "id": "561",
+    "type": "charcuteries",
+    "name": "Pate ou terrine aux champignons",
+    "kiloCaloriesPerHundredGrams": "329"
+  },
+  {
+    "id": "562",
+    "type": "charcuteries",
+    "name": "Pate ou terrine de campagne",
+    "kiloCaloriesPerHundredGrams": "318"
+  },
+  {
+    "id": "563",
+    "type": "mollusques et crustaces crus",
+    "name": "Pecten d Amerique ou Peigne du canada",
+    "kiloCaloriesPerHundredGrams": "81,3"
+  },
+  {
+    "id": "564",
+    "type": "poissons cuits",
+    "name": "Perche",
+    "kiloCaloriesPerHundredGrams": "119"
+  },
+  {
+    "id": "565",
+    "type": "mollusques et crustaces crus",
+    "name": "Petoncle ou Peigne du Perou",
+    "kiloCaloriesPerHundredGrams": "88,7"
+  },
+  {
+    "id": "566",
+    "type": "charcuteries",
+    "name": "Pied de porc",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "567",
+    "type": "viandes crues",
+    "name": "Pigeon",
+    "kiloCaloriesPerHundredGrams": "222"
+  },
+  {
+    "id": "568",
+    "type": "viandes crues",
+    "name": "Pintade  cuisse",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "569",
+    "type": "viandes crues",
+    "name": "Pintade  poitrine",
+    "kiloCaloriesPerHundredGrams": "107"
+  },
+  {
+    "id": "570",
+    "type": "viandes crues",
+    "name": "Pintade",
+    "kiloCaloriesPerHundredGrams": "143"
+  },
+  {
+    "id": "571",
+    "type": "charcuteries",
+    "name": "Poitrine de porc",
+    "kiloCaloriesPerHundredGrams": "265"
+  },
+  {
+    "id": "572",
+    "type": "charcuteries",
+    "name": "Poitrine de porc fumee",
+    "kiloCaloriesPerHundredGrams": "303"
+  },
+  {
+    "id": "573",
+    "type": "viandes crues",
+    "name": "Porc  carre",
+    "kiloCaloriesPerHundredGrams": "146"
+  },
+  {
+    "id": "574",
+    "type": "viandes crues",
+    "name": "Porc  cote",
+    "kiloCaloriesPerHundredGrams": "164"
+  },
+  {
+    "id": "575",
+    "type": "viandes crues",
+    "name": "Porc  couenne",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "576",
+    "type": "viandes crues",
+    "name": "Porc  echine",
+    "kiloCaloriesPerHundredGrams": "198"
+  },
+  {
+    "id": "577",
+    "type": "viandes crues",
+    "name": "Porc  epaule",
+    "kiloCaloriesPerHundredGrams": "178"
+  },
+  {
+    "id": "578",
+    "type": "viandes crues",
+    "name": "Porc  escalope de jambon",
+    "kiloCaloriesPerHundredGrams": "129"
+  },
+  {
+    "id": "579",
+    "type": "viandes crues",
+    "name": "Porc  filet mignon",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "580",
+    "type": "viandes crues",
+    "name": "Porc  filet maigre",
+    "kiloCaloriesPerHundredGrams": "117"
+  },
+  {
+    "id": "581",
+    "type": "viandes crues",
+    "name": "Porc  gorge",
+    "kiloCaloriesPerHundredGrams": "475"
+  },
+  {
+    "id": "582",
+    "type": "viandes crues",
+    "name": "Porc  jambonneau",
+    "kiloCaloriesPerHundredGrams": "148"
+  },
+  {
+    "id": "583",
+    "type": "viandes crues",
+    "name": "Porc  jarret",
+    "kiloCaloriesPerHundredGrams": "187"
+  },
+  {
+    "id": "584",
+    "type": "viandes crues",
+    "name": "Porc  longe",
+    "kiloCaloriesPerHundredGrams": "175"
+  },
+  {
+    "id": "585",
+    "type": "viandes crues",
+    "name": "Porc  maigre 80/20",
+    "kiloCaloriesPerHundredGrams": "293"
+  },
+  {
+    "id": "586",
+    "type": "viandes crues",
+    "name": "Porc  maigre 90/10",
+    "kiloCaloriesPerHundredGrams": "212"
+  },
+  {
+    "id": "587",
+    "type": "viandes crues",
+    "name": "Porc  palette",
+    "kiloCaloriesPerHundredGrams": "174"
+  },
+  {
+    "id": "588",
+    "type": "viandes crues",
+    "name": "Porc  poitrine cutter",
+    "kiloCaloriesPerHundredGrams": "323"
+  },
+  {
+    "id": "589",
+    "type": "viandes crues",
+    "name": "Porc  poitrine",
+    "kiloCaloriesPerHundredGrams": "253"
+  },
+  {
+    "id": "590",
+    "type": "viandes crues",
+    "name": "Porc  rouelle de jambon",
+    "kiloCaloriesPerHundredGrams": "149"
+  },
+  {
+    "id": "591",
+    "type": "viandes crues",
+    "name": "Porc  travers",
+    "kiloCaloriesPerHundredGrams": "237"
+  },
+  {
+    "id": "592",
+    "type": "viandes crues",
+    "name": "Poule  cuisse",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "593",
+    "type": "viandes crues",
+    "name": "Poule  viande et peau",
+    "kiloCaloriesPerHundredGrams": "215"
+  },
+  {
+    "id": "594",
+    "type": "viandes crues",
+    "name": "Poulet (var. blanc)  viande et peau",
+    "kiloCaloriesPerHundredGrams": "123"
+  },
+  {
+    "id": "595",
+    "type": "viandes crues",
+    "name": "Poulet eviscere sans abats",
+    "kiloCaloriesPerHundredGrams": "210"
+  },
+  {
+    "id": "596",
+    "type": "viandes crues",
+    "name": "Poulet fermier  viande et peau",
+    "kiloCaloriesPerHundredGrams": "135"
+  },
+  {
+    "id": "597",
+    "type": "viandes crues",
+    "name": "Poulet  cuisse",
+    "kiloCaloriesPerHundredGrams": "114"
+  },
+  {
+    "id": "598",
+    "type": "viandes crues",
+    "name": "Poulet  cuisse  viande et peau",
+    "kiloCaloriesPerHundredGrams": "188"
+  },
+  {
+    "id": "599",
+    "type": "viandes crues",
+    "name": "Poulet  filet  sans peau",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "600",
+    "type": "viandes crues",
+    "name": "Poulet  haut de cuisse",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "601",
+    "type": "viandes crues",
+    "name": "Poulet  pilon",
+    "kiloCaloriesPerHundredGrams": "155"
+  },
+  {
+    "id": "602",
+    "type": "viandes crues",
+    "name": "Poulet  poitrine  viande et peau",
+    "kiloCaloriesPerHundredGrams": "157"
+  },
+  {
+    "id": "603",
+    "type": "viandes crues",
+    "name": "Poulet  viande et peau",
+    "kiloCaloriesPerHundredGrams": "173"
+  },
+  {
+    "id": "604",
+    "type": "viandes crues",
+    "name": "Poulet  viande sans peau",
+    "kiloCaloriesPerHundredGrams": "113"
+  },
+  {
+    "id": "605",
+    "type": "mollusques et crustaces cuits",
+    "name": "Poulpe",
+    "kiloCaloriesPerHundredGrams": "156"
+  },
+  {
+    "id": "606",
+    "type": "charcuteries",
+    "name": "Quenelle de poisson",
+    "kiloCaloriesPerHundredGrams": "245"
+  },
+  {
+    "id": "607",
+    "type": "charcuteries",
+    "name": "Quenelle de veau",
+    "kiloCaloriesPerHundredGrams": "165"
+  },
+  {
+    "id": "608",
+    "type": "charcuteries",
+    "name": "Quenelle de volaille",
+    "kiloCaloriesPerHundredGrams": "187"
+  },
+  {
+    "id": "609",
+    "type": "charcuteries",
+    "name": "Quenelle nature",
+    "kiloCaloriesPerHundredGrams": "217"
+  },
+  {
+    "id": "610",
+    "type": "poissons cuits",
+    "name": "Raie",
+    "kiloCaloriesPerHundredGrams": "97,8"
+  },
+  {
+    "id": "611",
+    "type": "poissons cuits",
+    "name": "Rascasse",
+    "kiloCaloriesPerHundredGrams": "126"
+  },
+  {
+    "id": "612",
+    "type": "poissons crus",
+    "name": "Requin",
+    "kiloCaloriesPerHundredGrams": "109"
+  },
+  {
+    "id": "613",
+    "type": "charcuteries",
+    "name": "Rillettes de canard",
+    "kiloCaloriesPerHundredGrams": "417"
+  },
+  {
+    "id": "614",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Rillettes de crabe",
+    "kiloCaloriesPerHundredGrams": "192"
+  },
+  {
+    "id": "615",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Rillettes de maquereau",
+    "kiloCaloriesPerHundredGrams": "246"
+  },
+  {
+    "id": "616",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Rillettes de poisson",
+    "kiloCaloriesPerHundredGrams": "243"
+  },
+  {
+    "id": "617",
+    "type": "charcuteries",
+    "name": "Rillettes de poulet",
+    "kiloCaloriesPerHundredGrams": "340"
+  },
+  {
+    "id": "618",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Rillettes de saumon",
+    "kiloCaloriesPerHundredGrams": "237"
+  },
+  {
+    "id": "619",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Rillettes de thon",
+    "kiloCaloriesPerHundredGrams": "199"
+  },
+  {
+    "id": "620",
+    "type": "charcuteries",
+    "name": "Rillettes de Tours",
+    "kiloCaloriesPerHundredGrams": "522"
+  },
+  {
+    "id": "621",
+    "type": "charcuteries",
+    "name": "Rillettes d oie",
+    "kiloCaloriesPerHundredGrams": "459"
+  },
+  {
+    "id": "622",
+    "type": "charcuteries",
+    "name": "Rillettes du Mans",
+    "kiloCaloriesPerHundredGrams": "420"
+  },
+  {
+    "id": "623",
+    "type": "charcuteries",
+    "name": "Rillettes pur oie",
+    "kiloCaloriesPerHundredGrams": "417"
+  },
+  {
+    "id": "624",
+    "type": "charcuteries",
+    "name": "Rillettes pur porc",
+    "kiloCaloriesPerHundredGrams": "413"
+  },
+  {
+    "id": "625",
+    "type": "charcuteries",
+    "name": "Rillettes traditionnelles de porc",
+    "kiloCaloriesPerHundredGrams": "390"
+  },
+  {
+    "id": "626",
+    "type": "viandes crues",
+    "name": "Ris  agneau",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "627",
+    "type": "viandes crues",
+    "name": "Ris  veau",
+    "kiloCaloriesPerHundredGrams": "101"
+  },
+  {
+    "id": "628",
+    "type": "viandes crues",
+    "name": "Rognon  agneau",
+    "kiloCaloriesPerHundredGrams": "92,8"
+  },
+  {
+    "id": "629",
+    "type": "viandes crues",
+    "name": "Rognon  boeuf",
+    "kiloCaloriesPerHundredGrams": "95,9"
+  },
+  {
+    "id": "630",
+    "type": "viandes crues",
+    "name": "Rognon  porc",
+    "kiloCaloriesPerHundredGrams": "94,6"
+  },
+  {
+    "id": "631",
+    "type": "viandes crues",
+    "name": "Rognon  veau",
+    "kiloCaloriesPerHundredGrams": "94,9"
+  },
+  {
+    "id": "632",
+    "type": "charcuteries",
+    "name": "Rond de jambon cuit",
+    "kiloCaloriesPerHundredGrams": "182"
+  },
+  {
+    "id": "633",
+    "type": "charcuteries",
+    "name": "Rosette ou Fuseau",
+    "kiloCaloriesPerHundredGrams": "380"
+  },
+  {
+    "id": "634",
+    "type": "poissons crus",
+    "name": "Rouget-barbet de roche",
+    "kiloCaloriesPerHundredGrams": "158"
+  },
+  {
+    "id": "635",
+    "type": "charcuteries",
+    "name": "Roulade de porc pistachee",
+    "kiloCaloriesPerHundredGrams": "271"
+  },
+  {
+    "id": "636",
+    "type": "poissons cuits",
+    "name": "Roussette ou petite roussette ou saumonette",
+    "kiloCaloriesPerHundredGrams": "256"
+  },
+  {
+    "id": "637",
+    "type": "poissons crus",
+    "name": "Sabre",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "638",
+    "type": "poissons crus",
+    "name": "Saint-Pierre",
+    "kiloCaloriesPerHundredGrams": "86,7"
+  },
+  {
+    "id": "639",
+    "type": "charcuteries",
+    "name": "Salami",
+    "kiloCaloriesPerHundredGrams": "457"
+  },
+  {
+    "id": "640",
+    "type": "poissons crus",
+    "name": "Sandre",
+    "kiloCaloriesPerHundredGrams": "82,9"
+  },
+  {
+    "id": "641",
+    "type": "viandes crues",
+    "name": "Sang  boeuf",
+    "kiloCaloriesPerHundredGrams": "82,1"
+  },
+  {
+    "id": "642",
+    "type": "viandes crues",
+    "name": "Sanglier",
+    "kiloCaloriesPerHundredGrams": "147"
+  },
+  {
+    "id": "643",
+    "type": "poissons crus",
+    "name": "Sardinee",
+    "kiloCaloriesPerHundredGrams": "163"
+  },
+  {
+    "id": "644",
+    "type": "charcuteries",
+    "name": "Saucisse alsacienne fumee ou Gendarme",
+    "kiloCaloriesPerHundredGrams": "300"
+  },
+  {
+    "id": "645",
+    "type": "charcuteries",
+    "name": "Saucisse cocktail",
+    "kiloCaloriesPerHundredGrams": "290"
+  },
+  {
+    "id": "646",
+    "type": "charcuteries",
+    "name": "Saucisse de biere",
+    "kiloCaloriesPerHundredGrams": "319"
+  },
+  {
+    "id": "647",
+    "type": "charcuteries",
+    "name": "Saucisse de foie",
+    "kiloCaloriesPerHundredGrams": "374"
+  },
+  {
+    "id": "648",
+    "type": "charcuteries",
+    "name": "Saucisse de Francfort",
+    "kiloCaloriesPerHundredGrams": "271"
+  },
+  {
+    "id": "649",
+    "type": "charcuteries",
+    "name": "Saucisse de jambon pur porc",
+    "kiloCaloriesPerHundredGrams": "224"
+  },
+  {
+    "id": "650",
+    "type": "charcuteries",
+    "name": "Saucisse de langue a la pistache",
+    "kiloCaloriesPerHundredGrams": "294"
+  },
+  {
+    "id": "651",
+    "type": "charcuteries",
+    "name": "Saucisse de Montbeliard",
+    "kiloCaloriesPerHundredGrams": "319"
+  },
+  {
+    "id": "652",
+    "type": "charcuteries",
+    "name": "Saucisse de Morteau",
+    "kiloCaloriesPerHundredGrams": "397"
+  },
+  {
+    "id": "653",
+    "type": "charcuteries",
+    "name": "Saucisse de Strasbourg ou Knack",
+    "kiloCaloriesPerHundredGrams": "291"
+  },
+  {
+    "id": "654",
+    "type": "charcuteries",
+    "name": "Saucisse de Toulousee",
+    "kiloCaloriesPerHundredGrams": "327"
+  },
+  {
+    "id": "655",
+    "type": "charcuteries",
+    "name": "Saucisse de volaille",
+    "kiloCaloriesPerHundredGrams": "231"
+  },
+  {
+    "id": "656",
+    "type": "charcuteries",
+    "name": "Saucisse seche",
+    "kiloCaloriesPerHundredGrams": "451"
+  },
+  {
+    "id": "657",
+    "type": "charcuteries",
+    "name": "Saucisse suisse",
+    "kiloCaloriesPerHundredGrams": "323"
+  },
+  {
+    "id": "658",
+    "type": "charcuteries",
+    "name": "Saucisse viennoisee",
+    "kiloCaloriesPerHundredGrams": "233"
+  },
+  {
+    "id": "659",
+    "type": "charcuteries",
+    "name": "Saucisson a l ail",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "660",
+    "type": "charcuteries",
+    "name": "Saucisson brioche",
+    "kiloCaloriesPerHundredGrams": "303"
+  },
+  {
+    "id": "661",
+    "type": "charcuteries",
+    "name": "Saucisson pur porc",
+    "kiloCaloriesPerHundredGrams": "322"
+  },
+  {
+    "id": "662",
+    "type": "charcuteries",
+    "name": "Saucisson de Paris",
+    "kiloCaloriesPerHundredGrams": "346"
+  },
+  {
+    "id": "663",
+    "type": "charcuteries",
+    "name": "Saucisson de Paris  fume",
+    "kiloCaloriesPerHundredGrams": "288"
+  },
+  {
+    "id": "664",
+    "type": "charcuteries",
+    "name": "Saucisson sec",
+    "kiloCaloriesPerHundredGrams": "418"
+  },
+  {
+    "id": "665",
+    "type": "charcuteries",
+    "name": "Saucisson sec aux noix et/ou noisettes",
+    "kiloCaloriesPerHundredGrams": "477"
+  },
+  {
+    "id": "666",
+    "type": "charcuteries",
+    "name": "Saucisson sec pur porc",
+    "kiloCaloriesPerHundredGrams": "416"
+  },
+  {
+    "id": "667",
+    "type": "poissons cuits",
+    "name": "Saumon fume",
+    "kiloCaloriesPerHundredGrams": "178"
+  },
+  {
+    "id": "668",
+    "type": "poissons cuits",
+    "name": "Saumon",
+    "kiloCaloriesPerHundredGrams": "195"
+  },
+  {
+    "id": "669",
+    "type": "poissons crus",
+    "name": "Saupe",
+    "kiloCaloriesPerHundredGrams": "94,5"
+  },
+  {
+    "id": "670",
+    "type": "poissons crus",
+    "name": "Sebaste du nord  ou dorade sebaste  ou daurade sebaste",
+    "kiloCaloriesPerHundredGrams": "89,5"
+  },
+  {
+    "id": "671",
+    "type": "mollusques et crustaces crus",
+    "name": "Seiche",
+    "kiloCaloriesPerHundredGrams": "76,3"
+  },
+  {
+    "id": "672",
+    "type": "poissons cuits",
+    "name": "Sole",
+    "kiloCaloriesPerHundredGrams": "72,2"
+  },
+  {
+    "id": "673",
+    "type": "poissons crus",
+    "name": "Sole tropicale ou Sole langue",
+    "kiloCaloriesPerHundredGrams": "68,2"
+  },
+  {
+    "id": "674",
+    "type": "poissons crus",
+    "name": "Sprat",
+    "kiloCaloriesPerHundredGrams": "186"
+  },
+  {
+    "id": "675",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Surimi",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "676",
+    "type": "poissons crus",
+    "name": "Tacaud",
+    "kiloCaloriesPerHundredGrams": "81,6"
+  },
+  {
+    "id": "677",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Tarama",
+    "kiloCaloriesPerHundredGrams": "534"
+  },
+  {
+    "id": "678",
+    "type": "charcuteries",
+    "name": "Terrine de canard",
+    "kiloCaloriesPerHundredGrams": "304"
+  },
+  {
+    "id": "679",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Terrine de fruits de mer",
+    "kiloCaloriesPerHundredGrams": "188"
+  },
+  {
+    "id": "680",
+    "type": "charcuteries",
+    "name": "Terrine de lapin",
+    "kiloCaloriesPerHundredGrams": "281"
+  },
+  {
+    "id": "681",
+    "type": "produits a base de poissons et produits de la mer",
+    "name": "Terrine de poisson",
+    "kiloCaloriesPerHundredGrams": "171"
+  },
+  {
+    "id": "682",
+    "type": "poissons crus",
+    "name": "Thon",
+    "kiloCaloriesPerHundredGrams": "144"
+  },
+  {
+    "id": "683",
+    "type": "poissons crus",
+    "name": "Thon albacore ou thon jaune",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "684",
+    "type": "poissons crus",
+    "name": "Thon germon ou thon blanc",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "685",
+    "type": "poissons crus",
+    "name": "Thon listao ou Bonite a ventre raye",
+    "kiloCaloriesPerHundredGrams": "97,1"
+  },
+  {
+    "id": "686",
+    "type": "poissons crus",
+    "name": "Thon rouge",
+    "kiloCaloriesPerHundredGrams": "155"
+  },
+  {
+    "id": "687",
+    "type": "poissons crus",
+    "name": "Tilapia",
+    "kiloCaloriesPerHundredGrams": "91,6"
+  },
+  {
+    "id": "688",
+    "type": "viandes crues",
+    "name": "Tripes  bœuf",
+    "kiloCaloriesPerHundredGrams": "81,5"
+  },
+  {
+    "id": "689",
+    "type": "poissons crus",
+    "name": "Truite arc en ciel",
+    "kiloCaloriesPerHundredGrams": "132"
+  },
+  {
+    "id": "690",
+    "type": "poissons crus",
+    "name": "Truite de mer",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "691",
+    "type": "poissons cuits",
+    "name": "Truite fumee",
+    "kiloCaloriesPerHundredGrams": "180"
+  },
+  {
+    "id": "692",
+    "type": "poissons crus",
+    "name": "Truite",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "693",
+    "type": "poissons crus",
+    "name": "Truite saumonee",
+    "kiloCaloriesPerHundredGrams": "143"
+  },
+  {
+    "id": "694",
+    "type": "poissons crus",
+    "name": "Turbot",
+    "kiloCaloriesPerHundredGrams": "85,5"
+  },
+  {
+    "id": "695",
+    "type": "viandes crues",
+    "name": "Veau  carre",
+    "kiloCaloriesPerHundredGrams": "145"
+  },
+  {
+    "id": "696",
+    "type": "viandes crues",
+    "name": "Veau  collier",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "697",
+    "type": "viandes crues",
+    "name": "Veau  cote",
+    "kiloCaloriesPerHundredGrams": "189"
+  },
+  {
+    "id": "698",
+    "type": "viandes crues",
+    "name": "Veau  epaule",
+    "kiloCaloriesPerHundredGrams": "124"
+  },
+  {
+    "id": "699",
+    "type": "viandes crues",
+    "name": "Veau  escalope",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "700",
+    "type": "viandes crues",
+    "name": "Veau  filet",
+    "kiloCaloriesPerHundredGrams": "95"
+  },
+  {
+    "id": "701",
+    "type": "viandes crues",
+    "name": "Veau  jarret",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "702",
+    "type": "viandes crues",
+    "name": "Veau  noixe",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "703",
+    "type": "viandes crues",
+    "name": "Veau  pied",
+    "kiloCaloriesPerHundredGrams": "184"
+  },
+  {
+    "id": "704",
+    "type": "viandes crues",
+    "name": "Veau  poitrine",
+    "kiloCaloriesPerHundredGrams": "176"
+  },
+  {
+    "id": "705",
+    "type": "viandes crues",
+    "name": "Veau  roti",
+    "kiloCaloriesPerHundredGrams": "145"
+  },
+  {
+    "id": "706",
+    "type": "viandes crues",
+    "name": "Veau  steak hache 15% MG",
+    "kiloCaloriesPerHundredGrams": "208"
+  },
+  {
+    "id": "707",
+    "type": "viandes crues",
+    "name": "Veau  steak hache 20% MG",
+    "kiloCaloriesPerHundredGrams": "243"
+  },
+  {
+    "id": "708",
+    "type": "charcuteries",
+    "name": "Viande des Grisons",
+    "kiloCaloriesPerHundredGrams": "207"
+  },
+  {
+    "id": "709",
+    "type": "poissons cuits",
+    "name": "Vivaneau",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "710",
+    "type": "fromages",
+    "name": "Abondance",
+    "kiloCaloriesPerHundredGrams": "393"
+  },
+  {
+    "id": "711",
+    "type": "fromages",
+    "name": "Asiago",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "712",
+    "type": "fromages",
+    "name": "Beaufort",
+    "kiloCaloriesPerHundredGrams": "410"
+  },
+  {
+    "id": "713",
+    "type": "fromages",
+    "name": "Bleu de Gex ou Fromage bleu du Haut-jura ou Bleu de septmoncel (AOC)",
+    "kiloCaloriesPerHundredGrams": "364"
+  },
+  {
+    "id": "714",
+    "type": "fromages",
+    "name": "Brie de Meaux",
+    "kiloCaloriesPerHundredGrams": "271"
+  },
+  {
+    "id": "715",
+    "type": "fromages",
+    "name": "Brie de Melun",
+    "kiloCaloriesPerHundredGrams": "288"
+  },
+  {
+    "id": "716",
+    "type": "fromages",
+    "name": "Brie",
+    "kiloCaloriesPerHundredGrams": "297"
+  },
+  {
+    "id": "717",
+    "type": "fromages",
+    "name": "Camembert au lait cru",
+    "kiloCaloriesPerHundredGrams": "267"
+  },
+  {
+    "id": "718",
+    "type": "fromages",
+    "name": "Camembert",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "719",
+    "type": "fromages",
+    "name": "Cantal entre-deux",
+    "kiloCaloriesPerHundredGrams": "371"
+  },
+  {
+    "id": "720",
+    "type": "fromages",
+    "name": "Cantal  Salers ou Laguiole",
+    "kiloCaloriesPerHundredGrams": "378"
+  },
+  {
+    "id": "721",
+    "type": "fromages",
+    "name": "Carre de l Est",
+    "kiloCaloriesPerHundredGrams": "327"
+  },
+  {
+    "id": "722",
+    "type": "fromages",
+    "name": "Chabichou (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "294"
+  },
+  {
+    "id": "723",
+    "type": "fromages",
+    "name": "Chaource",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "724",
+    "type": "fromages",
+    "name": "Cheddar",
+    "kiloCaloriesPerHundredGrams": "399"
+  },
+  {
+    "id": "725",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Cheesecake ou Gateau au fromage frais",
+    "kiloCaloriesPerHundredGrams": "330"
+  },
+  {
+    "id": "726",
+    "type": "fromages",
+    "name": "Chevrot (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "277"
+  },
+  {
+    "id": "727",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Clafoutis aux fruits",
+    "kiloCaloriesPerHundredGrams": "192"
+  },
+  {
+    "id": "728",
+    "type": "fromages",
+    "name": "Comte",
+    "kiloCaloriesPerHundredGrams": "418"
+  },
+  {
+    "id": "729",
+    "type": "fromages",
+    "name": "Coulommiers",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "730",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme aux œufs (petit pot de creme chocolat  vanille  etc.)",
+    "kiloCaloriesPerHundredGrams": "174"
+  },
+  {
+    "id": "731",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme brulee",
+    "kiloCaloriesPerHundredGrams": "282"
+  },
+  {
+    "id": "732",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme caramel",
+    "kiloCaloriesPerHundredGrams": "139"
+  },
+  {
+    "id": "733",
+    "type": "cremes et specialites a base de creme",
+    "name": "Creme de lait  30% MG  epaisse",
+    "kiloCaloriesPerHundredGrams": "295"
+  },
+  {
+    "id": "734",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme dessert a la vanille",
+    "kiloCaloriesPerHundredGrams": "99,4"
+  },
+  {
+    "id": "735",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme dessert au cafe",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "736",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme dessert au caramel",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "737",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme dessert au chocolat",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "738",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Creme patissiere",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "739",
+    "type": "fromages",
+    "name": "Crottin de Chavignol (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "296"
+  },
+  {
+    "id": "740",
+    "type": "fromages",
+    "name": "Crottin de chevre  au lait cru",
+    "kiloCaloriesPerHundredGrams": "384"
+  },
+  {
+    "id": "741",
+    "type": "fromages",
+    "name": "Crottin de chevre",
+    "kiloCaloriesPerHundredGrams": "340"
+  },
+  {
+    "id": "742",
+    "type": "fromages",
+    "name": "Edam",
+    "kiloCaloriesPerHundredGrams": "329"
+  },
+  {
+    "id": "743",
+    "type": "fromages",
+    "name": "Emmental ou emmenthal",
+    "kiloCaloriesPerHundredGrams": "384"
+  },
+  {
+    "id": "744",
+    "type": "fromages",
+    "name": "epoisses",
+    "kiloCaloriesPerHundredGrams": "290"
+  },
+  {
+    "id": "745",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Flan aux œufs",
+    "kiloCaloriesPerHundredGrams": "117"
+  },
+  {
+    "id": "746",
+    "type": "fromages",
+    "name": "Fontina",
+    "kiloCaloriesPerHundredGrams": "381"
+  },
+  {
+    "id": "747",
+    "type": "fromages",
+    "name": "Fourme d Ambert",
+    "kiloCaloriesPerHundredGrams": "326"
+  },
+  {
+    "id": "748",
+    "type": "fromages",
+    "name": "Fourme de Montbrison",
+    "kiloCaloriesPerHundredGrams": "365"
+  },
+  {
+    "id": "749",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Fromage blanc nature  0% MG",
+    "kiloCaloriesPerHundredGrams": "49,4"
+  },
+  {
+    "id": "750",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Fromage blanc nature  3% MG environ",
+    "kiloCaloriesPerHundredGrams": "76,9"
+  },
+  {
+    "id": "751",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Fromage blanc nature  8% MG environ",
+    "kiloCaloriesPerHundredGrams": "116"
+  },
+  {
+    "id": "752",
+    "type": "fromages",
+    "name": "Fromage bleu au lait de vache",
+    "kiloCaloriesPerHundredGrams": "333"
+  },
+  {
+    "id": "753",
+    "type": "fromages",
+    "name": "Fromage bleu d Auvergne",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "754",
+    "type": "fromages",
+    "name": "Fromage bleu de Bresse",
+    "kiloCaloriesPerHundredGrams": "342"
+  },
+  {
+    "id": "755",
+    "type": "fromages",
+    "name": "Fromage bleu de Bresse allege environ 15% MG",
+    "kiloCaloriesPerHundredGrams": "246"
+  },
+  {
+    "id": "756",
+    "type": "fromages",
+    "name": "Fromage bleu des Causses",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "757",
+    "type": "fromages",
+    "name": "Fromage de brebis a pate molle et croute fleurie",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "758",
+    "type": "fromages",
+    "name": "Fromage de brebis a pate pressee",
+    "kiloCaloriesPerHundredGrams": "384"
+  },
+  {
+    "id": "759",
+    "type": "fromages",
+    "name": "Fromage de brebis Corse a pate molle",
+    "kiloCaloriesPerHundredGrams": "457"
+  },
+  {
+    "id": "760",
+    "type": "fromages",
+    "name": "Fromage de brebis des Pyrenees",
+    "kiloCaloriesPerHundredGrams": "397"
+  },
+  {
+    "id": "761",
+    "type": "fromages",
+    "name": "Fromage de chevre a pate molle et croute fleurie type camembert",
+    "kiloCaloriesPerHundredGrams": "292"
+  },
+  {
+    "id": "762",
+    "type": "fromages",
+    "name": "Fromage de chevre a pate molle non pressee non cuite croute naturelle  au lait pasteurise",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "763",
+    "type": "fromages",
+    "name": "Fromage de chevre buche",
+    "kiloCaloriesPerHundredGrams": "292"
+  },
+  {
+    "id": "764",
+    "type": "fromages",
+    "name": "Fromage de chevre demi-sec",
+    "kiloCaloriesPerHundredGrams": "353"
+  },
+  {
+    "id": "765",
+    "type": "fromages",
+    "name": "Fromage de chevre sec",
+    "kiloCaloriesPerHundredGrams": "440"
+  },
+  {
+    "id": "766",
+    "type": "fromages",
+    "name": "Fromage de lactoserum de brebis",
+    "kiloCaloriesPerHundredGrams": "172"
+  },
+  {
+    "id": "767",
+    "type": "fromages",
+    "name": "Fromage fondu double creme  environ 31% MG",
+    "kiloCaloriesPerHundredGrams": "320"
+  },
+  {
+    "id": "768",
+    "type": "fromages",
+    "name": "Fromage fondu en portions ou en cubes environ 20% MG",
+    "kiloCaloriesPerHundredGrams": "277"
+  },
+  {
+    "id": "769",
+    "type": "fromages",
+    "name": "Fromage type feta  au lait de vache",
+    "kiloCaloriesPerHundredGrams": "270"
+  },
+  {
+    "id": "770",
+    "type": "fromages",
+    "name": "Gorgonzola",
+    "kiloCaloriesPerHundredGrams": "312"
+  },
+  {
+    "id": "771",
+    "type": "fromages",
+    "name": "Gouda",
+    "kiloCaloriesPerHundredGrams": "374"
+  },
+  {
+    "id": "772",
+    "type": "fromages",
+    "name": "Grana Padano",
+    "kiloCaloriesPerHundredGrams": "396"
+  },
+  {
+    "id": "773",
+    "type": "fromages",
+    "name": "Gruyere",
+    "kiloCaloriesPerHundredGrams": "423"
+  },
+  {
+    "id": "774",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Ile flottante",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "775",
+    "type": "laits",
+    "name": "Lait concentre non sucre  entier",
+    "kiloCaloriesPerHundredGrams": "132"
+  },
+  {
+    "id": "776",
+    "type": "laits",
+    "name": "Lait concentre sucre  entier",
+    "kiloCaloriesPerHundredGrams": "323"
+  },
+  {
+    "id": "777",
+    "type": "laits",
+    "name": "Lait de brebis  entier",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "778",
+    "type": "laits",
+    "name": "Lait de chevre  entier",
+    "kiloCaloriesPerHundredGrams": "57,4"
+  },
+  {
+    "id": "779",
+    "type": "laits",
+    "name": "Lait de jument  entier",
+    "kiloCaloriesPerHundredGrams": "50"
+  },
+  {
+    "id": "780",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Lait de poule",
+    "kiloCaloriesPerHundredGrams": "97,3"
+  },
+  {
+    "id": "781",
+    "type": "laits",
+    "name": "Lait demi-ecreme",
+    "kiloCaloriesPerHundredGrams": "45,8"
+  },
+  {
+    "id": "782",
+    "type": "laits",
+    "name": "Lait ecreme",
+    "kiloCaloriesPerHundredGrams": "34,5"
+  },
+  {
+    "id": "783",
+    "type": "laits",
+    "name": "Lait en poudre  demi-ecreme",
+    "kiloCaloriesPerHundredGrams": "435"
+  },
+  {
+    "id": "784",
+    "type": "laits",
+    "name": "Lait en poudre  ecreme",
+    "kiloCaloriesPerHundredGrams": "361"
+  },
+  {
+    "id": "785",
+    "type": "laits",
+    "name": "Lait en poudre  entier",
+    "kiloCaloriesPerHundredGrams": "499"
+  },
+  {
+    "id": "786",
+    "type": "laits",
+    "name": "Lait entier",
+    "kiloCaloriesPerHundredGrams": "65,1"
+  },
+  {
+    "id": "787",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Lait fermente ou specialite laitiere type yaourt  nature  au bifidus",
+    "kiloCaloriesPerHundredGrams": "64,5"
+  },
+  {
+    "id": "788",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Lait gelifie aromatise",
+    "kiloCaloriesPerHundredGrams": "145"
+  },
+  {
+    "id": "789",
+    "type": "fromages",
+    "name": "Langres",
+    "kiloCaloriesPerHundredGrams": "281"
+  },
+  {
+    "id": "790",
+    "type": "fromages",
+    "name": "Livarot",
+    "kiloCaloriesPerHundredGrams": "301"
+  },
+  {
+    "id": "791",
+    "type": "fromages",
+    "name": "Maroilles",
+    "kiloCaloriesPerHundredGrams": "349"
+  },
+  {
+    "id": "792",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Milk-shake",
+    "kiloCaloriesPerHundredGrams": "131"
+  },
+  {
+    "id": "793",
+    "type": "fromages",
+    "name": "Mimolette",
+    "kiloCaloriesPerHundredGrams": "308"
+  },
+  {
+    "id": "794",
+    "type": "fromages",
+    "name": "Mont d or",
+    "kiloCaloriesPerHundredGrams": "302"
+  },
+  {
+    "id": "795",
+    "type": "fromages",
+    "name": "Morbier",
+    "kiloCaloriesPerHundredGrams": "354"
+  },
+  {
+    "id": "796",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Mousse a la creme de marrons",
+    "kiloCaloriesPerHundredGrams": "230"
+  },
+  {
+    "id": "797",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Mousse au chocolat (base laitiere)",
+    "kiloCaloriesPerHundredGrams": "180"
+  },
+  {
+    "id": "798",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Mousse au chocolat traditionnelle",
+    "kiloCaloriesPerHundredGrams": "303"
+  },
+  {
+    "id": "799",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Mousse aux fruits",
+    "kiloCaloriesPerHundredGrams": "148"
+  },
+  {
+    "id": "800",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Mousse liegeoise (chocolat  cafe  caramel ou vanille)",
+    "kiloCaloriesPerHundredGrams": "186"
+  },
+  {
+    "id": "801",
+    "type": "fromages",
+    "name": "Munster",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "802",
+    "type": "fromages",
+    "name": "Neufchatel",
+    "kiloCaloriesPerHundredGrams": "287"
+  },
+  {
+    "id": "803",
+    "type": "fromages",
+    "name": "Ossau-Iraty",
+    "kiloCaloriesPerHundredGrams": "428"
+  },
+  {
+    "id": "804",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Pain perdu",
+    "kiloCaloriesPerHundredGrams": "232"
+  },
+  {
+    "id": "805",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Panna cotta",
+    "kiloCaloriesPerHundredGrams": "207"
+  },
+  {
+    "id": "806",
+    "type": "fromages",
+    "name": "Parmesan",
+    "kiloCaloriesPerHundredGrams": "429"
+  },
+  {
+    "id": "807",
+    "type": "fromages",
+    "name": "Pelardon (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "808",
+    "type": "fromages",
+    "name": "Picodon (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "315"
+  },
+  {
+    "id": "809",
+    "type": "fromages",
+    "name": "Pont l eveque",
+    "kiloCaloriesPerHundredGrams": "326"
+  },
+  {
+    "id": "810",
+    "type": "fromages",
+    "name": "Pouligny Saint-Pierre (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "294"
+  },
+  {
+    "id": "811",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Preparation pour mousse au chocolat",
+    "kiloCaloriesPerHundredGrams": "443"
+  },
+  {
+    "id": "812",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Profiteroles (creme patissiere et sauce chocolat)",
+    "kiloCaloriesPerHundredGrams": "273"
+  },
+  {
+    "id": "813",
+    "type": "fromages",
+    "name": "Provolone",
+    "kiloCaloriesPerHundredGrams": "340"
+  },
+  {
+    "id": "814",
+    "type": "fromages",
+    "name": "Raclette (fromage)",
+    "kiloCaloriesPerHundredGrams": "345"
+  },
+  {
+    "id": "815",
+    "type": "fromages",
+    "name": "Reblochon",
+    "kiloCaloriesPerHundredGrams": "326"
+  },
+  {
+    "id": "816",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Riz au lait",
+    "kiloCaloriesPerHundredGrams": "126"
+  },
+  {
+    "id": "817",
+    "type": "fromages",
+    "name": "Rocamadour (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "818",
+    "type": "fromages",
+    "name": "Roquefort",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "819",
+    "type": "fromages",
+    "name": "Sainte-Maure (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "357"
+  },
+  {
+    "id": "820",
+    "type": "fromages",
+    "name": "Saint-Felicien",
+    "kiloCaloriesPerHundredGrams": "309"
+  },
+  {
+    "id": "821",
+    "type": "fromages",
+    "name": "Saint-Marcellin",
+    "kiloCaloriesPerHundredGrams": "280"
+  },
+  {
+    "id": "822",
+    "type": "fromages",
+    "name": "Saint-Nectaire",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "823",
+    "type": "fromages",
+    "name": "Saint-Paulin",
+    "kiloCaloriesPerHundredGrams": "299"
+  },
+  {
+    "id": "824",
+    "type": "fromages",
+    "name": "Salers",
+    "kiloCaloriesPerHundredGrams": "388"
+  },
+  {
+    "id": "825",
+    "type": "fromages",
+    "name": "Selles-sur-Cher (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "291"
+  },
+  {
+    "id": "826",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Semoule au lait",
+    "kiloCaloriesPerHundredGrams": "119"
+  },
+  {
+    "id": "827",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Tiramisu",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "828",
+    "type": "fromages",
+    "name": "Tome des Bauges",
+    "kiloCaloriesPerHundredGrams": "381"
+  },
+  {
+    "id": "829",
+    "type": "fromages",
+    "name": "Tomme ou tome de vache",
+    "kiloCaloriesPerHundredGrams": "356"
+  },
+  {
+    "id": "830",
+    "type": "fromages",
+    "name": "Valencay (fromage de chevre)",
+    "kiloCaloriesPerHundredGrams": "306"
+  },
+  {
+    "id": "831",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Yaourt a la grecque  au lait de brebis",
+    "kiloCaloriesPerHundredGrams": "69,1"
+  },
+  {
+    "id": "832",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Yaourt aromatise sucre",
+    "kiloCaloriesPerHundredGrams": "89,1"
+  },
+  {
+    "id": "833",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Yaourt sucre",
+    "kiloCaloriesPerHundredGrams": "95,7"
+  },
+  {
+    "id": "834",
+    "type": "produits laitiers frais et assimiles",
+    "name": "Yaourt nature",
+    "kiloCaloriesPerHundredGrams": "56,5"
+  },
+  {
+    "id": "835",
+    "type": "boisson alcoolisees",
+    "name": "Alcool pur",
+    "kiloCaloriesPerHundredGrams": "660"
+  },
+  {
+    "id": "836",
+    "type": "boisson alcoolisees",
+    "name": "Aperitif a base de vin ou vermouth",
+    "kiloCaloriesPerHundredGrams": "137"
+  },
+  {
+    "id": "837",
+    "type": "boisson alcoolisees",
+    "name": "Aperitif anise sans alcool",
+    "kiloCaloriesPerHundredGrams": "6"
+  },
+  {
+    "id": "838",
+    "type": "boisson alcoolisees",
+    "name": "Biere \"coeur de marche\" (4-5 degres alcool)",
+    "kiloCaloriesPerHundredGrams": "37,3"
+  },
+  {
+    "id": "839",
+    "type": "boisson alcoolisees",
+    "name": "Biere \"de specialites\" ou d abbaye  regionales ou d une brasserie (degre d alcool variable)",
+    "kiloCaloriesPerHundredGrams": "47,1"
+  },
+  {
+    "id": "840",
+    "type": "boisson alcoolisees",
+    "name": "Biere \"speciale\" (5-6 degres alcool)",
+    "kiloCaloriesPerHundredGrams": "56,3"
+  },
+  {
+    "id": "841",
+    "type": "boisson alcoolisees",
+    "name": "Biere brune",
+    "kiloCaloriesPerHundredGrams": "40,7"
+  },
+  {
+    "id": "842",
+    "type": "boisson alcoolisees",
+    "name": "Biere faiblement alcoolisee (3 degres alcool)",
+    "kiloCaloriesPerHundredGrams": "35,5"
+  },
+  {
+    "id": "843",
+    "type": "boisson alcoolisees",
+    "name": "Biere forte (>8 degres alcool)",
+    "kiloCaloriesPerHundredGrams": "62,5"
+  },
+  {
+    "id": "844",
+    "type": "boisson alcoolisees",
+    "name": "Biere sans alcool (<1 2 degres alcool)",
+    "kiloCaloriesPerHundredGrams": "25,3"
+  },
+  {
+    "id": "845",
+    "type": "boissons sans alcool",
+    "name": "Boisson a base d avoine  nature",
+    "kiloCaloriesPerHundredGrams": "42,6"
+  },
+  {
+    "id": "846",
+    "type": "boissons sans alcool",
+    "name": "Boisson a l amande",
+    "kiloCaloriesPerHundredGrams": "22,5"
+  },
+  {
+    "id": "847",
+    "type": "boissons sans alcool",
+    "name": "Boisson energisante  non sucree",
+    "kiloCaloriesPerHundredGrams": "5"
+  },
+  {
+    "id": "848",
+    "type": "boissons sans alcool",
+    "name": "Boisson energisante  sucree",
+    "kiloCaloriesPerHundredGrams": "48,7"
+  },
+  {
+    "id": "849",
+    "type": "boissons sans alcool",
+    "name": "Cacao  non sucre  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "387"
+  },
+  {
+    "id": "850",
+    "type": "boissons sans alcool",
+    "name": "Cafe au lait ou cappuccino au chocolat  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "402"
+  },
+  {
+    "id": "851",
+    "type": "boissons sans alcool",
+    "name": "Cafe au lait ou cappuccino  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "402"
+  },
+  {
+    "id": "852",
+    "type": "boissons sans alcool",
+    "name": "Cafe  decafeine  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "357"
+  },
+  {
+    "id": "853",
+    "type": "boissons sans alcool",
+    "name": "Cafe  moulu",
+    "kiloCaloriesPerHundredGrams": "397"
+  },
+  {
+    "id": "854",
+    "type": "boissons sans alcool",
+    "name": "Cafe  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "282"
+  },
+  {
+    "id": "855",
+    "type": "boisson alcoolisees",
+    "name": "Champagne",
+    "kiloCaloriesPerHundredGrams": "81,7"
+  },
+  {
+    "id": "856",
+    "type": "boissons sans alcool",
+    "name": "Chicoree et cafe  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "325"
+  },
+  {
+    "id": "857",
+    "type": "boissons sans alcool",
+    "name": "Chicoree  poudre soluble",
+    "kiloCaloriesPerHundredGrams": "323"
+  },
+  {
+    "id": "858",
+    "type": "boisson alcoolisees",
+    "name": "Cidre aromatise (framboise)",
+    "kiloCaloriesPerHundredGrams": "35,4"
+  },
+  {
+    "id": "859",
+    "type": "boisson alcoolisees",
+    "name": "Cidre bouche demi-sec",
+    "kiloCaloriesPerHundredGrams": "35,1"
+  },
+  {
+    "id": "860",
+    "type": "boisson alcoolisees",
+    "name": "Cidre doux",
+    "kiloCaloriesPerHundredGrams": "37,5"
+  },
+  {
+    "id": "861",
+    "type": "boissons sans alcool",
+    "name": "Citron ou Lime  specialite a diluer pour boissons",
+    "kiloCaloriesPerHundredGrams": "19,7"
+  },
+  {
+    "id": "862",
+    "type": "boisson alcoolisees",
+    "name": "Cocktail a base de rhum",
+    "kiloCaloriesPerHundredGrams": "180"
+  },
+  {
+    "id": "863",
+    "type": "boisson alcoolisees",
+    "name": "Cocktail a base de whisky",
+    "kiloCaloriesPerHundredGrams": "166"
+  },
+  {
+    "id": "864",
+    "type": "boisson alcoolisees",
+    "name": "Cocktail sans alcool (a base de jus de fruits et de sirop)",
+    "kiloCaloriesPerHundredGrams": "52,5"
+  },
+  {
+    "id": "865",
+    "type": "boisson alcoolisees",
+    "name": "Cocktail type punch  16% alcool",
+    "kiloCaloriesPerHundredGrams": "162"
+  },
+  {
+    "id": "866",
+    "type": "boissons sans alcool",
+    "name": "Cola",
+    "kiloCaloriesPerHundredGrams": "41,8"
+  },
+  {
+    "id": "867",
+    "type": "boisson alcoolisees",
+    "name": "Creme de cassis",
+    "kiloCaloriesPerHundredGrams": "251"
+  },
+  {
+    "id": "868",
+    "type": "boissons sans alcool",
+    "name": "Diabolo (limonade et sirop)",
+    "kiloCaloriesPerHundredGrams": "42,8"
+  },
+  {
+    "id": "869",
+    "type": "boissons sans alcool",
+    "name": "Eau de coco",
+    "kiloCaloriesPerHundredGrams": "17,9"
+  },
+  {
+    "id": "870",
+    "type": "boisson alcoolisees",
+    "name": "Eau de vie",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "871",
+    "type": "boisson alcoolisees",
+    "name": "Eau de vie de vin  type armagnac  cognac",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "872",
+    "type": "eaux",
+    "name": "Eau du robinet",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "873",
+    "type": "eaux",
+    "name": "Eau embouteillee de source",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "874",
+    "type": "boisson alcoolisees",
+    "name": "Gin",
+    "kiloCaloriesPerHundredGrams": "265"
+  },
+  {
+    "id": "875",
+    "type": "boissons sans alcool",
+    "name": "Jus d ananas",
+    "kiloCaloriesPerHundredGrams": "52,5"
+  },
+  {
+    "id": "876",
+    "type": "boissons sans alcool",
+    "name": "Jus de citron vert",
+    "kiloCaloriesPerHundredGrams": "24,1"
+  },
+  {
+    "id": "877",
+    "type": "boissons sans alcool",
+    "name": "Jus de citron",
+    "kiloCaloriesPerHundredGrams": "28,9"
+  },
+  {
+    "id": "878",
+    "type": "boissons sans alcool",
+    "name": "Jus de pamplemousse (pomelo)",
+    "kiloCaloriesPerHundredGrams": "38,2"
+  },
+  {
+    "id": "879",
+    "type": "boissons sans alcool",
+    "name": "Jus de pomme",
+    "kiloCaloriesPerHundredGrams": "42,7"
+  },
+  {
+    "id": "880",
+    "type": "boissons sans alcool",
+    "name": "Jus de raisin",
+    "kiloCaloriesPerHundredGrams": "69,2"
+  },
+  {
+    "id": "881",
+    "type": "boissons sans alcool",
+    "name": "Jus de tomate",
+    "kiloCaloriesPerHundredGrams": "19,1"
+  },
+  {
+    "id": "882",
+    "type": "boissons sans alcool",
+    "name": "Jus d orange",
+    "kiloCaloriesPerHundredGrams": "45"
+  },
+  {
+    "id": "883",
+    "type": "boisson alcoolisees",
+    "name": "Kir (au vin blanc)",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "884",
+    "type": "boisson alcoolisees",
+    "name": "Kir royal (au champagne)",
+    "kiloCaloriesPerHundredGrams": "111"
+  },
+  {
+    "id": "885",
+    "type": "boissons sans alcool",
+    "name": "Lait de coco ou Creme de coco",
+    "kiloCaloriesPerHundredGrams": "188"
+  },
+  {
+    "id": "886",
+    "type": "boissons sans alcool",
+    "name": "Limonade",
+    "kiloCaloriesPerHundredGrams": "34,1"
+  },
+  {
+    "id": "887",
+    "type": "boisson alcoolisees",
+    "name": "Liqueur",
+    "kiloCaloriesPerHundredGrams": "328"
+  },
+  {
+    "id": "888",
+    "type": "boisson alcoolisees",
+    "name": "Marsala",
+    "kiloCaloriesPerHundredGrams": "211"
+  },
+  {
+    "id": "889",
+    "type": "boisson alcoolisees",
+    "name": "Marsala aux oeufs",
+    "kiloCaloriesPerHundredGrams": "153"
+  },
+  {
+    "id": "890",
+    "type": "boissons sans alcool",
+    "name": "Nectar de fruit de la passion ou maracuja",
+    "kiloCaloriesPerHundredGrams": "68"
+  },
+  {
+    "id": "891",
+    "type": "boissons sans alcool",
+    "name": "Nectar de mangue",
+    "kiloCaloriesPerHundredGrams": "51,4"
+  },
+  {
+    "id": "892",
+    "type": "boissons sans alcool",
+    "name": "Nectar d orange",
+    "kiloCaloriesPerHundredGrams": "39,8"
+  },
+  {
+    "id": "893",
+    "type": "boissons sans alcool",
+    "name": "Nectar multifruit",
+    "kiloCaloriesPerHundredGrams": "49,7"
+  },
+  {
+    "id": "894",
+    "type": "boisson alcoolisees",
+    "name": "Panache (limonade et biere)",
+    "kiloCaloriesPerHundredGrams": "34,8"
+  },
+  {
+    "id": "895",
+    "type": "boisson alcoolisees",
+    "name": "Pastis",
+    "kiloCaloriesPerHundredGrams": "274"
+  },
+  {
+    "id": "896",
+    "type": "boisson alcoolisees",
+    "name": "Petillant de fruits",
+    "kiloCaloriesPerHundredGrams": "65,6"
+  },
+  {
+    "id": "897",
+    "type": "boissons sans alcool",
+    "name": "Poudre cacaotee ou au chocolat pour boisson",
+    "kiloCaloriesPerHundredGrams": "379"
+  },
+  {
+    "id": "898",
+    "type": "boisson alcoolisees",
+    "name": "Rhum",
+    "kiloCaloriesPerHundredGrams": "248"
+  },
+  {
+    "id": "899",
+    "type": "boisson alcoolisees",
+    "name": "Sake ou Alcool de riz",
+    "kiloCaloriesPerHundredGrams": "133"
+  },
+  {
+    "id": "900",
+    "type": "boisson alcoolisees",
+    "name": "Sangria",
+    "kiloCaloriesPerHundredGrams": "81,4"
+  },
+  {
+    "id": "901",
+    "type": "boissons sans alcool",
+    "name": "Sirop a diluer",
+    "kiloCaloriesPerHundredGrams": "246"
+  },
+  {
+    "id": "902",
+    "type": "boissons sans alcool",
+    "name": "The infuse",
+    "kiloCaloriesPerHundredGrams": "0,46"
+  },
+  {
+    "id": "903",
+    "type": "boissons sans alcool",
+    "name": "The noir",
+    "kiloCaloriesPerHundredGrams": "1,26"
+  },
+  {
+    "id": "904",
+    "type": "boissons sans alcool",
+    "name": "The oolong",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "905",
+    "type": "boissons sans alcool",
+    "name": "The vert",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "906",
+    "type": "boissons sans alcool",
+    "name": "Tisane infusee",
+    "kiloCaloriesPerHundredGrams": "0,87"
+  },
+  {
+    "id": "907",
+    "type": "boissons sans alcool",
+    "name": "Tonic ou bitter  sucre",
+    "kiloCaloriesPerHundredGrams": "34,1"
+  },
+  {
+    "id": "908",
+    "type": "boisson alcoolisees",
+    "name": "Vin blanc 11 degres",
+    "kiloCaloriesPerHundredGrams": "77,7"
+  },
+  {
+    "id": "909",
+    "type": "boisson alcoolisees",
+    "name": "Vin blanc mousseux",
+    "kiloCaloriesPerHundredGrams": "75,3"
+  },
+  {
+    "id": "910",
+    "type": "boisson alcoolisees",
+    "name": "Vin blanc mousseux aromatise",
+    "kiloCaloriesPerHundredGrams": "83,5"
+  },
+  {
+    "id": "911",
+    "type": "boisson alcoolisees",
+    "name": "Vin blanc sec 11 degres",
+    "kiloCaloriesPerHundredGrams": "55,9"
+  },
+  {
+    "id": "912",
+    "type": "boisson alcoolisees",
+    "name": "Vin doux",
+    "kiloCaloriesPerHundredGrams": "150"
+  },
+  {
+    "id": "913",
+    "type": "boisson alcoolisees",
+    "name": "Vin rose 11 degres",
+    "kiloCaloriesPerHundredGrams": "71,5"
+  },
+  {
+    "id": "914",
+    "type": "boisson alcoolisees",
+    "name": "Vin rouge 10 degres",
+    "kiloCaloriesPerHundredGrams": "67,3"
+  },
+  {
+    "id": "915",
+    "type": "boisson alcoolisees",
+    "name": "Vin rouge 11 degres",
+    "kiloCaloriesPerHundredGrams": "77,7"
+  },
+  {
+    "id": "916",
+    "type": "boisson alcoolisees",
+    "name": "Vin rouge 12 degres",
+    "kiloCaloriesPerHundredGrams": "76,5"
+  },
+  {
+    "id": "917",
+    "type": "boisson alcoolisees",
+    "name": "Vin rouge 13 degres",
+    "kiloCaloriesPerHundredGrams": "73,3"
+  },
+  {
+    "id": "918",
+    "type": "boisson alcoolisees",
+    "name": "Vodka",
+    "kiloCaloriesPerHundredGrams": "237"
+  },
+  {
+    "id": "919",
+    "type": "boisson alcoolisees",
+    "name": "Whisky",
+    "kiloCaloriesPerHundredGrams": "249"
+  },
+  {
+    "id": "920",
+    "type": "Boisson a base de riz",
+    "name": "Boisson a base de riz",
+    "kiloCaloriesPerHundredGrams": "53,7"
+  },
+  {
+    "id": "921",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Bonbon / bouchee au chocolat fourrage gaufrettes / biscuit",
+    "kiloCaloriesPerHundredGrams": "521"
+  },
+  {
+    "id": "922",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Bouchee chocolat fourrage fruits a coques et/ou praline",
+    "kiloCaloriesPerHundredGrams": "558"
+  },
+  {
+    "id": "923",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Cacahuetes enrobees de chocolat drageifiees",
+    "kiloCaloriesPerHundredGrams": "499"
+  },
+  {
+    "id": "924",
+    "type": "confiseries non chocolatees",
+    "name": "Calissons d Aix en Provence",
+    "kiloCaloriesPerHundredGrams": "440"
+  },
+  {
+    "id": "925",
+    "type": "confiseries non chocolatees",
+    "name": "Chewing-gum",
+    "kiloCaloriesPerHundredGrams": "228"
+  },
+  {
+    "id": "926",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat au lait aux cereales croustillantes  tablette",
+    "kiloCaloriesPerHundredGrams": "515"
+  },
+  {
+    "id": "927",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat au lait aux fruits secs (noisettes  amandes  raisins  praline)  tablette",
+    "kiloCaloriesPerHundredGrams": "559"
+  },
+  {
+    "id": "928",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat au lait praline  tablette",
+    "kiloCaloriesPerHundredGrams": "559"
+  },
+  {
+    "id": "929",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat au lait sans sucres ajoutes  avec edulcorants  tablette",
+    "kiloCaloriesPerHundredGrams": "487"
+  },
+  {
+    "id": "930",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat au lait  tablette",
+    "kiloCaloriesPerHundredGrams": "555"
+  },
+  {
+    "id": "931",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat blanc aux fruits secs (noisettes  amandes  raisins  praline)   tablette",
+    "kiloCaloriesPerHundredGrams": "579"
+  },
+  {
+    "id": "932",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat blanc  tablette",
+    "kiloCaloriesPerHundredGrams": "563"
+  },
+  {
+    "id": "933",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat noir aux fruits (orange  framboise  poire)  tablette",
+    "kiloCaloriesPerHundredGrams": "539"
+  },
+  {
+    "id": "934",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat noir aux fruits secs (noisettes  amandes  raisins  praline)  tablette",
+    "kiloCaloriesPerHundredGrams": "565"
+  },
+  {
+    "id": "935",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat noir fourrage confiseur a la menthe",
+    "kiloCaloriesPerHundredGrams": "501"
+  },
+  {
+    "id": "936",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat noir praline",
+    "kiloCaloriesPerHundredGrams": "559"
+  },
+  {
+    "id": "937",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Chocolat noir  tablette",
+    "kiloCaloriesPerHundredGrams": "525"
+  },
+  {
+    "id": "938",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Confiserie au chocolat drageifiee",
+    "kiloCaloriesPerHundredGrams": "502"
+  },
+  {
+    "id": "939",
+    "type": "confiseries non chocolatees",
+    "name": "Dragee amande",
+    "kiloCaloriesPerHundredGrams": "470"
+  },
+  {
+    "id": "940",
+    "type": "sucres, miels et assimiles",
+    "name": "edulcorant a base d extrait de stevia",
+    "kiloCaloriesPerHundredGrams": "238"
+  },
+  {
+    "id": "941",
+    "type": "sucres, miels et assimiles",
+    "name": "edulcorant a la saccharine",
+    "kiloCaloriesPerHundredGrams": "360"
+  },
+  {
+    "id": "942",
+    "type": "sucres, miels et assimiles",
+    "name": "edulcorant a l aspartame  en pastilles",
+    "kiloCaloriesPerHundredGrams": "216"
+  },
+  {
+    "id": "943",
+    "type": "sucres, miels et assimiles",
+    "name": "edulcorant a l aspartame  en poudre",
+    "kiloCaloriesPerHundredGrams": "382"
+  },
+  {
+    "id": "944",
+    "type": "sucres, miels et assimiles",
+    "name": "Fructose",
+    "kiloCaloriesPerHundredGrams": "399"
+  },
+  {
+    "id": "945",
+    "type": "confiseries non chocolatees",
+    "name": "Fruit confit",
+    "kiloCaloriesPerHundredGrams": "313"
+  },
+  {
+    "id": "946",
+    "type": "confiseries non chocolatees",
+    "name": "Marron glace",
+    "kiloCaloriesPerHundredGrams": "324"
+  },
+  {
+    "id": "947",
+    "type": "sucres, miels et assimiles",
+    "name": "Melasse de canne",
+    "kiloCaloriesPerHundredGrams": "300"
+  },
+  {
+    "id": "948",
+    "type": "sucres, miels et assimiles",
+    "name": "Miel",
+    "kiloCaloriesPerHundredGrams": "327"
+  },
+  {
+    "id": "949",
+    "type": "confiseries non chocolatees",
+    "name": "Nougat ou touron",
+    "kiloCaloriesPerHundredGrams": "511"
+  },
+  {
+    "id": "950",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Pate a tartiner chocolat et noisette",
+    "kiloCaloriesPerHundredGrams": "549"
+  },
+  {
+    "id": "951",
+    "type": "confiseries non chocolatees",
+    "name": "Pate de fruits",
+    "kiloCaloriesPerHundredGrams": "335"
+  },
+  {
+    "id": "952",
+    "type": "chocolats et produits a base de chocolat",
+    "name": "Rocher chocolat fourre praline",
+    "kiloCaloriesPerHundredGrams": "558"
+  },
+  {
+    "id": "953",
+    "type": "sucres, miels et assimiles",
+    "name": "Sirop d agave",
+    "kiloCaloriesPerHundredGrams": "318"
+  },
+  {
+    "id": "954",
+    "type": "sucres, miels et assimiles",
+    "name": "Sirop d erable",
+    "kiloCaloriesPerHundredGrams": "269"
+  },
+  {
+    "id": "955",
+    "type": "sucres, miels et assimiles",
+    "name": "Sucre allege a l aspartame",
+    "kiloCaloriesPerHundredGrams": "398"
+  },
+  {
+    "id": "956",
+    "type": "sucres, miels et assimiles",
+    "name": "Sucre blanc",
+    "kiloCaloriesPerHundredGrams": "399"
+  },
+  {
+    "id": "957",
+    "type": "sucres, miels et assimiles",
+    "name": "Sucre roux",
+    "kiloCaloriesPerHundredGrams": "389"
+  },
+  {
+    "id": "958",
+    "type": "sucres, miels et assimiles",
+    "name": "Sucre vanille",
+    "kiloCaloriesPerHundredGrams": "398"
+  },
+  {
+    "id": "959",
+    "type": "sucres, miels et assimiles",
+    "name": "Vermicelles multicolores",
+    "kiloCaloriesPerHundredGrams": "420"
+  },
+  {
+    "id": "960",
+    "type": "confiseries non chocolatees",
+    "name": "Zeste d orange confit",
+    "kiloCaloriesPerHundredGrams": "336"
+  },
+  {
+    "id": "961",
+    "type": "glaces",
+    "name": "Barre glacee chocolatee",
+    "kiloCaloriesPerHundredGrams": "359"
+  },
+  {
+    "id": "962",
+    "type": "glaces",
+    "name": "Glace au yaourt",
+    "kiloCaloriesPerHundredGrams": "188"
+  },
+  {
+    "id": "963",
+    "type": "glaces",
+    "name": "Glace ou creme glacee",
+    "kiloCaloriesPerHundredGrams": "201"
+  },
+  {
+    "id": "964",
+    "type": "desserts glaces",
+    "name": "Nougat glace",
+    "kiloCaloriesPerHundredGrams": "263"
+  },
+  {
+    "id": "965",
+    "type": "beurres",
+    "name": "Beurre demi-sel",
+    "kiloCaloriesPerHundredGrams": "736"
+  },
+  {
+    "id": "966",
+    "type": "beurres",
+    "name": "Beurre sale",
+    "kiloCaloriesPerHundredGrams": "748"
+  },
+  {
+    "id": "967",
+    "type": "beurres",
+    "name": "Beurre doux",
+    "kiloCaloriesPerHundredGrams": "744"
+  },
+  {
+    "id": "968",
+    "type": "huiles et graisses vegetales",
+    "name": "Beurre de cacao",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "969",
+    "type": "beurres",
+    "name": "Carotte  deshydratee",
+    "kiloCaloriesPerHundredGrams": "317"
+  },
+  {
+    "id": "970",
+    "type": "autres matieres grasses",
+    "name": "Graisse de canard",
+    "kiloCaloriesPerHundredGrams": "898"
+  },
+  {
+    "id": "971",
+    "type": "autres matieres grasses",
+    "name": "Graisse de dinde",
+    "kiloCaloriesPerHundredGrams": "898"
+  },
+  {
+    "id": "972",
+    "type": "autres matieres grasses",
+    "name": "Graisse de poulet",
+    "kiloCaloriesPerHundredGrams": "898"
+  },
+  {
+    "id": "973",
+    "type": "autres matieres grasses",
+    "name": "Graisse d oie",
+    "kiloCaloriesPerHundredGrams": "898"
+  },
+  {
+    "id": "974",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile combinee (melange d huiles)",
+    "kiloCaloriesPerHundredGrams": "896"
+  },
+  {
+    "id": "975",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d amande",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "976",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d amandes d abricot",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "977",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d arachide",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "978",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d argan ou d argane",
+    "kiloCaloriesPerHundredGrams": "889"
+  },
+  {
+    "id": "979",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d avocat",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "980",
+    "type": "beurres",
+    "name": "Huile de beurre ou Beurre concentre",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "981",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de carthame",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "982",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de colza",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "983",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de coton",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "984",
+    "type": "huiles de poissons",
+    "name": "Huile de foie de morue",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "985",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de germe de ble",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "986",
+    "type": "huiles de poissons",
+    "name": "Huile de hareng",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "987",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de lin",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "988",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de mais",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "989",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de noisette",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "990",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de noix",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "991",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de palme",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "992",
+    "type": "autres matieres grasses",
+    "name": "Huile de paraffine",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "993",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de pepins de raisin",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "994",
+    "type": "huiles de poissons",
+    "name": "Huile de sardine",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "995",
+    "type": "huiles de poissons",
+    "name": "Huile de saumon",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "996",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de sesame",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "997",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de soja",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "998",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile de tournesol",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "999",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile d olive vierge extra",
+    "kiloCaloriesPerHundredGrams": "900"
+  },
+  {
+    "id": "1000",
+    "type": "huiles et graisses vegetales",
+    "name": "Huile pour friture",
+    "kiloCaloriesPerHundredGrams": "866"
+  },
+  {
+    "id": "1001",
+    "type": "autres matieres grasses",
+    "name": "Lard gras",
+    "kiloCaloriesPerHundredGrams": "810"
+  },
+  {
+    "id": "1002",
+    "type": "margarines",
+    "name": "Matiere grasse vegetale salee",
+    "kiloCaloriesPerHundredGrams": "722"
+  },
+  {
+    "id": "1003",
+    "type": "margarines",
+    "name": "Matiere grasse vegetale demi-sel",
+    "kiloCaloriesPerHundredGrams": "358"
+  },
+  {
+    "id": "1004",
+    "type": "margarines",
+    "name": "Matiere grasse vegetale doux",
+    "kiloCaloriesPerHundredGrams": "726"
+  },
+  {
+    "id": "1005",
+    "type": "autres matieres grasses",
+    "name": "Saindoux",
+    "kiloCaloriesPerHundredGrams": "896"
+  },
+  {
+    "id": "1006",
+    "type": "algues",
+    "name": "Agar (algue)",
+    "kiloCaloriesPerHundredGrams": "28,4"
+  },
+  {
+    "id": "1007",
+    "type": "herbes",
+    "name": "Ail seche  poudre",
+    "kiloCaloriesPerHundredGrams": "344"
+  },
+  {
+    "id": "1008",
+    "type": "herbes",
+    "name": "Aneth",
+    "kiloCaloriesPerHundredGrams": "48,2"
+  },
+  {
+    "id": "1009",
+    "type": "algues",
+    "name": "Ao-nori (Enteromorpha sp.)",
+    "kiloCaloriesPerHundredGrams": "224"
+  },
+  {
+    "id": "1010",
+    "type": "algues",
+    "name": "Ascophylle noueux ou goemon noir (Ascophyllum nodosum)",
+    "kiloCaloriesPerHundredGrams": "211"
+  },
+  {
+    "id": "1011",
+    "type": "ingredients divers",
+    "name": "Base de pizza a la creme",
+    "kiloCaloriesPerHundredGrams": "261"
+  },
+  {
+    "id": "1012",
+    "type": "ingredients divers",
+    "name": "Base de pizza tomatee",
+    "kiloCaloriesPerHundredGrams": "232"
+  },
+  {
+    "id": "1013",
+    "type": "herbes",
+    "name": "Basilic",
+    "kiloCaloriesPerHundredGrams": "34,2"
+  },
+  {
+    "id": "1014",
+    "type": "herbes",
+    "name": "Basilic seche",
+    "kiloCaloriesPerHundredGrams": "244"
+  },
+  {
+    "id": "1015",
+    "type": "ingredients divers",
+    "name": "Bicarbonate de soude",
+    "kiloCaloriesPerHundredGrams": "0,4"
+  },
+  {
+    "id": "1016",
+    "type": "aides culinaires",
+    "name": "Bouillon de bœuf",
+    "kiloCaloriesPerHundredGrams": "240"
+  },
+  {
+    "id": "1017",
+    "type": "aides culinaires",
+    "name": "Bouillon de viande et legumes type pot-au-feu",
+    "kiloCaloriesPerHundredGrams": "213"
+  },
+  {
+    "id": "1018",
+    "type": "aides culinaires",
+    "name": "Bouillon de volaille",
+    "kiloCaloriesPerHundredGrams": "233"
+  },
+  {
+    "id": "1019",
+    "type": "epices",
+    "name": "Cannelle en poudre",
+    "kiloCaloriesPerHundredGrams": "243"
+  },
+  {
+    "id": "1020",
+    "type": "epices",
+    "name": "Cardamome en poudre",
+    "kiloCaloriesPerHundredGrams": "321"
+  },
+  {
+    "id": "1021",
+    "type": "epices",
+    "name": "Graine de carvi",
+    "kiloCaloriesPerHundredGrams": "334"
+  },
+  {
+    "id": "1022",
+    "type": "sauces",
+    "name": "Caviar de tomates",
+    "kiloCaloriesPerHundredGrams": "218"
+  },
+  {
+    "id": "1023",
+    "type": "herbes",
+    "name": "Cerfeuil",
+    "kiloCaloriesPerHundredGrams": "37,9"
+  },
+  {
+    "id": "1024",
+    "type": "herbes",
+    "name": "Ciboule ou Ciboulette",
+    "kiloCaloriesPerHundredGrams": "29,9"
+  },
+  {
+    "id": "1025",
+    "type": "epices",
+    "name": "Clou de girofle",
+    "kiloCaloriesPerHundredGrams": "335"
+  },
+  {
+    "id": "1026",
+    "type": "herbes",
+    "name": "Coriandre",
+    "kiloCaloriesPerHundredGrams": "22,3"
+  },
+  {
+    "id": "1027",
+    "type": "epices",
+    "name": "Coriandre  graine",
+    "kiloCaloriesPerHundredGrams": "346"
+  },
+  {
+    "id": "1028",
+    "type": "condiments",
+    "name": "Cornichon  aigre-doux",
+    "kiloCaloriesPerHundredGrams": "36"
+  },
+  {
+    "id": "1029",
+    "type": "condiments",
+    "name": "Cornichon  au vinaigre",
+    "kiloCaloriesPerHundredGrams": "26,8"
+  },
+  {
+    "id": "1030",
+    "type": "aides culinaires",
+    "name": "Court-bouillon pour poissons",
+    "kiloCaloriesPerHundredGrams": "260"
+  },
+  {
+    "id": "1031",
+    "type": "sauces",
+    "name": "Creme anglaise",
+    "kiloCaloriesPerHundredGrams": "105"
+  },
+  {
+    "id": "1032",
+    "type": "epices",
+    "name": "Graine de cumin",
+    "kiloCaloriesPerHundredGrams": "427"
+  },
+  {
+    "id": "1033",
+    "type": "epices",
+    "name": "Curcuma en poudre",
+    "kiloCaloriesPerHundredGrams": "291"
+  },
+  {
+    "id": "1034",
+    "type": "epices",
+    "name": "Curry en poudre",
+    "kiloCaloriesPerHundredGrams": "301"
+  },
+  {
+    "id": "1035",
+    "type": "algues",
+    "name": "Dulse (Palmaria palmata)",
+    "kiloCaloriesPerHundredGrams": "227"
+  },
+  {
+    "id": "1036",
+    "type": "herbes",
+    "name": "Estragon",
+    "kiloCaloriesPerHundredGrams": "44"
+  },
+  {
+    "id": "1037",
+    "type": "epices",
+    "name": "Graine de fenouil",
+    "kiloCaloriesPerHundredGrams": "326"
+  },
+  {
+    "id": "1038",
+    "type": "epices",
+    "name": "Graine de fenugrec",
+    "kiloCaloriesPerHundredGrams": "350"
+  },
+  {
+    "id": "1039",
+    "type": "sels",
+    "name": "Fleur de sel",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "1040",
+    "type": "aides culinaires",
+    "name": "Fond de veau deshydrate",
+    "kiloCaloriesPerHundredGrams": "343"
+  },
+  {
+    "id": "1041",
+    "type": "aides culinaires",
+    "name": "Fond de veau",
+    "kiloCaloriesPerHundredGrams": "40,9"
+  },
+  {
+    "id": "1042",
+    "type": "aides culinaires",
+    "name": "Fond de volaille deshydrate",
+    "kiloCaloriesPerHundredGrams": "341"
+  },
+  {
+    "id": "1043",
+    "type": "algues",
+    "name": "Fucus vesiculeux (Fucus serratus ou Fucus vesiculosus)",
+    "kiloCaloriesPerHundredGrams": "194"
+  },
+  {
+    "id": "1044",
+    "type": "ingredients divers",
+    "name": "Gelatine seche",
+    "kiloCaloriesPerHundredGrams": "348"
+  },
+  {
+    "id": "1045",
+    "type": "aides culinaires",
+    "name": "Gelee au madere",
+    "kiloCaloriesPerHundredGrams": "11,3"
+  },
+  {
+    "id": "1046",
+    "type": "aides culinaires",
+    "name": "Gelee au madere deshydratee",
+    "kiloCaloriesPerHundredGrams": "248"
+  },
+  {
+    "id": "1047",
+    "type": "ingredients divers",
+    "name": "Gelifiant pour confitures",
+    "kiloCaloriesPerHundredGrams": "278"
+  },
+  {
+    "id": "1048",
+    "type": "ingredients divers",
+    "name": "Germe de ble",
+    "kiloCaloriesPerHundredGrams": "375"
+  },
+  {
+    "id": "1049",
+    "type": "epices",
+    "name": "Gingembre en poudre",
+    "kiloCaloriesPerHundredGrams": "336"
+  },
+  {
+    "id": "1050",
+    "type": "epices",
+    "name": "Gingembre  racine crue",
+    "kiloCaloriesPerHundredGrams": "32,9"
+  },
+  {
+    "id": "1051",
+    "type": "algues",
+    "name": "Gracilaire ou ogonori (Gracilaria verrucosa)",
+    "kiloCaloriesPerHundredGrams": "243"
+  },
+  {
+    "id": "1052",
+    "type": "algues",
+    "name": "Haricot de mer (Himanthalia elongata)",
+    "kiloCaloriesPerHundredGrams": "239"
+  },
+  {
+    "id": "1053",
+    "type": "herbes",
+    "name": "Herbes de Provence",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "1054",
+    "type": "sauces",
+    "name": "Houmous",
+    "kiloCaloriesPerHundredGrams": "288"
+  },
+  {
+    "id": "1055",
+    "type": "sauces",
+    "name": "Ketchup",
+    "kiloCaloriesPerHundredGrams": "99"
+  },
+  {
+    "id": "1056",
+    "type": "algues",
+    "name": "Kombu sechee ou deshydratee",
+    "kiloCaloriesPerHundredGrams": "217"
+  },
+  {
+    "id": "1057",
+    "type": "algues",
+    "name": "Laitue de mer (Ulva sp.)",
+    "kiloCaloriesPerHundredGrams": "206"
+  },
+  {
+    "id": "1058",
+    "type": "epices",
+    "name": "Feuille de laurier",
+    "kiloCaloriesPerHundredGrams": "353"
+  },
+  {
+    "id": "1059",
+    "type": "ingredients divers",
+    "name": "Lecithine de soja",
+    "kiloCaloriesPerHundredGrams": "779"
+  },
+  {
+    "id": "1060",
+    "type": "ingredients divers",
+    "name": "Levure alimentaire",
+    "kiloCaloriesPerHundredGrams": "334"
+  },
+  {
+    "id": "1061",
+    "type": "algues",
+    "name": "Lichen de mer ou pioca ou goemon rouge (Chondrus crispus)",
+    "kiloCaloriesPerHundredGrams": "234"
+  },
+  {
+    "id": "1062",
+    "type": "herbes",
+    "name": "Marjolaine",
+    "kiloCaloriesPerHundredGrams": "276"
+  },
+  {
+    "id": "1063",
+    "type": "sauces",
+    "name": "Mayonnaise",
+    "kiloCaloriesPerHundredGrams": "696"
+  },
+  {
+    "id": "1064",
+    "type": "herbes",
+    "name": "Meloukhia  feuilles de corete sechees  en poudre",
+    "kiloCaloriesPerHundredGrams": "239"
+  },
+  {
+    "id": "1065",
+    "type": "herbes",
+    "name": "Menthe",
+    "kiloCaloriesPerHundredGrams": "57,7"
+  },
+  {
+    "id": "1066",
+    "type": "herbes",
+    "name": "Menthe sechee",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "1067",
+    "type": "condiments",
+    "name": "Moutarde",
+    "kiloCaloriesPerHundredGrams": "152"
+  },
+  {
+    "id": "1068",
+    "type": "condiments",
+    "name": "Moutarde a l ancienne",
+    "kiloCaloriesPerHundredGrams": "142"
+  },
+  {
+    "id": "1069",
+    "type": "epices",
+    "name": "Noix de muscade",
+    "kiloCaloriesPerHundredGrams": "507"
+  },
+  {
+    "id": "1070",
+    "type": "algues",
+    "name": "Nori (Porphyra sp.)",
+    "kiloCaloriesPerHundredGrams": "255"
+  },
+  {
+    "id": "1071",
+    "type": "condiments",
+    "name": "Olive noire  a l huile (a la grecque)",
+    "kiloCaloriesPerHundredGrams": "332"
+  },
+  {
+    "id": "1072",
+    "type": "herbes",
+    "name": "Origan",
+    "kiloCaloriesPerHundredGrams": "265"
+  },
+  {
+    "id": "1073",
+    "type": "epices",
+    "name": "Paprika",
+    "kiloCaloriesPerHundredGrams": "319"
+  },
+  {
+    "id": "1074",
+    "type": "epices",
+    "name": "Graine de pavot",
+    "kiloCaloriesPerHundredGrams": "551"
+  },
+  {
+    "id": "1075",
+    "type": "herbes",
+    "name": "Persil",
+    "kiloCaloriesPerHundredGrams": "42,7"
+  },
+  {
+    "id": "1076",
+    "type": "herbes",
+    "name": "Persil seche",
+    "kiloCaloriesPerHundredGrams": "291"
+  },
+  {
+    "id": "1077",
+    "type": "epices",
+    "name": "Poivre blanc en poudre",
+    "kiloCaloriesPerHundredGrams": "310"
+  },
+  {
+    "id": "1078",
+    "type": "epices",
+    "name": "Poivre de Cayenne ou piment de Cayenne",
+    "kiloCaloriesPerHundredGrams": "376"
+  },
+  {
+    "id": "1079",
+    "type": "epices",
+    "name": "Poivre gris en poudre",
+    "kiloCaloriesPerHundredGrams": "283"
+  },
+  {
+    "id": "1080",
+    "type": "epices",
+    "name": "Poivre noir en poudre",
+    "kiloCaloriesPerHundredGrams": "330"
+  },
+  {
+    "id": "1081",
+    "type": "ingredients divers",
+    "name": "Pollen",
+    "kiloCaloriesPerHundredGrams": "285"
+  },
+  {
+    "id": "1082",
+    "type": "aides culinaires",
+    "name": "Creme de soja",
+    "kiloCaloriesPerHundredGrams": "153"
+  },
+  {
+    "id": "1083",
+    "type": "epices",
+    "name": "Quatre epices",
+    "kiloCaloriesPerHundredGrams": "348"
+  },
+  {
+    "id": "1084",
+    "type": "herbes",
+    "name": "Romarin",
+    "kiloCaloriesPerHundredGrams": "121"
+  },
+  {
+    "id": "1085",
+    "type": "herbes",
+    "name": "Romarin seche",
+    "kiloCaloriesPerHundredGrams": "328"
+  },
+  {
+    "id": "1086",
+    "type": "epices",
+    "name": "Safran",
+    "kiloCaloriesPerHundredGrams": "352"
+  },
+  {
+    "id": "1087",
+    "type": "herbes",
+    "name": "Sarriette",
+    "kiloCaloriesPerHundredGrams": "264"
+  },
+  {
+    "id": "1088",
+    "type": "sauces",
+    "name": "Sauce a la creme",
+    "kiloCaloriesPerHundredGrams": "78,8"
+  },
+  {
+    "id": "1089",
+    "type": "sauces",
+    "name": "Sauce a la creme aux epices",
+    "kiloCaloriesPerHundredGrams": "80,7"
+  },
+  {
+    "id": "1090",
+    "type": "sauces",
+    "name": "Sauce a la creme aux herbes",
+    "kiloCaloriesPerHundredGrams": "75,2"
+  },
+  {
+    "id": "1091",
+    "type": "sauces",
+    "name": "Sauce a l echalote a la creme",
+    "kiloCaloriesPerHundredGrams": "106"
+  },
+  {
+    "id": "1092",
+    "type": "sauces",
+    "name": "Sauce aioli",
+    "kiloCaloriesPerHundredGrams": "395"
+  },
+  {
+    "id": "1093",
+    "type": "sauces",
+    "name": "Sauce americaine",
+    "kiloCaloriesPerHundredGrams": "423"
+  },
+  {
+    "id": "1094",
+    "type": "sauces",
+    "name": "Sauce armoricaine",
+    "kiloCaloriesPerHundredGrams": "83,6"
+  },
+  {
+    "id": "1095",
+    "type": "sauces",
+    "name": "Sauce au beurre",
+    "kiloCaloriesPerHundredGrams": "192"
+  },
+  {
+    "id": "1096",
+    "type": "sauces",
+    "name": "Sauce au beurre blanc",
+    "kiloCaloriesPerHundredGrams": "174"
+  },
+  {
+    "id": "1097",
+    "type": "sauces",
+    "name": "Sauce au chocolat",
+    "kiloCaloriesPerHundredGrams": "277"
+  },
+  {
+    "id": "1098",
+    "type": "sauces",
+    "name": "Sauce au curry",
+    "kiloCaloriesPerHundredGrams": "77,4"
+  },
+  {
+    "id": "1099",
+    "type": "sauces",
+    "name": "Sauce au fromage pour risotto ou pates",
+    "kiloCaloriesPerHundredGrams": "118"
+  },
+  {
+    "id": "1100",
+    "type": "sauces",
+    "name": "Sauce au poivre vert",
+    "kiloCaloriesPerHundredGrams": "83,9"
+  },
+  {
+    "id": "1101",
+    "type": "sauces",
+    "name": "Sauce au poivre  chaude",
+    "kiloCaloriesPerHundredGrams": "160"
+  },
+  {
+    "id": "1102",
+    "type": "sauces",
+    "name": "Sauce au poivre  condimentaire  froide",
+    "kiloCaloriesPerHundredGrams": "494"
+  },
+  {
+    "id": "1103",
+    "type": "sauces",
+    "name": "Sauce au roquefort",
+    "kiloCaloriesPerHundredGrams": "128"
+  },
+  {
+    "id": "1104",
+    "type": "sauces",
+    "name": "Sauce aux champignons",
+    "kiloCaloriesPerHundredGrams": "98,8"
+  },
+  {
+    "id": "1105",
+    "type": "sauces",
+    "name": "Sauce aux champignons et a la creme",
+    "kiloCaloriesPerHundredGrams": "90,5"
+  },
+  {
+    "id": "1106",
+    "type": "sauces",
+    "name": "Sauce barbecue",
+    "kiloCaloriesPerHundredGrams": "141"
+  },
+  {
+    "id": "1107",
+    "type": "sauces",
+    "name": "Sauce basquaise ou Sauce aux poivrons",
+    "kiloCaloriesPerHundredGrams": "63,1"
+  },
+  {
+    "id": "1108",
+    "type": "sauces",
+    "name": "Sauce bearnaise",
+    "kiloCaloriesPerHundredGrams": "454"
+  },
+  {
+    "id": "1109",
+    "type": "sauces",
+    "name": "Sauce bechamel",
+    "kiloCaloriesPerHundredGrams": "90,1"
+  },
+  {
+    "id": "1110",
+    "type": "sauces",
+    "name": "Sauce bourguignonne",
+    "kiloCaloriesPerHundredGrams": "433"
+  },
+  {
+    "id": "1111",
+    "type": "sauces",
+    "name": "Sauce burger",
+    "kiloCaloriesPerHundredGrams": "367"
+  },
+  {
+    "id": "1112",
+    "type": "sauces",
+    "name": "Sauce carbonara",
+    "kiloCaloriesPerHundredGrams": "160"
+  },
+  {
+    "id": "1113",
+    "type": "sauces",
+    "name": "Sauce chasseur",
+    "kiloCaloriesPerHundredGrams": "38,8"
+  },
+  {
+    "id": "1114",
+    "type": "sauces",
+    "name": "Sauce crudites ou Sauce salade",
+    "kiloCaloriesPerHundredGrams": "304"
+  },
+  {
+    "id": "1115",
+    "type": "sauces",
+    "name": "Sauce grand veneur",
+    "kiloCaloriesPerHundredGrams": "103"
+  },
+  {
+    "id": "1116",
+    "type": "sauces",
+    "name": "Sauce hollandaise",
+    "kiloCaloriesPerHundredGrams": "203"
+  },
+  {
+    "id": "1117",
+    "type": "sauces",
+    "name": "Sauce indienne type tandoori ou tikka masala",
+    "kiloCaloriesPerHundredGrams": "86,7"
+  },
+  {
+    "id": "1118",
+    "type": "sauces",
+    "name": "Sauce kebab",
+    "kiloCaloriesPerHundredGrams": "293"
+  },
+  {
+    "id": "1119",
+    "type": "sauces",
+    "name": "Sauce madere",
+    "kiloCaloriesPerHundredGrams": "37,6"
+  },
+  {
+    "id": "1120",
+    "type": "sauces",
+    "name": "Sauce moutarde",
+    "kiloCaloriesPerHundredGrams": "229"
+  },
+  {
+    "id": "1121",
+    "type": "sauces",
+    "name": "Sauce Nuoc Mam ou Sauce au poisson",
+    "kiloCaloriesPerHundredGrams": "81,2"
+  },
+  {
+    "id": "1122",
+    "type": "sauces",
+    "name": "Sauce pesto",
+    "kiloCaloriesPerHundredGrams": "370"
+  },
+  {
+    "id": "1123",
+    "type": "sauces",
+    "name": "Sauce pesto rosso",
+    "kiloCaloriesPerHundredGrams": "305"
+  },
+  {
+    "id": "1124",
+    "type": "sauces",
+    "name": "Sauce rouille",
+    "kiloCaloriesPerHundredGrams": "381"
+  },
+  {
+    "id": "1125",
+    "type": "sauces",
+    "name": "Sauce soja",
+    "kiloCaloriesPerHundredGrams": "46,2"
+  },
+  {
+    "id": "1126",
+    "type": "sauces",
+    "name": "Sauce tartare",
+    "kiloCaloriesPerHundredGrams": "520"
+  },
+  {
+    "id": "1127",
+    "type": "sauces",
+    "name": "Sauce tomate a la viande ou Sauce bolognaise",
+    "kiloCaloriesPerHundredGrams": "93,8"
+  },
+  {
+    "id": "1128",
+    "type": "sauces",
+    "name": "Sauce tomate au fromage",
+    "kiloCaloriesPerHundredGrams": "180"
+  },
+  {
+    "id": "1129",
+    "type": "sauces",
+    "name": "Sauce tomate aux champignons",
+    "kiloCaloriesPerHundredGrams": "67,1"
+  },
+  {
+    "id": "1130",
+    "type": "sauces",
+    "name": "Sauce tomate aux oignons",
+    "kiloCaloriesPerHundredGrams": "78,8"
+  },
+  {
+    "id": "1131",
+    "type": "sauces",
+    "name": "Sauce tomate aux olives",
+    "kiloCaloriesPerHundredGrams": "108"
+  },
+  {
+    "id": "1132",
+    "type": "sauces",
+    "name": "Sauce tomate aux petits legumes",
+    "kiloCaloriesPerHundredGrams": "66,8"
+  },
+  {
+    "id": "1133",
+    "type": "herbes",
+    "name": "Sauge",
+    "kiloCaloriesPerHundredGrams": "36,7"
+  },
+  {
+    "id": "1134",
+    "type": "herbes",
+    "name": "Sauge sechee",
+    "kiloCaloriesPerHundredGrams": "320"
+  },
+  {
+    "id": "1135",
+    "type": "sels",
+    "name": "Sel au celeri",
+    "kiloCaloriesPerHundredGrams": "49"
+  },
+  {
+    "id": "1136",
+    "type": "sels",
+    "name": "Sel blanc",
+    "kiloCaloriesPerHundredGrams": "0"
+  },
+  {
+    "id": "1137",
+    "type": "ingredients divers",
+    "name": "Son d avoine",
+    "kiloCaloriesPerHundredGrams": "359"
+  },
+  {
+    "id": "1138",
+    "type": "ingredients divers",
+    "name": "Son de ble",
+    "kiloCaloriesPerHundredGrams": "279"
+  },
+  {
+    "id": "1139",
+    "type": "ingredients divers",
+    "name": "Son de mais",
+    "kiloCaloriesPerHundredGrams": "226"
+  },
+  {
+    "id": "1140",
+    "type": "ingredients divers",
+    "name": "Son de riz",
+    "kiloCaloriesPerHundredGrams": "398"
+  },
+  {
+    "id": "1141",
+    "type": "algues",
+    "name": "Spiruline (Spirulina sp.)",
+    "kiloCaloriesPerHundredGrams": "388"
+  },
+  {
+    "id": "1142",
+    "type": "herbes",
+    "name": "Thym",
+    "kiloCaloriesPerHundredGrams": "107"
+  },
+  {
+    "id": "1143",
+    "type": "herbes",
+    "name": "Thym seche",
+    "kiloCaloriesPerHundredGrams": "285"
+  },
+  {
+    "id": "1144",
+    "type": "epices",
+    "name": "Vanille  extrait alcoolique",
+    "kiloCaloriesPerHundredGrams": "240"
+  },
+  {
+    "id": "1145",
+    "type": "epices",
+    "name": "Vanille",
+    "kiloCaloriesPerHundredGrams": "57,7"
+  },
+  {
+    "id": "1146",
+    "type": "condiments",
+    "name": "Vinaigre",
+    "kiloCaloriesPerHundredGrams": "22,6"
+  },
+  {
+    "id": "1147",
+    "type": "condiments",
+    "name": "Vinaigre balsamique",
+    "kiloCaloriesPerHundredGrams": "125"
+  },
+  {
+    "id": "1148",
+    "type": "algues",
+    "name": "Wakame (Undaria pinnatifida)",
+    "kiloCaloriesPerHundredGrams": "184"
+  },
+  {
+    "id": "1149",
+    "type": "algues",
+    "name": "Wakame atlantique (Alaria esculenta)",
+    "kiloCaloriesPerHundredGrams": "187"
+  }
+]

@@ -233,8 +233,8 @@ public class PlanningFragment extends Fragment implements Updatable{
             }
 
             @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
+            public void onClick(View view) {
+                switch (view.getId()) {
                     case R.id.btn_change:
                         Recipe r = (Recipe) spinnerRecipe.getSelectedItem();
                         recipeCalendar.saveRecipeForDate(r, date);

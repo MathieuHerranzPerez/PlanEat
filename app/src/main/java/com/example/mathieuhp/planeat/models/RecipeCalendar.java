@@ -87,16 +87,16 @@ public class RecipeCalendar {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            try {
-                Calendar calendar = Calendar.getInstance();
-                // the current year
-                int year = calendar.get(Calendar.YEAR);
-                // the current week
-                int week = calendar.get(Calendar.WEEK_OF_YEAR);
-                // the current day (indexed starting at 1)
-                int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-                // insert the calendar
 
+            Calendar calendar = Calendar.getInstance();
+            // the current year
+            int year = calendar.get(Calendar.YEAR);
+            // the current week
+            int week = calendar.get(Calendar.WEEK_OF_YEAR);
+            // the current day (indexed starting at 1)
+            int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+            // insert the calendar
+            try {
                 // if the user doesn't have any calendar with the current week, create it
                 if(!dataSnapshot.child(userId).child(Integer.toString(year)).child(Integer.toString(week)).exists()) {
                     for(int i = 1; i < 8; ++i) {
