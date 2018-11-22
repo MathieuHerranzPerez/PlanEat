@@ -119,17 +119,17 @@ public class Recipe {
             try {
                 DataSnapshot ds = dataSnapshot.child(recipe.getId());
                 recipe.setName((String) ds.child("name").getValue());
-                recipe.setCalories(Integer.parseInt((String)ds.child("calories").getValue()));
+                recipe.setCalories(Integer.parseInt((String) ds.child("calories").getValue()));
                 recipe.setNbPeople(Integer.parseInt((String) ds.child("persons").getValue()));
                 recipe.setDescription((String) ds.child("preparation").getValue());
-                recipe.setPreparationTime(Integer.parseInt((String)ds.child("preparationTime").getValue()));
-                recipe.setScore(Float.parseFloat((String)ds.child("score").getValue()));
-                recipe.setIsShared(Boolean.valueOf((String) ds.child("isShared").getValue()));
+                recipe.setPreparationTime(Integer.parseInt((String) ds.child("preparationTime").getValue()));
+                recipe.setScore(Float.parseFloat((String) ds.child("score").getValue()));
+                recipe.setIsShared((Boolean) ds.child("isShared").getValue());
 
                 // todo get the tags
 
 
-                // notify the observers
+                // notify the observers!
                 if(PlanningFragment.getPlanningFragment() != null)
                     PlanningFragment.getPlanningFragment().updateView();
                 if(RecipesListFragment.getRecipesListFragment() != null)

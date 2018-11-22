@@ -396,8 +396,6 @@ public class UserFragment extends Fragment implements Updatable {
         }
     }
 
-
-
     public static UserFragment getUserFragment() {
         return userFragment;
     }
