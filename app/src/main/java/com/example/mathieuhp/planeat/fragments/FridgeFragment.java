@@ -52,7 +52,6 @@ public class FridgeFragment extends Fragment implements Updatable{
     private User user;
     private Fridge fridge;
 
-    private JSONArray jsonArray;
     private List<Ingredient> ingredientList;
 
     private LinearLayout linearLayout;
@@ -186,28 +185,31 @@ public class FridgeFragment extends Fragment implements Updatable{
      */
     private void loadJsonFromAsset() {
 
-        try {
-            InputStream is = getActivity().getAssets().open("ingredientsCalories.json");
+        if(!(Ingredient.ingredientList.size() > 0)) {
+            try {
+                InputStream is = getActivity().getAssets().open("ingredientsCalories.json");
 
-            int size = is.available();
-            byte[] buffer = new byte[size];
+                int size = is.available();
+                byte[] buffer = new byte[size];
 
-            is.read(buffer);
-            is.close();
+                is.read(buffer);
+                is.close();
 
-            String json = new String(buffer, "UTF-8");
-            jsonArray = new JSONArray(json);
+                String json = new String(buffer, "UTF-8");
+                JSONArray jsonArray = new JSONArray(json);
 
-            for(int i = 0; i < jsonArray.length(); ++i) {
-                JSONObject obj = jsonArray.getJSONObject(i);
-                Ingredient ingr = new Ingredient(obj.getString("id"), obj.getString("name"),
-                         obj.getString("kiloCaloriesPerHundredGrams"), obj.getString("type"));
+                for (int i = 0; i < jsonArray.length(); ++i) {
+                    JSONObject obj = jsonArray.getJSONObject(i);
+                    // fill the ingredient static list by calling the constructor ...
+                    Ingredient ingr = new Ingredient(obj.getString("id"), obj.getString("name"),
+                            obj.getString("kiloCaloriesPerHundredGrams"), obj.getString("type"));
+                }
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
     }
 
@@ -265,7 +267,6 @@ public class FridgeFragment extends Fragment implements Updatable{
 
                     if(nbIngr >= 0) {
                         String res = Integer.toString(nbIngr);
-                        Log.d("RES", res);
                         fridge.updateQuantity(ingredient, res);
                     }
                 }
@@ -319,9 +320,9 @@ public class FridgeFragment extends Fragment implements Updatable{
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 requestWindowFeature(Window.FEATURE_NO_TITLE);
-                setContentView(R.layout.dialog_add_ingredient_fridge);
+                setContentView(R.layout.dialog_add_ingredient);
 
-                ingredientListView = (ListView) findViewById(R.id.fridge_ingredient_list);
+                ingredientListView = (ListView) findViewById(R.id.ingredient_list);
                 searchView = (SearchView) findViewById(R.id.search_ingredient_filter);
                 btnCancel = (Button) findViewById(R.id.btn_cancel);
 
