@@ -317,7 +317,10 @@ public class UserFragment extends Fragment implements Updatable {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_yes :
-                      // delete our user
+
+                    // delete the user fridge
+                    user.getFridge().deleteFridge();
+                    // delete our user
                     user.deleteData();
 
                     // delete firebase authentification user

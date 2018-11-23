@@ -1,8 +1,9 @@
 package com.example.mathieuhp.planeat.models;
 
 import android.support.annotation.NonNull;
+import android.support.v4.util.Pair;
 
-import com.example.mathieuhp.planeat.fragments.FridgeFragment;
+import com.example.mathieuhp.planeat.fragments.ShoppingFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -11,28 +12,29 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.TreeMap;
 
-public class Fridge {
+public class Shopping {
 
-    private TreeMap<Ingredient, Integer> treeMapIngredient;
+    private TreeMap<Ingredient, Pair<Integer, Boolean>> treeMapIngredient;
     private User user;
-    private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("fridgeContents");
+    private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("groceryLists");
 
-    public Fridge() {
+    public Shopping() {
         user = User.getUserInstance();
         treeMapIngredient = new TreeMap<>();
 
         // get the user ingredients or create the branch
-        firebaseReference.addValueEventListener(new ValueEventListenerFridgeConstruct(this, user.getId(), firebaseReference));
+        firebaseReference.addValueEventListener(new ValueEventListenerShoppingConstruct(this, user.getId(), firebaseReference));
     }
 
     /* ---- GETTERS ---- */
-
-    public TreeMap<Ingredient, Integer> getTreeMapIngredient() {
+    public TreeMap<Ingredient, Pair<Integer, Boolean>> getTreeMapIngredient() {
         return treeMapIngredient;
     }
 
 
     /* ---- SETTERS ---- */
+
+
 
     /**
      * add an ingredient to the ingredient user list
@@ -40,10 +42,11 @@ public class Fridge {
      */
     public void addIngedient(Ingredient ingredient) {
 
-        updateQuantity(ingredient, "1");
+        firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue("1");
+        firebaseReference.child(user.getId()).child(ingredient.getId()).child("checked").setValue(false);
 
         // add it to the treeMap
-        treeMapIngredient.put(ingredient, 1);
+        treeMapIngredient.put(ingredient, new Pair<>(1, false));
     }
 
     /**
@@ -53,6 +56,15 @@ public class Fridge {
     public void updateQuantity(Ingredient ingredient, String quantity) {
 
         firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue(quantity);
+    }
+
+    /**
+     * change the checked value of the ingredient for the user in DB
+     * @param ingredient the ingredient to change
+     */
+    public void updateChecked(Ingredient ingredient, boolean checked) {
+
+        firebaseReference.child(user.getId()).child(ingredient.getId()).child("checked").setValue(checked);
     }
 
     /**
@@ -71,22 +83,16 @@ public class Fridge {
         }
     }
 
-    /**
-     * Delete the user fridge
-     */
-    public void deleteFridge() {
-        firebaseReference.child(user.getId()).removeValue();
-    }
 
+    /* ---- LISTENERS ---- */
+    private class ValueEventListenerShoppingConstruct implements ValueEventListener {
 
-    private class ValueEventListenerFridgeConstruct implements ValueEventListener {
-
-        private Fridge fridge;
+        private Shopping shopping;
         private String userId;
         private DatabaseReference firebase;
 
-        private ValueEventListenerFridgeConstruct(Fridge f, String userId, DatabaseReference firebase) {
-            this.fridge = f;
+        private ValueEventListenerShoppingConstruct(Shopping s, String userId, DatabaseReference firebase) {
+            this.shopping = s;
             this.userId = userId;
             this.firebase = firebase;
         }
@@ -95,7 +101,7 @@ public class Fridge {
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
             try {
-                // if the user doesn't have a fridge yet, create it in DB
+                // if the user doesn't have a shopping yet, create it in DB
                 if (!dataSnapshot.child(userId).exists()) {
                     firebase.child(userId).setValue("-1");
                 }
@@ -103,15 +109,16 @@ public class Fridge {
                 // store all the ingredients in the treeMap if the quantity is higher than 0
                 for (DataSnapshot ds : dataSnapshot.child(userId).getChildren()) {
                     int quantity = Integer.parseInt((String) ds.child("quantity").getValue());
+                    boolean checked = (Boolean) ds.child("checked").getValue();
                     if (quantity >= 0) {
                         Ingredient ingredient = Ingredient.ingredientList.get(Integer.parseInt(ds.getKey()));
-                        fridge.getTreeMapIngredient().put(ingredient, quantity);
+                        shopping.getTreeMapIngredient().put(ingredient, new Pair<>(quantity, checked));
                     }
                 }
 
                 // notify the observers
-                if(FridgeFragment.getFridgeFragment() != null)
-                    FridgeFragment.getFridgeFragment().updateView();
+                if(ShoppingFragment.getShoppingFragment() != null)
+                    ShoppingFragment.getShoppingFragment().updateView();
 
             }  catch (Exception e) {
                 e.printStackTrace();
