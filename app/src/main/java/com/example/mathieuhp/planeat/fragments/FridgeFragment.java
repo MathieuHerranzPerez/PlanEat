@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -229,6 +230,7 @@ public class FridgeFragment extends Fragment implements Updatable{
 
                     if(nbIngr >= 0) {
                         String res = Integer.toString(nbIngr);
+                        Log.d("RES", res);
                         fridge.updateQuantity(ingredient, res);
                     }
                 }
