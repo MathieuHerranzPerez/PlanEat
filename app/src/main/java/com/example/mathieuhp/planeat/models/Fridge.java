@@ -1,7 +1,6 @@
 package com.example.mathieuhp.planeat.models;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.example.mathieuhp.planeat.fragments.FridgeFragment;
 import com.google.firebase.database.DataSnapshot;
@@ -35,12 +34,22 @@ public class Fridge {
 
     /* ---- SETTERS ---- */
 
+    /**
+     * add an ingredient to the ingredient user list
+     * @param ingredient the ingredient to add
+     */
+    public void addIngedient(Ingredient ingredient) {
+        firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue("1");
+
+        // add it to the treeMap
+        treeMapIngredient.put(ingredient, 1);
+    }
 
     /**
      * change the quantity of the ingredient for the user in DB
      * @param ingredient the ingredient to change
      */
-    public void updateData(Ingredient ingredient, String quantity) {
+    public void updateQuantity(Ingredient ingredient, String quantity) {
 
         firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue(quantity);
     }
