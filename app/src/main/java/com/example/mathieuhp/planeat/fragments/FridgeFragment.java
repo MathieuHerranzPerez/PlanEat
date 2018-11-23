@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.InputType;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -28,18 +27,13 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.activities.MainActivity;
 import com.example.mathieuhp.planeat.models.Fridge;
 import com.example.mathieuhp.planeat.models.Ingredient;
 import com.example.mathieuhp.planeat.models.User;
 import com.example.mathieuhp.planeat.utils.IngredientAdapter;
 import com.example.mathieuhp.planeat.utils.Utils;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -67,7 +61,8 @@ public class FridgeFragment extends Fragment implements Updatable{
         user = User.getUserInstance();
 
         ingredientList = new ArrayList<>();
-        loadJsonFromAsset();
+        // useless, but need to be sure. Load all the ingredients
+        ((MainActivity)getActivity()).loadIngredientJsonFromAsset();
 
         fridge = new Fridge();
         user.setFridge(fridge);
@@ -177,39 +172,6 @@ public class FridgeFragment extends Fragment implements Updatable{
 
             // add it to the main layout
             linearLayout.addView(linearLayoutIngredient);
-        }
-    }
-
-    /**
-     * Instantiate the ingredients by checking the JSON file
-     */
-    private void loadJsonFromAsset() {
-
-        if(!(Ingredient.ingredientList.size() > 0)) {
-            try {
-                InputStream is = getActivity().getAssets().open("ingredientsCalories.json");
-
-                int size = is.available();
-                byte[] buffer = new byte[size];
-
-                is.read(buffer);
-                is.close();
-
-                String json = new String(buffer, "UTF-8");
-                JSONArray jsonArray = new JSONArray(json);
-
-                for (int i = 0; i < jsonArray.length(); ++i) {
-                    JSONObject obj = jsonArray.getJSONObject(i);
-                    // fill the ingredient static list by calling the constructor ...
-                    Ingredient ingr = new Ingredient(obj.getString("id"), obj.getString("name"),
-                            obj.getString("kiloCaloriesPerHundredGrams"), obj.getString("type"));
-                }
-
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
         }
     }
 
