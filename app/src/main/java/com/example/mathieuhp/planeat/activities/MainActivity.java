@@ -20,6 +20,13 @@ import com.example.mathieuhp.planeat.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private TextView mTitleToolbar;
@@ -56,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         // and the bundle to pass it to the fragment
         bundleUser = new Bundle();
         bundleUser.putParcelable("user", user);
+
+        loadIngredientJsonFromAsset();
 
         // launch the main fragment
         recipesListFragment.setArguments(bundleUser);
@@ -98,6 +107,41 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return loadFragment(fragment);
     }
+
+
+    /**
+     * Instantiate the ingredients by checking the JSON file
+     */
+    public void loadIngredientJsonFromAsset() {
+
+        if(!(Ingredient.ingredientList.size() > 0)) {
+            try {
+                InputStream is = getAssets().open("ingredientsCalories.json");
+
+                int size = is.available();
+                byte[] buffer = new byte[size];
+
+                is.read(buffer);
+                is.close();
+
+                String json = new String(buffer, "UTF-8");
+                JSONArray jsonArray = new JSONArray(json);
+
+                for (int i = 0; i < jsonArray.length(); ++i) {
+                    JSONObject obj = jsonArray.getJSONObject(i);
+                    // fill the ingredient static list by calling the constructor ...
+                    Ingredient ingr = new Ingredient(obj.getString("id"), obj.getString("name"),
+                            obj.getString("kiloCaloriesPerHundredGrams"), obj.getString("type"));
+                }
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     private boolean loadFragment(Fragment fragment) {
 

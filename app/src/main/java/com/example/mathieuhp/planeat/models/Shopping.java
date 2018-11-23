@@ -84,6 +84,14 @@ public class Shopping {
     }
 
 
+    /**
+     * Delete the user shopping
+     */
+    public void deleteShopping() {
+        firebaseReference.child(user.getId()).removeValue();
+    }
+
+
     /* ---- LISTENERS ---- */
     private class ValueEventListenerShoppingConstruct implements ValueEventListener {
 

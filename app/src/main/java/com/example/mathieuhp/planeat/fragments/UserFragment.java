@@ -320,6 +320,8 @@ public class UserFragment extends Fragment implements Updatable {
 
                     // delete the user fridge
                     user.getFridge().deleteFridge();
+                    // delete the user shopping
+                    user.getShopping().deleteShopping();
                     // delete our user
                     user.deleteData();
 
