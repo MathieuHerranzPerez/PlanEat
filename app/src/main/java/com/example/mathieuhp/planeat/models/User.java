@@ -34,7 +34,7 @@ public class User implements Parcelable {
     private static User userInstance;
 
     private Fridge fridge;
-//    private ShoppingList shoppingList; //TODO
+    private Shopping shopping;
 
     public User() {
         // default constructor required for calls to DataSnapshot.getValue(xxx.class)
@@ -86,6 +86,9 @@ public class User implements Parcelable {
     public Fridge getFridge() {
         return fridge;
     }
+    public Shopping getShopping() {
+        return shopping;
+    }
 
     public static User getUserInstance() {
         return userInstance;
@@ -110,6 +113,9 @@ public class User implements Parcelable {
     }
     public void setFridge(Fridge fridge) {
         this.fridge = fridge;
+    }
+    public void setShopping(Shopping shopping) {
+        this.shopping = shopping;
     }
 
     public void addPersonnalRecipe(Recipe recipe) {
