@@ -18,16 +18,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Fridge;
 import com.example.mathieuhp.planeat.models.Ingredient;
 import com.example.mathieuhp.planeat.models.User;
+import com.example.mathieuhp.planeat.utils.IngredientAdapter;
 import com.example.mathieuhp.planeat.utils.Utils;
 
 import org.json.JSONArray;
@@ -232,7 +236,7 @@ public class FridgeFragment extends Fragment implements Updatable{
                     String res = Integer.toString(nbIngr);
                     editText.setText(res);
 
-                    fridge.updateData(ingredient, res);
+                    fridge.updateQuantity(ingredient, res);
                     editText.setText(res);
                 }
             }
@@ -262,7 +266,7 @@ public class FridgeFragment extends Fragment implements Updatable{
                     if(nbIngr >= 0) {
                         String res = Integer.toString(nbIngr);
                         Log.d("RES", res);
-                        fridge.updateData(ingredient, res);
+                        fridge.updateQuantity(ingredient, res);
                     }
                 }
                 return true;
@@ -283,25 +287,32 @@ public class FridgeFragment extends Fragment implements Updatable{
 
         @Override
         public void onClick(View view) {
-            DialogAddIngredient addIngedientWindow = new DialogAddIngredient(getActivity(), user, fridge);
+            DialogAddIngredient addIngedientWindow = new DialogAddIngredient(getActivity(), fridge);
             addIngedientWindow.show();
         }
 
-
+        /**
+         * Window where the user can choose an ingredient
+         */
         private class DialogAddIngredient extends Dialog implements android.view.View.OnClickListener {
 
-            private User user;
             private Fridge fridge;
+            private ArrayList<Ingredient> temporaryList;
 
             private Activity activity;
-            private Button btnAdd;
             private Button btnCancel;
+            private SearchView searchView;
+            private ListView ingredientListView;
 
-            private DialogAddIngredient(Activity a, User user, Fridge fridge) {
+            private IngredientAdapter adapter;
+
+            private DialogAddIngredient(Activity a, Fridge fridge) {
                 super(a);
                 this.activity = a;
                 this.fridge = fridge;
-                this.user = user;
+
+                temporaryList = new ArrayList<>();
+                temporaryList.addAll(Ingredient.ingredientList);
             }
 
             @Override
@@ -310,28 +321,42 @@ public class FridgeFragment extends Fragment implements Updatable{
                 requestWindowFeature(Window.FEATURE_NO_TITLE);
                 setContentView(R.layout.dialog_add_ingredient_fridge);
 
-                // TODO create a search bar
-
-                btnAdd = (Button) findViewById(R.id.btn_add_ingredient_fridge);
+                ingredientListView = (ListView) findViewById(R.id.fridge_ingredient_list);
+                searchView = (SearchView) findViewById(R.id.search_ingredient_filter);
                 btnCancel = (Button) findViewById(R.id.btn_cancel);
 
+                // adapter
+                adapter = new IngredientAdapter(activity, R.layout.row_ingredient, temporaryList);
+                ingredientListView.setAdapter(adapter);
 
-                btnAdd.setOnClickListener(this);
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String s) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String s) {
+                        adapter.getFilter().filter(s);
+                        return false;
+                    }
+                });
+
+                // by clicking on an Ingredient, add it to the ingredient user list
+                ingredientListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Ingredient ingredient = (Ingredient) adapterView.getAdapter().getItem(i);
+                        fridge.addIngedient(ingredient);
+                        dismiss();
+                    }
+                });
+
                 btnCancel.setOnClickListener(this);
             }
 
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.btn_add_ingredient_fridge:
-                        // TODO
-                        break;
-                    case R.id.btn_cancel:
-                        dismiss();
-                        break;
-                    default:
-                        break;
-                }
                 dismiss();
             }
         }

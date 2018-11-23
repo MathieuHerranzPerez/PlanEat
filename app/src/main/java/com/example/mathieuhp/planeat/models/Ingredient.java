@@ -10,13 +10,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Ingredient implements Comparable {
 
     // the list of all ingredients instantiated
-    public static List<Ingredient> ingredientList = new ArrayList<>();
+    public static ArrayList<Ingredient> ingredientList = new ArrayList<>();
 
     private String id;
     private String name;
