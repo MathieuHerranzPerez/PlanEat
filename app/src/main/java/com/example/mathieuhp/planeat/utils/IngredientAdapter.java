@@ -62,6 +62,10 @@ public class IngredientAdapter extends ArrayAdapter<Ingredient> implements Filte
         return convertView;
     }
 
+    /**
+     * Search in ingredient name and type if the char sequence is present
+     * @return the filter
+     */
     @NonNull
     @Override
     public Filter getFilter() {
