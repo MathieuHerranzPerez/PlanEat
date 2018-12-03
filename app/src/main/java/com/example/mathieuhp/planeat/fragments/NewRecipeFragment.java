@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,6 +31,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class NewRecipeFragment extends Fragment {
 
     final AtomicInteger count = new AtomicInteger();
+
+
+
     public String id;
     public String name;
     public String imageLink;
@@ -46,18 +50,18 @@ public class NewRecipeFragment extends Fragment {
     public ArrayList<String> preparation;
     public LinearLayout sectionIngredient;
     public int nbIngredient = 2;
-    public Button buttonAddIngredient;
+    public FloatingActionButton buttonAddIngredient;
     public LinearLayout sectionPreparation;
     public int nbStep = 1;
-    public Button buttonAddStep;
-    public ImageButton imageButtonValid;
+    public FloatingActionButton buttonAddStep;
+    public FloatingActionButton validation;
     int nbRecipe = 0;
     boolean isPut = false;
     private Context myContext = getActivity();
     private View rootview;
     private Button.OnClickListener addIngredient_listener;
     private Button.OnClickListener addStep_listener;
-    private ImageButton.OnClickListener imageButtonValid_listener;
+    private ImageButton.OnClickListener validation_listener;
     private boolean isDifficultyValid;
     private boolean isComplete;
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference();
@@ -126,7 +130,7 @@ public class NewRecipeFragment extends Fragment {
 
     //button create the recipe
     {
-        imageButtonValid_listener = new ImageButton.OnClickListener() {
+        validation_listener = new ImageButton.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -371,8 +375,8 @@ public class NewRecipeFragment extends Fragment {
         buttonAddStep = rootview.findViewById(R.id.addStep);
         buttonAddStep.setOnClickListener(addStep_listener);
 
-        imageButtonValid = rootview.findViewById(R.id.imageButton_validate);
-        imageButtonValid.setOnClickListener(imageButtonValid_listener);
+        validation = rootview.findViewById(R.id.validate);
+        validation.setOnClickListener(validation_listener);
 
         return rootview;
     }
