@@ -186,22 +186,22 @@ public class Recipe implements Parcelable{
     private void setId(String id) {
         this.id = id;
     }
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
-    public void setCalories(int calories) {
+    private void setCalories(int calories) {
         this.calories = calories;
     }
-    public void setNbPeople(int nbPeople) {
+    private void setNbPeople(int nbPeople) {
         this.nbPeople = nbPeople;
     }
-    public void setDifficulty(float difficulty) {
+    private void setDifficulty(float difficulty) {
         this.difficulty = difficulty;
     }
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
-    public void setPreparationTime(int preparationTime) {
+    private void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
     public void setImageLink(String imageLink) {

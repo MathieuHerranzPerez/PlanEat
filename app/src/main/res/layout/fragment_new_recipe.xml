@@ -59,7 +59,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/nbPerson" />
+                android:text="@string/nbPerson"
+                android:textSize="16dp"/>
 
             <EditText
                 android:id="@+id/edit_nbPerson"
@@ -81,7 +82,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/preparationTime" />
+                android:text="@string/preparationTime"
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/edit_preparationTime"
@@ -104,7 +106,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/difficulty" />
+                android:text="@string/difficulty"
+                android:textSize="16dp"/>
 
             <EditText
                 android:id="@+id/edit_difficulty"
@@ -120,7 +123,8 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            android:background="?android:attr/listDivider"
+            android:layout_marginVertical="10dp"/>
 
         <!-- Ingredients list-->
         <LinearLayout
@@ -129,26 +133,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
+            <TextView
                     android:id="@+id/tittle_ingredients"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="@string/tittle_ingredients" />
-
-                <Button
-                    android:id="@+id/addIngredient"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+" />
-
-            </LinearLayout>
+                    android:text="@string/tittle_ingredients"
+                    android:textSize="20dp"/>
 
             <LinearLayout
                 android:id="@+id/ingredient_1"
@@ -212,6 +202,17 @@
 
         </LinearLayout>
 
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_action_add"
+            android:layout_gravity="center|bottom"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:background="@color/colorBackgroundMenu"
+            android:layout_margin="10dp"/>
+
         <View
             android:id="@+id/divider3"
             android:layout_width="match_parent"
@@ -225,26 +226,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tittle_preparation"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tittle_preparation"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="@string/tittle_preparation" />
-
-                <Button
-                    android:id="@+id/addStep"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="+" />
-
-            </LinearLayout>
+                android:text="@string/tittle_preparation"
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/edit_step1"
@@ -253,16 +240,34 @@
                 android:hint="@string/hint_firstStep"
                 android:inputType="text" />
 
-
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imageButton_validate"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addStep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:src="@drawable/ic_check" />
+            android:src="@mipmap/ic_action_add"
+            android:layout_gravity="center|bottom"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:background="@color/colorBackgroundMenu"
+            android:layout_margin="10dp" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/validate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check"
+            android:layout_gravity="right|bottom"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:background="@color/colorBackgroundMenu"
+            android:layout_margin="16dp"
+            android:text="+" />
 
     </LinearLayout>
 
