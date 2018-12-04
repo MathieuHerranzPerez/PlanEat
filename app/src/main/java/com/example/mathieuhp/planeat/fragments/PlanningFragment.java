@@ -46,7 +46,11 @@ public class PlanningFragment extends Fragment implements Updatable{
         super.onCreate(savedInstanceState);
         planningFragment = this;
         // get the user
-        user = User.getUserInstance();
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            // get the user from the activity
+            user = bundle.getParcelable("user");
+        }
     }
 
     @Nullable

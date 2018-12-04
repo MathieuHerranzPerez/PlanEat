@@ -37,6 +37,8 @@ public class User implements Parcelable{
 
 
 
+
+
     // TODO
 //    private Fridge fridge;
 //    private ShoppingList shoppingList;
@@ -191,9 +193,6 @@ public class User implements Parcelable{
 
 
 
-
-
-
     /**
      * link the the current instance of the user of the connection with our user
      */
@@ -233,7 +232,7 @@ public class User implements Parcelable{
 
 
                 // get the calendar
-                recipeCalendar = new RecipeCalendar();
+                recipeCalendar = new RecipeCalendar(this.u.id);
 
 
                 // notify the observers
@@ -288,23 +287,21 @@ public class User implements Parcelable{
 
 
     public void updateRecipes(){
-        try{
-            this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Iterable<DataSnapshot> children = dataSnapshot.getChildren();
-                    for(DataSnapshot child : children){
+        this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for(DataSnapshot child : children){
 
-                        Recipe newRecipe = new Recipe();
-                    }
+                    Recipe newRecipe = new Recipe();
                 }
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
-        } catch
+            }
+        });
     }
 
 

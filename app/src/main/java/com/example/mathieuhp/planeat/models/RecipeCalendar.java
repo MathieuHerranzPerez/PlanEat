@@ -19,12 +19,11 @@ public class RecipeCalendar {
     private TreeMap<Integer, Pair<Recipe, Recipe> > recipesListPerDay;
 
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipeSchedule");
+    private String userId;
 
-
-    public RecipeCalendar() {
-        User user = User.getUserInstance();
-
-        firebaseReference.addValueEventListener(new ValueEventListenerRecipeCalendarConstruct(this, user.getId(), firebaseReference));
+    public RecipeCalendar(String userId) {
+        this.userId = userId;
+        firebaseReference.addValueEventListener(new ValueEventListenerRecipeCalendarConstruct(this, userId, firebaseReference));
     }
 
 
@@ -55,7 +54,7 @@ public class RecipeCalendar {
             recipesListPerDay.put(key, new Pair<>(recipe, recipePart2));
 
             // update the DB
-            firebaseReference.child(User.getUserInstance().getId()).child(Integer.toString(year)).child(Integer.toString(week))
+            firebaseReference.child(this.userId).child(Integer.toString(year)).child(Integer.toString(week))
                     .child(Integer.toString(dayOfWeek)).child("dinner").setValue(recipe.getId());
         }
         else {
@@ -64,7 +63,7 @@ public class RecipeCalendar {
             recipesListPerDay.put(key, new Pair<>(recipePart1, recipe));
 
             // update the DB
-            firebaseReference.child(User.getUserInstance().getId()).child(Integer.toString(year)).child(Integer.toString(week))
+            firebaseReference.child(this.userId).child(Integer.toString(year)).child(Integer.toString(week))
                     .child(Integer.toString(dayOfWeek)).child("lunch").setValue(recipe.getId());
         }
 

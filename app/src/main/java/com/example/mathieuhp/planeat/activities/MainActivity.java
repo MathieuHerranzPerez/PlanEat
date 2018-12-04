@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.navigation_planning:
                 fragment = new PlanningFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.planning);
                 break;
 
