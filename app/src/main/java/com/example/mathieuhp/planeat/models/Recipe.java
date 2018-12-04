@@ -99,18 +99,6 @@ public class Recipe implements Parcelable{
     }
 
 
-    public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
-
-        this.name = name;
-        this.nbPeople = nbPeople;
-        this.description = description;
-        this.preparationTime = preparationTime;
-        this.difficulty = difficulty;
-        this.ingredients = ingredients;
-        this.preparation = preparation;
-        this.isShared = isShared;
-    }
-
     protected Recipe(Parcel in) {
         id = in.readString();
         name = in.readString();
