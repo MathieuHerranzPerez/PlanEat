@@ -75,21 +75,25 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch(menuItem.getItemId()) {
             case R.id.navigation_recipes:
                 fragment = new RecipesListFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.recipes);
                 break;
 
             case R.id.navigation_fridge:
                 fragment = new FridgeFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.fridge);
                 break;
 
             case R.id.navigation_planning:
                 fragment = new PlanningFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.planning);
                 break;
 
             case R.id.navigation_shopping:
                 fragment = new ShoppingFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.shopping);
                 break;
 
