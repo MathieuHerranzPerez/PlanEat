@@ -3,7 +3,7 @@ package com.example.mathieuhp.planeat.models;
 public class Component {
 
 
-    /* ATTRIBUTS */
+    /* ATTRIBUTES */
     private Recipe recipe;
 
     private Ingredient ingredient;

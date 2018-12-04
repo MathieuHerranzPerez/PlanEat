@@ -18,6 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import com.example.mathieuhp.planeat.R;
+import com.example.mathieuhp.planeat.models.Component;
+import com.example.mathieuhp.planeat.models.Ingredient;
+import com.example.mathieuhp.planeat.models.QuantityUnit;
 import com.example.mathieuhp.planeat.models.Recipe;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +35,20 @@ public class NewRecipeFragment extends Fragment {
 
     final AtomicInteger count = new AtomicInteger();
 
+    private Context myContext = getActivity();
+    private View rootview;
 
+    private View.OnClickListener addIngredient_listener;
+    private View.OnClickListener addStep_listener;
+    private View.OnClickListener validation_listener;
+
+    private boolean isPut = false;
+    private boolean isDifficultyValid;
+    private boolean isComplete;
+
+    public Recipe newRecipe;
+    public Component newComponent;
+    public Ingredient newIngredient;
 
     public String id;
     public String name;
@@ -56,17 +72,9 @@ public class NewRecipeFragment extends Fragment {
     public FloatingActionButton buttonAddStep;
     public FloatingActionButton validation;
     int nbRecipe = 0;
-    boolean isPut = false;
-    private Context myContext = getActivity();
-    private View rootview;
-    private Button.OnClickListener addIngredient_listener;
-    private Button.OnClickListener addStep_listener;
-    private ImageButton.OnClickListener validation_listener;
-    private boolean isDifficultyValid;
-    private boolean isComplete;
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference();
 
-    //button add ingredient
+    //button to add a new ingredient in the recipe
     {
         addIngredient_listener = new Button.OnClickListener() {
 
@@ -74,6 +82,7 @@ public class NewRecipeFragment extends Fragment {
             public void onClick(View arg0) {
                 nbIngredient += 1;
 
+                //Linear Layout
                 LinearLayout addIngredient = new LinearLayout(myContext);
                 addIngredient.setOrientation(LinearLayout.HORIZONTAL);
                 sectionIngredient.addView(addIngredient);
@@ -91,10 +100,7 @@ public class NewRecipeFragment extends Fragment {
                 Spinner dropdown_unity = new Spinner(myContext);
                 addIngredient.addView(dropdown_unity);
                 dropdown_unity.setTag("dropdown_unity_" + nbIngredient);
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(myContext,
-                        R.array.unity_array, android.R.layout.simple_spinner_item);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                dropdown_unity.setAdapter(adapter);
+                dropdown_unity.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
                 LinearLayout.LayoutParams paramUnity = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 dropdown_unity.setLayoutParams(paramUnity);
 
@@ -111,7 +117,7 @@ public class NewRecipeFragment extends Fragment {
         };
     }
 
-    //button add step
+    //button to add a step on the recipe
     {
         addStep_listener = new Button.OnClickListener() {
 
@@ -121,6 +127,7 @@ public class NewRecipeFragment extends Fragment {
                 EditText newStep = new EditText(myContext);
                 sectionPreparation.addView(newStep);
 
+                //Edittext for next step
                 newStep.setTag("edit_step_" + nbStep);
                 newStep.setHint(R.string.hint_otherStep);
                 newStep.setInputType(1);
@@ -143,18 +150,16 @@ public class NewRecipeFragment extends Fragment {
                 //Set the recipe name and it description
                 EditText edit_name = rootview.findViewById(R.id.name);
                 if (edit_name.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner le nom de la recette");
                     isComplete = false;
-                } else {
-                    name = edit_name.getText().toString();
                 }
+//                else newRecipe.setName(edit_name.getText().toString());
+
                 EditText edit_desc = rootview.findViewById(R.id.description);
                 if (edit_desc.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner une description");
                     isComplete = false;
-                } else {
-                    description = edit_desc.getText().toString();
                 }
+//                else newRecipe.setDescription(edit_desc.getText().toString());
+
 
                 //Set the picture
                 //TODO Load picture
@@ -175,6 +180,7 @@ public class NewRecipeFragment extends Fragment {
                 } else {
                     nbPeople = Integer.parseInt(edit_nbPerson.getText().toString());
                 }
+
                 EditText edit_prepTime = rootview.findViewById(R.id.edit_preparationTime);
                 if (edit_prepTime.getText().length() == 0) {
                     //edit.setError("Veuillez renseigner le temps de préparation");
@@ -182,14 +188,7 @@ public class NewRecipeFragment extends Fragment {
                 } else {
                     preparationTime = Integer.parseInt(edit_prepTime.getText().toString());
                 }
-                /*
-                EditText edit_cookTime = rootview.findViewById(R.id.edit_cookingTime);
-                if (edit_cookTime.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner le temps de cuisson");
-                    isComplete = false;
-                } else {
-                    cookingTime = Integer.parseInt(edit_cookTime.getText().toString());
-                }*/
+
                 EditText edit_difficulty = rootview.findViewById(R.id.edit_difficulty);
                 if (edit_difficulty.getText().length() == 0) {
                     //edit.setError("Veuillez renseigner la difficulté");
@@ -321,6 +320,15 @@ public class NewRecipeFragment extends Fragment {
         myContext = context;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        newRecipe = new Recipe();
+        newComponent = new Component();
+        newIngredient = new Ingredient();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -361,11 +369,8 @@ public class NewRecipeFragment extends Fragment {
         unity1 = (Spinner) rootview.findViewById(R.id.unity_1);
         unity2 = (Spinner) rootview.findViewById(R.id.unity_2);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(myContext,
-                R.array.unity_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        unity1.setAdapter(adapter);
-        unity2.setAdapter(adapter);
+        unity1.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity2.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
 
         sectionIngredient = rootview.findViewById(R.id.section_ingredients);
         buttonAddIngredient = rootview.findViewById(R.id.addIngredient);
