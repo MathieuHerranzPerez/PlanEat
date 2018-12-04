@@ -56,9 +56,14 @@ public class FridgeFragment extends Fragment implements Updatable{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // get the user
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            // get the user from the activity
+            user = bundle.getParcelable("user");
+        }
+
         fridgeFragment = this;
-        //get the user
-        user = User.getUserInstance();
 
         ingredientList = new ArrayList<>();
         // useless, but need to be sure. Load all the ingredients

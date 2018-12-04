@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.navigation_fridge:
                 fragment = new FridgeFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.fridge);
                 break;
 
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.navigation_shopping:
                 fragment = new ShoppingFragment();
+                fragment.setArguments(bundleUser);
                 mTitleToolbar.setText(R.string.shopping);
                 break;
 
