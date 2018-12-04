@@ -18,7 +18,7 @@
 
         <!-- Name of the recipe -->
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/RecipeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -28,14 +28,14 @@
 
         <!-- Add picture -->
         <ImageView
-            android:id="@+id/picture"
+            android:id="@+id/RecipePicture"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/im_picture" />
 
         <!-- Description -->
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/RecipeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
@@ -60,14 +60,14 @@
             android:layout_marginVertical="5dp">
 
             <TextView
-                android:id="@+id/nbPerson"
+                android:id="@+id/RecipeNbPeopleText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="@string/nbPerson" />
 
             <TextView
-                android:id="@+id/show_nbPerson"
+                android:id="@+id/RecipeForNbPeople"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -82,14 +82,14 @@
             android:layout_marginVertical="5dp">
 
             <TextView
-                android:id="@+id/preparationTime"
+                android:id="@+id/RecipePreparationTimeText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="@string/preparationTime" />
 
             <TextView
-                android:id="@+id/show_preparationTime"
+                android:id="@+id/RecipePreparationTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -105,14 +105,14 @@
             android:layout_marginVertical="5dp">
 
             <TextView
-                android:id="@+id/difficulty"
+                android:id="@+id/RecipeDifficultyText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="@string/difficulty" />
 
             <TextView
-                android:id="@+id/show_difficulty"
+                android:id="@+id/RecipeDifficultyLevel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -132,7 +132,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tittle_ingredients"
+                android:id="@+id/IngredientSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -141,7 +141,7 @@
                 android:textSize="20dp"/>
 
             <LinearLayout
-                android:id="@+id/section_ingredients"
+                android:id="@+id/IngredientSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -159,13 +159,13 @@
 
         <!-- Preparation list -->
         <LinearLayout
-            android:id="@+id/section_preparation"
+            android:id="@+id/PreparationSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tittle_preparation"
+                android:id="@+id/PreparationSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -181,7 +181,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/addToPlanning"
+                android:id="@+id/addToPlanningButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -189,7 +189,7 @@
                 android:textSize="12dp"/>
 
             <Button
-                android:id="@+id/addToMarket"
+                android:id="@+id/addToMarketButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

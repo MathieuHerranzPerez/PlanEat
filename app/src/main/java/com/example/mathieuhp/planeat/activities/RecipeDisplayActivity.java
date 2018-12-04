@@ -2,11 +2,14 @@ package com.example.mathieuhp.planeat.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -22,13 +25,13 @@ import com.example.mathieuhp.planeat.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Set;
+
 public class RecipeDisplayActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private TextView mTitleToolbar;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
-
-    private Bundle bundleUser;
 
     private Recipe recipe;
     private RecipeFragment recipeFragment;
@@ -36,12 +39,14 @@ public class RecipeDisplayActivity extends AppCompatActivity implements BottomNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        bundleUser = new Bundle();
+        Intent intent = getIntent();
+        recipe = null;
         //get the recipe to display
-        if (bundleUser != null) {
-            // get the user from the activity
-            if(bundleUser.containsKey("recipe")) {
-                recipe = bundleUser.getParcelable("recipe");
+        if (intent != null) {
+            Bundle extras = intent.getExtras();
+            if(extras != null) {
+                // get the recipe from the previous activity
+                recipe = (Recipe) extras.getParcelable("recipe");
             }
         }
 
@@ -60,14 +65,14 @@ public class RecipeDisplayActivity extends AppCompatActivity implements BottomNa
         navigation.setOnNavigationItemSelectedListener(this);
 
         //create the fragment
+        Bundle bundle = new Bundle();
         this.recipeFragment = new RecipeFragment();
 
         // and the bundle to pass it to the fragment
-        bundleUser = new Bundle();
-        bundleUser.putParcelable("recipe", this.recipe);
+        bundle.putParcelable("recipe", this.recipe);
 
         // launch the main fragment
-        recipeFragment.setArguments(bundleUser);
+        recipeFragment.setArguments(bundle);
         loadFragment(recipeFragment);
     }
 
@@ -98,7 +103,7 @@ public class RecipeDisplayActivity extends AppCompatActivity implements BottomNa
 
             case R.id.navigation_user:
                 fragment = new UserFragment();
-                fragment.setArguments(bundleUser);
+                //fragment.setArguments(bundle);
                 mTitleToolbar.setText(R.string.user);
                 break;
         }

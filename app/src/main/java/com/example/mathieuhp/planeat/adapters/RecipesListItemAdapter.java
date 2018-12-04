@@ -63,9 +63,8 @@ public class RecipesListItemAdapter extends RecyclerView.Adapter{
                 @Override
                 public void onClick(View v) {
                     Log.d("clicked recipe",  currentRecipe.getName());
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable("recipe", currentRecipe);
                     Intent intent = new Intent(context, RecipeDisplayActivity.class);
+                    intent.putExtra("recipe", currentRecipe);
                     context.startActivity(intent);
                 }
             });

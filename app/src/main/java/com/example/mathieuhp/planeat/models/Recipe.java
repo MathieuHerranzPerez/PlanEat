@@ -96,6 +96,34 @@ public class Recipe implements Parcelable{
         this.isShared = isShared;
     }
 
+    protected Recipe(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        nbPeople = in.readInt();
+        calories = in.readInt();
+        description = in.readString();
+        preparationTime = in.readInt();
+        difficulty = in.readFloat();
+        preparation = in.createStringArrayList();
+        imageLink = in.readString();
+        image = in.readParcelable(Bitmap.class.getClassLoader());
+        tags = in.createStringArrayList();
+        isShared = in.readByte() != 0;
+        score = in.readFloat();
+    }
+
+    public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
+        @Override
+        public Recipe createFromParcel(Parcel in) {
+            return new Recipe(in);
+        }
+
+        @Override
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
+        }
+    };
+
     public String getId() {
         return this.id;
     }
@@ -192,7 +220,19 @@ public class Recipe implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeInt(nbPeople);
+        dest.writeInt(calories);
+        dest.writeString(description);
+        dest.writeInt(preparationTime);
+        dest.writeFloat(difficulty);
+        dest.writeStringList(preparation);
+        dest.writeString(imageLink);
+        dest.writeParcelable(image, flags);
+        dest.writeStringList(tags);
+        dest.writeByte((byte) (isShared ? 1 : 0));
+        dest.writeFloat(score);
     }
 
 
