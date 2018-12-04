@@ -1,5 +1,13 @@
 package com.example.mathieuhp.planeat.models;
 
 public enum QuantityUnit {
-    g, cups, ml
+    g,
+    kg,
+    ml,
+    cl,
+    L,
+    cups,
+    cuillère,
+    unité;
+
 }
