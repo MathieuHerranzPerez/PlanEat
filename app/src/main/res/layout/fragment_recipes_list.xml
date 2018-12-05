@@ -36,4 +36,15 @@
         android:adjustViewBounds="true"
         android:visibility="visible" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/AddRecipeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/ic_action_add"
+        android:backgroundTint="@color/colorBackgroundMenu"
+        android:background="@color/colorBackgroundMenu"
+        android:layout_margin="16dp" />
+
 </RelativeLayout>
