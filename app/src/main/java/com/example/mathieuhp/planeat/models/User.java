@@ -39,6 +39,7 @@ public class User implements Parcelable{
     private Fridge fridge;
     private Shopping shopping;
 
+
     public User() {
         // default constructor required for calls to DataSnapshot.getValue(xxx.class)
     }
@@ -415,10 +416,6 @@ public class User implements Parcelable{
         @Override
         public void updateData() {
 
-        }
-
-        public User getUser() {
-            return user;
         }
     }
 }

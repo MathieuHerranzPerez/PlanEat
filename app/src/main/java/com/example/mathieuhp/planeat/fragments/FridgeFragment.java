@@ -69,7 +69,7 @@ public class FridgeFragment extends Fragment implements Updatable{
         // useless, but need to be sure. Load all the ingredients
         ((MainActivity)getActivity()).loadIngredientJsonFromAsset();
 
-        fridge = new Fridge();
+        fridge = new Fridge(user.getId());
         user.setFridge(fridge);
     }
 

@@ -15,15 +15,15 @@ import java.util.TreeMap;
 public class Shopping {
 
     private TreeMap<Ingredient, Pair<Integer, Boolean>> treeMapIngredient;
-    private User user;
+    private String userId;
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("groceryLists");
 
-    public Shopping() {
-        user = User.getUserInstance();
+    public Shopping(String userId) {
+        this.userId = userId;
         treeMapIngredient = new TreeMap<>();
 
         // get the user ingredients or create the branch
-        firebaseReference.addValueEventListener(new ValueEventListenerShoppingConstruct(this, user.getId(), firebaseReference));
+        firebaseReference.addValueEventListener(new ValueEventListenerShoppingConstruct(this, userId, firebaseReference));
     }
 
     /* ---- GETTERS ---- */
@@ -42,8 +42,8 @@ public class Shopping {
      */
     public void addIngedient(Ingredient ingredient) {
 
-        firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue("1");
-        firebaseReference.child(user.getId()).child(ingredient.getId()).child("checked").setValue(false);
+        firebaseReference.child(this.userId).child(ingredient.getId()).child("quantity").setValue("1");
+        firebaseReference.child(this.userId).child(ingredient.getId()).child("checked").setValue(false);
 
         // add it to the treeMap
         treeMapIngredient.put(ingredient, new Pair<>(1, false));
@@ -55,7 +55,7 @@ public class Shopping {
      */
     public void updateQuantity(Ingredient ingredient, String quantity) {
 
-        firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue(quantity);
+        firebaseReference.child(this.userId).child(ingredient.getId()).child("quantity").setValue(quantity);
     }
 
     /**
@@ -64,7 +64,7 @@ public class Shopping {
      */
     public void updateChecked(Ingredient ingredient, boolean checked) {
 
-        firebaseReference.child(user.getId()).child(ingredient.getId()).child("checked").setValue(checked);
+        firebaseReference.child(this.userId).child(ingredient.getId()).child("checked").setValue(checked);
     }
 
     /**
@@ -77,7 +77,7 @@ public class Shopping {
 
         // remove it in the user fridge DB
         try {
-            this.firebaseReference.child(user.getId()).child(ingredient.getId()).removeValue();
+            this.firebaseReference.child(this.userId).child(ingredient.getId()).removeValue();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +88,7 @@ public class Shopping {
      * Delete the user shopping
      */
     public void deleteShopping() {
-        firebaseReference.child(user.getId()).removeValue();
+        firebaseReference.child(userId).removeValue();
     }
 
 
