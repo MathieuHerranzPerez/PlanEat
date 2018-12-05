@@ -24,7 +24,7 @@ public class Recipe implements Parcelable{
 
     private String id;
     private String name;
-    private ArrayList<Component> listComponent;
+    private ArrayList<Component> components;
     private int nbPeople;
     private int calories;
     private String description;
