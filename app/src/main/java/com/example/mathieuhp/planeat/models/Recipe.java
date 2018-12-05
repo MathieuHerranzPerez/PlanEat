@@ -68,13 +68,6 @@ public class Recipe implements Parcelable{
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
     }
 
-    public Recipe(String id) {
-        this.id = id;
-        // todo get the recipe from DB
-        firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.child("recipes").addValueEventListener(new ValueEventListenerRecipeConstruct(this));
-    }
-
     public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
 
         this.name = name;
