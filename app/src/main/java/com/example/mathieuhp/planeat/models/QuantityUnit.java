@@ -5,7 +5,7 @@ public enum QuantityUnit {
     /* ATTRIBUTES */
 
     unite("-"),
-    gramme("g."),
+    gramme("g"),
     kilogramme("kg"),
     millilitres("ml"),
     centilitres("cl"),

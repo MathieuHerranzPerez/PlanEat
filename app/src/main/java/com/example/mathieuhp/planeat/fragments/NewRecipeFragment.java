@@ -1,5 +1,6 @@
 package com.example.mathieuhp.planeat.fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +16,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Component;
@@ -38,9 +42,29 @@ public class NewRecipeFragment extends Fragment {
     private Context myContext = getActivity();
     private View rootview;
 
+    //section to add ingredient
+    private LinearLayout sectionIngredient;
+        //set a new ingredient
+    public Spinner unity1;
+    public Button buttonSetIngredient1;
+    public Spinner unity2;
+    public Button buttonSetIngredient2;
+    private View.OnClickListener setIngredient_listener;
+        //Add a new ingredient
+    public FloatingActionButton buttonAddIngredient;
     private View.OnClickListener addIngredient_listener;
+    private int nbIngredient = 2;
+
+    //section to add a step
+    public LinearLayout sectionPreparation;
+    public FloatingActionButton buttonAddStep;
     private View.OnClickListener addStep_listener;
+    public int nbStep = 1;
+
+    //section to send the recipe
+    public FloatingActionButton validation;
     private View.OnClickListener validation_listener;
+
 
     private boolean isPut = false;
     private boolean isDifficultyValid;
@@ -49,6 +73,11 @@ public class NewRecipeFragment extends Fragment {
     public Recipe newRecipe;
     public Component newComponent;
     public Ingredient newIngredient;
+
+    public ListView ingredientListView;
+    public SearchView searchView;
+    public Button btnCancel;
+
 
     public String id;
     public String name;
@@ -60,17 +89,8 @@ public class NewRecipeFragment extends Fragment {
     public float difficulty;
     public int calories;
     public boolean isShared;
-    public Spinner unity1;
-    public Spinner unity2;
     public ArrayList<ArrayList> ingredients;
     public ArrayList<String> preparation;
-    public LinearLayout sectionIngredient;
-    public int nbIngredient = 2;
-    public FloatingActionButton buttonAddIngredient;
-    public LinearLayout sectionPreparation;
-    public int nbStep = 1;
-    public FloatingActionButton buttonAddStep;
-    public FloatingActionButton validation;
     int nbRecipe = 0;
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -104,14 +124,14 @@ public class NewRecipeFragment extends Fragment {
                 LinearLayout.LayoutParams paramUnity = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 dropdown_unity.setLayoutParams(paramUnity);
 
-                //EditText for ingredient
-                EditText newIngredient = new EditText(myContext);
+                //Button for ingredient
+                Button newIngredient = new Button(myContext);
                 addIngredient.addView(newIngredient);
-                newIngredient.setTag("edit_ingredient_" + nbIngredient);
+                newIngredient.setTag("set_ingredient_" + nbIngredient);
                 newIngredient.setHint(R.string.hint_ingredient);
-                newIngredient.setInputType(1);
                 LinearLayout.LayoutParams paramIngredient = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 4f);
                 newIngredient.setLayoutParams(paramIngredient);
+                newIngredient.setOnClickListener(setIngredient_listener);
 
             }
         };
@@ -132,6 +152,28 @@ public class NewRecipeFragment extends Fragment {
                 newStep.setHint(R.string.hint_otherStep);
                 newStep.setInputType(1);
             }
+        };
+    }
+
+    //button to add the ingredient
+    {
+        setIngredient_listener = new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                final Dialog setIngredient_dialogue = new Dialog(myContext);
+                setIngredient_dialogue.setTitle("Choisir l'ingrédient");
+                setIngredient_dialogue.setContentView(R.layout.dialog_add_ingredient);
+                setIngredient_dialogue.show();
+
+                ArrayList temporaryList = new ArrayList<>();
+                temporaryList.addAll(Ingredient.ingredientList);
+//                Toast.makeText(myContext, "Dialogue", Toast.LENGTH_SHORT).show();
+            }
+
+
+
         };
     }
 
@@ -181,11 +223,13 @@ public class NewRecipeFragment extends Fragment {
                     nbPeople = Integer.parseInt(edit_nbPerson.getText().toString());
                 }
 
+
                 EditText edit_prepTime = rootview.findViewById(R.id.edit_preparationTime);
                 if (edit_prepTime.getText().length() == 0) {
                     //edit.setError("Veuillez renseigner le temps de préparation");
                     isComplete = false;
-                } else {
+                } else
+                    {
                     preparationTime = Integer.parseInt(edit_prepTime.getText().toString());
                 }
 
@@ -203,13 +247,13 @@ public class NewRecipeFragment extends Fragment {
                 }
 
                 EditText edit_qtyIngredient1 = rootview.findViewById(R.id.edit_quantity_1);
-                EditText edit_ingredient1 = rootview.findViewById(R.id.edit_ingredient_l);
+                Button set_ingredient1 = rootview.findViewById(R.id.set_ingredient_l);
 
                 EditText edit_qtyIngredient2 = rootview.findViewById(R.id.edit_quantity_2);
-                EditText edit_ingredient2 = rootview.findViewById(R.id.edit_ingredient_2);
+                Button set_ingredient2 = rootview.findViewById(R.id.set_ingredient_2);
 
                 if (edit_qtyIngredient1.getText().length() == 0 || edit_qtyIngredient2.getText().length() == 0 ||
-                        edit_ingredient1.getText().length() == 0 || edit_ingredient2.getText().length() == 0) {
+                        set_ingredient1.getText().length() == 0 || set_ingredient2.getText().length() == 0) {
                     //edit.setError("Veuillez renseigner la difficulté");
                     isComplete = false;
                 } else {
@@ -218,12 +262,12 @@ public class NewRecipeFragment extends Fragment {
                     ArrayList<String> ingredient1 = new ArrayList<>();
                     ingredient1.add(edit_qtyIngredient1.getText().toString());
                     ingredient1.add(unity1.getSelectedItem().toString());
-                    ingredient1.add(edit_ingredient1.getText().toString());
+                    ingredient1.add(set_ingredient1.getText().toString());
 
                     ArrayList<String> ingredient2 = new ArrayList<>();
                     ingredient2.add(edit_qtyIngredient2.getText().toString());
                     ingredient2.add(unity2.getSelectedItem().toString());
-                    ingredient2.add(edit_ingredient2.getText().toString());
+                    ingredient2.add(set_ingredient2.getText().toString());
 
                     ingredients.add(ingredient1);
                     ingredients.add(ingredient2);
@@ -366,19 +410,31 @@ public class NewRecipeFragment extends Fragment {
 
         });
 
-        unity1 = (Spinner) rootview.findViewById(R.id.unity_1);
-        unity2 = (Spinner) rootview.findViewById(R.id.unity_2);
-
-        unity1.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
-        unity2.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
 
         sectionIngredient = rootview.findViewById(R.id.section_ingredients);
+
+        unity1 = rootview.findViewById(R.id.unity_1);
+        unity1.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        buttonSetIngredient1 = rootview.findViewById(R.id.set_ingredient_l);
+        buttonSetIngredient1.setOnClickListener(setIngredient_listener);
+
+        unity2 = rootview.findViewById(R.id.unity_2);
+        unity2.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        buttonSetIngredient2 = rootview.findViewById(R.id.set_ingredient_2);
+        buttonSetIngredient2.setOnClickListener(setIngredient_listener);
+
         buttonAddIngredient = rootview.findViewById(R.id.addIngredient);
         buttonAddIngredient.setOnClickListener(addIngredient_listener);
 
         sectionPreparation = rootview.findViewById(R.id.section_preparation);
         buttonAddStep = rootview.findViewById(R.id.addStep);
         buttonAddStep.setOnClickListener(addStep_listener);
+
+
+        ingredientListView = (ListView) rootview.findViewById(R.id.ingredient_list);
+        searchView = (SearchView) rootview.findViewById(R.id.search_ingredient_filter);
+        btnCancel = (Button) rootview.findViewById(R.id.btn_cancel);
+
 
         validation = rootview.findViewById(R.id.validate);
         validation.setOnClickListener(validation_listener);
