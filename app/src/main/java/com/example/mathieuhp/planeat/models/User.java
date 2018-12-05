@@ -169,13 +169,14 @@ public class User implements Parcelable{
 
 
 
+
+
     /* ---- FUNCTIONS ---- */
     /**
      * sort the recipes list
      */
     public void sortList(){
         Collections.sort(this.getAllRecipes(), comparator);
-
 
 //    /**
 //     * sort the recipes list
