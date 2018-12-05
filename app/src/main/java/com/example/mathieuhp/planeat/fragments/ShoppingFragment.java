@@ -71,7 +71,7 @@ public class ShoppingFragment extends Fragment implements Updatable {
         // useless, but need to be sure. Load all the ingredients
         ((MainActivity)getActivity()).loadIngredientJsonFromAsset();
 
-        shopping = new Shopping();
+        shopping = new Shopping(user.getId());
         user.setShopping(shopping);
     }
 

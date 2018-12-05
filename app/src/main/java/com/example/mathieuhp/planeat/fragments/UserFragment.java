@@ -161,7 +161,7 @@ public class UserFragment extends Fragment implements Updatable {
 
         int color = getResources().getColor(R.color.colorBackgroundMenu);
 
-        for(Map.Entry<String, Recipe> entry : user.getListPersonnalRecipe().entrySet()) {
+        for(Recipe recipe : user.getPersonnalRecipes()) {
             LinearLayout linearLayoutRecipe = new LinearLayout(getActivity());
             LinearLayout.LayoutParams layoutParamsRecipe = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
             linearLayoutRecipe.setLayoutParams(layoutParamsRecipe);
@@ -175,21 +175,21 @@ public class UserFragment extends Fragment implements Updatable {
                 color =getResources().getColor(R.color.colorBackgroundMenu);
 
             linearLayoutRecipe.setBackgroundColor(color);
-            linearLayoutRecipe.setOnClickListener(new OnClickListenerRecipeChange(entry.getValue()));
+            linearLayoutRecipe.setOnClickListener(new OnClickListenerRecipeChange(recipe));
 
             // title of the recipe
             TextView titleRecipeTextView = new TextView(getActivity());
             LinearLayout.LayoutParams layoutParamsTitle1 = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 6);
             titleRecipeTextView.setLayoutParams(layoutParamsTitle1);
             titleRecipeTextView.setGravity(Gravity.CENTER_VERTICAL);
-            titleRecipeTextView.setText(entry.getValue().getName());
+            titleRecipeTextView.setText(recipe.getName());
 
             // calories of the recipe
             TextView caloriesRecipeTextView = new TextView(getActivity());
             LinearLayout.LayoutParams layoutParamsCalories = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 2);
             caloriesRecipeTextView.setLayoutParams(layoutParamsCalories);
             caloriesRecipeTextView.setGravity(Gravity.CENTER_VERTICAL);
-            String cal = entry.getValue().getCalories() + " kcal";
+            String cal = recipe.getCalories() + " kcal";
             caloriesRecipeTextView.setText(cal);
 
             // btn delete recipe
@@ -197,7 +197,7 @@ public class UserFragment extends Fragment implements Updatable {
             LinearLayout.LayoutParams layoutParamsBtnChange = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 2);
             btnDelete.setLayoutParams(layoutParamsBtnChange);
             btnDelete.setImageResource(R.drawable.ic_action_delete);
-            btnDelete.setOnClickListener(new OnClickListenerDeleteRecipe(entry.getValue(), user));
+            btnDelete.setOnClickListener(new OnClickListenerDeleteRecipe(recipe, user));
 
             linearLayoutRecipe.addView(titleRecipeTextView);
             linearLayoutRecipe.addView(caloriesRecipeTextView);
@@ -386,8 +386,8 @@ public class UserFragment extends Fragment implements Updatable {
             switch (v.getId()) {
                 case R.id.btn_yes :
                     // delete the recipe in the user recipe list
-                    u.getListPersonnalAndFollowedRecipe().remove(r.getId());
-                    u.getListPersonnalRecipe().remove(r.getId());
+                    u.getAllRecipes().remove(r.getId());
+                    u.getPersonnalRecipes().remove(r.getId());
                     // delete the recipe in DB
                     r.deleteData();
                     break;

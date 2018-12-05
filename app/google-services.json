@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "786271678733",
+    "firebase_url": "https://plan-eat-555d7.firebaseio.com",
+    "project_id": "plan-eat-555d7",
+    "storage_bucket": "plan-eat-555d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786271678733:android:69db340d5400dda5",
+        "android_client_info": {
+          "package_name": "com.example.mathieuhp.planeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786271678733-snssvg5kclsiei0mn51hm8mkb0p44778.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mathieuhp.planeat",
+            "certificate_hash": "bb0c77846045434e042b8099ea9aa12ef1176fc0"
+          }
+        },
+        {
+          "client_id": "786271678733-1jhmgjfrlpg050gas4psp3942snkvteu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mathieuhp.planeat",
+            "certificate_hash": "233fb22b6fae29a611ab0c067be80926a6ccb03e"
+          }
+        },
+        {
+          "client_id": "786271678733-q63scccml2r9ks1f7q3riq63uc2cnksn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4tXBB8Zc8boSIput3r_ewG4SmWE77J8U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786271678733-q63scccml2r9ks1f7q3riq63uc2cnksn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
