@@ -21,6 +21,11 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait">   <!-- todo si on a le temps -->
         </activity>
+        <activity
+            android:name=".activities.RecipeDisplayActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">   <!-- todo si on a le temps -->
+        </activity>
 
         <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
             android:value="false"/>

@@ -68,6 +68,7 @@
     <!-- /addRecipe -->
 
 
+
     <!-- showRecipe -->
     <string name="nbPerson">Nombre de personnes</string>
     <string name="preparationTime">Temps de préparation</string>
@@ -75,7 +76,7 @@
     <string name="difficulty">Dificulté</string>
     <!-- /showRecipe -->
 
-    <!-- Unities -->
+    <!-- Units -->
     <string-array name="unity_array">
         <item>-</item>
         <item>g</item>
@@ -84,7 +85,7 @@
         <item>L</item>
         <item>unité</item>
     </string-array>
-    <!-- /Unities -->
+    <!-- /Units -->
 
     <!-- fridge -->
     <string name="ingredient_name">Nom ingrédient</string>

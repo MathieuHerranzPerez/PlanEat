@@ -14,15 +14,15 @@ import java.util.TreeMap;
 public class Fridge {
 
     private TreeMap<Ingredient, Integer> treeMapIngredient;
-    private User user;
+    private String userId;
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("fridgeContents");
 
-    public Fridge() {
-        user = User.getUserInstance();
+    public Fridge(String userId) {
+        userId = userId;
         treeMapIngredient = new TreeMap<>();
 
         // get the user ingredients or create the branch
-        firebaseReference.addValueEventListener(new ValueEventListenerFridgeConstruct(this, user.getId(), firebaseReference));
+        firebaseReference.addValueEventListener(new ValueEventListenerFridgeConstruct(this, this.userId, firebaseReference));
     }
 
     /* ---- GETTERS ---- */
@@ -52,7 +52,7 @@ public class Fridge {
      */
     public void updateQuantity(Ingredient ingredient, String quantity) {
 
-        firebaseReference.child(user.getId()).child(ingredient.getId()).child("quantity").setValue(quantity);
+        firebaseReference.child(this.userId).child(ingredient.getId()).child("quantity").setValue(quantity);
     }
 
     /**
@@ -65,7 +65,7 @@ public class Fridge {
 
         // remove it in the user fridge DB
         try {
-            this.firebaseReference.child(user.getId()).child(ingredient.getId()).removeValue();
+            this.firebaseReference.child(this.userId).child(ingredient.getId()).removeValue();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,7 +75,7 @@ public class Fridge {
      * Delete the user fridge
      */
     public void deleteFridge() {
-        firebaseReference.child(user.getId()).removeValue();
+        firebaseReference.child(this.userId).removeValue();
     }
 
 

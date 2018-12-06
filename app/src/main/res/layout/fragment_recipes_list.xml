@@ -10,11 +10,41 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary" />
 
-    <TextView
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+    <ProgressBar
+        android:id="@+id/recipesLoadingBar"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_recipes" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:visibility="visible" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recipesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarSearch"
+        />
+    <ProgressBar
+        android:id="@+id/recipesLoadingBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:visibility="visible" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/AddRecipeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/ic_action_add"
+        android:backgroundTint="@color/colorBackgroundMenu"
+        android:background="@color/colorBackgroundMenu"
+        android:layout_margin="16dp" />
 
 </RelativeLayout>

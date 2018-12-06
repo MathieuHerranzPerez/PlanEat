@@ -1,5 +1,6 @@
 package com.example.mathieuhp.planeat.models;
 
+import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -13,76 +14,110 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class User implements Parcelable {
+public class User implements Parcelable{
+
+    private FirebaseDataRetriever firebaseDataRetriever; //usually the activity or the model that needs its info
 
     private String id;
     private String birthDate;
     private String email;
     private String firstName;
     private String lastName;
-    private TreeMap<String, Recipe> listPersonnalRecipe;
-    private TreeMap<String, Recipe> listFollowedRecipe;
-    private TreeMap<String, Recipe> listPersonnalAndFollowedRecipe;
+    private ArrayList<Recipe> personnalRecipes;
+    private ArrayList<Recipe> followedRecipes;
     private RecipeCalendar recipeCalendar;
     private RecipeComparator comparator;
 
     private DatabaseReference firebaseReference;
 
-    private static User userInstance;
 
     private Fridge fridge;
     private Shopping shopping;
+
 
     public User() {
         // default constructor required for calls to DataSnapshot.getValue(xxx.class)
     }
 
-    public User(String id, String email) {
+
+    public User(String id, String email, FirebaseDataRetriever firebaseDataRetriever) {
         this.id = id;
         this.email = email;
         this.birthDate = "";
         this.firstName = "";
         this.lastName = "";
 
-        listPersonnalRecipe = new TreeMap<>();
-        listFollowedRecipe = new TreeMap<>();
-        listPersonnalAndFollowedRecipe = new TreeMap<>();
+        this.personnalRecipes = new ArrayList<Recipe>();
+        this.followedRecipes = new ArrayList<Recipe>();
+
+        this.firebaseDataRetriever = firebaseDataRetriever;
 
         // get data if stored in firebase
         // if not, create a user, a link between data and the connection
         firebaseReference = FirebaseDatabase.getInstance().getReference();
-        firebaseReference.addValueEventListener(new ValueEventListenerUserConstruct(this, firebaseReference));
+        firebaseReference.addListenerForSingleValueEvent(new ValueEventListenerUserConstruct(this, firebaseReference));
 
-        userInstance = this;
+
+        //get data dealing with recipes
+        RecipeCatalogValueListener recipeCatalogValueListener = new RecipeCatalogValueListener(this);
+        firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(recipeCatalogValueListener);
     }
+
     /* ---- GETTERS ----*/
+
+    public FirebaseDataRetriever getFirebaseDataRetriever() {
+        return firebaseDataRetriever;
+    }
+
     public String getId() {
         return id;
     }
+
     public String getBirthDate() {
         return birthDate;
     }
+
     public String getEmail() {
         return email;
     }
+
     public String getFirstName() {
         return firstName;
     }
+
     public String getLastName() {
         return lastName;
     }
+
+
+    public ArrayList<Recipe> getFollowedRecipes() {
+        return followedRecipes;
+    }
+
+    public ArrayList<Recipe> getPersonnalRecipes() {
+        return personnalRecipes;
+    }
+
+    public ArrayList<Recipe> getAllRecipes() {
+        ArrayList<Recipe> allRecipes = new ArrayList<Recipe>();
+        if(this.followedRecipes != null) {
+            allRecipes.addAll(this.followedRecipes);
+        }
+        if(this.personnalRecipes != null) {
+            allRecipes.addAll(this.personnalRecipes);
+        }
+        return allRecipes;
+    }
+
     public RecipeCalendar getRecipeCalendar() {
         return recipeCalendar;
     }
-    public TreeMap<String, Recipe> getListPersonnalAndFollowedRecipe() {
-        return listPersonnalAndFollowedRecipe;
-    }
-    public TreeMap<String, Recipe> getListPersonnalRecipe() {
-        return listPersonnalRecipe;
-    }
+
     public Fridge getFridge() {
         return fridge;
     }
@@ -90,27 +125,41 @@ public class User implements Parcelable {
         return shopping;
     }
 
-    public static User getUserInstance() {
-        return userInstance;
-    }
+
+
 
 
     /* ---- SETTERS ---- */
+
+
+    public void setFirebaseDataRetriever(FirebaseDataRetriever firebaseDataRetriever) {
+        this.firebaseDataRetriever = firebaseDataRetriever;
+    }
+
     private void setId(String id) {
         this.id = id;
     }
+
     private void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
     private void setEmail(String email) {
         this.email = email;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public void setPersonnalRecipes(ArrayList<Recipe> personnalRecipes){ this.personnalRecipes = personnalRecipes; }
+
+    public void setFollowedRecipes(ArrayList<Recipe> followedRecipes){ this.followedRecipes = followedRecipes; }
+
     public void setFridge(Fridge fridge) {
         this.fridge = fridge;
     }
@@ -118,22 +167,31 @@ public class User implements Parcelable {
         this.shopping = shopping;
     }
 
-    public void addPersonnalRecipe(Recipe recipe) {
-        this.listPersonnalRecipe.put(recipe.getId(), recipe);
-        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
-    }
 
-    public void addFollowedRecipe(Recipe recipe) {
-        this.listFollowedRecipe.put(recipe.getId(), recipe);
-        this.listPersonnalAndFollowedRecipe.put(recipe.getId(), recipe);
-    }
+
+
+
+    /* ---- FUNCTIONS ---- */
+    /**
+     * sort the recipes list
+     */
+    public void sortList(){
+        Collections.sort(this.getAllRecipes(), comparator);
 
 //    /**
 //     * sort the recipes list
 //     */
 //    public void sortList() {
 //        Collections.sort(listPersonnalAndFollowedRecipe, comparator);
-//    }
+   }
+
+    public void addPersonnalRecipe(Recipe recipe){
+        this.personnalRecipes.add(recipe);
+    }
+
+    public void addFollowedRecipe(Recipe recipe){
+        this.followedRecipes.add(recipe);
+    }
 
     @Override
     public String toString() {
@@ -173,7 +231,7 @@ public class User implements Parcelable {
                     u.setBirthDate(ds.child(u.getId()).getValue(User.class).getBirthDate());
                     isInDB = true;
                 }
-                
+
                 // get the recipe list todo
                 ds = dataSnapshot.child("recipes");
                 for(DataSnapshot dataSnapshot1 : ds.getChildren()) {
@@ -182,12 +240,12 @@ public class User implements Parcelable {
                     }
                 }
 
-                for(Map.Entry<String, Recipe> entry : listPersonnalAndFollowedRecipe.entrySet())    // affD
-                    Log.d("TABLEAU RECIPE : ", entry.toString());   // affD
+                for(Recipe recipe : u.getAllRecipes())    // affD
+                    Log.d("TABLEAU RECIPE : ", recipe.toString());   // affD
 
 
                 // get the calendar
-                recipeCalendar = new RecipeCalendar();
+                recipeCalendar = new RecipeCalendar(this.u.id);
 
 
                 // notify the observers
@@ -236,6 +294,31 @@ public class User implements Parcelable {
         }
     }
 
+
+
+
+
+
+    public void updateRecipes(){
+        this.firebaseReference.child("recipeCatalogs").child(this.id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                for(DataSnapshot child : children){
+
+                    Recipe newRecipe = new Recipe();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
+
     /* ------------- PARCELABLE ------------- */
 
     /**
@@ -274,5 +357,66 @@ public class User implements Parcelable {
         parcel.writeString(email);
         parcel.writeString(firstName);
         parcel.writeString(lastName);
+    }
+
+
+    public class RecipeCatalogValueListener implements ValueEventListener, FirebaseDataRetriever{
+
+        private User user;
+        private int nbLoadedRecipes;
+        private int nbTotalRecipes;
+
+        public RecipeCatalogValueListener(User user){
+            this.user = user;
+            this.nbLoadedRecipes = 0;
+            this.nbTotalRecipes = 0;
+        }
+
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            Log.d("Lets explore recipes! ", "Lets go!");
+            Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+            for(DataSnapshot recipesPerTypeSnapshot : children){
+                String recipeType = recipesPerTypeSnapshot.getKey().toString();
+                Log.d("recipe type", recipeType);
+                Iterable<DataSnapshot> recipes = recipesPerTypeSnapshot.getChildren();
+                this.nbTotalRecipes += recipesPerTypeSnapshot.getChildrenCount();
+                for(DataSnapshot recipeSnapshot : recipes){
+                    String recipeId = recipeSnapshot.getKey();
+                    Recipe newRecipe = new Recipe(this, recipeId);
+                    if(recipeType.equals("followed")){
+                        this.user.addFollowedRecipe(newRecipe);
+                        Log.d("recipe added to ", recipeType);
+                        Log.d("followed recipes contains:", this.user.getFollowedRecipes().get(0).toString());
+                    }
+                    else if(recipeType.equals("personnal")){
+                        this.user.addPersonnalRecipe(newRecipe);
+                        Log.d("recipe added to ", recipeType);
+                        Log.d("personnal recipes contains:", this.user.getPersonnalRecipes().get(0).toString());
+                    }
+                    Log.d("recipes loaded: ", this.nbLoadedRecipes + "/" + this.nbTotalRecipes);
+                }
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+            System.out.println("FAILED");
+        }
+
+
+        @Override
+        public void retrieveData() {
+            this.nbLoadedRecipes += 1;
+            //notify observer when recipes are all loaded
+            if(this.nbLoadedRecipes == nbTotalRecipes){
+                this.user.getFirebaseDataRetriever().retrieveData();
+            }
+        }
+
+        @Override
+        public void updateData() {
+
+        }
     }
 }

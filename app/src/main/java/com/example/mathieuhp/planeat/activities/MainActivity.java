@@ -15,6 +15,7 @@ import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
 import com.example.mathieuhp.planeat.fragments.ShoppingFragment;
 import com.example.mathieuhp.planeat.fragments.UserFragment;
+import com.example.mathieuhp.planeat.models.FirebaseDataRetriever;
 import com.example.mathieuhp.planeat.models.Ingredient;
 import com.example.mathieuhp.planeat.models.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,11 +53,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
+        //create the fragment
+        RecipesListFragment recipesListFragment = new RecipesListFragment();
+
         // get the user connection
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         // create the user
-        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail());
+        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), recipesListFragment);
         // and the bundle to pass it to the fragment
         bundleUser = new Bundle();
         bundleUser.putParcelable("user", user);
@@ -64,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         loadIngredientJsonFromAsset();
 
         // launch the main fragment
-        loadFragment(new RecipesListFragment());
+        recipesListFragment.setArguments(bundleUser);
+        loadFragment(recipesListFragment);
     }
 
 
@@ -152,4 +157,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+
 }
