@@ -18,7 +18,7 @@ public class Fridge {
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference().child("fridgeContents");
 
     public Fridge(String userId) {
-        userId = userId;
+        this.userId = userId;
         treeMapIngredient = new TreeMap<>();
 
         // get the user ingredients or create the branch
