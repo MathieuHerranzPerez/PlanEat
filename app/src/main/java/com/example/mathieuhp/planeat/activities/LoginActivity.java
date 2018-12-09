@@ -31,6 +31,9 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static com.example.mathieuhp.planeat.utils.Utils.buildDialog;
+import static com.example.mathieuhp.planeat.utils.Utils.isConnected;
+
 public class LoginActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -49,11 +52,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        if(currentUser != null)
-            login();
+
+        // Check the user Internet connection
+        if(!isConnected(this))
+            buildDialog(this, this).show();
+        else {
+            // Check if user is signed in (non-null) and update UI accordingly.
+            firebaseAuth = FirebaseAuth.getInstance();
+            FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+            if(currentUser != null)
+                login();
+        }
     }
 
 

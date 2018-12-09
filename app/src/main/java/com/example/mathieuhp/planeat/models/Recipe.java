@@ -239,7 +239,6 @@ public class Recipe implements Parcelable{
         dest.writeFloat(score);
     }
 
-
     private class ValueEventListenerRecipeConstruct implements ValueEventListener {
 
         private Recipe recipe;

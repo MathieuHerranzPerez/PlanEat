@@ -91,6 +91,10 @@
     <string name="ingredient_name">Nom ingrédient</string>
     <!-- /fridge -->
 
+    <string name="no_internet">Hors connexion internet</string>
+    <string name="message_no_internet">Vous devez avoir internet pour utiliser cette application. Appuyez sur Ok pour quitter</string>
+
+
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>
     <string name="activity_user">ACTIVITY USER</string>
