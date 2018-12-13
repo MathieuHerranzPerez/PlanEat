@@ -8,19 +8,14 @@
     android:background="@color/colorPrimaryDark"
     android:minWidth="400dp">
 
-    <SearchView
-        android:id="@+id/search_ingredient_filter"
+    <ListView
+        android:id="@+id/tag_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/ingredient_name"
-        />
-
-    <ListView
-        android:id="@+id/ingredient_list"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
         android:layout_marginBottom="30dp"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:choiceMode="multipleChoice"
         />
 
     <LinearLayout
@@ -28,6 +23,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal" >
+        <Button
+            android:id="@+id/btn_addTag"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:text="@string/valid"
+            android:textStyle="bold"
+            android:layout_gravity="end"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_weight="0.4"/>
 
         <Button
             android:id="@+id/btn_cancel"

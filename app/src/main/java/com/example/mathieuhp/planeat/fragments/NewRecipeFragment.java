@@ -1,5 +1,6 @@
 package com.example.mathieuhp.planeat.fragments;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,24 +9,31 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Component;
 import com.example.mathieuhp.planeat.models.Ingredient;
 import com.example.mathieuhp.planeat.models.QuantityUnit;
 import com.example.mathieuhp.planeat.models.Recipe;
+import com.example.mathieuhp.planeat.models.Tags;
+import com.example.mathieuhp.planeat.utils.IngredientAdapter;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,57 +50,107 @@ public class NewRecipeFragment extends Fragment {
     private Context myContext = getActivity();
     private View rootview;
 
+    //section to add tags
+    private GridLayout sectionTag;
+    private TextView newTag;
+    private FloatingActionButton buttonAddTag;
+    private View.OnClickListener addTag_listener;
+    private ArrayList<String> items;
+
     //section to add ingredient
     private LinearLayout sectionIngredient;
-        //set a new ingredient
-    public Spinner unity1;
-    public Button buttonSetIngredient1;
-    public Spinner unity2;
-    public Button buttonSetIngredient2;
-    private View.OnClickListener setIngredient_listener;
-        //Add a new ingredient
-    public FloatingActionButton buttonAddIngredient;
+    //set a new ingredient
+    private Spinner unity1;
+    private Button buttonSetIngredient1;
+    private View.OnClickListener setIngredient1_listener;
+    private Spinner unity2;
+    private Button buttonSetIngredient2;
+    private View.OnClickListener setIngredient2_listener;
+    //Add a new ingredient
+    private FloatingActionButton buttonAddIngredient;
     private View.OnClickListener addIngredient_listener;
     private int nbIngredient = 2;
+    private Button buttnSetIngredient;
+    private View.OnClickListener setIngredient_listener;
 
     //section to add a step
-    public LinearLayout sectionPreparation;
-    public FloatingActionButton buttonAddStep;
+    private LinearLayout sectionPreparation;
+    private FloatingActionButton buttonAddStep;
     private View.OnClickListener addStep_listener;
-    public int nbStep = 1;
+    private int nbStep = 1;
 
     //section to send the recipe
-    public FloatingActionButton validation;
+    private FloatingActionButton validation;
     private View.OnClickListener validation_listener;
-
 
     private boolean isPut = false;
     private boolean isDifficultyValid;
     private boolean isComplete;
 
-    public Recipe newRecipe;
-    public Component newComponent;
-    public Ingredient newIngredient;
+    private Recipe newRecipe;
 
-    public ListView ingredientListView;
-    public SearchView searchView;
-    public Button btnCancel;
+    private Component newComponent1;
+    private Component newComponent2;
+    private Component component;
 
+    private ArrayList<String> tag;
+    private Ingredient newIngredient;
+    private ArrayList<Component> ingredients;
 
-    public String id;
-    public String name;
-    public String imageLink;
-    public String description;
-    public String tag;
-    public int nbPeople;
-    public int preparationTime;
-    public float difficulty;
-    public int calories;
-    public boolean isShared;
-    public ArrayList<ArrayList> ingredients;
-    public ArrayList<String> preparation;
-    int nbRecipe = 0;
+    private ArrayList<String> preparation;
+    private int nbRecipe = 0;
+
     private DatabaseReference firebaseReference = FirebaseDatabase.getInstance().getReference();
+
+    //button to add tags
+    {
+        addTag_listener = new Button.OnClickListener() {
+            @Override
+            public  void onClick (View arg0) {
+                DialogAddTag addTag = new DialogAddTag(getActivity());
+                addTag.show();
+            }
+        };
+    }
+
+    //button to add the ingredient 1 in the recipe
+    {
+        setIngredient1_listener = new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent1, buttonSetIngredient1);
+                addIngredientWindow.show();
+                //buttonSetIngredient1.setText(newComponent1.getIngredient().getName());
+            }
+        };
+    }
+
+    //button to add the ingredient 2 in the recipe
+    {
+        setIngredient2_listener = new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent2, buttonSetIngredient2);
+                addIngredientWindow.show();
+                //buttonSetIngredient1.setText(newComponent2.getIngredient().getName());
+            }
+        };
+    }
+
+    //button to add the others ingredients in the recipe
+    {
+        setIngredient_listener = new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), component, buttnSetIngredient);
+                addIngredientWindow.show();
+                //buttonSetIngredient1.setText(component.getIngredient().getName());
+            }
+        };
+    }
 
     //button to add a new ingredient in the recipe
     {
@@ -116,6 +174,9 @@ public class NewRecipeFragment extends Fragment {
                 LinearLayout.LayoutParams paramQty = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
                 newQty.setLayoutParams(paramQty);
 
+                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), component, buttnSetIngredient);
+                addIngredientWindow.show();
+
                 //Drop-down
                 Spinner dropdown_unity = new Spinner(myContext);
                 addIngredient.addView(dropdown_unity);
@@ -124,14 +185,16 @@ public class NewRecipeFragment extends Fragment {
                 LinearLayout.LayoutParams paramUnity = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 dropdown_unity.setLayoutParams(paramUnity);
 
-                //Button for ingredient
-                Button newIngredient = new Button(myContext);
-                addIngredient.addView(newIngredient);
-                newIngredient.setTag("set_ingredient_" + nbIngredient);
-                newIngredient.setHint(R.string.hint_ingredient);
+
+
+                //Textview for ingredient
+                buttnSetIngredient = new Button(myContext);
+                addIngredient.addView(buttnSetIngredient);
+                buttnSetIngredient.setTag("set_ingredient_" + nbIngredient);
+                buttnSetIngredient.setHint(R.string.hint_ingredient);
                 LinearLayout.LayoutParams paramIngredient = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 4f);
-                newIngredient.setLayoutParams(paramIngredient);
-                newIngredient.setOnClickListener(setIngredient_listener);
+                buttnSetIngredient.setLayoutParams(paramIngredient);
+                buttnSetIngredient.setOnClickListener(setIngredient_listener);
 
             }
         };
@@ -155,29 +218,7 @@ public class NewRecipeFragment extends Fragment {
         };
     }
 
-    //button to add the ingredient
-    {
-        setIngredient_listener = new Button.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                final Dialog setIngredient_dialogue = new Dialog(myContext);
-                setIngredient_dialogue.setTitle("Choisir l'ingrédient");
-                setIngredient_dialogue.setContentView(R.layout.dialog_add_ingredient);
-                setIngredient_dialogue.show();
-
-                ArrayList temporaryList = new ArrayList<>();
-                temporaryList.addAll(Ingredient.ingredientList);
-//                Toast.makeText(myContext, "Dialogue", Toast.LENGTH_SHORT).show();
-            }
-
-
-
-        };
-    }
-
-    //button create the recipe
+    //button to create the recipe
     {
         validation_listener = new ImageButton.OnClickListener() {
 
@@ -187,65 +228,56 @@ public class NewRecipeFragment extends Fragment {
                 isDifficultyValid = true;
                 isComplete = true;
 
-                //Generating the ID of the recipe
-
                 //Set the recipe name and it description
                 EditText edit_name = rootview.findViewById(R.id.name);
                 if (edit_name.getText().length() == 0) {
                     isComplete = false;
                 }
-//                else newRecipe.setName(edit_name.getText().toString());
+                else newRecipe.setName(edit_name.getText().toString());
 
                 EditText edit_desc = rootview.findViewById(R.id.description);
                 if (edit_desc.getText().length() == 0) {
                     isComplete = false;
                 }
-//                else newRecipe.setDescription(edit_desc.getText().toString());
+                else newRecipe.setDescription(edit_desc.getText().toString());
 
 
                 //Set the picture
                 //TODO Load picture
 
                 //TODO beta : calculate calories for 1 person
-                calories = 12;
+                //calories = 12;
                 // somme des calorie de chaques ingredients / le nombre de personnes
 
-                //TODO Beta : Set the tags
-                tag = "tag";
-
+                //Set the tags
+                newRecipe.setTags(items);
 
                 //set the nb of people, the time and the difficulty
                 EditText edit_nbPerson = rootview.findViewById(R.id.edit_nbPerson);
                 if (edit_nbPerson.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner la nombre de personnes");
                     isComplete = false;
-                } else {
-                    nbPeople = Integer.parseInt(edit_nbPerson.getText().toString());
                 }
-
+                else newRecipe.setNbPeople(Integer.parseInt(edit_nbPerson.getText().toString()));
 
                 EditText edit_prepTime = rootview.findViewById(R.id.edit_preparationTime);
                 if (edit_prepTime.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner le temps de préparation");
                     isComplete = false;
-                } else
-                    {
-                    preparationTime = Integer.parseInt(edit_prepTime.getText().toString());
                 }
+                else newRecipe.setPreparationTime(Integer.parseInt(edit_prepTime.getText().toString()));
 
                 EditText edit_difficulty = rootview.findViewById(R.id.edit_difficulty);
                 if (edit_difficulty.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner la difficulté");
                     isComplete = false;
-                } else {
+                }
+                else {
                     int dif = Integer.parseInt(edit_difficulty.getText().toString());
                     if (dif >= 0 && dif <= 5) {
-                        difficulty = dif;
-                    } else {
-                        isDifficultyValid = false;
+                        newRecipe.setDifficulty(dif);
                     }
+                    else isDifficultyValid = false;
                 }
 
+                //set the ingredients
                 EditText edit_qtyIngredient1 = rootview.findViewById(R.id.edit_quantity_1);
                 Button set_ingredient1 = rootview.findViewById(R.id.set_ingredient_l);
 
@@ -254,24 +286,24 @@ public class NewRecipeFragment extends Fragment {
 
                 if (edit_qtyIngredient1.getText().length() == 0 || edit_qtyIngredient2.getText().length() == 0 ||
                         set_ingredient1.getText().length() == 0 || set_ingredient2.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner la difficulté");
                     isComplete = false;
                 } else {
-                    ingredients = new ArrayList<>();
+                    //first and second ingredients
 
-                    ArrayList<String> ingredient1 = new ArrayList<>();
-                    ingredient1.add(edit_qtyIngredient1.getText().toString());
-                    ingredient1.add(unity1.getSelectedItem().toString());
-                    ingredient1.add(set_ingredient1.getText().toString());
+                    newComponent1.setQuantity(Float.parseFloat(edit_qtyIngredient1.getText().toString()));
+                    newComponent1.setUnity(QuantityUnit.valueOf(unity1.getSelectedItem().toString()));
+                    
+                    //ingredient1.add(set_ingredient1.getText().toString());
 
-                    ArrayList<String> ingredient2 = new ArrayList<>();
-                    ingredient2.add(edit_qtyIngredient2.getText().toString());
-                    ingredient2.add(unity2.getSelectedItem().toString());
-                    ingredient2.add(set_ingredient2.getText().toString());
+                    newComponent2.setQuantity(Float.parseFloat(edit_qtyIngredient2.getText().toString()));
+                    newComponent2.setUnity(QuantityUnit.valueOf(unity2.getSelectedItem().toString()));
 
-                    ingredients.add(ingredient1);
-                    ingredients.add(ingredient2);
+                    //ingredient2.add(set_ingredient2.getText().toString());
 
+                    ingredients.add(newComponent1);
+                    ingredients.add(newComponent2);
+
+                    //other ingredients
                     for (int i = 3; i <= nbIngredient; i++) {
 
                         EditText edit_qtyIngredient = rootview.findViewWithTag("edit_quantity_" + i);
@@ -282,11 +314,11 @@ public class NewRecipeFragment extends Fragment {
 
                         if (nbIngredient > 2 && (!string_edit_quantity.isEmpty() || !string_edit_ingredient.isEmpty())) {
 
-                            ArrayList<String> ingredient = new ArrayList<>();
-                            ingredient.add(edit_qtyIngredient.getText().toString());
-                            ingredient.add(unity.getSelectedItem().toString());
-                            ingredient.add(edit_ingredient.getText().toString());
-                            ingredients.add(ingredient);
+                            component.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                            component.setUnity(QuantityUnit.valueOf(unity.getSelectedItem().toString()));
+
+                            //ingredient.add(edit_ingredient.getText().toString());
+                            ingredients.add(component);
 
                         }
                     }
@@ -294,11 +326,9 @@ public class NewRecipeFragment extends Fragment {
 
                 EditText edit_preparation = rootview.findViewById(R.id.edit_step1);
                 if (edit_preparation.getText().length() == 0) {
-                    //edit.setError("Veuillez renseigner la difficulté");
                     isComplete = false;
                 } else {
                     preparation = new ArrayList<>();
-
                     preparation.add(edit_preparation.getText().toString());
                     for (int i = 2; i <= nbStep; i++) {
                         EditText edit_step = rootview.findViewWithTag("edit_step_" + i);
@@ -307,10 +337,11 @@ public class NewRecipeFragment extends Fragment {
                             preparation.add(edit_step.getText().toString());
                         }
                     }
+                    newRecipe.setPreparation(preparation);
                 }
 
                 //Recipe not shared yet
-                isShared = false;
+                newRecipe.setShared(false);
 
                 //Verifying if the recipe is complete
                 if (!isDifficultyValid) {
@@ -320,12 +351,13 @@ public class NewRecipeFragment extends Fragment {
                     Snackbar snackbarComplete = Snackbar.make(rootview, R.string.invalid_completion, Snackbar.LENGTH_SHORT);
                     snackbarComplete.show();
                 } else if (isPut) {
-                    Snackbar snackbarComplete = Snackbar.make(rootview, "Recette déja soumise", Snackbar.LENGTH_SHORT);
-                    snackbarComplete.show();
+                    Snackbar snackbarExisting = Snackbar.make(rootview, R.string.existing_recipe, Snackbar.LENGTH_SHORT);
+                    snackbarExisting.show();
                 } else {
-                    Recipe recipe = new Recipe(name, nbPeople, description, preparationTime,
-                            difficulty, ingredients, preparation, isShared);
 
+                    //put the recipe in Firebase
+
+                    /*
                     firebaseReference.child("recipes").child(id).child("name").setValue(name);
                     firebaseReference.child("recipes").child(id).child("description").setValue(description);
                     firebaseReference.child("recipes").child(id).child("persons").setValue(nbPeople);
@@ -340,6 +372,7 @@ public class NewRecipeFragment extends Fragment {
                     firebaseReference.child("recipes").child(id).child("isShared").setValue(isShared);
                     firebaseReference.child("recipes").child(id).child("calories").setValue(calories);
                     firebaseReference.child("recipes").child(id).child("tag").setValue(tag);
+                    */
 
                     Snackbar snackbarComplete = Snackbar.make(rootview, "Recette envoyée", Snackbar.LENGTH_SHORT);
                     snackbarComplete.show();
@@ -347,8 +380,6 @@ public class NewRecipeFragment extends Fragment {
                     isPut = true;
 
                 }
-
-                //TODO if time : Add a pop up to be sure
 
 
             }
@@ -369,7 +400,10 @@ public class NewRecipeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         newRecipe = new Recipe();
-        newComponent = new Component();
+        ingredients = new ArrayList<>();
+        newComponent1 = new Component();
+        newComponent2 = new Component();
+        component = new Component();
         newIngredient = new Ingredient();
     }
 
@@ -379,13 +413,14 @@ public class NewRecipeFragment extends Fragment {
 
         rootview = inflater.inflate(R.layout.fragment_new_recipe, null);
 
+
+        //to know the id of the recipe
         firebaseReference.child("recipes").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 nbRecipe = 0;
                 nbRecipe = count.incrementAndGet() + 1;
-                id = String.valueOf(nbRecipe);
-
+                newRecipe.setId(String.valueOf(nbRecipe));
             }
 
             @Override
@@ -410,18 +445,22 @@ public class NewRecipeFragment extends Fragment {
 
         });
 
+        sectionTag = rootview.findViewById(R.id.tags);
+
+        buttonAddTag = rootview.findViewById(R.id.addTag);
+        buttonAddTag.setOnClickListener(addTag_listener);
 
         sectionIngredient = rootview.findViewById(R.id.section_ingredients);
 
         unity1 = rootview.findViewById(R.id.unity_1);
         unity1.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
         buttonSetIngredient1 = rootview.findViewById(R.id.set_ingredient_l);
-        buttonSetIngredient1.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient1.setOnClickListener(setIngredient1_listener);
 
         unity2 = rootview.findViewById(R.id.unity_2);
         unity2.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
         buttonSetIngredient2 = rootview.findViewById(R.id.set_ingredient_2);
-        buttonSetIngredient2.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient2.setOnClickListener(setIngredient2_listener);
 
         buttonAddIngredient = rootview.findViewById(R.id.addIngredient);
         buttonAddIngredient.setOnClickListener(addIngredient_listener);
@@ -430,16 +469,158 @@ public class NewRecipeFragment extends Fragment {
         buttonAddStep = rootview.findViewById(R.id.addStep);
         buttonAddStep.setOnClickListener(addStep_listener);
 
-
-        ingredientListView = (ListView) rootview.findViewById(R.id.ingredient_list);
-        searchView = (SearchView) rootview.findViewById(R.id.search_ingredient_filter);
-        btnCancel = (Button) rootview.findViewById(R.id.btn_cancel);
-
-
         validation = rootview.findViewById(R.id.validate);
         validation.setOnClickListener(validation_listener);
 
         return rootview;
     }
 
+
+    /**
+     * Window where the user can choose an ingredient
+     */
+    final class DialogAddIngredient extends Dialog implements android.view.View.OnClickListener {
+
+        private ArrayList<Ingredient> temporaryList;
+
+        private Activity activity;
+        private Button btnCancel;
+        private SearchView searchView;
+        private ListView ingredientListView;
+        private Component component;
+        private Button button;
+
+        private IngredientAdapter adapter;
+
+        private DialogAddIngredient(Activity a, Component component, Button button) {
+            super(a);
+            this.activity = a;
+            this.component = component;
+            this.button = button;
+
+            temporaryList = new ArrayList<>();
+            temporaryList.addAll(Ingredient.ingredientList);
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_add_ingredient);
+
+            ingredientListView = findViewById(R.id.ingredient_list);
+            searchView = findViewById(R.id.search_ingredient_filter);
+            btnCancel = findViewById(R.id.btn_cancel);
+
+            // adapter
+            adapter = new IngredientAdapter(activity, R.layout.row_ingredient, temporaryList);
+            ingredientListView.setAdapter(adapter);
+
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String s) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    adapter.getFilter().filter(s);
+                    return false;
+                }
+            });
+
+            // by clicking on an Ingredient, add it to the ingredient user list
+            ingredientListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Ingredient ingredient = (Ingredient) adapterView.getAdapter().getItem(i);
+                    component.setIngredient(ingredient);
+                    button.setText(ingredient.getName());
+                    dismiss();
+                }
+            });
+
+            btnCancel.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            dismiss();
+        }
+    }
+
+    /**
+     * Window where the user can choose the tags
+     */
+    final class DialogAddTag extends Dialog implements android.view.View.OnClickListener {
+
+
+        private Activity activity;
+        private Button btnValid;
+        private View.OnClickListener buttonValid_listener;
+        private Button btnCancel;
+        private ListView tagListView;
+
+
+        private DialogAddTag(Activity a) {
+            super(a);
+            this.activity = a;
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.dialog_add_tag);
+
+            tagListView = findViewById(R.id.tag_list);
+            btnValid = findViewById(R.id.btn_addTag);
+            btnValid.setOnClickListener(buttonValid_listener);
+            btnCancel = findViewById(R.id.btn_cancel);
+
+            tagListView.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_list_item_checked, Tags.values()));
+
+            btnCancel.setOnClickListener(this);
+
+            items = new ArrayList<>();
+
+        }
+
+        {
+            buttonValid_listener = new Button.OnClickListener() {
+            @Override
+            public  void onClick (View arg0) {
+                sectionTag.removeAllViews();
+                for (int i = tagListView.getFirstVisiblePosition(); i< tagListView.getFirstVisiblePosition() + tagListView.getChildCount();i++) {
+                    View nextChild = tagListView.getChildAt(i);
+                    if (nextChild instanceof CheckedTextView ) {
+                        CheckedTextView  check = (CheckedTextView ) nextChild;
+                        if (check.isChecked()) {
+                            newTag = new TextView(myContext);
+                            newTag.setText(check.getText().toString());
+                            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            param.setMargins(10,10,10,10);
+                            newTag.setPadding(10,10,10,10);
+                            newTag.setLayoutParams(param);
+                            newTag.setBackgroundResource(R.color.colorBackgroundMenu);
+                            newTag.setGravity(Gravity.CENTER);
+                            sectionTag.addView(newTag);
+                            items.add(check.getText().toString());
+                        }
+                    }
+                 }
+                if (items.size() > 3 ) {
+                    int numberRow = items.size()/3;
+                    sectionTag.setRowCount(numberRow);
+                }
+                dismiss();
+                }
+            };
+        }
+
+        @Override
+        public void onClick(View view) {
+            dismiss();
+        }
+    }
 }
