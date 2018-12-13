@@ -10,6 +10,7 @@
     <string name="yes">Oui</string>
     <string name="cancel">Annuler</string>
     <string name="no">Non</string>
+    <string name="valid">Valider</string>
     <!-- /global -->
 
     <!-- connection -->
@@ -64,11 +65,10 @@
     <string name="tittle_preparation">Preparation</string>
     <string name="hint_firstStep">Première étape*</string>
     <string name="hint_otherStep">Etape suivante</string>
-    <string name="invalid_difficulty">La dificulté doit être comprise entre 0 et 5</string>
+    <string name="invalid_difficulty">La dificulté doit être comprise entre 0 et 5.</string>
     <string name="invalid_completion">Les champs marqués d\'une * sont obligatoire.</string>
+    <string name="existing_recipe">Recette déja soumise.</string>
     <!-- /addRecipe -->
-
-
 
     <!-- showRecipe -->
     <string name="nbPerson">Nombre de personnes</string>
@@ -81,7 +81,6 @@
     <string name="ingredient_name">Nom ingrédient</string>
     <!-- /fridge -->
 
-
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>
     <string name="activity_user">ACTIVITY USER</string>
@@ -89,10 +88,10 @@
     <string name="activity_fridge">ACTIVITY FRIDGE</string>
     <string name="activity_shopping">ACTIVITY SHOPPING</string>
 
-
     <string name="facebook_app_id">1968130033267796</string>
     <string name="fb_login_protocol_scheme">fb1968130033267796</string>
 
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -142,6 +142,17 @@
                 android:text="@string/tittle_tag"
                 android:textSize="20dp"/>
 
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tags"
+                android:orientation="horizontal"
+                android:columnCount="3"
+                android:layout_margin="7dp">
+
+
+            </GridLayout>
+
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton
