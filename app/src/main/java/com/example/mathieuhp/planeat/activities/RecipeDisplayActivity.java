@@ -115,7 +115,7 @@ public class RecipeDisplayActivity extends AppCompatActivity implements BottomNa
         if(fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.recipe_fragment_container, fragment)
                     .commit();
             return true;
         }

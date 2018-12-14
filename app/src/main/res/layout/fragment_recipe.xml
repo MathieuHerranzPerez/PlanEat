@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+    android:fillViewport="true"
+    android:background="#FFFF00">
+-->
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#FF0000"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <!--
         <EditText
             android:id="@+id/idRecipe"
@@ -18,7 +20,7 @@
 
         <!-- Name of the recipe -->
         <TextView
-            android:id="@+id/RecipeName"
+            android:id="@+id/DetailedRecipeName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -28,14 +30,14 @@
 
         <!-- Add picture -->
         <ImageView
-            android:id="@+id/RecipePicture"
+            android:id="@+id/DetailedRecipePicture"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/im_picture" />
 
         <!-- Description -->
         <TextView
-            android:id="@+id/RecipeDescription"
+            android:id="@+id/DetailedRecipeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
@@ -198,6 +200,6 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</ScrollView>
+<!--</ScrollView>-->

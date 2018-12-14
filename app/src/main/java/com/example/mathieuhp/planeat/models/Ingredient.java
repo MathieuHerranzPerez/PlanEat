@@ -131,4 +131,15 @@ public class Ingredient implements Comparable {
 //        @Override
 //        public void onCancelled(@NonNull DatabaseError databaseError) {}
 //    }
+
+
+    public static Ingredient getIngredientById(String ingredientId){
+        for (Ingredient ingredient : Ingredient.ingredientList) {
+            if(ingredient.getId() == ingredientId){
+                return ingredient;
+            }
+        }
+        return null;
+    }
+
 }

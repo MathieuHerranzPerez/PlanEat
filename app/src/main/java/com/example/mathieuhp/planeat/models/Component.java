@@ -6,14 +6,26 @@ public class Component {
     private float quantity;
     private QuantityUnit unit;
     private Ingredient ingredient;
+    private float calories; //calories calculated with quantity
+
+    public Component() {
+        this.recipeId = "";
+        this.quantity = 0;
+        this.unit = QuantityUnit.unit;
+        this.ingredient = null;
+        this.calories = 0;
+    }
 
     /**** CONSTRUCTORS ****/
 
-    public Component(String recipeId, float quantity, QuantityUnit unit, Ingredient ingredient) {
+
+
+    public Component(String recipeId, float quantity, QuantityUnit unit, Ingredient ingredient, float calories) {
         this.recipeId = recipeId;
         this.quantity = quantity;
         this.unit = unit;
         this.ingredient = ingredient;
+        this.calories = 0;
     }
 
 
@@ -35,6 +47,14 @@ public class Component {
         return ingredient;
     }
 
+    public float getCalories(){
+        return calories;
+    }
+
+    public String getIngredientName(){
+        return ingredient.getName();
+    }
+
 
     /**** SETTERS ****/
 
@@ -52,5 +72,9 @@ public class Component {
 
     public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
+    }
+
+    public void setCalories(float calories){
+        this.calories = calories;
     }
 }

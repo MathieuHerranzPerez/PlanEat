@@ -31,7 +31,7 @@
     <!-- / -->
 
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/recipe_fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
@@ -45,9 +45,11 @@
         android:layout_height="wrap_content"
         android:background="@color/colorBackgroundMenu"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_container"
+        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation" />
 
 </android.support.constraint.ConstraintLayout>

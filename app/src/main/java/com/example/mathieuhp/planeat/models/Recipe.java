@@ -20,7 +20,8 @@ import java.util.List;
 
 public class Recipe implements Parcelable{
 
-    private FirebaseDataRetriever firebaseDataRetriever;
+    private FirebaseDataRetriever recipeListView;
+    private FirebaseDataRetriever recipeDetailedView;
 
     private String id;
     private String name;
@@ -44,10 +45,10 @@ public class Recipe implements Parcelable{
 
     }
 
-    public Recipe(String id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
+    public Recipe(String id, String name, ArrayList<Component> components, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
         this.id = id;
         this.name = name;
-        this.listComponent = listComponent;
+        this.components = components;
         this.nbPeople = nbPeople;
         this.calories = calories;
         this.difficulty = difficulty;
@@ -63,6 +64,7 @@ public class Recipe implements Parcelable{
 
     public Recipe(String id) {
         this.id = id;
+        this.components = new ArrayList<Component>();
         // todo get the recipe from DB
         firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
@@ -81,9 +83,10 @@ public class Recipe implements Parcelable{
         this.score = score;
     }
 
-    public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
+    public Recipe(FirebaseDataRetriever recipeListView, String id) {
         this.id = id;
         this.name = "";
+        this.components = new ArrayList<Component>();
         this.nbPeople = 0;
         this.calories = 0;
         this.difficulty = 0;
@@ -93,7 +96,7 @@ public class Recipe implements Parcelable{
         this.isShared = false;
         this.score = 0;
 
-        this.firebaseDataRetriever = firebaseDataRetriever;
+        this.recipeListView = recipeListView;
         // todo get the recipe from DB
         firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
@@ -128,12 +131,31 @@ public class Recipe implements Parcelable{
         }
     };
 
+
+    /**** GETTERS ****/
+
+    public FirebaseDataRetriever getRecipeDetailedView() {
+        return recipeDetailedView;
+    }
+
     public String getId() {
         return this.id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<Component> getComponents() {
+        return components;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getCalories() {
+        return calories;
     }
 
     public float getDifficulty() {
@@ -156,33 +178,21 @@ public class Recipe implements Parcelable{
         return image;
     }
 
-    public void setImage(Bitmap image) {
-        this.image = image;
-    }
-
     public List<String> getTags() {
         return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
     }
 
     public boolean isShared() {
         return isShared;
     }
 
-    public void setShared(boolean shared) {
-        isShared = shared;
+
+    /**** SETTERS ****/
+
+    public void setRecipeDetailedView(FirebaseDataRetriever view) {
+        this.recipeDetailedView = view;
     }
 
-    public void loadInformation() {
-    }
-    public int getCalories() {
-        return calories;
-    }
-
-    /* ---- SETTERS ---- */
     private void setId(String id) {
         this.id = id;
     }
@@ -204,8 +214,14 @@ public class Recipe implements Parcelable{
     public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
     public void setScore(float score) {
         this.score = score;
@@ -214,8 +230,28 @@ public class Recipe implements Parcelable{
         this.isShared = isShared;
     }
 
+    /**** PRIVATE FUNCTIONS ****/
+    public void loadComponents(){
+        DatabaseReference componentsFirebaseReference = FirebaseDatabase.getInstance().getReference().child("recipeComponents").child(this.id);
+        componentsFirebaseReference.addListenerForSingleValueEvent(new RecipeComponentsValueEventListener(this));
+    }
 
-    //parcelable
+    public boolean hasComponents(){
+        if(this.components != null){
+            return this.components.size() != 0;
+        }
+        return false;
+    }
+
+    public void addComponent(Component component) {
+        if(this.components == null){
+            this.components = new ArrayList<Component>();
+        }
+        this.components.add(component);
+    }
+
+
+    /**** IMPLEMENTS PARCELABLE ****/
 
     @Override
     public int describeContents() {
@@ -240,6 +276,11 @@ public class Recipe implements Parcelable{
     }
 
 
+
+
+    /**** FIRBASE RELATED FUNCTIONS/CLASSES ****/
+
+    // to get main info about a recipe
     private class ValueEventListenerRecipeConstruct implements ValueEventListener {
 
         private Recipe recipe;
@@ -297,7 +338,7 @@ public class Recipe implements Parcelable{
                 }
                 Log.d("Getting recipe done! ", this.recipe.name);
                 //notify that recipe has been retrieved from db
-                this.recipe.firebaseDataRetriever.retrieveData();
+                this.recipe.recipeListView.retrieveData();
 
             } catch(Exception e) {
                 e.printStackTrace();
@@ -327,4 +368,73 @@ public class Recipe implements Parcelable{
             UserFragment.getUserFragment().updateView();
         }
     }
+
+    // to get ingredients in recipe
+
+    class RecipeComponentsValueEventListener implements ValueEventListener {
+
+        private Recipe recipe;
+        private int nbLoadedComponents;
+        private int nbTotalComponents;
+
+        public RecipeComponentsValueEventListener(Recipe recipe) {
+            this.recipe = recipe;
+            this.nbLoadedComponents = 0;
+            this.nbTotalComponents = 0;
+        }
+
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            try {
+                Log.d("components lets go","voila");
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                nbTotalComponents = (int) dataSnapshot.getChildrenCount();
+                for(DataSnapshot component : children){
+                    Component newComponent = new Component();
+
+                    Log.d("the one component", "voila");
+
+                    String ingredientId = component.getKey();
+                    newComponent.setIngredient(Ingredient.getIngredientById(ingredientId));
+                    Log.d("ingredient id", ingredientId);
+
+                    String amount = "";
+                    if(component.hasChild("amount") && (amount = component.child("amount").getValue().toString()) != null){
+                        newComponent.setQuantity(Integer.parseInt(amount));
+                        Log.d("component amount", amount);
+                    }
+
+                    String calories;
+                    if ((calories = component.child("calories").getValue().toString()) != null) {
+                        newComponent.setCalories(Float.parseFloat(calories));
+                        Log.d("component calories", calories);
+                    }
+
+                    String unit;
+                    if ((unit = component.child("unit").getValue().toString()) != null) {
+                        newComponent.setUnit(QuantityUnit.getUnit(unit));
+                        Log.d("component amount", unit);
+                    }
+                    recipe.addComponent(newComponent);
+                    nbLoadedComponents += 1;
+                    Log.d("loaded components:", String.valueOf(nbLoadedComponents));
+                    if(nbLoadedComponents == nbTotalComponents){
+                        this.recipe.getRecipeDetailedView().retrieveData();
+                    }
+                }
+
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+        }
+    }
+
+
+
+
 }
