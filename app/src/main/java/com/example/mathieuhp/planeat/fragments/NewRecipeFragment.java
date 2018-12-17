@@ -26,6 +26,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Component;
@@ -62,16 +63,25 @@ public class NewRecipeFragment extends Fragment {
     //set a new ingredient
     private Spinner unity1;
     private Button buttonSetIngredient1;
-    private View.OnClickListener setIngredient1_listener;
+    private View.OnClickListener setIngredient_listener;
     private Spinner unity2;
     private Button buttonSetIngredient2;
-    private View.OnClickListener setIngredient2_listener;
-    //Add a new ingredient
-    private FloatingActionButton buttonAddIngredient;
-    private View.OnClickListener addIngredient_listener;
-    private int nbIngredient = 2;
-    private Button buttnSetIngredient;
-    private View.OnClickListener setIngredient_listener;
+    private Spinner unity3;
+    private Button buttonSetIngredient3;
+    private Spinner unity4;
+    private Button buttonSetIngredient4;
+    private Spinner unity5;
+    private Button buttonSetIngredient5;
+    private Spinner unity6;
+    private Button buttonSetIngredient6;
+    private Spinner unity7;
+    private Button buttonSetIngredient7;
+    private Spinner unity8;
+    private Button buttonSetIngredient8;
+    private Spinner unity9;
+    private Button buttonSetIngredient9;
+    private Spinner unity10;
+    private Button buttonSetIngredient10;
 
     //section to add a step
     private LinearLayout sectionPreparation;
@@ -91,11 +101,19 @@ public class NewRecipeFragment extends Fragment {
 
     private Component newComponent1;
     private Component newComponent2;
-    private Component component;
+    private Component newComponent3;
+    private Component newComponent4;
+    private Component newComponent5;
+    private Component newComponent6;
+    private Component newComponent7;
+    private Component newComponent8;
+    private Component newComponent9;
+    private Component newComponent10;
 
     private ArrayList<String> tag;
     private Ingredient newIngredient;
     private ArrayList<Component> ingredients;
+    private float calories;
 
     private ArrayList<String> preparation;
     private int nbRecipe = 0;
@@ -113,47 +131,61 @@ public class NewRecipeFragment extends Fragment {
         };
     }
 
-    //button to add the ingredient 1 in the recipe
-    {
-        setIngredient1_listener = new Button.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent1, buttonSetIngredient1);
-                addIngredientWindow.show();
-                //buttonSetIngredient1.setText(newComponent1.getIngredient().getName());
-            }
-        };
-    }
-
-    //button to add the ingredient 2 in the recipe
-    {
-        setIngredient2_listener = new Button.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent2, buttonSetIngredient2);
-                addIngredientWindow.show();
-                //buttonSetIngredient1.setText(newComponent2.getIngredient().getName());
-            }
-        };
-    }
-
-    //button to add the others ingredients in the recipe
+    //buttons to add an ingredient in the recipe
     {
         setIngredient_listener = new Button.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), component, buttnSetIngredient);
-                addIngredientWindow.show();
-                //buttonSetIngredient1.setText(component.getIngredient().getName());
+                DialogAddIngredient addIngredientWindow;
+                switch (arg0.getId()) {
+                    case R.id.set_ingredient_l:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent1, buttonSetIngredient1,1);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_2:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent2, buttonSetIngredient2,2);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_3:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent3, buttonSetIngredient3,3);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_4:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent4, buttonSetIngredient4,4);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_5:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent5, buttonSetIngredient5,5);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_6:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent6, buttonSetIngredient6,6);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_7:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent7, buttonSetIngredient7,7);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_8:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent8, buttonSetIngredient8,8);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_9:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent9, buttonSetIngredient9,9);
+                        addIngredientWindow.show();
+                        break;
+                    case R.id.set_ingredient_10:
+                        addIngredientWindow = new DialogAddIngredient(getActivity(), newComponent10, buttonSetIngredient10,10);
+                        addIngredientWindow.show();
+                        break;
+                }
             }
         };
     }
 
-    //button to add a new ingredient in the recipe
-    {
+    //button to add dynamically a new ingredient in the recipe
+    /*{
         addIngredient_listener = new Button.OnClickListener() {
 
             @Override
@@ -174,8 +206,8 @@ public class NewRecipeFragment extends Fragment {
                 LinearLayout.LayoutParams paramQty = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
                 newQty.setLayoutParams(paramQty);
 
-                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), component, buttnSetIngredient);
-                addIngredientWindow.show();
+//                DialogAddIngredient addIngredientWindow = new DialogAddIngredient(getActivity(), component, buttnSetIngredient);
+//                addIngredientWindow.show();
 
                 //Drop-down
                 Spinner dropdown_unity = new Spinner(myContext);
@@ -198,7 +230,7 @@ public class NewRecipeFragment extends Fragment {
 
             }
         };
-    }
+    }*/
 
     //button to add a step on the recipe
     {
@@ -292,37 +324,70 @@ public class NewRecipeFragment extends Fragment {
 
                     newComponent1.setQuantity(Float.parseFloat(edit_qtyIngredient1.getText().toString()));
                     newComponent1.setUnity(QuantityUnit.valueOf(unity1.getSelectedItem().toString()));
-                    
-                    //ingredient1.add(set_ingredient1.getText().toString());
+                    ingredients.add(newComponent1);
+                    calories = newRecipe.calculCalorie(newComponent1);
 
                     newComponent2.setQuantity(Float.parseFloat(edit_qtyIngredient2.getText().toString()));
                     newComponent2.setUnity(QuantityUnit.valueOf(unity2.getSelectedItem().toString()));
-
-                    //ingredient2.add(set_ingredient2.getText().toString());
-
-                    ingredients.add(newComponent1);
                     ingredients.add(newComponent2);
+                    calories += newRecipe.calculCalorie(newComponent2);
 
                     //other ingredients
-                    for (int i = 3; i <= nbIngredient; i++) {
+                    for (int i = 3; i <= 10; i++) {
 
                         EditText edit_qtyIngredient = rootview.findViewWithTag("edit_quantity_" + i);
                         String string_edit_quantity = edit_qtyIngredient.getText().toString().trim();
                         Spinner unity = rootview.findViewWithTag("dropdown_unity_" + i);
-                        EditText edit_ingredient = rootview.findViewWithTag("edit_ingredient_" + i);
-                        String string_edit_ingredient = edit_ingredient.getText().toString().trim();
 
-                        if (nbIngredient > 2 && (!string_edit_quantity.isEmpty() || !string_edit_ingredient.isEmpty())) {
-
-                            component.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
-                            component.setUnity(QuantityUnit.valueOf(unity.getSelectedItem().toString()));
-
-                            //ingredient.add(edit_ingredient.getText().toString());
-                            ingredients.add(component);
+                        if (!string_edit_quantity.isEmpty()) {
+                            switch (i){
+                                case 3:
+                                    newComponent3.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent3.setUnity(QuantityUnit.valueOf(unity3.getSelectedItem().toString()));
+                                    ingredients.add(newComponent3);
+                                    calories += newRecipe.calculCalorie(newComponent3);
+                                case 4:
+                                    newComponent4.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent4.setUnity(QuantityUnit.valueOf(unity4.getSelectedItem().toString()));
+                                    ingredients.add(newComponent4);
+                                    calories += newRecipe.calculCalorie(newComponent4);
+                                case 5:
+                                    newComponent5.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent5.setUnity(QuantityUnit.valueOf(unity5.getSelectedItem().toString()));
+                                    ingredients.add(newComponent5);
+                                    calories += newRecipe.calculCalorie(newComponent5);
+                                case 6:
+                                    newComponent6.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent6.setUnity(QuantityUnit.valueOf(unity6.getSelectedItem().toString()));
+                                    ingredients.add(newComponent6);
+                                    calories += newRecipe.calculCalorie(newComponent6);
+                                case 7:
+                                    newComponent7.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent7.setUnity(QuantityUnit.valueOf(unity7.getSelectedItem().toString()));
+                                    ingredients.add(newComponent7);
+                                    calories += newRecipe.calculCalorie(newComponent7);
+                                case 8:
+                                    newComponent8.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent8.setUnity(QuantityUnit.valueOf(unity8.getSelectedItem().toString()));
+                                    ingredients.add(newComponent8);
+                                    calories += newRecipe.calculCalorie(newComponent8);
+                                case 9:
+                                    newComponent9.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent9.setUnity(QuantityUnit.valueOf(unity9.getSelectedItem().toString()));
+                                    ingredients.add(newComponent9);
+                                    calories += newRecipe.calculCalorie(newComponent9);
+                                case 10:
+                                    newComponent10.setQuantity(Float.parseFloat(edit_qtyIngredient.getText().toString()));
+                                    newComponent10.setUnity(QuantityUnit.valueOf(unity10.getSelectedItem().toString()));
+                                    ingredients.add(newComponent10);
+                                    calories += newRecipe.calculCalorie(newComponent10);
+                            }
 
                         }
                     }
                 }
+
+                newRecipe.setCalories((int) calories);
 
                 EditText edit_preparation = rootview.findViewById(R.id.edit_step1);
                 if (edit_preparation.getText().length() == 0) {
@@ -356,23 +421,7 @@ public class NewRecipeFragment extends Fragment {
                 } else {
 
                     //put the recipe in Firebase
-
-                    /*
-                    firebaseReference.child("recipes").child(id).child("name").setValue(name);
-                    firebaseReference.child("recipes").child(id).child("description").setValue(description);
-                    firebaseReference.child("recipes").child(id).child("persons").setValue(nbPeople);
-                    firebaseReference.child("recipes").child(id).child("preparationTime").setValue(preparationTime);
-                    firebaseReference.child("recipes").child(id).child("difficulty").setValue(difficulty);
-                    for (int i = 0; i < ingredients.size(); i++) {
-                        firebaseReference.child("recipes").child(id).child("ingredient").child(String.valueOf(i)).setValue(ingredients.get(i));
-                    }
-                    for (int j = 0; j < preparation.size(); j++) {
-                        firebaseReference.child("recipes").child(id).child("preparation").child(String.valueOf(j)).setValue(preparation.get(j));
-                    }
-                    firebaseReference.child("recipes").child(id).child("isShared").setValue(isShared);
-                    firebaseReference.child("recipes").child(id).child("calories").setValue(calories);
-                    firebaseReference.child("recipes").child(id).child("tag").setValue(tag);
-                    */
+                    newRecipe.addRecipeToDatabase(newRecipe);
 
                     Snackbar snackbarComplete = Snackbar.make(rootview, "Recette envoyée", Snackbar.LENGTH_SHORT);
                     snackbarComplete.show();
@@ -403,8 +452,16 @@ public class NewRecipeFragment extends Fragment {
         ingredients = new ArrayList<>();
         newComponent1 = new Component();
         newComponent2 = new Component();
-        component = new Component();
+        newComponent3 = new Component();
+        newComponent4 = new Component();
+        newComponent5 = new Component();
+        newComponent6 = new Component();
+        newComponent7 = new Component();
+        newComponent8 = new Component();
+        newComponent9 = new Component();
+        newComponent10 = new Component();
         newIngredient = new Ingredient();
+        calories = 0;
     }
 
     @Nullable
@@ -454,16 +511,49 @@ public class NewRecipeFragment extends Fragment {
 
         unity1 = rootview.findViewById(R.id.unity_1);
         unity1.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
-        buttonSetIngredient1 = rootview.findViewById(R.id.set_ingredient_l);
-        buttonSetIngredient1.setOnClickListener(setIngredient1_listener);
-
         unity2 = rootview.findViewById(R.id.unity_2);
         unity2.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
-        buttonSetIngredient2 = rootview.findViewById(R.id.set_ingredient_2);
-        buttonSetIngredient2.setOnClickListener(setIngredient2_listener);
+        unity3 = rootview.findViewById(R.id.unity_3);
+        unity3.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity4 = rootview.findViewById(R.id.unity_4);
+        unity4.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity5 = rootview.findViewById(R.id.unity_5);
+        unity5.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity6 = rootview.findViewById(R.id.unity_6);
+        unity6.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity7 = rootview.findViewById(R.id.unity_7);
+        unity7.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity8 = rootview.findViewById(R.id.unity_8);
+        unity8.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity9 = rootview.findViewById(R.id.unity_9);
+        unity9.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
+        unity10 = rootview.findViewById(R.id.unity_10);
+        unity10.setAdapter(new ArrayAdapter<>(myContext, android.R.layout.simple_spinner_dropdown_item, QuantityUnit.values()));
 
-        buttonAddIngredient = rootview.findViewById(R.id.addIngredient);
-        buttonAddIngredient.setOnClickListener(addIngredient_listener);
+        buttonSetIngredient1 = rootview.findViewById(R.id.set_ingredient_l);
+        buttonSetIngredient2 = rootview.findViewById(R.id.set_ingredient_2);
+        buttonSetIngredient3 = rootview.findViewById(R.id.set_ingredient_3);
+        buttonSetIngredient4 = rootview.findViewById(R.id.set_ingredient_4);
+        buttonSetIngredient5 = rootview.findViewById(R.id.set_ingredient_5);
+        buttonSetIngredient6 = rootview.findViewById(R.id.set_ingredient_6);
+        buttonSetIngredient7 = rootview.findViewById(R.id.set_ingredient_7);
+        buttonSetIngredient8 = rootview.findViewById(R.id.set_ingredient_8);
+        buttonSetIngredient9 = rootview.findViewById(R.id.set_ingredient_9);
+        buttonSetIngredient10 = rootview.findViewById(R.id.set_ingredient_10);
+
+        buttonSetIngredient1.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient2.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient3.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient4.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient5.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient6.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient7.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient8.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient9.setOnClickListener(setIngredient_listener);
+        buttonSetIngredient10.setOnClickListener(setIngredient_listener);
+
+//        buttonAddIngredient = rootview.findViewById(R.id.addIngredient);
+//        buttonAddIngredient.setOnClickListener(addIngredient_listener);
 
         sectionPreparation = rootview.findViewById(R.id.section_preparation);
         buttonAddStep = rootview.findViewById(R.id.addStep);
@@ -489,14 +579,16 @@ public class NewRecipeFragment extends Fragment {
         private ListView ingredientListView;
         private Component component;
         private Button button;
+        private int nbIng;
 
         private IngredientAdapter adapter;
 
-        private DialogAddIngredient(Activity a, Component component, Button button) {
+        private DialogAddIngredient(Activity a, Component component, Button button, int nbIng) {
             super(a);
             this.activity = a;
             this.component = component;
             this.button = button;
+            this.nbIng = nbIng;
 
             temporaryList = new ArrayList<>();
             temporaryList.addAll(Ingredient.ingredientList);

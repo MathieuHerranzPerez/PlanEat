@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true">
 
     <LinearLayout
@@ -37,16 +37,12 @@
             android:hint="@string/hint_description"
             android:inputType="text" />
 
-        <!-- Tags -->
-        <!-- TODO : Choose tag with checkbox and show it bellow-->
-        <!-- Button open a pop-up with checkboxes and ok, after ok, tags selected are showed -->
-
         <View
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginVertical="8dp"/>
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider"/>
 
         <!-- Number of person and Times -->
         <LinearLayout
@@ -54,14 +50,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- TODO if time : Add button "+" and "-" near the EditText -->
-
             <TextView
                 android:id="@+id/nbPerson_star"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/nbPerson"
+                android:text="@string/nbPerson_star"
                 android:textSize="16dp"/>
 
             <EditText
@@ -84,7 +78,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/preparationTime"
+                android:text="@string/preparationTime_star"
                 android:textSize="16dp" />
 
             <EditText
@@ -108,7 +102,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="@string/difficulty"
+                android:text="@string/difficulty_star"
                 android:textSize="16dp"/>
 
             <EditText
@@ -125,8 +119,8 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginVertical="8dp"/>
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider"/>
 
         <!-- Tags -->
         <LinearLayout
@@ -143,12 +137,12 @@
                 android:textSize="20dp"/>
 
             <GridLayout
+                android:id="@+id/tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tags"
-                android:orientation="horizontal"
+                android:layout_margin="7dp"
                 android:columnCount="3"
-                android:layout_margin="7dp">
+                android:orientation="horizontal">
 
 
             </GridLayout>
@@ -159,11 +153,11 @@
             android:id="@+id/addTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_action_add"
             android:layout_gravity="center|bottom"
-            android:backgroundTint="@color/colorBackgroundMenu"
-            android:background="@color/colorBackgroundMenu"
             android:layout_margin="10dp"
+            android:background="@color/colorBackgroundMenu"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:src="@mipmap/ic_action_add"
             app:borderWidth="0dp" />
 
 
@@ -171,8 +165,8 @@
             android:id="@+id/divider3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginVertical="8dp" />
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider" />
 
         <!-- Ingredients list-->
         <LinearLayout
@@ -246,26 +240,271 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/ingredient_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_3"
+                    android:id="@+id/edit_quantity_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_3"
+                    android:id="@+id/unity_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient3"
+                    android:id="@+id/set_ingredient_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_4"
+                    android:id="@+id/edit_quantity_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_4"
+                    android:id="@+id/unity_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient4"
+                    android:id="@+id/set_ingredient_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_5"
+                    android:id="@+id/edit_quantity_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_4"
+                    android:id="@+id/unity_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient5"
+                    android:id="@+id/set_ingredient_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_6"
+                    android:id="@+id/edit_quantity_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_4"
+                    android:id="@+id/unity_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient6"
+                    android:id="@+id/set_ingredient_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient_star" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_7"
+                    android:id="@+id/edit_quantity_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_7"
+                    android:id="@+id/unity_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient7"
+                    android:id="@+id/set_ingredient_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_8"
+                    android:id="@+id/edit_quantity_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_8"
+                    android:id="@+id/unity_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient8"
+                    android:id="@+id/set_ingredient_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_9"
+                    android:id="@+id/edit_quantity_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_9"
+                    android:id="@+id/unity_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient9"
+                    android:id="@+id/set_ingredient_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ingredient_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:tag="edit_quantity_10"
+                    android:id="@+id/edit_quantity_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_quantity"
+                    android:inputType="number" />
+
+                <Spinner
+                    android:tag="unity_10"
+                    android:id="@+id/unity_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+                <Button
+                    android:tag="set_ingredient10"
+                    android:id="@+id/set_ingredient_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:hint="@string/hint_ingredient" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/addIngredient"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_action_add"
-            android:layout_gravity="center|bottom"
-            android:backgroundTint="@color/colorBackgroundMenu"
-            android:background="@color/colorBackgroundMenu"
-            android:layout_margin="10dp"
-            app:borderWidth="0dp"/>
 
         <View
             android:id="@+id/divider4"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginVertical="8dp" />
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider" />
 
         <!-- Preparation list -->
         <LinearLayout
@@ -294,28 +533,28 @@
             android:id="@+id/addStep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_action_add"
             android:layout_gravity="center|bottom"
-            android:backgroundTint="@color/colorBackgroundMenu"
-            android:background="@color/colorBackgroundMenu"
             android:layout_margin="10dp"
+            android:background="@color/colorBackgroundMenu"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:src="@mipmap/ic_action_add"
             app:borderWidth="0dp" />
 
         <View
             android:id="@+id/divider5"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginVertical="8dp" />
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/validate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_check"
             android:layout_gravity="right|bottom"
-            android:backgroundTint="@color/colorBackgroundMenu"
             android:layout_margin="16dp"
+            android:backgroundTint="@color/colorBackgroundMenu"
+            android:src="@drawable/ic_check"
             app:borderWidth="0dp" />
 
     </LinearLayout>
