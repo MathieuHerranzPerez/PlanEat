@@ -4,13 +4,13 @@ public enum QuantityUnit {
 
     /* ATTRIBUTES */
 
-    unite("-"),
-    gramme("g"),
-    kilogramme("kg"),
-    millilitres("ml"),
-    centilitres("cl"),
-    litres("L"),
-    cupes("cup"),
+    unite("unite"),
+    g("g"),
+    kg("kg"),
+    ml("ml"),
+    cl("cl"),
+    L("L"),
+    cup("cup"),
     cuillere("cuillere");
 
     private String unity;

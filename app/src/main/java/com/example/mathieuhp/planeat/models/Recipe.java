@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
@@ -31,13 +32,13 @@ public class Recipe implements Parcelable{
     private int calories;
     private int preparationTime;
     private float difficulty;
-    private ArrayList<String> tags;
-    private ArrayList<Component> listComponent;
-    private ArrayList<String> preparation;
+    private ArrayList<String> tags = new ArrayList<>();
+    private ArrayList<Component> listComponent = new ArrayList<>();
+    private ArrayList<String> preparation = new ArrayList<>();
     private boolean isShared;
     private float score;
 
-    private DatabaseReference firebaseReference;
+    private DatabaseReference firebaseReference  = FirebaseDatabase.getInstance().getReference();
 
     public Recipe() {
 
@@ -239,6 +240,64 @@ public class Recipe implements Parcelable{
         dest.writeFloat(score);
     }
 
+    //Add the ingredient to the database
+    public void addRecipeToDatabase(Recipe recipe) {
+        firebaseReference.child("recipes").child(recipe.id).child("name").setValue(recipe.name);
+        firebaseReference.child("recipes").child(recipe.id).child("description").setValue(recipe.description);
+        firebaseReference.child("recipes").child(recipe.id).child("persons").setValue(recipe.nbPeople);
+        firebaseReference.child("recipes").child(recipe.id).child("preparationTime").setValue(recipe.preparationTime);
+        firebaseReference.child("recipes").child(recipe.id).child("difficulty").setValue(recipe.difficulty);
+        for (int i = 0; i < listComponent.size(); i++) {
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getQuantity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getUnity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getIngredient());
+
+        }
+        for (int b = 0; b < preparation.size(); b++) {
+            firebaseReference.child("recipes").child(recipe.id).child("preparation").child(String.valueOf(b)).setValue(recipe.preparation.get(b));
+        }
+        for (int a = 0; a < tags.size(); a++) {
+            firebaseReference.child("recipes").child(recipe.id).child("tags").child(String.valueOf(a)).setValue(recipe.tags.get(a));
+        }
+        firebaseReference.child("recipes").child(recipe.id).child("isShared").setValue(recipe.isShared);
+        firebaseReference.child("recipes").child(recipe.id).child("calories").setValue(recipe.calories);
+    }
+
+    //Calculate the calories for 1 ingredient
+    public float calculCalorie(Component component) {
+        float calories = 0;
+        float calorieper100grams = 0;
+        float gramme = 0;
+        switch (component.getUnity()) {
+            case L:
+                gramme = component.getQuantity() * 1000;
+                break;
+            case cl:
+                gramme = component.getQuantity() * 10;
+                break;
+            case ml:
+                gramme = component.getQuantity() * 1;
+                break;
+            case cup:
+                gramme = component.getQuantity() * 115;
+                break;
+            case cuillere:
+                gramme = component.getQuantity() * 15;
+                break;
+            case unite:
+                gramme = component.getQuantity() * 60;
+                break;
+            case kg:
+                gramme = component.getQuantity() * 1000;
+                break;
+        }
+        Log.d("test", component.getIngredient().getKiloCaloriesPerHundredGrams());
+        String lol = component.getIngredient().getKiloCaloriesPerHundredGrams();
+        lol = lol.replace(",",".");
+        calorieper100grams = Float.parseFloat(lol);
+        calories = (calorieper100grams * gramme ) / 100 ;
+        return calories;
+    }
 
     private class ValueEventListenerRecipeConstruct implements ValueEventListener {
 
