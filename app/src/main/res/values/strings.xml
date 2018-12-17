@@ -10,6 +10,7 @@
     <string name="yes">Oui</string>
     <string name="cancel">Annuler</string>
     <string name="no">Non</string>
+    <string name="valid">Valider</string>
     <!-- /global -->
 
     <!-- connection -->
@@ -55,6 +56,7 @@
     <string name="nbPerson_star">Nombre de personnes*</string>
     <string name="preparationTime_star">Temps de préparation*</string>
     <string name="difficulty_star">Dificulté* (de 0 à 5)</string>
+    <string name="tittle_tag">Tags</string>
     <string name="tittle_ingredients">Ingredients</string>
     <string name="hint_quantity_star">Qté*</string>
     <string name="hint_quantity">Qté</string>
@@ -63,11 +65,10 @@
     <string name="tittle_preparation">Preparation</string>
     <string name="hint_firstStep">Première étape*</string>
     <string name="hint_otherStep">Etape suivante</string>
-    <string name="invalid_difficulty">La dificulté doit être comprise entre 0 et 5</string>
+    <string name="invalid_difficulty">La dificulté doit être comprise entre 0 et 5.</string>
     <string name="invalid_completion">Les champs marqués d\'une * sont obligatoire.</string>
+    <string name="existing_recipe">Recette déja soumise.</string>
     <!-- /addRecipe -->
-
-
 
     <!-- showRecipe -->
     <string name="nbPerson">Nombre de personnes</string>
@@ -76,24 +77,12 @@
     <string name="difficulty">Dificulté</string>
     <!-- /showRecipe -->
 
-    <!-- Units -->
-    <string-array name="unity_array">
-        <item>-</item>
-        <item>g</item>
-        <item>kg</item>
-        <item>cl</item>
-        <item>L</item>
-        <item>unité</item>
-    </string-array>
-    <!-- /Units -->
-
     <!-- fridge -->
     <string name="ingredient_name">Nom ingrédient</string>
     <!-- /fridge -->
 
     <string name="no_internet">Hors connexion internet</string>
     <string name="message_no_internet">Vous devez avoir internet pour utiliser cette application. Appuyez sur Ok pour quitter</string>
-
 
     <string name="activity_recipes">ACTIVITY RECIPES</string>
     <string name="activity_recipe">ACTIVITY RECIPE</string>
@@ -102,10 +91,7 @@
     <string name="activity_fridge">ACTIVITY FRIDGE</string>
     <string name="activity_shopping">ACTIVITY SHOPPING</string>
 
-
     <string name="facebook_app_id">1968130033267796</string>
     <string name="fb_login_protocol_scheme">fb1968130033267796</string>
-
-
 
 </resources>

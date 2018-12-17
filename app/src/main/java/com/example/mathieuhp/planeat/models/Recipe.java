@@ -24,40 +24,23 @@ public class Recipe implements Parcelable{
 
     private String id;
     private String name;
-    private ArrayList<Component> listComponent;
-    private int nbPeople;
-    private int calories;
-    private String description;
-    private int preparationTime;
-    private float difficulty;
-    private ArrayList<ArrayList> ingredients;
-    private ArrayList<String> preparation;
     private String imageLink;
     private Bitmap image;
-    private List<String> tags;
+    private String description;
+    private int nbPeople;
+    private int calories;
+    private int preparationTime;
+    private float difficulty;
+    private ArrayList<String> tags = new ArrayList<>();
+    private ArrayList<Component> listComponent = new ArrayList<>();
+    private ArrayList<String> preparation = new ArrayList<>();
     private boolean isShared;
     private float score;
 
-    private DatabaseReference firebaseReference;
+    private DatabaseReference firebaseReference  = FirebaseDatabase.getInstance().getReference();
 
     public Recipe() {
 
-    }
-
-    public Recipe(String id, String name, ArrayList<Component> listComponent, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
-        this.id = id;
-        this.name = name;
-        this.listComponent = listComponent;
-        this.nbPeople = nbPeople;
-        this.calories = calories;
-        this.difficulty = difficulty;
-        this.description = description;
-        this.preparationTime = preparationTime;
-        this.imageLink = imageLink;
-        this.image = image;
-        this.tags = tags;
-        this.isShared = isShared;
-        this.score = score;
     }
 
 
@@ -66,19 +49,6 @@ public class Recipe implements Parcelable{
         // todo get the recipe from DB
         firebaseReference = FirebaseDatabase.getInstance().getReference().child("recipes");
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
-    }
-
-    public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
-
-        this.name = name;
-        this.nbPeople = nbPeople;
-        this.description = description;
-        this.preparationTime = preparationTime;
-        this.difficulty = difficulty;
-        this.ingredients = ingredients;
-        this.preparation = preparation;
-        this.isShared = isShared;
-        this.score = score;
     }
 
     public Recipe(FirebaseDataRetriever firebaseDataRetriever, String id) {
@@ -128,24 +98,42 @@ public class Recipe implements Parcelable{
         }
     };
 
+    /* ---- GETTER ---- */
+
     public String getId() {
-        return this.id;
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public float getDifficulty() {
-        return difficulty;
+    public ArrayList<Component> getListComponent() {
+        return listComponent;
+    }
+
+    public int getNbPeople() {
+        return nbPeople;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public int getPreparationTime() {
         return preparationTime;
     }
 
-    public float getScore() {
-        return score;
+    public float getDifficulty() {
+        return difficulty;
+    }
+
+    public ArrayList<String> getPreparation() {
+        return preparation;
     }
 
     public String getImageLink() {
@@ -156,62 +144,74 @@ public class Recipe implements Parcelable{
         return image;
     }
 
-    public void setImage(Bitmap image) {
-        this.image = image;
-    }
-
-    public List<String> getTags() {
+    public ArrayList<String> getTags() {
         return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
     }
 
     public boolean isShared() {
         return isShared;
     }
 
+    public float getScore() {
+        return score;
+    }
+
+    /* ---- SETTERS ---- */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setListComponent(ArrayList<Component> listComponent) {
+        this.listComponent = listComponent;
+    }
+
+    public void setNbPeople(int nbPeople) {
+        this.nbPeople = nbPeople;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPreparationTime(int preparationTime) {
+        this.preparationTime = preparationTime;
+    }
+
+    public void setDifficulty(float difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public void setPreparation(ArrayList<String> preparation) {
+        this.preparation = preparation;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
     public void setShared(boolean shared) {
         isShared = shared;
     }
 
-    public void loadInformation() {
-    }
-    public int getCalories() {
-        return calories;
-    }
-
-    /* ---- SETTERS ---- */
-    private void setId(String id) {
-        this.id = id;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setCalories(int calories) {
-        this.calories = calories;
-    }
-    public void setNbPeople(int nbPeople) {
-        this.nbPeople = nbPeople;
-    }
-    public void setDifficulty(float difficulty) {
-        this.difficulty = difficulty;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public void setPreparationTime(int preparationTime) {
-        this.preparationTime = preparationTime;
-    }
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
-    }
     public void setScore(float score) {
         this.score = score;
-    }
-    public void setIsShared(boolean isShared) {
-        this.isShared = isShared;
     }
 
 
@@ -237,6 +237,67 @@ public class Recipe implements Parcelable{
         dest.writeStringList(tags);
         dest.writeByte((byte) (isShared ? 1 : 0));
         dest.writeFloat(score);
+    }
+
+    //Add the ingredient to the database
+    public void addRecipeToDatabase(Recipe recipe) {
+        firebaseReference.child("recipes").child(recipe.id).child("name").setValue(recipe.name);
+        firebaseReference.child("recipes").child(recipe.id).child("description").setValue(recipe.description);
+        firebaseReference.child("recipes").child(recipe.id).child("persons").setValue(recipe.nbPeople);
+        firebaseReference.child("recipes").child(recipe.id).child("preparationTime").setValue(recipe.preparationTime);
+        firebaseReference.child("recipes").child(recipe.id).child("difficulty").setValue(recipe.difficulty);
+        for (int i = 0; i < listComponent.size(); i++) {
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getQuantity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getUnity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getIngredient());
+
+        }
+        for (int b = 0; b < preparation.size(); b++) {
+            firebaseReference.child("recipes").child(recipe.id).child("preparation").child(String.valueOf(b)).setValue(recipe.preparation.get(b));
+        }
+        if (tags!=null && !tags.isEmpty()) {
+            for (int a = 0; a < tags.size(); a++) {
+                firebaseReference.child("recipes").child(recipe.id).child("tags").child(String.valueOf(a)).setValue(recipe.tags.get(a));
+            }
+        }
+        firebaseReference.child("recipes").child(recipe.id).child("isShared").setValue(recipe.isShared);
+        firebaseReference.child("recipes").child(recipe.id).child("calories").setValue(recipe.calories);
+    }
+
+    //Calculate the calories for 1 ingredient
+    public float calculCalorie(Component component) {
+        float calories = 0;
+        float calorieper100grams = 0;
+        float gramme = 0;
+        switch (component.getUnity()) {
+            case L:
+                gramme = component.getQuantity() * 1000;
+                break;
+            case cl:
+                gramme = component.getQuantity() * 10;
+                break;
+            case ml:
+                gramme = component.getQuantity() * 1;
+                break;
+            case cup:
+                gramme = component.getQuantity() * 115;
+                break;
+            case cuillere:
+                gramme = component.getQuantity() * 15;
+                break;
+            case unite:
+                gramme = component.getQuantity() * 60;
+                break;
+            case kg:
+                gramme = component.getQuantity() * 1000;
+                break;
+        }
+        Log.d("test", component.getIngredient().getKiloCaloriesPerHundredGrams());
+        String lol = component.getIngredient().getKiloCaloriesPerHundredGrams();
+        lol = lol.replace(",",".");
+        calorieper100grams = Float.parseFloat(lol);
+        calories = (calorieper100grams * gramme ) / 100 ;
+        return calories;
     }
 
     private class ValueEventListenerRecipeConstruct implements ValueEventListener {

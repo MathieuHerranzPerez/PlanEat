@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.mathieuhp.planeat.fragments.FridgeFragment;
+import com.example.mathieuhp.planeat.fragments.NewRecipeFragment;
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;
