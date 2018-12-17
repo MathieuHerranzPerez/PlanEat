@@ -408,7 +408,8 @@ public class Recipe implements Parcelable{
                     Log.d("the one component", "voila");
 
                     String ingredientId = component.getKey();
-                    newComponent.setIngredient(Ingredient.getIngredientById(ingredientId));
+                    Ingredient ingredient = Ingredient.getIngredientById(ingredientId);
+                    newComponent.setIngredient(ingredient);
                     Log.d("ingredient id", ingredientId);
 
                     String amount = "";

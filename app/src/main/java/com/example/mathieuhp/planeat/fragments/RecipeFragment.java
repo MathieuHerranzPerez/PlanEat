@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.RecipesListItemDecoration;
 import com.example.mathieuhp.planeat.adapters.RecipesListItemAdapter;
+import com.example.mathieuhp.planeat.models.Component;
 import com.example.mathieuhp.planeat.models.FirebaseDataRetriever;
 import com.example.mathieuhp.planeat.models.Recipe;
 import com.google.firebase.database.ChildEventListener;
@@ -59,6 +60,8 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
     private LinearLayout difficultySection = null;
     private TextView difficultyTextView = null;
 
+    private LinearLayout ingredientSection = null;
+
 
 
 
@@ -68,8 +71,6 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
         super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_recipe,null);
-
-        //TODO mettre une barre de chargement
 
         if(this.recipe != null && this.recipe.hasComponents()){
 
@@ -93,7 +94,6 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
             addNbPeopleButton.setOnClickListener(new AddNbPeopleListener(this.recipe, this.nbPeopleTextView));
 
 
-
             preparationAndDifficultySection = (LinearLayout) view.findViewById(R.id.PreparationAndDifficultySection);
 
             preparationTimeSection = (LinearLayout) preparationAndDifficultySection.findViewById(R.id.PreparationTimeSection);
@@ -108,6 +108,28 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
             difficultyTextView = (TextView) difficultySection.findViewById(R.id.RecipeDifficultyLevel);
             if(recipe.getDifficulty() > 0.0){
                 difficultyTextView.setText(String.valueOf(recipe.getDifficulty()));
+            }
+
+            ingredientSection = (LinearLayout) view.findViewById(R.id.IngredientSection);
+            for(Component component: this.recipe.getComponents()){
+                View ingredientView = getLayoutInflater().inflate(R.layout.ingredient_display, null);
+
+                TextView quantityTextView = (TextView) ingredientView.findViewById(R.id.IngredientQuantity);
+                if(component.getQuantity() > 0){
+                    quantityTextView.setText(String.valueOf(component.getQuantity()));
+                }
+
+                TextView unitTextView = (TextView) ingredientView.findViewById(R.id.IngredientUnit);
+                if(component.getUnit() != null){
+                    unitTextView.setText(String.valueOf(component.getUnit()));
+                }
+
+                TextView ingredientNameTextView = (TextView) ingredientView.findViewById(R.id.IngredientName);
+                if(component.getIngredientName() != null){
+                    ingredientNameTextView.setText(component.getIngredientName());
+                }
+
+                ingredientSection.addView(ingredientView);
             }
         }
 
@@ -153,6 +175,10 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
 
     }
 
+    public void updateIngredients(){
+        //TODO
+    }
+
     public class RemoveNbPeopleListener implements View.OnClickListener{
 
         private Recipe recipe;
@@ -167,7 +193,7 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
         public void onClick(View v) {
             this.recipe.decrementNbPeople();
             this.nbPeopleTextView.setText(String.valueOf(this.recipe.getNbPeople()));
-            //TODO changer les ingrédients de la recette
+
         }
     }
 

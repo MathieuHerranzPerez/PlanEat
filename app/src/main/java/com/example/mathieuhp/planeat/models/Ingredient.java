@@ -135,7 +135,7 @@ public class Ingredient implements Comparable {
 
     public static Ingredient getIngredientById(String ingredientId){
         for (Ingredient ingredient : Ingredient.ingredientList) {
-            if(ingredient.getId() == ingredientId){
+            if(ingredient.getId().equals(ingredientId)){
                 return ingredient;
             }
         }
