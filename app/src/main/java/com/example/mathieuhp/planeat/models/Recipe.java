@@ -247,16 +247,18 @@ public class Recipe implements Parcelable{
         firebaseReference.child("recipes").child(recipe.id).child("preparationTime").setValue(recipe.preparationTime);
         firebaseReference.child("recipes").child(recipe.id).child("difficulty").setValue(recipe.difficulty);
         for (int i = 0; i < listComponent.size(); i++) {
-            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getQuantity());
-            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getUnity());
-            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(recipe.listComponent.get(i).getIngredient().getId()).setValue(recipe.listComponent.get(i).getIngredient());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getQuantity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getUnity());
+            firebaseReference.child("recipe").child(recipe.id).child("ingredient").child(listComponent.get(i).getIngredient().getId()).setValue(listComponent.get(i).getIngredient());
 
         }
         for (int b = 0; b < preparation.size(); b++) {
             firebaseReference.child("recipes").child(recipe.id).child("preparation").child(String.valueOf(b)).setValue(recipe.preparation.get(b));
         }
-        for (int a = 0; a < tags.size(); a++) {
-            firebaseReference.child("recipes").child(recipe.id).child("tags").child(String.valueOf(a)).setValue(recipe.tags.get(a));
+        if (tags!=null && !tags.isEmpty()) {
+            for (int a = 0; a < tags.size(); a++) {
+                firebaseReference.child("recipes").child(recipe.id).child("tags").child(String.valueOf(a)).setValue(recipe.tags.get(a));
+            }
         }
         firebaseReference.child("recipes").child(recipe.id).child("isShared").setValue(recipe.isShared);
         firebaseReference.child("recipes").child(recipe.id).child("calories").setValue(recipe.calories);
