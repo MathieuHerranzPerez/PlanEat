@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.mathieuhp.planeat.fragments.PlanningFragment;
 import com.example.mathieuhp.planeat.fragments.RecipesListFragment;

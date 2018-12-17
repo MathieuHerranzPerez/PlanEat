@@ -26,6 +26,7 @@ import com.example.mathieuhp.planeat.R;
 import com.example.mathieuhp.planeat.models.Recipe;
 import com.example.mathieuhp.planeat.models.RecipeCalendar;
 import com.example.mathieuhp.planeat.models.User;
+import com.example.mathieuhp.planeat.utils.RecipeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -225,9 +226,12 @@ public class PlanningFragment extends Fragment implements Updatable{
                 recipeList = user.getAllRecipes();
 
                 // create an adapter for the spinner
-                ArrayAdapter<Recipe> adapterRecipe = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_item, recipeList);
-                adapterRecipe.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spinnerRecipe.setAdapter(adapterRecipe);
+                RecipeAdapter adapter = new RecipeAdapter(activity, android.R.layout.simple_spinner_item, recipeList);
+                spinnerRecipe.setAdapter(adapter);
+
+//                ArrayAdapter<Recipe> adapterRecipe = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_item, recipeList);
+//                adapterRecipe.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                spinnerRecipe.setAdapter(adapterRecipe);
 
                 btnChange.setOnClickListener(this);
                 btnCancel.setOnClickListener(this);
