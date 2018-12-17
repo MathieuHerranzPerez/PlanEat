@@ -62,6 +62,8 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
 
     private LinearLayout ingredientSection = null;
 
+    private LinearLayout preparationSection = null;
+
 
 
 
@@ -130,6 +132,23 @@ public class RecipeFragment extends Fragment implements Updatable, FirebaseDataR
                 }
 
                 ingredientSection.addView(ingredientView);
+            }
+
+            preparationSection = (LinearLayout) view.findViewById(R.id.PreparationSection);
+            if(recipe.getPreparation() != null) {
+                for (int i = 0; i < recipe.getPreparation().size(); i++) {
+                    String preparationStep = recipe.getPreparation().get(i);
+                    View preparationStepView = getLayoutInflater().inflate(R.layout.preparation_instruction_display, null);
+
+                    TextView preparationStepNumberTextView = (TextView) preparationStepView.findViewById(R.id.PreparationStepNumber);
+                    preparationStepNumberTextView.setText(String.valueOf(i+1) + ". ");
+
+                    TextView preparationStepDescriptionTextView = (TextView) preparationStepView.findViewById(R.id.PreparationStepDescription);
+                    if (preparationStep != null) {
+                        preparationStepDescriptionTextView.setText(preparationStep);
+                    }
+                    preparationSection.addView(preparationStepView);
+                }
             }
         }
 

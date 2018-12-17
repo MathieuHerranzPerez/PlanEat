@@ -158,6 +158,10 @@ public class Recipe implements Parcelable{
         return difficulty;
     }
 
+    public ArrayList<String> getPreparation() {
+        return preparation;
+    }
+
     public int getPreparationTime() {
         return preparationTime;
     }
@@ -283,7 +287,6 @@ public class Recipe implements Parcelable{
         dest.writeByte((byte) (isShared ? 1 : 0));
         dest.writeFloat(score);
     }
-
 
 
 
