@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#FFFF00">
--->
+    android:fillViewport="true">
+
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#FF0000"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<!--
-        <EditText
-            android:id="@+id/idRecipe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
--->
 
-        <!-- Name of the recipe -->
-        <TextView
-            android:id="@+id/DetailedRecipeName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:textSize="25dp"
-            android:layout_marginVertical="7dp"/>
 
         <!-- Add picture -->
         <ImageView
@@ -40,8 +23,11 @@
             android:id="@+id/DetailedRecipeDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/DetailedRecipePicture"
+            android:layout_marginVertical="7dp"
             android:textSize="16dp"
-            android:layout_marginVertical="7dp"/>
+            android:layout_alignParentRight="true" />
 
         <!-- Tags -->
         <!-- TODO : Show tags -->
@@ -51,73 +37,125 @@
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_below="@+id/DetailedRecipeDescription"
+            android:background="?android:attr/listDivider"
+            android:layout_alignTop="@id/DetailedRecipeDescription"/>
 
-        <!-- Number of person and Times -->
+        <!-- Number of person-->
         <LinearLayout
+            android:id="@+id/NumberPeopleSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_below="@+id/divider1"
+            android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginVertical="5dp">
+            android:layout_marginVertical="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/NumberPeopleSubSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/RemoveNbPeopleButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_action_less" />
+
+
+                <TextView
+                    android:id="@+id/DetailedNbPeopleForRecipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/AddNbPeopleButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_action_plus" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/RecipeNbPeopleText"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/nbPerson" />
-
-            <TextView
-                android:id="@+id/RecipeForNbPeople"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_below="@id/NumberPeopleSubSection"
+                android:text="@string/nbPerson"
+                android:textAlignment="center"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
+
+        <!-- PreparationTime and Difficulty-->
         <LinearLayout
+            android:id="@+id/PreparationAndDifficultySection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginVertical="5dp">
+            android:layout_below="@id/NumberPeopleSection"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/RecipePreparationTimeText"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/PreparationTimeSection"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/preparationTime" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/RecipePreparationTime"
-                android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/RecipePreparationTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preparationTime"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/RecipePreparationTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <!-- Dificulty -->
+            <LinearLayout
+                android:id="@+id/DifficultySection"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:orientation="vertical"
+                android:layout_below="@id/PreparationTimeSection"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight="1"
+                android:layout_gravity="center">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/RecipeDifficultyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Difficulté"
+                    android:layout_gravity="center"/>
 
-        <!-- Dificulty -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginVertical="5dp">
+                <TextView
+                    android:id="@+id/RecipeDifficultyLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
 
-            <TextView
-                android:id="@+id/RecipeDifficultyText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/difficulty" />
-
-            <TextView
-                android:id="@+id/RecipeDifficultyLevel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -125,13 +163,18 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_below="@id/PreparationAndDifficultySection"
             android:background="?android:attr/listDivider" />
 
         <!-- Ingredients list-->
         <LinearLayout
+            android:id="@+id/IngredientListSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/divider2"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true">
 
             <TextView
                 android:id="@+id/IngredientSectionTitle"
@@ -139,16 +182,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:text="@string/tittle_ingredients"
-                android:textSize="20dp"/>
+                android:text="@string/title_ingredients"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
 
             <LinearLayout
                 android:id="@+id/IngredientSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
             </LinearLayout>
 
         </LinearLayout>
@@ -157,6 +199,7 @@
             android:id="@+id/divider3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_below="@id/IngredientListSection"
             android:background="?android:attr/listDivider" />
 
         <!-- Preparation list -->
@@ -164,7 +207,10 @@
             android:id="@+id/PreparationSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/divider3"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
 
             <TextView
                 android:id="@+id/PreparationSectionTitle"
@@ -172,15 +218,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:text="@string/tittle_preparation"
-                android:textSize="20dp"/>
+                android:text="@string/title_preparation"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
 
             <Button
                 android:id="@+id/addToPlanningButton"
@@ -188,7 +238,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:text="Ajouter au Planning"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
 
             <Button
                 android:id="@+id/addToMarketButton"
@@ -196,10 +246,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:text="Ajouter au courses"
-                android:textSize="12dp"/>
+                android:textSize="12dp" />
 
         </RelativeLayout>
 
     </RelativeLayout>
 
-<!--</ScrollView>-->
+</ScrollView>

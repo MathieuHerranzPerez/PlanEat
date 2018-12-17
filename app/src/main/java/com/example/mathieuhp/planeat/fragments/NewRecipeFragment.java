@@ -276,11 +276,10 @@ public class NewRecipeFragment extends Fragment {
                     Snackbar snackbarComplete = Snackbar.make(rootview, "Recette déja soumise", Snackbar.LENGTH_SHORT);
                     snackbarComplete.show();
                 } else {
-                    Recipe recipe = new Recipe(name, nbPeople, description, preparationTime,
+                    Recipe recipe = new Recipe(name, nbPeople, preparationTime,
                             difficulty, ingredients, preparation, isShared);
 
                     firebaseReference.child("recipes").child(id).child("name").setValue(name);
-                    firebaseReference.child("recipes").child(id).child("description").setValue(description);
                     firebaseReference.child("recipes").child(id).child("persons").setValue(nbPeople);
                     firebaseReference.child("recipes").child(id).child("preparationTime").setValue(preparationTime);
                     firebaseReference.child("recipes").child(id).child("difficulty").setValue(difficulty);

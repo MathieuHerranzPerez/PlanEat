@@ -139,7 +139,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
-                    android:text="@string/tittle_ingredients" />
+                    android:text="@string/title_ingredients" />
 
                 <Button
                     android:id="@+id/addIngredient"
@@ -231,11 +231,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tittle_preparation"
+                    android:id="@+id/title_preparation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
-                    android:text="@string/tittle_preparation" />
+                    android:text="@string/title_preparation" />
 
                 <Button
                     android:id="@+id/addStep"

@@ -28,7 +28,6 @@ public class Recipe implements Parcelable{
     private ArrayList<Component> components;
     private int nbPeople;
     private int calories;
-    private String description;
     private int preparationTime;
     private float difficulty;
     private ArrayList<ArrayList> ingredients;
@@ -45,14 +44,13 @@ public class Recipe implements Parcelable{
 
     }
 
-    public Recipe(String id, String name, ArrayList<Component> components, int nbPeople, int calories, float difficulty, String description, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
+    public Recipe(String id, String name, ArrayList<Component> components, int nbPeople, int calories, float difficulty, int preparationTime, String imageLink, String tag, Bitmap image, List<String> tags, boolean isShared, float score) {
         this.id = id;
         this.name = name;
         this.components = components;
         this.nbPeople = nbPeople;
         this.calories = calories;
         this.difficulty = difficulty;
-        this.description = description;
         this.preparationTime = preparationTime;
         this.imageLink = imageLink;
         this.image = image;
@@ -70,11 +68,10 @@ public class Recipe implements Parcelable{
         firebaseReference.addValueEventListener(new ValueEventListenerRecipeConstruct(this));
     }
 
-    public Recipe(String name, int nbPeople, String description, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
+    public Recipe(String name, int nbPeople, int preparationTime, float difficulty, ArrayList<ArrayList> ingredients, ArrayList<String> preparation, boolean isShared) {
 
         this.name = name;
         this.nbPeople = nbPeople;
-        this.description = description;
         this.preparationTime = preparationTime;
         this.difficulty = difficulty;
         this.ingredients = ingredients;
@@ -87,10 +84,10 @@ public class Recipe implements Parcelable{
         this.id = id;
         this.name = "";
         this.components = new ArrayList<Component>();
+        this.preparation = new ArrayList<String>();
         this.nbPeople = 0;
         this.calories = 0;
         this.difficulty = 0;
-        this.description = "";
         this.preparationTime = 0;
         this.imageLink = "";
         this.isShared = false;
@@ -108,7 +105,6 @@ public class Recipe implements Parcelable{
         name = in.readString();
         nbPeople = in.readInt();
         calories = in.readInt();
-        description = in.readString();
         preparationTime = in.readInt();
         difficulty = in.readFloat();
         preparation = in.createStringArrayList();
@@ -150,12 +146,12 @@ public class Recipe implements Parcelable{
         return components;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public int getCalories() {
         return calories;
+    }
+
+    public int getNbPeople() {
+        return nbPeople;
     }
 
     public float getDifficulty() {
@@ -208,9 +204,6 @@ public class Recipe implements Parcelable{
     public void setDifficulty(float difficulty) {
         this.difficulty = difficulty;
     }
-    public void setDescription(String description) {
-        this.description = description;
-    }
     public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
@@ -250,6 +243,23 @@ public class Recipe implements Parcelable{
         this.components.add(component);
     }
 
+    private void addPreparationStep(String preparationStep) {
+        if(this.preparation == null){
+            this.preparation = new ArrayList<String>();
+        }
+        this.preparation.add(preparationStep);
+    }
+
+    public void decrementNbPeople(){
+        if(this.nbPeople > 1) {
+            this.nbPeople -= 1;
+        }
+    }
+
+    public void incrementNbPeople() {
+        this.nbPeople += 1;
+    }
+
 
     /**** IMPLEMENTS PARCELABLE ****/
 
@@ -264,7 +274,6 @@ public class Recipe implements Parcelable{
         dest.writeString(name);
         dest.writeInt(nbPeople);
         dest.writeInt(calories);
-        dest.writeString(description);
         dest.writeInt(preparationTime);
         dest.writeFloat(difficulty);
         dest.writeStringList(preparation);
@@ -308,10 +317,12 @@ public class Recipe implements Parcelable{
                     recipe.setNbPeople(nbPeople);
                     Log.d("recipe nbPeople", nbPeople.toString());
                 }
-                String description;
-                if ((description = (String) ds.child("preparation").getValue()) != null){
-                    recipe.setDescription(description);
-                    Log.d("recipe description", description);
+                if (ds.hasChild("preparation")){
+                    Iterable<DataSnapshot> preparationSteps = ds.child("preparation").getChildren();
+                    for(DataSnapshot preparationStep : preparationSteps){
+                        recipe.addPreparationStep((String) preparationStep.getValue());
+                    }
+                    //Log.d("recipe preparation instructions", description);
                 }
                 Integer preparationTime;
                 if((preparationTime = Integer.parseInt((String)ds.child("preparationTime").getValue())) != null){
@@ -348,6 +359,8 @@ public class Recipe implements Parcelable{
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {}
     }
+
+
 
     public void deleteData() {
         // TODO delete the recipe
